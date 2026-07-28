@@ -26,10 +26,10 @@ interface ContactSubmissionResult {
  */
 export const submitContactForm = createServerFn(
   { method: "POST" },
-  async (formData: ContactFormData): Promise<ContactSubmissionResult> => {
+  async (data: unknown): Promise<ContactSubmissionResult> => {
     try {
       // Validate input
-      const validated = contactFormSchema.parse(formData);
+      const validated = contactFormSchema.parse(data) as ContactFormData;
 
       // Send email notification
       await sendEmailNotification(validated);
