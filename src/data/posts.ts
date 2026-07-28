@@ -1,0 +1,251 @@
+export interface Post {
+  slug: string;
+  title: string;
+  /** Optional override for the <title> meta tag; falls back to `${title} — Safe Haven Inspections`. */
+  titleTag?: string;
+  description: string;
+  date: string;
+  readMinutes: number;
+  body: string[];
+  related?: { to: string; label: string }[];
+}
+
+export const posts: Post[] = [
+  {
+    slug: "mold-removal-process-florida",
+    title: "How Mold Is Properly Handled in Florida: Assessment, Remediation & Clearance",
+    titleTag: "How Mold Removal Works in Florida | Safe Haven",
+    description:
+      "In Florida, mold assessment, remediation, and post-remediation clearance are kept in separate hands for a reason. Here's the three-step process, in order.",
+    date: "2026-07-14",
+    readMinutes: 6,
+    body: [
+      "In Florida, resolving a mold problem the right way follows a clear sequence — and state licensing deliberately keeps the key steps in different hands. An independent mold assessor evaluates the property and documents the problem, a separate remediation company performs the cleanup, and the assessor returns to verify the work. That separation protects you: the company diagnosing the problem shouldn't be the same one profiting from the cleanup. Safe Haven Inspections handles the two independent bookends — the assessment and the clearance verification — and never performs remediation, so our findings stay objective from start to finish.",
+      "Why the order matters: Under Florida's licensing framework, mold assessment and mold remediation are generally kept separate when the work is performed for compensation. In practice, the assessment should come first, performed by a licensed assessor with no stake in the cleanup. (Requirements can change, so confirm what applies to your situation.)",
+      "Step 1 — Start with an independent mold assessment. Before any cleanup begins, a licensed mold assessor inspects the property to determine whether mold is present, how far it extends, and what's driving it. At Safe Haven, that means a full visual inspection plus moisture mapping and infrared thermal imaging to trace hidden leaks or humidity feeding the growth, and air or surface sampling analyzed by an accredited third-party lab. You receive a written assessment report, typically within 24 hours, documenting the findings and laying out a protocol the remediation company can follow.",
+      "Step 2 — Have a licensed remediation company do the cleanup. With the report and protocol in hand, you hire a licensed mold remediation company of your choice to safely remove the mold and correct the moisture source. Safe Haven does not perform remediation and takes no referral fees, so you're free to choose any qualified remediator — and the protocol gives every bidder the same clear scope.",
+      "Step 3 — Confirm success with post-remediation verification. After the remediation company finishes, the assessor returns for clearance testing (post-remediation verification) to confirm the work succeeded and that indoor spore levels and fungal ecology have returned to normal. This clearance visit is a separate service from the initial assessment. It's the step that gives you documented proof the problem is resolved before walls close up.",
+      "Because Safe Haven only inspects, tests, and verifies — never remediates — you get an honest, lab-backed picture at both ends of the process, with no incentive to inflate the problem or steer you toward a particular cleanup crew.",
+      "Ready to start the process the right way? Request a free quote or call (561) 632-6387 to schedule an independent assessment across Martin, Palm Beach, and Broward Counties.",
+    ],
+    related: [
+      { to: "/services/mold-assessment-report", label: "Mold Assessment & Written Protocol" },
+      { to: "/services/post-remediation-verification", label: "Post-Remediation Verification" },
+      { to: "/services/thermal-imaging", label: "Moisture Mapping & Thermal Imaging" },
+      { to: "/services/mold-inspection", label: "Full Mold Inspection" },
+      { to: "/contact", label: "Request a free quote" },
+    ],
+  },
+  {
+    slug: "signs-you-have-hidden-mold-in-your-florida-home",
+    title: "Signs You Have Hidden Mold in Your Florida Home",
+    description: "Musty smells, unexplained allergies, and water stains are early warnings. Here's how to spot hidden mold in South Florida homes before it spreads.",
+    date: "2025-11-15",
+    readMinutes: 5,
+    body: [
+      "Florida's warm, humid climate is one of the most mold-friendly environments in the country. Even a well-kept home can harbor mold behind drywall, above ceilings, and inside HVAC systems long before you see a visible spot.",
+      "The most common early warning is smell. A persistent musty or 'old basement' odor — especially in bathrooms, laundry rooms, or near AC vents — usually means mold is growing somewhere out of sight.",
+      "Unexplained allergy symptoms are another red flag. Sneezing, itchy eyes, congestion, or asthma flare-ups that improve when you leave the house often trace back to elevated indoor spore counts.",
+      "Visual clues include yellow or brown water stains on ceilings and baseboards, bubbling paint, warped wood, and dark spots around window frames. Any of these should prompt an independent mold inspection so you know exactly what you're dealing with before any repair work begins.",
+      "If you're seeing or smelling anything unusual, an independent assessment will tell you what's actually there — clearly and objectively.",
+    ],
+  },
+  {
+    slug: "mold-after-a-hurricane-or-water-damage",
+    title: "Mold After a Hurricane or Water Damage: What to Do",
+    description: "Mold can start growing within 24–48 hours of water intrusion. Here's the step-by-step for South Florida homeowners after a storm or leak.",
+    date: "2025-10-02",
+    readMinutes: 6,
+    body: [
+      "After a hurricane, tropical storm, or interior leak, mold can begin colonizing wet materials in as little as 24 to 48 hours. Acting fast protects both your health and your property value.",
+      "Step 1 — Document everything. Photos and video of every affected area help with insurance claims and give your inspector a clear starting point.",
+      "Step 2 — Stop the water source. A roof leak, plumbing failure, or slab intrusion has to be fixed before drying begins. Otherwise mold will return.",
+      "Step 3 — Dry the space aggressively. Fans, dehumidifiers, and open windows during dry weather help — but wet drywall, insulation, and carpet padding often need removal within 48 hours.",
+      "Step 4 — Get an independent mold assessment. A third-party inspection and lab testing before any remediation gives you a clear picture of the true scope and a solid basis for scoping the work.",
+      "Step 5 — Retest after remediation. A post-remediation verification confirms the work solved the problem before you close the walls back up.",
+    ],
+  },
+  {
+    slug: "do-i-need-a-mold-test-before-buying-a-home-in-florida",
+    title: "Do I Need a Mold Test Before Buying a Home in Florida?",
+    description: "Standard home inspections don't test for mold. Here's when a pre-purchase mold inspection is worth it — and how it protects your investment.",
+    date: "2025-09-18",
+    readMinutes: 4,
+    body: [
+      "A standard four-point or general home inspection in Florida does not include mold testing. Inspectors will note visible moisture, but they won't sample the air or send anything to a lab.",
+      "For any older home, coastal property, or house that's been vacant, a pre-purchase mold inspection is one of the best small investments you can make. It's independent, lab-backed, and gives you real leverage during negotiation.",
+      "We regularly find hidden mold in properties that 'looked clean' — behind vanities, above popcorn ceilings, and inside air handlers. Discovering it before closing can save tens of thousands of dollars in surprise remediation.",
+      "If the seller pushes back on testing, that itself is useful information. A serious seller of a clean home has no reason to object to independent verification.",
+      "Buyers we work with typically get their report within 24 hours of the walk-through — in time to include in their inspection response.",
+    ],
+  },
+  {
+    slug: "mold-inspection-before-selling-home-palm-beach-county",
+    title: "Do You Need a Mold Inspection Before Selling a Home in Palm Beach County?",
+    description: "A pre-listing mold inspection helps Palm Beach County sellers handle disclosure, avoid surprise renegotiations, and price with confidence.",
+    date: "2026-01-08",
+    readMinutes: 6,
+    body: [
+      "If you're preparing to list a home in Palm Beach County, you've probably wondered whether you need to test for mold before you sign with a buyer. It's not legally required — but between Florida's humidity, older housing stock in cities like West Palm Beach and Lake Worth Beach, and the reality that most general home inspections don't test for mold at all, a pre-listing assessment is one of the quietest, highest-leverage moves a seller can make.",
+      "Florida law generally requires sellers of residential real estate to disclose material defects they know about that aren't readily observable to a buyer. Mold — especially mold tied to a past leak, roof issue, or storm event — can qualify. Sellers should confirm current disclosure obligations with their real-estate attorney or a current Florida Realtors form, but the practical rule of thumb is straightforward: if you know about it, you generally need to say something. What sellers usually want to avoid is finding out about it during the buyer's inspection period, with a closing date looming.",
+      "A pre-listing mold inspection changes the sequence. Instead of the buyer's inspector flagging something ambiguous and the deal grinding to a halt while you scramble for answers, you already have an independent, lab-backed report describing what's actually present, where it is, and how significant it is. That lets you either address it before listing, disclose it up front with documentation, or (in many cases) confirm the home is clean and neutralize a common negotiation lever entirely.",
+      "What does a pre-listing inspection cover? A licensed mold assessor walks the property with moisture meters, humidity readings, and thermal imaging to find hidden moisture behind drywall, above ceilings, and around AC air handlers — the places that don't show visible staining but drive most 'surprise' findings. If suspect conditions turn up, we collect air or surface samples and send them to an independent AIHA-accredited laboratory. You get a written report with photos, readings, and lab results.",
+      "In Palm Beach County specifically, a few property types deserve extra attention before listing: older CBS (concrete block) homes with jalousie or single-pane windows, coastal properties east of the Intracoastal that have taken repeated storm exposure, condos where prior stack leaks are common, and homes that sat vacant for a snowbird season with the AC turned off. In each case, moisture history matters more than surface appearance — a freshly painted ceiling doesn't mean the leak that stained it was addressed correctly.",
+      "Independence matters here more than most sellers realize. Safe Haven is a mold assessment company only — we do not perform, subcontract, or refer remediation. That means the report you hand your listing agent or a prospective buyer isn't a scope of work our own crew wrote to sell itself. It reads as a neutral document, which is exactly how buyer's agents, attorneys, and insurance adjusters expect a legitimate assessment to look.",
+      "Cost is almost always dwarfed by the negotiation risk it removes. Buyers who see a clean, independent report from a licensed Florida mold assessor rarely re-open the topic. Buyers who see a report you commissioned from a company that also does the cleanup often treat it as suspect. Independent equals credible.",
+      "If you're getting ready to list anywhere from Jupiter and Palm Beach Gardens down through Boca Raton and Delray Beach, this is the right time to schedule. Call (561) 632-6387 or request a quote and we'll walk through what your specific property needs.",
+    ],
+    related: [
+      { to: "/services/real-estate-mold-inspection", label: "Real Estate Mold Inspection" },
+      { to: "/mold-inspection-west-palm-beach", label: "Mold Inspection in West Palm Beach" },
+      { to: "/mold-inspection-boca-raton", label: "Mold Inspection in Boca Raton" },
+      { to: "/mold-inspection-delray-beach", label: "Mold Inspection in Delray Beach" },
+      { to: "/contact", label: "Request a quote" },
+    ],
+  },
+  {
+    slug: "mold-clearance-testing-after-remediation-independent",
+    title: "Mold Clearance Testing After Remediation: Why It Should Be Independent",
+    description: "Clearance testing verifies mold remediation actually worked. Here's why the assessor and the remediator should be separate companies.",
+    date: "2026-01-15",
+    readMinutes: 6,
+    body: [
+      "Once a remediation crew has finished tearing out affected materials, running HEPA scrubbers, and cleaning contained areas, someone has to answer a specific question: did the work actually meet the protocol? That's what clearance testing — sometimes called post-remediation verification — is for. It's the final quality check before containment comes down and the walls get closed back up.",
+      "In Florida, mold assessment and mold remediation are separately regulated for a reason. When one company both does the cleanup and grades its own homework afterward, the incentives quietly point in one direction. That's why the industry standard — and the position we take at Safe Haven — is that clearance testing should be performed by an independent, licensed mold assessor who wasn't involved in the removal work.",
+      "A proper clearance visit is more than an air sample. We start with a visual inspection of the previously affected area to confirm that visible growth has been removed, that materials appear dry and clean, that dust and debris have been HEPA-vacuumed, and that containment barriers and negative-air setups are still in place. We take moisture readings on remaining materials to confirm they've been dried to acceptable levels. Only then do we collect air samples inside the containment area and, in almost every case, a paired outdoor control taken the same day.",
+      "The lab report is where the neutrality of clearance really matters. An AIHA-accredited third-party lab counts spore types and concentrations from each sample. What we're looking for is that indoor spore counts inside the previously affected space are similar to or lower than outdoor levels, that no unusual indicator species remain elevated indoors, and that visible and moisture conditions match the protocol goals. If it passes, we say so plainly. If it doesn't, we say that too — and we tell you specifically what still needs to be addressed.",
+      "This is where independence pays off. A remediator grading their own work has a subtle financial reason to declare victory: additional cleaning cycles cost them time and materials, and a failed clearance means going back into the same house. An independent assessor has no such incentive. If we say clearance passed, it's because the numbers and conditions actually support that call.",
+      "A clean clearance report is also the document you want on file. If a health concern, insurance claim, or real-estate question comes up months or years later, being able to show a lab-backed, third-party report — signed by a Florida-licensed mold assessor who wasn't paid by the remediator — is very different from producing a one-page 'final walkthrough' letter from the same crew that did the work.",
+      "One caveat worth naming: no clearance test tells you the house will never grow mold again. What it confirms is that, at the time of testing, the previously affected area met the protocol goals for cleanliness, moisture, and airborne spore levels compared to outdoors. If the underlying moisture source wasn't fully addressed, mold can return. We'll flag that risk in the report when we see it.",
+      "If you've just completed remediation and want a genuinely independent verification, we can typically schedule quickly. Learn more about our clearance process on the post-remediation verification page or call (561) 632-6387.",
+    ],
+    related: [
+      { to: "/services/post-remediation-verification", label: "Post-Remediation Verification" },
+      { to: "/services/air-quality-testing", label: "Air Quality Testing" },
+      { to: "/services/mold-assessment-report", label: "Mold Assessment Report" },
+      { to: "/contact", label: "Schedule clearance testing" },
+    ],
+  },
+  {
+    slug: "tenant-rights-mold-florida-rentals-what-to-know",
+    title: "Tenant Rights and Mold in Florida Rentals: What Renters and Landlords Should Know",
+    description: "How Florida renters and landlords can document mold complaints, communicate in writing, and use independent testing to resolve disputes fairly.",
+    date: "2026-01-22",
+    readMinutes: 7,
+    body: [
+      "Mold in a rental property is one of the more emotionally charged conversations we get pulled into. A tenant is worried about their family's health; a landlord is worried about liability and cost. Both sides usually want the same thing in the end — a clear, factual answer about what's actually going on — but they often get there faster when there's independent documentation on the record.",
+      "Florida law generally requires residential landlords to keep rental units in a habitable condition and to comply with applicable building, housing, and health codes. Whether a specific mold situation crosses into a habitability issue depends on the facts, and the specifics of any dispute should be reviewed with an attorney or the current Florida landlord-tenant statute. Nothing in this article is legal advice. What we can offer is practical guidance on how to document conditions in a way that holds up regardless of which direction things go.",
+      "For tenants: put the complaint in writing. A dated text or email to the landlord or property manager describing exactly what you're seeing (musty smell in the primary bathroom; brown staining spreading on the ceiling below the upstairs bath; asthma symptoms that clear when you leave the unit) creates a timeline. Photos and short videos help even more. Keep a copy for yourself. If the landlord responds, save that too.",
+      "Also document the moisture source when you can. Is water coming from the AC air handler? A slow plumbing leak under a sink? A roof leak after the last storm? A window that never fully closes? A recurring bathroom exhaust fan that doesn't vent outside? Mold doesn't grow without moisture, and identifying the cause is usually more important than identifying the species.",
+      "For landlords: respond in writing and act promptly. A short, professional written response acknowledging the complaint and describing next steps — even something as simple as scheduling an inspection — protects the owner as much as the tenant. Delayed or verbal-only responses tend to escalate. If the tenant is describing conditions consistent with active water intrusion, that's the time to bring in a licensed plumber, roofer, or HVAC tech first, and then a licensed mold assessor — not the other way around.",
+      "Independent testing is where these situations often get unstuck. When a Florida-licensed mold assessor who isn't tied to either side collects air or surface samples and reports what the AIHA-accredited lab actually found, the conversation shifts from 'you said / I said' to numbers on paper. Tenants aren't guessing about health risk; landlords aren't guessing about scope; both sides can act on the same document.",
+      "One important note: an independent assessor doesn't act as an advocate for either party. Our report describes what's present, where, and at what concentration compared to outdoor controls. It doesn't declare who has to pay for what — that's a matter for the lease, the landlord-tenant statute, and, if needed, an attorney. That neutrality is precisely what makes an independent report useful in a rental dispute.",
+      "Property managers and multi-unit owners we work with often keep us on call for exactly this reason — a quick, licensed, third-party assessment tends to defuse escalating tenant concerns faster than any internal walkthrough can. Learn more on our commercial and property-manager service page, or call (561) 632-6387.",
+    ],
+    related: [
+      { to: "/services/commercial-mold-inspection", label: "Commercial & Property Manager Inspection" },
+      { to: "/services/mold-assessment-report", label: "Mold Assessment Report" },
+      { to: "/services/air-quality-testing", label: "Air Quality Testing" },
+      { to: "/contact", label: "Request an independent inspection" },
+    ],
+  },
+  {
+    slug: "cbs-concrete-block-homes-south-florida-hidden-mold",
+    title: "Why Concrete Block (CBS) Homes in South Florida Are Prone to Hidden Mold",
+    description: "CBS construction, humidity, flat terrain, and storm exposure create hidden moisture patterns unique to South Florida homes. Here's where to look.",
+    date: "2026-01-29",
+    readMinutes: 6,
+    body: [
+      "Concrete block stucco (CBS) is the dominant residential wall system across South Florida, and for good reason: it holds up to storms, resists termites, and shrugs off the kind of moisture exposure that would destroy a wood-framed exterior wall in short order. But CBS homes carry their own mold risk profile — one that's very different from the wood-frame homes most national mold advice is written about. Knowing where to look changes what you find.",
+      "Start with the wall assembly itself. A typical South Florida CBS wall has block on the outside, an interior furring channel or 1x2 wood strapping, and drywall attached to that strapping. When bulk water gets past the stucco — through a hairline crack, a failed window flashing, a leaking roof-to-wall junction, or a poorly sealed hose-bib penetration — it can travel down inside the block cavity and wet the back of the drywall and any wood strapping in contact with it. The drywall face often looks fine for weeks, sometimes months, while mold grows on the back.",
+      "That's why thermal imaging matters so much on CBS properties. An infrared camera reveals temperature differences that flag moisture the eye can't see, and confirmed with a moisture meter, it points us to the specific bays that need attention. Without thermal imaging, a CBS mold inspection often misses exactly the areas that need sampling the most.",
+      "Flat terrain is the second amplifier. Most of coastal and central South Florida drains slowly. After a heavy rain, standing water can sit against the base of exterior walls for hours, and older CBS homes with worn stucco or below-grade landscaping can wick moisture up into the block. Homes that have been re-landscaped so that soil or mulch now sits above the slab line are especially prone to this.",
+      "Humidity is the third. CBS mass absorbs heat and cool slowly, which is generally a comfort win — but when indoor humidity climbs above roughly 60% and cool block surfaces sit in contact with warmer interior air, condensation forms on the interior face of the wall. Repeat that daily through a summer, and the back of the drywall becomes a mold-friendly environment even without a leak.",
+      "Storms add the fourth layer. Wind-driven rain during a tropical system can push moisture past window and door assemblies, into soffits, and through roof-to-wall intersections that are watertight against normal rainfall. Post-storm hidden mold in CBS homes often shows up not right after the storm, but two to six weeks later, once the assembly has held moisture long enough for growth to establish.",
+      "The places we most commonly find hidden mold in South Florida CBS homes: inside the exterior wall at floor level in older homes with grade issues; behind cabinetry on exterior walls, especially kitchens and primary baths; around window and slider frames on the storm-facing side of the house; and above the AC air handler closet, where condensate line failures wet the ceiling from behind.",
+      "The playbook is consistent: thermal imaging to find the anomalies, moisture meters to confirm them, and targeted lab-analyzed sampling when the readings warrant it. Learn more on our thermal imaging page, or call (561) 632-6387 to schedule a walkthrough.",
+    ],
+    related: [
+      { to: "/services/thermal-imaging", label: "Thermal Imaging" },
+      { to: "/services/surface-sampling", label: "Surface & Swab Sampling" },
+      { to: "/services/mold-inspection", label: "Mold Inspection Overview" },
+      { to: "/contact", label: "Schedule a CBS inspection" },
+    ],
+  },
+  {
+    slug: "snowbird-condos-summer-mold-ac-settings-hidden-growth",
+    title: "Snowbird Condos and Summer Mold: How AC Settings Cause Hidden Growth",
+    description: "Closed-up seasonal condos plus wrong summer AC settings drive hidden mold across South Florida coastal buildings. Prevention tips inside.",
+    date: "2026-02-05",
+    readMinutes: 6,
+    body: [
+      "Every fall we get the same call. A snowbird returns to their South Florida condo — Deerfield Beach, Jupiter, Boca Raton, Delray, Hollywood — flips on the lights, and is hit by a musty smell that wasn't there in May. Sometimes there's visible growth on baseboards or on the back of leather furniture; more often the surfaces look clean and it's the air that's off. The pattern is common enough that it's practically a season.",
+      "The mechanism is straightforward once you see it. In summer, South Florida outdoor dew points sit in the 70s F, and a closed-up condo will pull humid air in through every small leak in the envelope — around the front door, through elevator shafts on high floors, through unsealed AC penetrations, and through the return chase itself when the unit is off. If nothing is actively removing that moisture, indoor relative humidity climbs into the 70–80% range and stays there. Mold doesn't need liquid water to grow on porous surfaces at those humidity levels; it just needs time.",
+      "AC settings are the most-controllable half of the equation, and they're where seasonal owners go wrong most often. Turning the system fully off saves energy but lets humidity run unchecked. Turning the thermostat up to 82–85°F to save money while away also fails: the AC only runs briefly, doesn't stay on long enough to dehumidify, and short-cycles through the summer. The unit stays warm and wet.",
+      "What works better in most South Florida coastal buildings is one of two approaches. First: leave the AC set to a moderate temperature — commonly around 76–78°F, though the right number depends on the unit and building — with the fan set to Auto (not On), so the system runs long, dehumidifying cycles. Second, and better where the electrical setup allows: pair a moderate cooling setpoint with a stand-alone dehumidifier or a smart humidistat that keeps indoor RH under about 55–60% regardless of temperature. Confirm any specific plan with your building's HVAC contractor and your unit's manual.",
+      "Even with the right settings, there are a few coastal-condo failure points we see repeatedly. AC condensate lines that clog while the owner is away and flood the air-handler closet from below. Refrigerator drip pans and ice-maker lines that quietly leak onto the slab. Bathroom exhaust fans that vent into an attic or soffit instead of outside, so every summer shower re-humidifies the ceiling assembly. Sliding-door tracks that collect windblown rain and never fully dry.",
+      "Salt air adds another layer. Coastal condos in cities like Deerfield Beach, Jensen Beach, and Riviera Beach see faster corrosion on evaporator coils and condensate pans, which means AC systems lose dehumidification capacity years earlier than their inland counterparts. A unit that pulled 10–12 pints of water out of the air per hour when it was new may be pulling much less by year eight.",
+      "The practical prevention list for seasonal owners: schedule an AC service before you leave, confirm the condensate line is clear, set the thermostat and (if available) humidistat correctly, ask a neighbor or manager to check on the unit monthly, and consider a return-visit air-quality test before your family moves back in. That last step catches problems while they're still small.",
+      "If you're returning to a musty unit or preparing one for the season, we can help. Learn more about air quality testing or call (561) 632-6387.",
+    ],
+    related: [
+      { to: "/services/air-quality-testing", label: "Air Quality Testing" },
+      { to: "/mold-inspection-deerfield-beach", label: "Mold Inspection in Deerfield Beach" },
+      { to: "/mold-inspection-jupiter", label: "Mold Inspection in Jupiter" },
+      { to: "/mold-inspection-jensen-beach", label: "Mold Inspection in Jensen Beach" },
+      { to: "/contact", label: "Schedule a condo air test" },
+    ],
+  },
+  {
+    slug: "how-to-read-mold-lab-report-spore-counts-species",
+    title: "How to Read Your Mold Lab Report: Spore Counts, Species, and What They Mean",
+    description: "A plain-language guide to reading a mold lab report — spore counts, indoor vs outdoor controls, indicator species, and what actually matters.",
+    date: "2026-02-12",
+    readMinutes: 7,
+    body: [
+      "Most homeowners who receive a mold lab report for the first time look at a page of Latin-sounding names and numbers and immediately feel a mix of anxious and confused. That's a fair reaction — these reports are written to lab standards, not to consumers. Here's how to actually read one, in plain language, without over- or under-reacting to what it says.",
+      "Start with the basics: what was sampled. Air samples (usually spore-trap cassettes) capture a fixed volume of air over a set time. Surface samples (swab, tape-lift, or bulk) capture whatever was on a specific spot. Any legitimate air-sample report will show at least two samples: at least one indoor location, and an outdoor control taken the same day. The outdoor control is the reference point — mold spores exist in outdoor air everywhere in South Florida, all year, and 'zero indoors' isn't a realistic goal. What you're comparing is indoor vs. outdoor.",
+      "The main number for each sample is spores per cubic meter of air (spores/m³). The lab lists it by genus (Aspergillus/Penicillium, Cladosporium, Basidiospores, Ascospores, Curvularia, Stachybotrys, and so on). A healthy pattern in most South Florida homes: indoor total counts similar to or lower than outdoor totals, and the same genera dominant indoors as outdoors — because indoor air, when nothing is growing inside, is essentially filtered outdoor air.",
+      "Unhealthy patterns generally look like one of two things. Either the indoor total is meaningfully higher than the outdoor total (something is generating spores inside the building), or the indoor genus mix looks nothing like the outdoor mix — for example, a big Aspergillus/Penicillium indoor spike with none showing outside. That mismatch is often the most useful signal in the whole report.",
+      "Certain genera get flagged as indicator species because they're associated with chronic indoor water damage rather than normal outdoor drift. Stachybotrys (the famous 'black mold'), Chaetomium, and elevated Aspergillus/Penicillium counts in the indoor sample all typically warrant a closer look at the moisture history of the space, even at modest concentrations. Cladosporium and Basidiospores, by contrast, are extremely common outdoors and don't carry the same weight when found indoors at similar levels.",
+      "Two nuances that trip people up. First, spore-trap air sampling can't reliably distinguish between live and dead spores. A recent remediation can lower live growth but still leave settled dust that contributes to counts. Second, air samples are a snapshot — HVAC status, occupancy, and even foot traffic in the hour before sampling affect the numbers. That's why a good assessor pairs air data with visual findings, moisture readings, humidity, and thermal imaging. The lab result is one input, not the whole diagnosis.",
+      "What you should look for in the written interpretation from your assessor: a clear statement of what the samples measured, an explicit indoor-vs-outdoor comparison for each area, a plain-language conclusion (elevated / consistent with outdoor / inconclusive), and specific next steps tied to specific locations rather than generic advice. If the report only shows raw lab numbers with no interpretation, that's a report you should push back on.",
+      "For Safe Haven clients, the assessment report is designed to answer three questions on the first page: what did we find, where did we find it, and what should you do next. Learn more on our air quality testing and mold assessment report pages, or call (561) 632-6387 if you'd like help reading a report from another company.",
+    ],
+    related: [
+      { to: "/services/air-quality-testing", label: "Air Quality Testing" },
+      { to: "/services/mold-assessment-report", label: "Mold Assessment Report" },
+      { to: "/services/surface-sampling", label: "Surface & Swab Sampling" },
+      { to: "/contact", label: "Ask about a report" },
+    ],
+  },
+  {
+    slug: "7-questions-to-ask-before-hiring-mold-inspector-south-florida",
+    title: "7 Questions to Ask Before Hiring a Mold Inspector in South Florida",
+    description: "Use these seven questions to separate a genuinely independent, licensed South Florida mold inspector from a company selling remediation on the side.",
+    date: "2026-02-19",
+    readMinutes: 6,
+    body: [
+      "Not all 'mold inspections' are the same, and in Florida the differences matter more than most homeowners realize. Ask these seven questions before you hire anyone. The answers separate a real independent assessment from a sales call in inspection clothing.",
+      "1) Are you a Florida State-Licensed Mold Assessor, and what's your license number? Florida DBPR regulates mold assessment separately from mold remediation. Any legitimate assessor should be able to answer this without hesitation and give you a license number you can verify. Safe Haven's licenses are MRSA3366 and MRSR3536, and they're posted on our site.",
+      "2) Do you also sell mold remediation, or refer to a preferred remediator? This is the single most important question. Florida rules generally discourage the same firm from both assessing and remediating the same property, for the obvious conflict-of-interest reason. A truly independent assessor will tell you plainly that they do not perform, subcontract, or refer remediation. If the answer is a soft 'we can handle everything for you,' you're not talking to an independent assessor.",
+      "3) Is your lab AIHA-accredited and independent of your company? Air and surface samples should be analyzed by a third-party AIHA-accredited laboratory that isn't owned by or contracted exclusively to the inspection company. An outside lab is what makes results defensible in an insurance claim, a real-estate negotiation, or a landlord-tenant dispute.",
+      "4) What exactly does the inspection include? A real assessment isn't just a walkthrough. Expect moisture meter readings on suspect materials, humidity logging, thermal imaging where hidden moisture is possible, a written scope for any samples collected, and photos in the report. If the answer is a vague 'we'll take a look,' keep calling.",
+      "5) When and how will I receive the written report? A reasonable answer is field observations captured the day of the visit and the written report — with lab-backed results — delivered within about 24 hours. At Safe Haven, results and the written report are typically delivered within 24 hours. You should also expect the report to be in plain language, not just raw lab data with no interpretation.",
+      "6) Are you insured, and can I see current proof? A licensed, insured assessor should have current liability coverage and be willing to provide a certificate. This matters both for you as the property owner and for anyone relying on the report later.",
+      "7) Who is going to walk the property — a licensed assessor, or a technician? Small independent shops usually have the owner or a licensed team member on site. Larger companies sometimes send an unlicensed technician who collects samples while the licensed assessor 'reviews' the report later. Neither is inherently wrong, but you should know which one you're getting and who is putting their license behind the findings.",
+      "There's a bonus question worth asking too: how do you handle a case where the samples come back clean? A trustworthy assessor tells you the samples came back clean, writes that in the report, and doesn't invent a scope of work. That's a boring answer on purpose — and it's the answer you want.",
+      "If any of these questions get vague answers, that's your signal. Learn more about Safe Haven's approach on the Meet Landon page, or call (561) 632-6387 and ask us these questions directly.",
+    ],
+    related: [
+      { to: "/about", label: "Meet Landon Heinrichs" },
+      { to: "/services/mold-inspection", label: "Mold Inspection Overview" },
+      { to: "/services", label: "All Services" },
+      { to: "/contact", label: "Request a quote" },
+    ],
+  },
+];
+
+export function findPost(slug: string): Post | undefined {
+  return posts.find((p) => p.slug === slug);
+}
