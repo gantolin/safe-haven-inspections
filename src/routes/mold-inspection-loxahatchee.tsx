@@ -18,6 +18,16 @@ function LoxahatcheePage() {
     <CityMoldPage
       city="Loxahatchee"
       county="Palm Beach County"
+      localFaqs={[
+        {
+          q: "We're on well water and septic out in Loxahatchee. Does that change the inspection?",
+          a: "It changes what we prioritize. There's no municipal water system out here — homes draw from the aquifer through private wells, with septic on site and drainage handled through the Indian Trail Improvement District. Practically, that means pressure tanks, filtration, and softener equipment living indoors in a garage or utility closet, and those are classic slow-leak locations that go unnoticed for months. We check that equipment and the wall and slab around it as standard. After storms we also find elevated readings at window frames, attics, and garage-to-house transitions long after visible water is gone.",
+        },
+        {
+          q: "Is Loxahatchee in the High-Velocity Hurricane Zone?",
+          a: "No. The Florida Building Code defines the High-Velocity Hurricane Zone as Broward and Miami-Dade counties only, so Loxahatchee — in Palm Beach County — is built to the standard statewide code rather than HVHZ requirements. That matters for moisture because the housing stock here is mixed: homes with original single-glazed openings and more incidental air exchange sit alongside newer or impact-retrofitted homes that seal far tighter. The two fail in opposite ways — older homes tend to let water in at windows, doors, and roof penetrations, while tighter homes trap humidity and condense it on cool interior surfaces. We test for both rather than assuming which one you have.",
+        },
+      ]}
       intro="A mold inspection in Loxahatchee, FL is an on-site, licensed assessment of your home for active mold growth, hidden moisture, and elevated indoor spore levels. Safe Haven Inspections is independent and does inspection and testing only — so families in Loxahatchee and The Acreage get an honest answer, not a sales pitch."
       localAngle={{
         heading: "Loxahatchee and The Acreage: what makes moisture different out here",
