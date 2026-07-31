@@ -170,7 +170,7 @@ function Index() {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3.5 text-sm font-semibold text-cta-foreground shadow-lg shadow-cta/30 transition hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
-                Get a Free Quote <ArrowRight className="h-4 w-4" />
+                Get a Free Phone Consultation <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"
@@ -568,7 +568,7 @@ function Index() {
               },
               {
                 q: "What does a mold inspection cost?",
-                a: "Every home is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free quote for exact numbers.",
+                a: "Every home is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation for exact numbers.",
               },
               {
                 q: "Which areas do you serve?",
@@ -607,7 +607,7 @@ function Index() {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-md shadow-cta/30 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
-                Get a Free Quote
+                Get a Free Phone Consultation
               </Link>
               <a
                 href="tel:+15616326387"

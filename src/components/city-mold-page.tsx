@@ -65,7 +65,7 @@ export function CityMoldPage({ city, county, intro, localAngle, otherCities }: C
   const faqItems: Array<{ q: string; a: string }> = [
     {
       q: `How much does a mold inspection cost in ${city}?`,
-      a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free quote and we'll walk through what your specific property needs.`,
+      a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation and we'll walk through what your specific property needs.`,
     },
     {
       q: "How long does a mold inspection take?",

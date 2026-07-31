@@ -17,7 +17,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "How much does surface sampling cost?",
-    a: "Every job is different — the number of samples and whether they're collected during a full inspection or as a stand-alone visit both factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free quote for your property.",
+    a: "Every job is different — the number of samples and whether they're collected during a full inspection or as a stand-alone visit both factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation for your property.",
   },
 ];
 

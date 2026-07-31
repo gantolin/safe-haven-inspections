@@ -26,14 +26,14 @@ export const posts: Post[] = [
       "Step 2 — Have a licensed remediation company do the cleanup. With the report and protocol in hand, you hire a licensed mold remediation company of your choice to safely remove the mold and correct the moisture source. Safe Haven does not perform remediation and takes no referral fees, so you're free to choose any qualified remediator — and the protocol gives every bidder the same clear scope.",
       "Step 3 — Confirm success with post-remediation verification. After the remediation company finishes, the assessor returns for clearance testing (post-remediation verification) to confirm the work succeeded and that indoor spore levels and fungal ecology have returned to normal. This clearance visit is a separate service from the initial assessment. It's the step that gives you documented proof the problem is resolved before walls close up.",
       "Because Safe Haven only inspects, tests, and verifies — never remediates — you get an honest, lab-backed picture at both ends of the process, with no incentive to inflate the problem or steer you toward a particular cleanup crew.",
-      "Ready to start the process the right way? Request a free quote or call (561) 632-6387 to schedule an independent assessment across Martin, Palm Beach, and Broward Counties.",
+      "Ready to start the process the right way? Request a free phone consultation or call (561) 632-6387 to schedule an independent assessment across Martin, Palm Beach, and Broward Counties.",
     ],
     related: [
       { to: "/services/mold-assessment-report", label: "Mold Assessment & Written Protocol" },
       { to: "/services/post-remediation-verification", label: "Post-Remediation Verification" },
       { to: "/services/thermal-imaging", label: "Moisture Mapping & Thermal Imaging" },
       { to: "/services/mold-inspection", label: "Full Mold Inspection" },
-      { to: "/contact", label: "Request a free quote" },
+      { to: "/contact", label: "Request a free phone consultation" },
     ],
   },
   {

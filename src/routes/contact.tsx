@@ -6,8 +6,8 @@ import { submitContactForm } from "@/lib/contact";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Safe Haven Inspections | Free Mold Inspection Quote" },
-      { name: "description", content: "Request a free mold-inspection quote in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 or email us." },
+      { title: "Contact — Safe Haven Inspections | Free Phone Consultation" },
+      { name: "description", content: "Request a free phone consultation in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 or email us." },
       { property: "og:title", content: "Contact Safe Haven Inspections" },
       { property: "og:url", content: "https://www.safehaveninspectionsllc.com/contact" },
     ],
@@ -93,7 +93,7 @@ function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Contact</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Get a free mold-inspection quote.
+            Get a free phone consultation.
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Tell us about your property and what you're seeing. We'll follow up with a
@@ -105,7 +105,7 @@ function ContactPage() {
       <section className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-semibold text-primary">Request a free quote</h2>
+            <h2 className="text-xl font-semibold text-primary">Request a free phone consultation</h2>
             {submitted ? (
               <div className="mt-6 rounded-xl border border-accent/30 bg-accent/10 p-6 text-sm">
                 <div className="flex items-center gap-2 font-semibold text-primary">
