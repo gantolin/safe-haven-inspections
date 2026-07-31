@@ -139,11 +139,18 @@ export function CityMoldPage({
     },
   ];
 
-  // City-specific questions win; a shared question repeated locally is dropped.
-  const localQuestions = new Set((localFaqs ?? []).map((f) => f.q));
+  // City-specific questions win. They also *displace* shared ones rather than
+  // simply being appended: the page keeps a fixed FAQ count, so every local
+  // question added removes one templated answer that would otherwise be
+  // byte-identical across all 27 city pages.
+  const MAX_FAQS = 15;
+  const locals = localFaqs ?? [];
+  const localQuestions = new Set(locals.map((f) => f.q));
   const faqItems = [
-    ...(localFaqs ?? []),
-    ...sharedFaqs.filter((f) => !localQuestions.has(f.q)),
+    ...locals,
+    ...sharedFaqs
+      .filter((f) => !localQuestions.has(f.q))
+      .slice(0, Math.max(0, MAX_FAQS - locals.length)),
   ];
 
   const faqLd = faqSchema(faqItems);

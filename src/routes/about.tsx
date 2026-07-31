@@ -278,6 +278,17 @@ function AboutPage() {
                   not perform, subcontract, or refer remediation.
                 </p>
                 <p>
+                  Florida law draws that line explicitly.{" "}
+                  <span className="font-mono-data text-primary">
+                    § 468.8419
+                  </span>{" "}
+                  bars a licensed mold assessor from performing remediation on
+                  a structure their company assessed within the previous 12
+                  months, and bars a remediator from assessing a property they
+                  remediated in that same window. Safe Haven simply never works
+                  the other side of it.
+                </p>
+                <p>
                   That means the number of samples we pull, the areas we
                   flag, and the recommendations we make are driven by what
                   the property is actually telling us — not by a scope of
