@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import { submitContactForm } from "~/server/contact";
+import { submitContactForm } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -70,11 +70,7 @@ function ContactPage() {
       const message = String(data.get("message") ?? "");
 
       const result = await submitContactForm({
-        name,
-        phone,
-        email,
-        address,
-        message,
+        data: { name, phone, email, address, message },
       });
 
       if (result.success) {
