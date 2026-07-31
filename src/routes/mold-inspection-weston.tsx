@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-weston")({
       path: "/mold-inspection-weston",
       title: "Mold Inspection Weston FL | Safe Haven",
       description:
-        "Independent mold inspection and testing in Weston, FL. Lab-backed reports for upscale master-planned homes, HOA properties, and finished interiors hiding intrusion.",
+        "Independent mold inspection and testing in Weston, FL. Lab-backed reports for upscale master-planned homes, HOA properties, and finished interiors.",
     }),
   component: WestonPage,
 });

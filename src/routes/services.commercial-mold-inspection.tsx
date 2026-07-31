@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -27,9 +27,28 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
       path: "/services/commercial-mold-inspection",
       title: "Commercial Mold Inspection FL | Safe Haven",
       description:
-        "Independent commercial mold inspection for South Florida offices, rentals, HOAs, condos, and retail. Third-party reports property managers and landlords can rely on.",
+        "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Commercial Mold Inspection FL",
+            description: "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
+            path: "/services/commercial-mold-inspection",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Commercial Mold Inspection FL", path: "/services/commercial-mold-inspection" },
+          ]),
+        ),
+      ],
+    };
   },
   component: CommercialPage,
 });

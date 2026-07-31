@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-boca-raton")({
       path: "/mold-inspection-boca-raton",
       title: "Mold Inspection Boca Raton FL | Safe Haven",
       description:
-        "Independent mold inspection and testing in Boca Raton, FL. Lab-backed reports for tile-roof Mediterranean estates, country-club homes, and luxury high-rise condos.",
+        "Independent mold inspection and testing in Boca Raton, FL. Lab-backed reports for Mediterranean estates, country-club homes, and luxury high-rise condos.",
     }),
   component: BocaRatonPage,
 });

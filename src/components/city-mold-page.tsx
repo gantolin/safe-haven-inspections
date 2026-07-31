@@ -18,7 +18,7 @@ import {
   Check,
   X,
 } from "lucide-react";
-import { faqSchema } from "@/lib/seo";
+import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 
 export interface CityMoldPageProps {
   city: string;
@@ -59,10 +59,28 @@ export interface CityMoldPageProps {
       | "/mold-inspection-riviera-beach";
     label: string;
   }>;
+  /**
+   * City-specific FAQs. These are placed ahead of the shared set, and any
+   * shared question with the same text is dropped rather than duplicated.
+   *
+   * 12 of the 15 shared answers below are byte-identical across all 27 city
+   * pages, which is what makes these read to Google as templated duplicates.
+   * Adding even 4-6 genuinely local questions here — permit rules, a specific
+   * neighborhood, a common local build type — is the most effective way to
+   * differentiate a city page.
+   */
+  localFaqs?: Array<{ q: string; a: string }>;
 }
 
-export function CityMoldPage({ city, county, intro, localAngle, otherCities }: CityMoldPageProps) {
-  const faqItems: Array<{ q: string; a: string }> = [
+export function CityMoldPage({
+  city,
+  county,
+  intro,
+  localAngle,
+  otherCities,
+  localFaqs,
+}: CityMoldPageProps) {
+  const sharedFaqs: Array<{ q: string; a: string }> = [
     {
       q: `How much does a mold inspection cost in ${city}?`,
       a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation and we'll walk through what your specific property needs.`,
@@ -121,7 +139,31 @@ export function CityMoldPage({ city, county, intro, localAngle, otherCities }: C
     },
   ];
 
+  // City-specific questions win; a shared question repeated locally is dropped.
+  const localQuestions = new Set((localFaqs ?? []).map((f) => f.q));
+  const faqItems = [
+    ...(localFaqs ?? []),
+    ...sharedFaqs.filter((f) => !localQuestions.has(f.q)),
+  ];
+
   const faqLd = faqSchema(faqItems);
+
+  // Route files are named /mold-inspection-<city-slug>, so the path is derivable
+  // from the city name rather than threaded through every one of the 27 pages.
+  const cityPath = `/mold-inspection-${city.toLowerCase().replace(/\s+/g, "-")}`;
+
+  const breadcrumbLd = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Service Areas", path: "/service-areas" },
+    { name: city, path: cityPath },
+  ]);
+
+  const serviceLd = serviceSchema({
+    name: `Mold Inspection in ${city}, FL`,
+    description: intro,
+    path: cityPath,
+    serviceType: "Mold inspection and assessment",
+  });
 
   const trustBadges = [
     { icon: CalendarCheck, label: "Same-day / fast appointments" },
@@ -510,6 +552,16 @@ export function CityMoldPage({ city, county, intro, localAngle, otherCities }: C
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
         />
       </section>
 

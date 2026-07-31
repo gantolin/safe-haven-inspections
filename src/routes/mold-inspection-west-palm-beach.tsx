@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-west-palm-beach")({
       path: "/mold-inspection-west-palm-beach",
       title: "Mold Inspection West Palm Beach FL | Safe Haven",
       description:
-        "Independent, state-licensed mold inspection and testing in West Palm Beach, FL. Lab-backed reports for historic districts, downtown condos, and Intracoastal-adjacent homes.",
+        "Independent, state-licensed mold inspection in West Palm Beach, FL. Lab-backed reports for historic districts, downtown condos, and Intracoastal homes.",
     }),
   component: WestPalmBeachPage,
 });

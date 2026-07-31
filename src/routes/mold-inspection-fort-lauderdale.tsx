@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-fort-lauderdale")({
       path: "/mold-inspection-fort-lauderdale",
       title: "Mold Inspection Fort Lauderdale FL | Safe Haven",
       description:
-        "Independent, state-licensed mold inspection and testing in Fort Lauderdale, FL. Lab-backed reports for canal-front homes, high-rise condos, and older mid-century houses.",
+        "Independent, state-licensed mold inspection in Fort Lauderdale, FL. Lab-backed reports for canal-front homes, high-rise condos, and mid-century houses.",
     }),
   component: FortLauderdalePage,
 });

@@ -4,7 +4,7 @@ import { Clock, Handshake, FileCheck2, Building2, ArrowRight, CheckCircle2, Phon
 export const Route = createFileRoute("/realtors")({
   head: () => ({
     meta: [
-      { title: "Mold Inspection for Realtors & Property Managers | Safe Haven" },
+      { title: "Realtor & Property Manager Mold Inspection | Safe Haven" },
       { name: "description", content: "Fast, independent pre-closing mold inspection for South Florida real-estate professionals. Clear reports buyers can negotiate with. Partner with Safe Haven." },
       { property: "og:title", content: "For Realtors & Property Managers — Safe Haven Inspections" },
       { property: "og:url", content: "https://www.safehaveninspectionsllc.com/realtors" },

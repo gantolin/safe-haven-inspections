@@ -12,6 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import landonPhoto from "@/assets/landon-heinrichs.jpg.asset.json";
+import { webpVariant } from "@/lib/images";
 import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } from "@/lib/seo";
 
 const CANONICAL = absoluteUrl("/about");
@@ -25,6 +26,24 @@ const personSchema = {
   "@id": `${SITE_URL}/about#landon`,
   name: "Landon Heinrichs",
   jobTitle: "Founder · Florida State-Licensed Mold Assessor & Mold Remediator",
+  description:
+    "Lifelong South Florida resident and founder of Safe Haven Inspections, a small family-operated mold assessment company. Landon's background is in mold remediation — years of hands-on cleanup experience that informs how he inspects and what he holds remediators to.",
+  homeLocation: {
+    "@type": "Place",
+    name: "South Florida",
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "FL",
+      addressCountry: "US",
+    },
+  },
+  knowsAbout: [
+    "Mold assessment",
+    "Mold remediation",
+    "Indoor air quality testing",
+    "Post-remediation verification",
+    "Moisture intrusion diagnostics",
+  ],
   image: absoluteUrl(landonPhoto.url),
   url: CANONICAL,
   telephone: BUSINESS_PHONE,
@@ -101,11 +120,17 @@ function AboutPage() {
       <section className="border-b border-border bg-secondary">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <div className="grid gap-10 md:grid-cols-[320px_1fr] md:items-center">
-            <img
-              src={landonPhoto.url}
-              alt="Landon Heinrichs, founder of Safe Haven Inspections and Florida State-Licensed Mold Assessor & Mold Remediator"
-              className="mx-auto aspect-[4/5] w-full max-w-[320px] rounded-2xl border border-border object-cover shadow-sm"
-            />
+            <picture>
+              <source srcSet={webpVariant(landonPhoto.url)} type="image/webp" />
+              <img
+                src={landonPhoto.url}
+                alt="Landon Heinrichs, founder of Safe Haven Inspections and Florida State-Licensed Mold Assessor & Mold Remediator"
+                width={320}
+                height={400}
+                decoding="async"
+                className="mx-auto aspect-[4/5] w-full max-w-[320px] rounded-2xl border border-border object-cover shadow-sm"
+              />
+            </picture>
             <div>
               <p className="text-sm font-medium uppercase tracking-wider text-accent">
                 About the founder
@@ -191,6 +216,45 @@ function AboutPage() {
             you call (561) 632-6387, you reach the local team directly —
             never an answering service — and the person writing your report
             is the person who walked your property.
+          </p>
+        </div>
+      </section>
+
+      {/* IN LANDON'S WORDS */}
+      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+        <p className="text-sm font-medium uppercase tracking-wider text-accent">
+          In Landon's words
+        </p>
+        <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
+          Why I built Safe Haven the way I did
+        </h2>
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-secondary/50 p-6 sm:p-8">
+          <div className="max-w-3xl space-y-4 text-muted-foreground">
+            <p>
+              I'm a lifelong South Florida resident — born and raised here. This
+              is the place I grew up in, and that's really the reason I do this
+              the way I do. I wanted to build something trustworthy and
+              genuinely good in my own community, for the people who live in it.
+            </p>
+            <p>
+              Safe Haven is a small, family-operated company, and I intend to
+              keep it that way. The people I work with are people I've come to
+              know and trust here over the years — not a rotating crew of
+              subcontractors I've never met.
+            </p>
+            <p>
+              My background is in remediation. I specialized on that side of the
+              industry first, and that hands-on experience is what shapes how I
+              inspect today. I've spent years learning which remediation
+              techniques actually work and what the safest, most effective
+              cleanup really looks like — by doing it, not by reading about it.
+              So when I walk your property, I'm not guessing at what a
+              remediation job will take. I know the process start to finish, and
+              I can tell you what genuinely needs to happen.
+            </p>
+          </div>
+          <p className="mt-6 font-[Bricolage_Grotesque] text-sm font-semibold text-primary">
+            — Landon Heinrichs, Founder
           </p>
         </div>
       </section>
@@ -326,11 +390,13 @@ function AboutPage() {
                   key={b.label}
                   className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-secondary/40 p-3"
                 >
-                  {/* BADGE: {b.label} — drop official seal image here */}
-                  <img
-                    src=""
-                    alt={b.alt}
-                    className="h-16 w-16 rounded-md bg-background/60 object-contain"
+                  {/* BADGE: {b.label} — drop the official seal image here.
+                      Use b.alt as its alt text. Rendered as an empty box until
+                      then: an <img src=""> makes the browser re-request the
+                      page URL, once per badge. */}
+                  <div
+                    aria-hidden="true"
+                    className="h-16 w-16 rounded-md bg-background/60"
                   />
                   <span className="text-center text-[11px] font-medium text-muted-foreground">
                     {b.label}

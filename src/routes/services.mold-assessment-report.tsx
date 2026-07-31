@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -27,9 +27,28 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
       path: "/services/mold-assessment-report",
       title: "Mold Assessment Report & Protocol | Safe Haven",
       description:
-        "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation remediators, insurers, and attorneys can rely on.",
+        "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Mold Assessment Report & Protocol",
+            description: "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
+            path: "/services/mold-assessment-report",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Mold Assessment Report & Protocol", path: "/services/mold-assessment-report" },
+          ]),
+        ),
+      ],
+    };
   },
   component: MoldAssessmentReportPage,
 });
