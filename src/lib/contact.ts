@@ -24,23 +24,37 @@ interface ContactSubmissionResult {
  * - Sends email notification to business
  * - Stores submission in database
  */
-export const submitContactForm = createServerFn(
-  { method: "POST" },
-  async (data: unknown): Promise<ContactSubmissionResult> => {
+export const submitContactForm = createServerFn({ method: "POST" })
+  .validator((data: unknown) => data)
+  .handler(async ({ data }): Promise<ContactSubmissionResult> => {
     try {
       // Validate input
       const validated = contactFormSchema.parse(data) as ContactFormData;
 
-      // Send email notification
-      await sendEmailNotification(validated);
+      const [emailed, submissionId] = await Promise.all([
+        sendEmailNotification(validated),
+        storeSubmission(validated),
+      ]);
 
-      // Store in database
-      const submissionId = await storeSubmission(validated);
+      // If neither the notification nor the database captured this lead, it is
+      // lost. Say so rather than showing a confirmation for a dropped enquiry.
+      if (!emailed && submissionId === null) {
+        console.error(
+          "Contact submission captured by neither email nor database - lead lost.",
+          { name: validated.name, email: validated.email }
+        );
+        return {
+          success: false,
+          error:
+            "We couldn't submit your request. Please call (561) 632-6387 and we'll help right away.",
+          message: "",
+        };
+      }
 
       return {
         success: true,
         message: "Your inquiry has been received. We'll contact you within one business day.",
-        id: submissionId,
+        id: submissionId ?? undefined,
       };
     } catch (error) {
       console.error("Contact form error:", error);
@@ -59,19 +73,23 @@ export const submitContactForm = createServerFn(
         message: "",
       };
     }
-  }
-);
+  });
 
 /**
  * Send email notification to business
  */
-async function sendEmailNotification(data: ContactFormData): Promise<void> {
+async function sendEmailNotification(data: ContactFormData): Promise<boolean> {
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
     console.warn("RESEND_API_KEY not configured. Email notifications disabled.");
-    return;
+    return false;
   }
+
+  // safehaveninspectionsllc.com has no DNS zone, so it cannot be verified in
+  // Resend and sends from it are rejected. Default to Resend's shared sender
+  // until the domain's DKIM/SPF records are back, then set CONTACT_FROM_EMAIL.
+  const fromAddress = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
 
   const emailContent = `
 New Mold Inspection Request from Safe Haven Inspections Website
@@ -96,8 +114,9 @@ Submitted: ${new Date().toISOString()}
         Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: "noreply@safehaveninspectionsllc.com",
+        from: fromAddress,
         to: "safehaveninspectionsllc@gmail.com",
+        reply_to: data.email,
         subject: `New Mold Inspection Request - ${data.name}`,
         text: emailContent,
         html: formatEmailHtml(data),
@@ -105,28 +124,31 @@ Submitted: ${new Date().toISOString()}
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      console.error("Resend API error:", error);
-      throw new Error(`Failed to send email: ${response.statusText}`);
+      const error = await response.json().catch(() => ({}));
+      console.error(
+        `Resend API error (${response.status} ${response.statusText}):`,
+        error
+      );
+      return false;
     }
 
     console.log("Email sent successfully");
+    return true;
   } catch (error) {
     console.error("Email notification failed:", error);
-    // Don't throw - allow form submission even if email fails
+    return false;
   }
 }
 
 /**
  * Store submission in database
  */
-async function storeSubmission(data: ContactFormData): Promise<string> {
+async function storeSubmission(data: ContactFormData): Promise<string | null> {
   const dbUrl = process.env.DATABASE_URL;
 
   if (!dbUrl) {
-    console.warn("DATABASE_URL not configured. Storing submission in memory only.");
-    // Generate a simple ID for tracking
-    return `submission_${Date.now()}`;
+    console.warn("DATABASE_URL not configured. Submission was not persisted.");
+    return null;
   }
 
   try {
@@ -155,8 +177,7 @@ async function storeSubmission(data: ContactFormData): Promise<string> {
     return result.id || `submission_${Date.now()}`;
   } catch (error) {
     console.error("Database storage failed:", error);
-    // Generate a fallback ID
-    return `submission_${Date.now()}`;
+    return null;
   }
 }
 
