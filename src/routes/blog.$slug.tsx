@@ -133,7 +133,7 @@ function PostPage() {
           </p>
           <div className="mt-4 flex flex-col gap-2 sm:flex-row">
             <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-5 py-2.5 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
-              Get a Free Quote
+              Get a Free Phone Consultation
             </Link>
             <a href="tel:+15616326387" className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-sm font-semibold text-primary">
               <Phone className="h-4 w-4" /> (561) 632-6387

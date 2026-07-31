@@ -21,7 +21,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "How much does air quality testing cost?",
-    a: "Every property is different — the number of samples and the size of the space both factor in. We give you a clear, upfront quote before any work begins, with no surprise per-cassette add-ons. Call (561) 632-6387 or request a free quote for your property.",
+    a: "Every property is different — the number of samples and the size of the space both factor in. We give you a clear, upfront quote before any work begins, with no surprise per-cassette add-ons. Call (561) 632-6387 or request a free phone consultation for your property.",
   },
 ];
 

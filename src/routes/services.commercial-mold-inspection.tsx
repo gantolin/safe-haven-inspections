@@ -17,7 +17,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "What does a commercial inspection cost?",
-    a: "Every commercial project is different — square footage, number of units, number of samples, and access logistics all factor in. We give you a clear, upfront quote for the full scope before any work begins, with no surprise fees. Call (561) 632-6387 or request a free quote.",
+    a: "Every commercial project is different — square footage, number of units, number of samples, and access logistics all factor in. We give you a clear, upfront quote for the full scope before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation.",
   },
 ];
 

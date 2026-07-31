@@ -87,7 +87,7 @@
   --ring: oklch(0.505 0.075 200);
   --surface: oklch(0.940 0.010 210);
   --signal: oklch(0.678 0.170 45);              /* #E8792B thermal amber — SPARINGLY */
-  /* Reserved CTA color — used ONLY on primary conversion buttons ("Get a Free Quote",
+  /* Reserved CTA color — used ONLY on primary conversion buttons ("Get a Free Phone Consultation",
    * "Schedule an Inspection", "Call Now" mobile bar). Do not reuse elsewhere.
    * Contrast: white text on --cta ≈ 5.0:1 (WCAG AA for normal & bold text). */
   --cta: oklch(0.575 0.190 42);                 /* vivid orange, AA against white */

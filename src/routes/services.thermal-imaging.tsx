@@ -17,7 +17,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Do you offer moisture mapping as a standalone service?",
-    a: "Yes. Moisture mapping and thermal imaging can be requested on their own — for example after a leak, storm event, or before a remediation scope is written. We give you a clear, upfront quote for a stand-alone visit before any work begins, with no surprise fees. Call (561) 632-6387 or request a free quote.",
+    a: "Yes. Moisture mapping and thermal imaging can be requested on their own — for example after a leak, storm event, or before a remediation scope is written. We give you a clear, upfront quote for a stand-alone visit before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation.",
   },
 ];
 
