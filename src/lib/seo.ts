@@ -58,7 +58,7 @@ export function localBusinessSchema() {
     telephone: BUSINESS_PHONE,
     email: BUSINESS_EMAIL,
     description:
-      "Independent, state-licensed mold inspection, testing, and indoor air-quality assessment company serving Martin, Palm Beach & Broward Counties.",
+      "Independent, family-operated, state-licensed mold inspection, testing, and indoor air-quality assessment company serving Martin, Palm Beach & Broward Counties. Founded and run by a lifelong South Florida resident whose background is in mold remediation.",
     // TODO: Landon to confirm street address for LocalBusiness schema
     address: {
       "@type": "PostalAddress",
@@ -85,6 +85,56 @@ export function localBusinessSchema() {
       areaServed: ["US-FL"],
       availableLanguage: ["English"],
     },
+  };
+}
+
+export interface Crumb {
+  name: string;
+  path: string;
+}
+
+/**
+ * BreadcrumbList schema. Lets Google render a breadcrumb trail in the SERP
+ * instead of the raw URL. Pass the full trail including Home.
+ */
+export function breadcrumbSchema(crumbs: Crumb[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: crumbs.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      item: absoluteUrl(c.path),
+    })),
+  };
+}
+
+export interface ServiceSchemaInput {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+}
+
+/**
+ * Service schema for an individual service page, tied back to the sitewide
+ * LocalBusiness node via @id so the two are understood as one entity.
+ */
+export function serviceSchema(input: ServiceSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: input.name,
+    description: input.description,
+    url: absoluteUrl(input.path),
+    ...(input.serviceType ? { serviceType: input.serviceType } : {}),
+    provider: { "@id": `${SITE_URL}/#business` },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Martin County, FL" },
+      { "@type": "AdministrativeArea", name: "Palm Beach County, FL" },
+      { "@type": "AdministrativeArea", name: "Broward County, FL" },
+    ],
   };
 }
 

@@ -20,7 +20,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import {
+  pageMeta,
+  faqSchema,
+  jsonLdScript,
+  serviceSchema,
+  breadcrumbSchema,
+  type FaqItem,
+} from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -79,12 +86,30 @@ export const Route = createFileRoute("/services/mold-inspection")({
       path: "/services/mold-inspection",
       title: "Mold Inspection South Florida | Safe Haven",
       description:
-        "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, thermal, and lab-backed sampling. Lab results and written report typically within 24 hours.",
+        "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
       ogType: "website",
     });
     return {
       ...base,
-      scripts: [jsonLdScript(faqSchema(faqs))],
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Mold Inspection South Florida",
+            description:
+              "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
+            path: "/services/mold-inspection",
+            serviceType: "Mold inspection and assessment",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Mold Inspection South Florida", path: "/services/mold-inspection" },
+          ]),
+        ),
+      ],
     };
   },
   component: MoldInspectionPage,
@@ -164,7 +189,8 @@ function MoldInspectionPage() {
           <p className="mt-6 text-sm text-muted-foreground">
             Want the full walk-through of how mold is properly handled in Florida?{" "}
             <Link
-              to="/blog/mold-removal-process-florida"
+              to="/blog/$slug"
+              params={{ slug: "mold-removal-process-florida" }}
               className="font-semibold text-accent hover:underline"
             >
               Read the full process guide

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   { q: "What is mold testing, exactly?", a: "Mold testing is the lab-analyzed sampling portion of a mold assessment. Air samples measure how many spores of which types are in the air compared to an outdoor control. Surface samples identify what's growing on a specific spot. Testing quantifies and identifies; the on-site inspection tells you where and why." },
@@ -20,9 +20,28 @@ export const Route = createFileRoute("/services/mold-testing")({
     const base = pageMeta({
       path: "/services/mold-testing",
       title: "Mold Testing South Florida | Safe Haven",
-      description: "Independent, lab-analyzed mold testing — air and surface sampling — across Martin, Palm Beach & Broward Counties. AIHA-accredited third-party lab. Results and report typically within 24 hours.",
+      description: "Independent, lab-analyzed mold testing — air and surface sampling — across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Mold Testing South Florida",
+            description: "Independent, lab-analyzed mold testing — air and surface sampling — across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
+            path: "/services/mold-testing",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Mold Testing South Florida", path: "/services/mold-testing" },
+          ]),
+        ),
+      ],
+    };
   },
   component: MoldTestingPage,
 });

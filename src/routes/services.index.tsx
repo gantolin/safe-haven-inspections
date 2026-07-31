@@ -15,16 +15,25 @@ import {
   Gauge,
   Microscope,
 } from "lucide-react";
+import { breadcrumbSchema, jsonLdScript } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Mold Inspection, Testing & Air Quality | Safe Haven" },
+      { title: "Mold Inspection, Testing & Air Quality | Safe Haven" },
       { name: "description", content: "Independent mold inspection, assessment, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
       { property: "og:title", content: "Our Services — Safe Haven Inspections" },
       { property: "og:url", content: "https://www.safehaveninspectionsllc.com/services" },
     ],
     links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/services" }],
+    scripts: [
+      jsonLdScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]),
+      ),
+    ],
   }),
   component: ServicesPage,
 });

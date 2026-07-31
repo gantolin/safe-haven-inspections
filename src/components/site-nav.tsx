@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
 import logo from "@/assets/safe-haven-logo.png.asset.json";
+import { webpVariant } from "@/lib/images";
 
 const links = [
   { to: "/", label: "Home" },
@@ -36,13 +37,18 @@ export function SiteNav() {
           onClick={() => setOpen(false)}
         >
           <span className="relative flex h-[72px] items-center overflow-hidden sm:h-24">
-            <img
-              src={logo.url}
-              alt="Safe Haven Inspections LLC logo"
-              className="h-full w-auto max-w-none mix-blend-multiply"
-              width={480}
-              height={320}
-            />
+            {/* Header logo is above the fold — left eager on purpose. */}
+            <picture>
+              <source srcSet={webpVariant(logo.url)} type="image/webp" />
+              <img
+                src={logo.url}
+                alt="Safe Haven Inspections LLC logo"
+                className="h-full w-auto max-w-none mix-blend-multiply"
+                width={480}
+                height={320}
+                decoding="async"
+              />
+            </picture>
           </span>
           <span className="font-[Bricolage_Grotesque] text-base font-semibold uppercase tracking-[0.14em] text-primary sm:text-lg">
             Inspections <span className="text-muted-foreground">LLC</span>
@@ -107,13 +113,18 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3">
         <div>
           <span className="relative flex h-14 items-center overflow-hidden">
-            <img
-              src={logo.url}
-              alt="Safe Haven Inspections LLC logo"
-              className="h-full w-auto max-w-none mix-blend-multiply"
-              width={480}
-              height={320}
-            />
+            <picture>
+              <source srcSet={webpVariant(logo.url)} type="image/webp" />
+              <img
+                src={logo.url}
+                alt="Safe Haven Inspections LLC logo"
+                className="h-full w-auto max-w-none mix-blend-multiply"
+                width={480}
+                height={320}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </span>
           <p className="mt-3 font-[Bricolage_Grotesque] font-semibold text-primary">Safe Haven Inspections LLC</p>
           <p className="mt-3 text-sm text-muted-foreground">

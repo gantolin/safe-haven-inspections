@@ -29,6 +29,7 @@ import { GoogleReviews } from "@/components/google-reviews";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
 import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
 import landonPhoto from "@/assets/landon-heinrichs.jpg.asset.json";
+import { webpVariant } from "@/lib/images";
 import stepVisual from "@/assets/step-visual.jpg.asset.json";
 import stepSampling from "@/assets/step-sampling.jpg.asset.json";
 import stepLab from "@/assets/step-lab.jpg.asset.json";
@@ -40,7 +41,7 @@ const heroImgMobile = heroMobileAsset.url;
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Independent Mold Inspection in South Florida | Safe Haven Inspections" },
+      { title: "Independent Mold Inspection, South Florida | Safe Haven" },
       { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Unbiased, lab-backed answers for your home. Call (561) 632-6387." },
       { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
       { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
@@ -115,7 +116,9 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <picture className="absolute inset-0 -z-10 h-full w-full">
+          <source media="(min-width: 768px)" srcSet={webpVariant(heroImg)} type="image/webp" />
           <source media="(min-width: 768px)" srcSet={heroImg} />
+          <source srcSet={webpVariant(heroImgMobile)} type="image/webp" />
           <img
             src={heroImgMobile}
             alt="A family with two children and a golden doodle puppy relaxing in a bright, sunlit South Florida living room."
@@ -195,13 +198,18 @@ function Index() {
         <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
           <div className="flex flex-col items-center gap-5 md:flex-row md:justify-between">
             <div className="flex items-center gap-4">
-              <img
-                src={landonPhoto.url}
-                alt="Landon Heinrichs, owner of Safe Haven Inspections"
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-cover ring-1 ring-border"
-              />
+              <picture>
+                <source srcSet={webpVariant(landonPhoto.url)} type="image/webp" />
+                <img
+                  src={landonPhoto.url}
+                  alt="Landon Heinrichs, owner of Safe Haven Inspections"
+                  width={56}
+                  height={56}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-14 w-14 rounded-full object-cover ring-1 ring-border"
+                />
+              </picture>
               <div>
                 <p className="font-[Bricolage_Grotesque] text-base font-semibold text-primary">
                   Landon Heinrichs
@@ -295,6 +303,41 @@ function Index() {
         </div>
       </section>
 
+      {/* From the founder — Landon's own words */}
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="rounded-2xl border-l-4 border-accent bg-secondary/50 p-6 sm:p-8">
+          <p className="text-sm font-medium uppercase tracking-wider text-accent">
+            From the founder
+          </p>
+          <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
+            <p>
+              "I'm a lifelong South Florida resident — born and raised here. I
+              wanted to build something trustworthy in the place I grew up in,
+              for the people who live here. Safe Haven is a small,
+              family-operated company, and the people I work with are people
+              I've come to know and trust in this community."
+            </p>
+            <p>
+              "My background is in remediation. I spent years doing the
+              hands-on cleanup work and learning which techniques actually
+              work — so when I inspect your home, I'm not guessing at what a
+              remediation job will take. I know the process start to finish."
+            </p>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            <p className="font-[Bricolage_Grotesque] text-sm font-semibold text-primary">
+              — Landon Heinrichs, Founder
+            </p>
+            <Link
+              to="/about"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
+            >
+              Read more about Landon <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Stat strip */}
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -369,15 +412,18 @@ function Index() {
               className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                <img
-                  src={image}
-                  alt={alt}
-                  width={1280}
-                  height={720}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                />
+                <picture>
+                  <source srcSet={webpVariant(image)} type="image/webp" />
+                  <img
+                    src={image}
+                    alt={alt}
+                    width={1280}
+                    height={720}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
                 <span className="absolute right-3 top-3 rounded-md bg-white/95 px-2 py-1 font-[Bricolage_Grotesque] text-xs font-semibold text-primary shadow-sm ring-1 ring-black/5">
                   {step}

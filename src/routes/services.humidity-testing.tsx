@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   { q: "What is psychrometric testing?", a: "Psychrometric testing measures three related properties of indoor air — temperature, relative humidity, and dew point — together, at multiple points in the home, and compares them to outdoor conditions. It reveals whether the HVAC system, envelope, and moisture load are actually keeping the interior dry, or only appear to." },
@@ -22,7 +22,26 @@ export const Route = createFileRoute("/services/humidity-testing")({
       title: "Humidity & Psychrometric Testing FL | Safe Haven",
       description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Humidity & Psychrometric Testing FL",
+            description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
+            path: "/services/humidity-testing",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Humidity & Psychrometric Testing FL", path: "/services/humidity-testing" },
+          ]),
+        ),
+      ],
+    };
   },
   component: HumidityPage,
 });

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -29,7 +29,26 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
       description:
         "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Real Estate Mold Inspection FL",
+            description: "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
+            path: "/services/real-estate-mold-inspection",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Real Estate Mold Inspection FL", path: "/services/real-estate-mold-inspection" },
+          ]),
+        ),
+      ],
+    };
   },
   component: RealEstatePage,
 });

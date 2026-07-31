@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -31,9 +31,28 @@ export const Route = createFileRoute("/services/air-quality-testing")({
       path: "/services/air-quality-testing",
       title: "Air Quality & Mold Testing | Safe Haven",
       description:
-        "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, AIHA-accredited lab analysis, and a clear report.",
+        "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Air Quality & Mold Testing",
+            description: "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
+            path: "/services/air-quality-testing",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Air Quality & Mold Testing", path: "/services/air-quality-testing" },
+          ]),
+        ),
+      ],
+    };
   },
   component: AirQualityTestingPage,
 });

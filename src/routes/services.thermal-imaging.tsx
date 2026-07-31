@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -29,7 +29,26 @@ export const Route = createFileRoute("/services/thermal-imaging")({
       description:
         "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Moisture Mapping & Thermal Imaging",
+            description: "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
+            path: "/services/thermal-imaging",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Moisture Mapping & Thermal Imaging", path: "/services/thermal-imaging" },
+          ]),
+        ),
+      ],
+    };
   },
   component: ThermalImagingPage,
 });

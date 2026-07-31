@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   { q: "How soon after water damage should we get an inspection?", a: "As fast as you reasonably can. Mold can begin colonizing wet materials within 24 to 48 hours in South Florida conditions. Even if drying is already in progress, an independent moisture and mold inspection documents what actually got wet and how far the moisture traveled, so nothing gets sealed behind drywall by mistake." },
@@ -20,9 +20,28 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
     const base = pageMeta({
       path: "/services/water-damage-inspection",
       title: "Water Damage Inspection FL | Safe Haven",
-      description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports. Results and report typically within 24 hours.",
+      description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Water Damage Inspection FL",
+            description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
+            path: "/services/water-damage-inspection",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Water Damage Inspection FL", path: "/services/water-damage-inspection" },
+          ]),
+        ),
+      ],
+    };
   },
   component: WaterDamagePage,
 });

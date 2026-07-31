@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
-import { pageMeta, faqSchema, jsonLdScript, type FaqItem } from "@/lib/seo";
+import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
   {
@@ -29,7 +29,26 @@ export const Route = createFileRoute("/services/surface-sampling")({
       description:
         "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth — no remediation upsell.",
     });
-    return { ...base, scripts: [jsonLdScript(faqSchema(faqs))] };
+    return {
+      ...base,
+      scripts: [
+        jsonLdScript(faqSchema(faqs)),
+        jsonLdScript(
+          serviceSchema({
+            name: "Surface & Swab Mold Sampling",
+            description: "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth — no remediation upsell.",
+            path: "/services/surface-sampling",
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+            { name: "Surface & Swab Mold Sampling", path: "/services/surface-sampling" },
+          ]),
+        ),
+      ],
+    };
   },
   component: SurfaceSamplingPage,
 });

@@ -5,6 +5,12 @@ import { SITE_URL } from "@/lib/seo";
 
 const BASE_URL = SITE_URL;
 
+// Bump this when you materially change static page copy. Google ignores
+// <lastmod> values it decides are untrustworthy, so a date that never moves
+// (or one that moves on every deploy) is worse than none at all. Blog URLs use
+// their own post date instead.
+const STATIC_CONTENT_UPDATED = "2026-07-31";
+
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -56,15 +62,18 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/mold-inspection-greenacres",
           "/mold-inspection-riviera-beach",
         ];
-        const postPaths = posts.map((p) => `/blog/${p.slug}`);
-        const paths = [...staticPaths, ...postPaths];
+        const entries = [
+          ...staticPaths.map((path) => ({ path, lastmod: STATIC_CONTENT_UPDATED })),
+          // Blog posts carry a real publication date, so use it.
+          ...posts.map((p) => ({ path: `/blog/${p.slug}`, lastmod: p.date })),
+        ];
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
           `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
-          ...paths.map(
-            (p) =>
-              `  <url><loc>${BASE_URL}${p}</loc><changefreq>${p === "/" ? "weekly" : "monthly"}</changefreq><priority>${p === "/" ? "1.0" : "0.7"}</priority></url>`,
+          ...entries.map(
+            ({ path, lastmod }) =>
+              `  <url><loc>${BASE_URL}${path}</loc><lastmod>${lastmod}</lastmod><changefreq>${path === "/" ? "weekly" : "monthly"}</changefreq><priority>${path === "/" ? "1.0" : "0.7"}</priority></url>`,
           ),
           `</urlset>`,
         ].join("\n");
