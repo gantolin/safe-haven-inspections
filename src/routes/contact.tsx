@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import { submitContactForm } from "@/lib/contact";
+import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -52,39 +51,22 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    try {
-      const form = e.currentTarget;
-      const data = new FormData(form);
-      const name = String(data.get("name") ?? "");
-      const phone = String(data.get("phone") ?? "");
-      const email = String(data.get("email") ?? "");
-      const address = String(data.get("address") ?? "");
-      const message = String(data.get("message") ?? "");
-
-      const result = await submitContactForm({
-        data: { name, phone, email, address, message },
-      });
-
-      if (result.success) {
-        setSubmitted(true);
-        form.reset();
-      } else {
-        setError(result.error || "Failed to submit form. Please try again.");
-      }
-    } catch (err) {
-      console.error("Form submission error:", err);
-      setError("An error occurred. Please try again or call us directly.");
-    } finally {
-      setLoading(false);
-    }
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "");
+    const phone = String(data.get("phone") ?? "");
+    const email = String(data.get("email") ?? "");
+    const address = String(data.get("address") ?? "");
+    const message = String(data.get("message") ?? "");
+    const subject = encodeURIComponent(`Mold inspection request — ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProperty address: ${address}\n\n${message}`,
+    );
+    window.location.href = `mailto:safehaveninspectionsllc@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
   };
 
   return (
@@ -109,29 +91,19 @@ function ContactPage() {
             {submitted ? (
               <div className="mt-6 rounded-xl border border-accent/30 bg-accent/10 p-6 text-sm">
                 <div className="flex items-center gap-2 font-semibold text-primary">
-                  <CheckCircle2 className="h-5 w-5 text-accent" /> Request received
+                  <CheckCircle2 className="h-5 w-5 text-accent" /> Almost done
                 </div>
                 <p className="mt-2 text-muted-foreground">
-                  Thank you! We've received your mold inspection request. Our team will
-                  review your details and contact you within one business day. For urgent
-                  matters, feel free to call us at{" "}
-                  <a className="font-semibold text-accent" href="tel:+15616326387">
-                    (561) 632-6387
-                  </a>
-                  .
+                  Your email app should now be open with your details filled in. If
+                  nothing happened, just email us at{" "}
+                  <a className="font-semibold text-accent" href="mailto:safehaveninspectionsllc@gmail.com">
+                    safehaveninspectionsllc@gmail.com
+                  </a>{" "}
+                  or call <a className="font-semibold text-accent" href="tel:+15616326387">(561) 632-6387</a>.
                 </p>
               </div>
             ) : (
-              <>
-                {error && (
-                  <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4 text-sm">
-                    <div className="flex items-center gap-2 font-semibold text-red-900">
-                      <AlertCircle className="h-5 w-5" /> Error
-                    </div>
-                    <p className="mt-2 text-red-800">{error}</p>
-                  </div>
-                )}
-                <form onSubmit={onSubmit} className="mt-6 grid gap-4">
+              <form onSubmit={onSubmit} className="mt-6 grid gap-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Full name" name="name" required />
                   <Field label="Phone" name="phone" type="tel" required />
@@ -154,10 +126,9 @@ function ContactPage() {
                 </label>
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-all hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-all hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
                 >
-                  <Send className="h-4 w-4" /> {loading ? "Sending..." : "Send request"}
+                  <Send className="h-4 w-4" /> Send request
                 </button>
                 <p className="text-sm text-muted-foreground">
                   Not sure if it's mold?{" "}
@@ -170,7 +141,6 @@ function ContactPage() {
                   We respond within one business day. For same-day scheduling, please call.
                 </p>
               </form>
-              </>
             )}
           </div>
 
