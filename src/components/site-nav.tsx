@@ -29,23 +29,26 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 sm:h-28 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC — Home"
           className="flex shrink-0 items-center gap-2 sm:gap-3"
           onClick={() => setOpen(false)}
         >
-          <span className="relative flex h-[72px] items-center overflow-hidden sm:h-24">
-            {/* Header logo is above the fold — left eager on purpose. */}
+          <span className="relative flex items-center">
+            {/* Header logo is above the fold — left eager on purpose.
+                Height is set explicitly on the <img>: a percentage height
+                (h-full) does not resolve inside the <picture> wrapper, which
+                let the image render at its intrinsic width and get cropped. */}
             <picture>
               <source srcSet={webpVariant(logo.url)} type="image/webp" />
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-full w-auto max-w-none mix-blend-multiply"
-                width={480}
-                height={320}
+                className="h-9 w-auto max-w-none mix-blend-multiply sm:h-11"
+                width={988}
+                height={489}
                 decoding="async"
               />
             </picture>
@@ -112,15 +115,15 @@ export function SiteFooter() {
     <footer className="mt-16 border-t border-border bg-secondary">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3">
         <div>
-          <span className="relative flex h-14 items-center overflow-hidden">
+          <span className="relative flex items-center">
             <picture>
               <source srcSet={webpVariant(logo.url)} type="image/webp" />
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-full w-auto max-w-none mix-blend-multiply"
-                width={480}
-                height={320}
+                className="h-10 w-auto max-w-none mix-blend-multiply"
+                width={988}
+                height={489}
                 loading="lazy"
                 decoding="async"
               />

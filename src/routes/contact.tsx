@@ -91,15 +91,22 @@ function ContactPage() {
             {submitted ? (
               <div className="mt-6 rounded-xl border border-accent/30 bg-accent/10 p-6 text-sm">
                 <div className="flex items-center gap-2 font-semibold text-primary">
-                  <CheckCircle2 className="h-5 w-5 text-accent" /> Almost done
+                  <CheckCircle2 className="h-5 w-5 text-accent" /> One last step — hit send
                 </div>
                 <p className="mt-2 text-muted-foreground">
-                  Your email app should now be open with your details filled in. If
-                  nothing happened, just email us at{" "}
+                  We've opened a draft email with your details already filled in.
+                  Your request doesn't reach us until you send it, so give it a
+                  quick look and press send.
+                </p>
+                <p className="mt-3 text-muted-foreground">
+                  No draft appear? Your device may not have email set up. Reach us
+                  directly at{" "}
                   <a className="font-semibold text-accent" href="mailto:safehaveninspectionsllc@gmail.com">
                     safehaveninspectionsllc@gmail.com
                   </a>{" "}
-                  or call <a className="font-semibold text-accent" href="tel:+15616326387">(561) 632-6387</a>.
+                  or call{" "}
+                  <a className="font-semibold text-accent" href="tel:+15616326387">(561) 632-6387</a>{" "}
+                  — we answer directly, never an answering service.
                 </p>
               </div>
             ) : (
