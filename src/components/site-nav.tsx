@@ -29,7 +29,7 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 sm:h-28 sm:px-6">
+      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-28 sm:px-6">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC — Home"
@@ -46,14 +46,19 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-12 w-auto max-w-none mix-blend-multiply min-[400px]:h-14 sm:h-20"
+                className="h-[clamp(3.375rem,15vw,4.5rem)] w-auto max-w-none mix-blend-multiply sm:h-20"
                 width={988}
                 height={489}
                 decoding="async"
               />
             </picture>
           </span>
-          <span className="font-[Bricolage_Grotesque] text-base font-semibold uppercase tracking-[0.14em] text-primary min-[400px]:text-lg sm:text-xl">
+          {/* Logo and wordmark scale with the viewport rather than stepping at
+            breakpoints — the header is a single line that has to clear the
+            hamburger, and fixed sizes either overflow at 360px or leave the
+            mark undersized at 430px. Tracking is tightened on phones for the
+            same reason and relaxes back to 0.14em from sm up. */}
+        <span className="font-[Bricolage_Grotesque] whitespace-nowrap text-[clamp(1rem,4.4vw,1.375rem)] font-semibold uppercase tracking-[0.07em] text-primary sm:text-xl sm:tracking-[0.14em]">
             Inspections <span className="text-muted-foreground">LLC</span>
           </span>
         </Link>

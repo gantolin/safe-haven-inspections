@@ -132,20 +132,24 @@ function Index() {
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="h-full w-full object-cover object-[center_55%] md:object-[center_62%]"
+            className="h-full w-full object-cover object-[center_78%] brightness-[1.12] saturate-[1.06] sm:object-[center_62%] sm:brightness-100 sm:saturate-100"
           />
         </picture>
-        {/* Overall darkening to tame brightness */}
+        {/* Overall darkening to tame brightness. Suppressed below sm, where it
+            stacked with the scrim and buried the family. The breakpoint matches
+            the one that restores the long hero copy — the dense text is what
+            needs the extra backing. */}
         <div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 -z-10 hidden sm:block"
           style={{ backgroundColor: "rgba(11,37,69,0.28)" }}
         />
-        {/* Mobile: top-to-bottom navy scrim so headline + CTAs always have dark backing */}
+        {/* Mobile: scrim is heavy behind the headline and falls away fast, so the
+            lower half of the frame reads as a photograph rather than a navy wash. */}
         <div
           className="absolute inset-0 -z-10 md:hidden"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(11,37,69,0.78) 0%, rgba(11,37,69,0.55) 55%, rgba(11,37,69,0.28) 100%)",
+              "linear-gradient(to bottom, rgba(11,37,69,0.86) 0%, rgba(11,37,69,0.74) 34%, rgba(11,37,69,0.30) 66%, rgba(11,37,69,0.10) 100%)",
           }}
         />
         {/* Desktop: directional gradient anchored behind the headline (left) */}
@@ -157,7 +161,10 @@ function Index() {
           }}
         />
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24 md:min-h-[640px] md:py-28">
-          <div className="max-w-2xl">
+          {/* Column is a flex container on phones only, so the reassurance line
+              can be pulled above the CTA (see order-1 below) without moving it
+              on desktop. items-start keeps the pill badge from stretching. */}
+          <div className="flex max-w-2xl flex-col items-start sm:block">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
               <ShieldCheck className="h-3.5 w-3.5" /> Independent · Licensed · Insured
             </div>
@@ -168,30 +175,42 @@ function Index() {
               Protect your home and the air you breathe.
             </p>
             <span aria-hidden className="spectrum-rule mt-5" />
-            <p className="mt-5 text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-lg">
+            {/* Phones get a one-line version of the pitch; the full paragraph
+                returns from sm up. Four lines of body copy over the photo was
+                burying the image and pushing the CTA toward the fold. */}
+            <p className="mt-5 text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:hidden">
+              Independent, state-licensed assessment across South Florida — unbiased,
+              lab-backed answers.
+            </p>
+            <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg">
               Safe Haven Inspections is an independent, state-licensed mold assessment
               company serving South Florida. Our focus is inspection and testing, so
               every answer you get is unbiased, lab-backed, and written for you.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="order-1 mt-6 flex w-full flex-col gap-3 sm:order-none sm:mt-7 sm:w-auto sm:flex-row">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3.5 text-sm font-semibold text-cta-foreground shadow-lg shadow-cta/30 transition hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
+              {/* Hidden on phones: the fixed MobileCallBar already pins Call and
+                  Text a Photo to the bottom of every screen below lg. */}
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20"
+                className="hidden items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:inline-flex"
               >
                 <Phone className="h-4 w-4" /> Call (561) 632-6387
               </a>
             </div>
-            <p className="mt-3 max-w-xl text-xs text-white/90 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:text-sm">
+            {/* Sits over the brightest part of the photo on phones, where the
+                scrim has deliberately fallen away — needs a hard shadow of its
+                own rather than re-darkening the family behind it. */}
+            <p className="mt-4 max-w-xl text-xs font-medium text-white [text-shadow:0_1px_3px_rgba(11,37,69,0.95),0_2px_16px_rgba(11,37,69,0.9)] sm:mt-3 sm:font-normal sm:text-sm sm:text-white/90 sm:[text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
               The call is free — we'll tell you honestly whether you need an inspection
               at all.
             </p>
-            <p className="mt-2 max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:text-sm">
+            <p className="mt-2 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm">
               Not sure if it's mold?{" "}
               <a href="sms:+15616326387" className="font-semibold text-white underline underline-offset-2 hover:text-accent">
                 Text a photo to (561) 632-6387
