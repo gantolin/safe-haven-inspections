@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter, MobileCallBar } from "../components/site-nav";
-import { localBusinessSchema, jsonLdScript } from "../lib/seo";
+import { localBusinessSchema, jsonLdScript, absoluteUrl } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -87,6 +87,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Independent, state-licensed mold assessors serving South Florida's tri-county area." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      // Sitewide default link-preview image. Without this only / and /about
+      // carried an og:image at all, so every service, city, and blog page
+      // shared as a bare text link. Individual routes may still override.
+      // MUST be absolute — relative og:image URLs are ignored by Facebook,
+      // LinkedIn, iMessage, and WhatsApp.
+      { property: "og:image", content: absoluteUrl("/og-card.png") },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Safe Haven Inspections LLC" },
+      { name: "twitter:image", content: absoluteUrl("/og-card.png") },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -96,7 +106,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      // Icon set built from the logo's interlocking-circles mark. SVG is the
+      // primary for modern browsers; the PNGs and the legacy .ico cover the
+      // rest. apple-touch-icon is opaque on purpose — iOS composites a
+      // transparent icon onto black, which would swallow the gold.
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon-32.png", type: "image/png", sizes: "32x32" },
+      { rel: "icon", href: "/favicon-16.png", type: "image/png", sizes: "16x16" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
     scripts: [jsonLdScript(localBusinessSchema())],
   }),

@@ -51,7 +51,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
       { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
       { property: "og:url", content: "https://www.safehaveninspectionsllc.com/" },
-      { property: "og:image", content: heroImg },
+      // og:image intentionally omitted — __root.tsx supplies the absolute
+      // branded card sitewide. This previously passed the bare asset path,
+      // which is relative, so the homepage rendered no preview image at all.
     ],
     links: [
       { rel: "canonical", href: "https://www.safehaveninspectionsllc.com/" },
