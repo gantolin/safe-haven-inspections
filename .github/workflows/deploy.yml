@@ -22,15 +22,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      # bun.lock is the committed lockfile — package-lock.json is excluded via
+      # .git/info/exclude, so npm has nothing to install from here.
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
-          cache: npm
+          bun-version: latest
 
-      - run: npm ci
+      - run: bun install --frozen-lockfile
 
       - name: Build (prerender to static HTML)
-        run: npm run build
+        run: bun run build
         env:
           # Public by design — only permits posting to the one inbox it was
           # issued for. Stored as a repository variable, not a secret.
