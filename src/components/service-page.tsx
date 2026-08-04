@@ -87,7 +87,7 @@ export function ServicePage({
               to="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
             >
-              Request a quote <ArrowRight className="h-4 w-4" />
+              Request an inspection <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+15616326387"
@@ -258,7 +258,7 @@ export function ServicePage({
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
-                Request a quote <ArrowRight className="h-4 w-4" />
+                Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"

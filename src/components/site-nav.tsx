@@ -29,7 +29,7 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-6">
+      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between px-4 sm:h-28 sm:px-6">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC — Home"
@@ -46,18 +46,18 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-9 w-auto max-w-none mix-blend-multiply sm:h-11"
+                className="h-12 w-auto max-w-none mix-blend-multiply min-[400px]:h-14 sm:h-20"
                 width={988}
                 height={489}
                 decoding="async"
               />
             </picture>
           </span>
-          <span className="font-[Bricolage_Grotesque] text-base font-semibold uppercase tracking-[0.14em] text-primary sm:text-lg">
+          <span className="font-[Bricolage_Grotesque] text-base font-semibold uppercase tracking-[0.14em] text-primary min-[400px]:text-lg sm:text-xl">
             Inspections <span className="text-muted-foreground">LLC</span>
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -83,14 +83,14 @@ export function SiteNav() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-primary"
+          className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-primary"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       {open && (
-        <nav className="md:hidden border-t border-border bg-background">
+        <nav className="lg:hidden border-t border-border bg-background">
           <div className="mx-auto flex max-w-6xl flex-col px-4 py-2">
             {links.map((l) => (
               <Link
@@ -177,7 +177,7 @@ export function MobileCallBar() {
     <div
       role="navigation"
       aria-label="Quick contact"
-      className="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
+      className="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
     >
       <a
         href="tel:+15616326387"

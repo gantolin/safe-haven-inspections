@@ -9,187 +9,106 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServiceAreasRouteImport } from './routes/service-areas'
-import { Route as RealtorsRouteImport } from './routes/realtors'
-import { Route as MoldInspectionWestonRouteImport } from './routes/mold-inspection-weston'
-import { Route as MoldInspectionWestPalmBeachRouteImport } from './routes/mold-inspection-west-palm-beach'
-import { Route as MoldInspectionWellingtonRouteImport } from './routes/mold-inspection-wellington'
-import { Route as MoldInspectionSunriseRouteImport } from './routes/mold-inspection-sunrise'
-import { Route as MoldInspectionStuartRouteImport } from './routes/mold-inspection-stuart'
-import { Route as MoldInspectionRoyalPalmBeachRouteImport } from './routes/mold-inspection-royal-palm-beach'
-import { Route as MoldInspectionRivieraBeachRouteImport } from './routes/mold-inspection-riviera-beach'
-import { Route as MoldInspectionPortSalernoRouteImport } from './routes/mold-inspection-port-salerno'
-import { Route as MoldInspectionPompanoBeachRouteImport } from './routes/mold-inspection-pompano-beach'
-import { Route as MoldInspectionPlantationRouteImport } from './routes/mold-inspection-plantation'
-import { Route as MoldInspectionPembrokePinesRouteImport } from './routes/mold-inspection-pembroke-pines'
-import { Route as MoldInspectionPalmCityRouteImport } from './routes/mold-inspection-palm-city'
-import { Route as MoldInspectionPalmBeachGardensRouteImport } from './routes/mold-inspection-palm-beach-gardens'
-import { Route as MoldInspectionLoxahatcheeRouteImport } from './routes/mold-inspection-loxahatchee'
-import { Route as MoldInspectionLakeWorthBeachRouteImport } from './routes/mold-inspection-lake-worth-beach'
-import { Route as MoldInspectionJupiterRouteImport } from './routes/mold-inspection-jupiter'
-import { Route as MoldInspectionJensenBeachRouteImport } from './routes/mold-inspection-jensen-beach'
-import { Route as MoldInspectionHollywoodRouteImport } from './routes/mold-inspection-hollywood'
-import { Route as MoldInspectionHobeSoundRouteImport } from './routes/mold-inspection-hobe-sound'
-import { Route as MoldInspectionGreenacresRouteImport } from './routes/mold-inspection-greenacres'
-import { Route as MoldInspectionFortLauderdaleRouteImport } from './routes/mold-inspection-fort-lauderdale'
-import { Route as MoldInspectionDelrayBeachRouteImport } from './routes/mold-inspection-delray-beach'
-import { Route as MoldInspectionDeerfieldBeachRouteImport } from './routes/mold-inspection-deerfield-beach'
-import { Route as MoldInspectionDavieRouteImport } from './routes/mold-inspection-davie'
-import { Route as MoldInspectionCoralSpringsRouteImport } from './routes/mold-inspection-coral-springs'
-import { Route as MoldInspectionBoyntonBeachRouteImport } from './routes/mold-inspection-boynton-beach'
-import { Route as MoldInspectionBocaRatonRouteImport } from './routes/mold-inspection-boca-raton'
-import { Route as MoldInspectionRouteImport } from './routes/mold-inspection'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ServicesIndexRouteImport } from './routes/services.index'
-import { Route as ServicesWaterDamageInspectionRouteImport } from './routes/services.water-damage-inspection'
-import { Route as ServicesThermalImagingRouteImport } from './routes/services.thermal-imaging'
-import { Route as ServicesSurfaceSamplingRouteImport } from './routes/services.surface-sampling'
-import { Route as ServicesRealEstateMoldInspectionRouteImport } from './routes/services.real-estate-mold-inspection'
-import { Route as ServicesPostRemediationVerificationRouteImport } from './routes/services.post-remediation-verification'
-import { Route as ServicesMoldTestingRouteImport } from './routes/services.mold-testing'
-import { Route as ServicesMoldInspectionRouteImport } from './routes/services.mold-inspection'
-import { Route as ServicesMoldAssessmentReportRouteImport } from './routes/services.mold-assessment-report'
-import { Route as ServicesHumidityTestingRouteImport } from './routes/services.humidity-testing'
-import { Route as ServicesCommercialMoldInspectionRouteImport } from './routes/services.commercial-mold-inspection'
-import { Route as ServicesAirQualityTestingRouteImport } from './routes/services.air-quality-testing'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MoldInspectionRouteImport } from './routes/mold-inspection'
+import { Route as MoldInspectionBocaRatonRouteImport } from './routes/mold-inspection-boca-raton'
+import { Route as MoldInspectionBoyntonBeachRouteImport } from './routes/mold-inspection-boynton-beach'
+import { Route as MoldInspectionCoralSpringsRouteImport } from './routes/mold-inspection-coral-springs'
+import { Route as MoldInspectionDavieRouteImport } from './routes/mold-inspection-davie'
+import { Route as MoldInspectionDeerfieldBeachRouteImport } from './routes/mold-inspection-deerfield-beach'
+import { Route as MoldInspectionDelrayBeachRouteImport } from './routes/mold-inspection-delray-beach'
+import { Route as MoldInspectionFortLauderdaleRouteImport } from './routes/mold-inspection-fort-lauderdale'
+import { Route as MoldInspectionGreenacresRouteImport } from './routes/mold-inspection-greenacres'
+import { Route as MoldInspectionHobeSoundRouteImport } from './routes/mold-inspection-hobe-sound'
+import { Route as MoldInspectionHollywoodRouteImport } from './routes/mold-inspection-hollywood'
+import { Route as MoldInspectionJensenBeachRouteImport } from './routes/mold-inspection-jensen-beach'
+import { Route as MoldInspectionJupiterRouteImport } from './routes/mold-inspection-jupiter'
+import { Route as MoldInspectionLakeWorthBeachRouteImport } from './routes/mold-inspection-lake-worth-beach'
+import { Route as MoldInspectionLoxahatcheeRouteImport } from './routes/mold-inspection-loxahatchee'
+import { Route as MoldInspectionPalmBeachGardensRouteImport } from './routes/mold-inspection-palm-beach-gardens'
+import { Route as MoldInspectionPalmCityRouteImport } from './routes/mold-inspection-palm-city'
+import { Route as MoldInspectionPembrokePinesRouteImport } from './routes/mold-inspection-pembroke-pines'
+import { Route as MoldInspectionPlantationRouteImport } from './routes/mold-inspection-plantation'
+import { Route as MoldInspectionPompanoBeachRouteImport } from './routes/mold-inspection-pompano-beach'
+import { Route as MoldInspectionPortSalernoRouteImport } from './routes/mold-inspection-port-salerno'
+import { Route as MoldInspectionRivieraBeachRouteImport } from './routes/mold-inspection-riviera-beach'
+import { Route as MoldInspectionRoyalPalmBeachRouteImport } from './routes/mold-inspection-royal-palm-beach'
+import { Route as MoldInspectionStuartRouteImport } from './routes/mold-inspection-stuart'
+import { Route as MoldInspectionSunriseRouteImport } from './routes/mold-inspection-sunrise'
+import { Route as MoldInspectionWellingtonRouteImport } from './routes/mold-inspection-wellington'
+import { Route as MoldInspectionWestPalmBeachRouteImport } from './routes/mold-inspection-west-palm-beach'
+import { Route as MoldInspectionWestonRouteImport } from './routes/mold-inspection-weston'
+import { Route as RealtorsRouteImport } from './routes/realtors'
+import { Route as ServiceAreasRouteImport } from './routes/service-areas'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAirQualityTestingRouteImport } from './routes/services.air-quality-testing'
+import { Route as ServicesCommercialMoldInspectionRouteImport } from './routes/services.commercial-mold-inspection'
+import { Route as ServicesHumidityTestingRouteImport } from './routes/services.humidity-testing'
+import { Route as ServicesMoldAssessmentReportRouteImport } from './routes/services.mold-assessment-report'
+import { Route as ServicesMoldInspectionRouteImport } from './routes/services.mold-inspection'
+import { Route as ServicesMoldTestingRouteImport } from './routes/services.mold-testing'
+import { Route as ServicesPostRemediationVerificationRouteImport } from './routes/services.post-remediation-verification'
+import { Route as ServicesRealEstateMoldInspectionRouteImport } from './routes/services.real-estate-mold-inspection'
+import { Route as ServicesSurfaceSamplingRouteImport } from './routes/services.surface-sampling'
+import { Route as ServicesThermalImagingRouteImport } from './routes/services.thermal-imaging'
+import { Route as ServicesWaterDamageInspectionRouteImport } from './routes/services.water-damage-inspection'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServiceAreasRoute = ServiceAreasRouteImport.update({
-  id: '/service-areas',
-  path: '/service-areas',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RealtorsRoute = RealtorsRouteImport.update({
-  id: '/realtors',
-  path: '/realtors',
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionWestonRoute = MoldInspectionWestonRouteImport.update({
-  id: '/mold-inspection-weston',
-  path: '/mold-inspection-weston',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionWestPalmBeachRoute =
-  MoldInspectionWestPalmBeachRouteImport.update({
-    id: '/mold-inspection-west-palm-beach',
-    path: '/mold-inspection-west-palm-beach',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionWellingtonRoute =
-  MoldInspectionWellingtonRouteImport.update({
-    id: '/mold-inspection-wellington',
-    path: '/mold-inspection-wellington',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionSunriseRoute = MoldInspectionSunriseRouteImport.update({
-  id: '/mold-inspection-sunrise',
-  path: '/mold-inspection-sunrise',
+const MoldInspectionRoute = MoldInspectionRouteImport.update({
+  id: '/mold-inspection',
+  path: '/mold-inspection',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionStuartRoute = MoldInspectionStuartRouteImport.update({
-  id: '/mold-inspection-stuart',
-  path: '/mold-inspection-stuart',
+const MoldInspectionBocaRatonRoute = MoldInspectionBocaRatonRouteImport.update({
+  id: '/mold-inspection-boca-raton',
+  path: '/mold-inspection-boca-raton',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionRoyalPalmBeachRoute =
-  MoldInspectionRoyalPalmBeachRouteImport.update({
-    id: '/mold-inspection-royal-palm-beach',
-    path: '/mold-inspection-royal-palm-beach',
+const MoldInspectionBoyntonBeachRoute =
+  MoldInspectionBoyntonBeachRouteImport.update({
+    id: '/mold-inspection-boynton-beach',
+    path: '/mold-inspection-boynton-beach',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionRivieraBeachRoute =
-  MoldInspectionRivieraBeachRouteImport.update({
-    id: '/mold-inspection-riviera-beach',
-    path: '/mold-inspection-riviera-beach',
+const MoldInspectionCoralSpringsRoute =
+  MoldInspectionCoralSpringsRouteImport.update({
+    id: '/mold-inspection-coral-springs',
+    path: '/mold-inspection-coral-springs',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionPortSalernoRoute =
-  MoldInspectionPortSalernoRouteImport.update({
-    id: '/mold-inspection-port-salerno',
-    path: '/mold-inspection-port-salerno',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionPompanoBeachRoute =
-  MoldInspectionPompanoBeachRouteImport.update({
-    id: '/mold-inspection-pompano-beach',
-    path: '/mold-inspection-pompano-beach',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionPlantationRoute =
-  MoldInspectionPlantationRouteImport.update({
-    id: '/mold-inspection-plantation',
-    path: '/mold-inspection-plantation',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionPembrokePinesRoute =
-  MoldInspectionPembrokePinesRouteImport.update({
-    id: '/mold-inspection-pembroke-pines',
-    path: '/mold-inspection-pembroke-pines',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionPalmCityRoute = MoldInspectionPalmCityRouteImport.update({
-  id: '/mold-inspection-palm-city',
-  path: '/mold-inspection-palm-city',
+const MoldInspectionDavieRoute = MoldInspectionDavieRouteImport.update({
+  id: '/mold-inspection-davie',
+  path: '/mold-inspection-davie',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionPalmBeachGardensRoute =
-  MoldInspectionPalmBeachGardensRouteImport.update({
-    id: '/mold-inspection-palm-beach-gardens',
-    path: '/mold-inspection-palm-beach-gardens',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionLoxahatcheeRoute =
-  MoldInspectionLoxahatcheeRouteImport.update({
-    id: '/mold-inspection-loxahatchee',
-    path: '/mold-inspection-loxahatchee',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionLakeWorthBeachRoute =
-  MoldInspectionLakeWorthBeachRouteImport.update({
-    id: '/mold-inspection-lake-worth-beach',
-    path: '/mold-inspection-lake-worth-beach',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionJupiterRoute = MoldInspectionJupiterRouteImport.update({
-  id: '/mold-inspection-jupiter',
-  path: '/mold-inspection-jupiter',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoldInspectionJensenBeachRoute =
-  MoldInspectionJensenBeachRouteImport.update({
-    id: '/mold-inspection-jensen-beach',
-    path: '/mold-inspection-jensen-beach',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionHollywoodRoute = MoldInspectionHollywoodRouteImport.update({
-  id: '/mold-inspection-hollywood',
-  path: '/mold-inspection-hollywood',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoldInspectionHobeSoundRoute = MoldInspectionHobeSoundRouteImport.update({
-  id: '/mold-inspection-hobe-sound',
-  path: '/mold-inspection-hobe-sound',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoldInspectionGreenacresRoute =
-  MoldInspectionGreenacresRouteImport.update({
-    id: '/mold-inspection-greenacres',
-    path: '/mold-inspection-greenacres',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const MoldInspectionFortLauderdaleRoute =
-  MoldInspectionFortLauderdaleRouteImport.update({
-    id: '/mold-inspection-fort-lauderdale',
-    path: '/mold-inspection-fort-lauderdale',
+const MoldInspectionDeerfieldBeachRoute =
+  MoldInspectionDeerfieldBeachRouteImport.update({
+    id: '/mold-inspection-deerfield-beach',
+    path: '/mold-inspection-deerfield-beach',
     getParentRoute: () => rootRouteImport,
   } as any)
 const MoldInspectionDelrayBeachRoute =
@@ -198,100 +117,165 @@ const MoldInspectionDelrayBeachRoute =
     path: '/mold-inspection-delray-beach',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionDeerfieldBeachRoute =
-  MoldInspectionDeerfieldBeachRouteImport.update({
-    id: '/mold-inspection-deerfield-beach',
-    path: '/mold-inspection-deerfield-beach',
+const MoldInspectionFortLauderdaleRoute =
+  MoldInspectionFortLauderdaleRouteImport.update({
+    id: '/mold-inspection-fort-lauderdale',
+    path: '/mold-inspection-fort-lauderdale',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionDavieRoute = MoldInspectionDavieRouteImport.update({
-  id: '/mold-inspection-davie',
-  path: '/mold-inspection-davie',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoldInspectionCoralSpringsRoute =
-  MoldInspectionCoralSpringsRouteImport.update({
-    id: '/mold-inspection-coral-springs',
-    path: '/mold-inspection-coral-springs',
+const MoldInspectionGreenacresRoute =
+  MoldInspectionGreenacresRouteImport.update({
+    id: '/mold-inspection-greenacres',
+    path: '/mold-inspection-greenacres',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionBoyntonBeachRoute =
-  MoldInspectionBoyntonBeachRouteImport.update({
-    id: '/mold-inspection-boynton-beach',
-    path: '/mold-inspection-boynton-beach',
+const MoldInspectionHobeSoundRoute = MoldInspectionHobeSoundRouteImport.update({
+  id: '/mold-inspection-hobe-sound',
+  path: '/mold-inspection-hobe-sound',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoldInspectionHollywoodRoute = MoldInspectionHollywoodRouteImport.update({
+  id: '/mold-inspection-hollywood',
+  path: '/mold-inspection-hollywood',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoldInspectionJensenBeachRoute =
+  MoldInspectionJensenBeachRouteImport.update({
+    id: '/mold-inspection-jensen-beach',
+    path: '/mold-inspection-jensen-beach',
     getParentRoute: () => rootRouteImport,
   } as any)
-const MoldInspectionBocaRatonRoute = MoldInspectionBocaRatonRouteImport.update({
-  id: '/mold-inspection-boca-raton',
-  path: '/mold-inspection-boca-raton',
+const MoldInspectionJupiterRoute = MoldInspectionJupiterRouteImport.update({
+  id: '/mold-inspection-jupiter',
+  path: '/mold-inspection-jupiter',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionRoute = MoldInspectionRouteImport.update({
-  id: '/mold-inspection',
-  path: '/mold-inspection',
+const MoldInspectionLakeWorthBeachRoute =
+  MoldInspectionLakeWorthBeachRouteImport.update({
+    id: '/mold-inspection-lake-worth-beach',
+    path: '/mold-inspection-lake-worth-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionLoxahatcheeRoute =
+  MoldInspectionLoxahatcheeRouteImport.update({
+    id: '/mold-inspection-loxahatchee',
+    path: '/mold-inspection-loxahatchee',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionPalmBeachGardensRoute =
+  MoldInspectionPalmBeachGardensRouteImport.update({
+    id: '/mold-inspection-palm-beach-gardens',
+    path: '/mold-inspection-palm-beach-gardens',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionPalmCityRoute = MoldInspectionPalmCityRouteImport.update({
+  id: '/mold-inspection-palm-city',
+  path: '/mold-inspection-palm-city',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const MoldInspectionPembrokePinesRoute =
+  MoldInspectionPembrokePinesRouteImport.update({
+    id: '/mold-inspection-pembroke-pines',
+    path: '/mold-inspection-pembroke-pines',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionPlantationRoute =
+  MoldInspectionPlantationRouteImport.update({
+    id: '/mold-inspection-plantation',
+    path: '/mold-inspection-plantation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionPompanoBeachRoute =
+  MoldInspectionPompanoBeachRouteImport.update({
+    id: '/mold-inspection-pompano-beach',
+    path: '/mold-inspection-pompano-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionPortSalernoRoute =
+  MoldInspectionPortSalernoRouteImport.update({
+    id: '/mold-inspection-port-salerno',
+    path: '/mold-inspection-port-salerno',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionRivieraBeachRoute =
+  MoldInspectionRivieraBeachRouteImport.update({
+    id: '/mold-inspection-riviera-beach',
+    path: '/mold-inspection-riviera-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionRoyalPalmBeachRoute =
+  MoldInspectionRoyalPalmBeachRouteImport.update({
+    id: '/mold-inspection-royal-palm-beach',
+    path: '/mold-inspection-royal-palm-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionStuartRoute = MoldInspectionStuartRouteImport.update({
+  id: '/mold-inspection-stuart',
+  path: '/mold-inspection-stuart',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
+const MoldInspectionSunriseRoute = MoldInspectionSunriseRouteImport.update({
+  id: '/mold-inspection-sunrise',
+  path: '/mold-inspection-sunrise',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const MoldInspectionWellingtonRoute =
+  MoldInspectionWellingtonRouteImport.update({
+    id: '/mold-inspection-wellington',
+    path: '/mold-inspection-wellington',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionWestPalmBeachRoute =
+  MoldInspectionWestPalmBeachRouteImport.update({
+    id: '/mold-inspection-west-palm-beach',
+    path: '/mold-inspection-west-palm-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionWestonRoute = MoldInspectionWestonRouteImport.update({
+  id: '/mold-inspection-weston',
+  path: '/mold-inspection-weston',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const RealtorsRoute = RealtorsRouteImport.update({
+  id: '/realtors',
+  path: '/realtors',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreasRoute = ServiceAreasRouteImport.update({
+  id: '/service-areas',
+  path: '/service-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesWaterDamageInspectionRoute =
-  ServicesWaterDamageInspectionRouteImport.update({
-    id: '/services/water-damage-inspection',
-    path: '/services/water-damage-inspection',
+const ServicesAirQualityTestingRoute =
+  ServicesAirQualityTestingRouteImport.update({
+    id: '/services/air-quality-testing',
+    path: '/services/air-quality-testing',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesThermalImagingRoute = ServicesThermalImagingRouteImport.update({
-  id: '/services/thermal-imaging',
-  path: '/services/thermal-imaging',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesSurfaceSamplingRoute = ServicesSurfaceSamplingRouteImport.update({
-  id: '/services/surface-sampling',
-  path: '/services/surface-sampling',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRealEstateMoldInspectionRoute =
-  ServicesRealEstateMoldInspectionRouteImport.update({
-    id: '/services/real-estate-mold-inspection',
-    path: '/services/real-estate-mold-inspection',
+const ServicesCommercialMoldInspectionRoute =
+  ServicesCommercialMoldInspectionRouteImport.update({
+    id: '/services/commercial-mold-inspection',
+    path: '/services/commercial-mold-inspection',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesPostRemediationVerificationRoute =
-  ServicesPostRemediationVerificationRouteImport.update({
-    id: '/services/post-remediation-verification',
-    path: '/services/post-remediation-verification',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesMoldTestingRoute = ServicesMoldTestingRouteImport.update({
-  id: '/services/mold-testing',
-  path: '/services/mold-testing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesMoldInspectionRoute = ServicesMoldInspectionRouteImport.update({
-  id: '/services/mold-inspection',
-  path: '/services/mold-inspection',
+const ServicesHumidityTestingRoute = ServicesHumidityTestingRouteImport.update({
+  id: '/services/humidity-testing',
+  path: '/services/humidity-testing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesMoldAssessmentReportRoute =
@@ -300,28 +284,44 @@ const ServicesMoldAssessmentReportRoute =
     path: '/services/mold-assessment-report',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesHumidityTestingRoute = ServicesHumidityTestingRouteImport.update({
-  id: '/services/humidity-testing',
-  path: '/services/humidity-testing',
+const ServicesMoldInspectionRoute = ServicesMoldInspectionRouteImport.update({
+  id: '/services/mold-inspection',
+  path: '/services/mold-inspection',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesCommercialMoldInspectionRoute =
-  ServicesCommercialMoldInspectionRouteImport.update({
-    id: '/services/commercial-mold-inspection',
-    path: '/services/commercial-mold-inspection',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesAirQualityTestingRoute =
-  ServicesAirQualityTestingRouteImport.update({
-    id: '/services/air-quality-testing',
-    path: '/services/air-quality-testing',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+const ServicesMoldTestingRoute = ServicesMoldTestingRouteImport.update({
+  id: '/services/mold-testing',
+  path: '/services/mold-testing',
+  getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesPostRemediationVerificationRoute =
+  ServicesPostRemediationVerificationRouteImport.update({
+    id: '/services/post-remediation-verification',
+    path: '/services/post-remediation-verification',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesRealEstateMoldInspectionRoute =
+  ServicesRealEstateMoldInspectionRouteImport.update({
+    id: '/services/real-estate-mold-inspection',
+    path: '/services/real-estate-mold-inspection',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesSurfaceSamplingRoute = ServicesSurfaceSamplingRouteImport.update({
+  id: '/services/surface-sampling',
+  path: '/services/surface-sampling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesThermalImagingRoute = ServicesThermalImagingRouteImport.update({
+  id: '/services/thermal-imaging',
+  path: '/services/thermal-imaging',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWaterDamageInspectionRoute =
+  ServicesWaterDamageInspectionRouteImport.update({
+    id: '/services/water-damage-inspection',
+    path: '/services/water-damage-inspection',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -679,235 +679,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/service-areas': {
-      id: '/service-areas'
-      path: '/service-areas'
-      fullPath: '/service-areas'
-      preLoaderRoute: typeof ServiceAreasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/realtors': {
-      id: '/realtors'
-      path: '/realtors'
-      fullPath: '/realtors'
-      preLoaderRoute: typeof RealtorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-weston': {
-      id: '/mold-inspection-weston'
-      path: '/mold-inspection-weston'
-      fullPath: '/mold-inspection-weston'
-      preLoaderRoute: typeof MoldInspectionWestonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-west-palm-beach': {
-      id: '/mold-inspection-west-palm-beach'
-      path: '/mold-inspection-west-palm-beach'
-      fullPath: '/mold-inspection-west-palm-beach'
-      preLoaderRoute: typeof MoldInspectionWestPalmBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-wellington': {
-      id: '/mold-inspection-wellington'
-      path: '/mold-inspection-wellington'
-      fullPath: '/mold-inspection-wellington'
-      preLoaderRoute: typeof MoldInspectionWellingtonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-sunrise': {
-      id: '/mold-inspection-sunrise'
-      path: '/mold-inspection-sunrise'
-      fullPath: '/mold-inspection-sunrise'
-      preLoaderRoute: typeof MoldInspectionSunriseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-stuart': {
-      id: '/mold-inspection-stuart'
-      path: '/mold-inspection-stuart'
-      fullPath: '/mold-inspection-stuart'
-      preLoaderRoute: typeof MoldInspectionStuartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-royal-palm-beach': {
-      id: '/mold-inspection-royal-palm-beach'
-      path: '/mold-inspection-royal-palm-beach'
-      fullPath: '/mold-inspection-royal-palm-beach'
-      preLoaderRoute: typeof MoldInspectionRoyalPalmBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-riviera-beach': {
-      id: '/mold-inspection-riviera-beach'
-      path: '/mold-inspection-riviera-beach'
-      fullPath: '/mold-inspection-riviera-beach'
-      preLoaderRoute: typeof MoldInspectionRivieraBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-port-salerno': {
-      id: '/mold-inspection-port-salerno'
-      path: '/mold-inspection-port-salerno'
-      fullPath: '/mold-inspection-port-salerno'
-      preLoaderRoute: typeof MoldInspectionPortSalernoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-pompano-beach': {
-      id: '/mold-inspection-pompano-beach'
-      path: '/mold-inspection-pompano-beach'
-      fullPath: '/mold-inspection-pompano-beach'
-      preLoaderRoute: typeof MoldInspectionPompanoBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-plantation': {
-      id: '/mold-inspection-plantation'
-      path: '/mold-inspection-plantation'
-      fullPath: '/mold-inspection-plantation'
-      preLoaderRoute: typeof MoldInspectionPlantationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-pembroke-pines': {
-      id: '/mold-inspection-pembroke-pines'
-      path: '/mold-inspection-pembroke-pines'
-      fullPath: '/mold-inspection-pembroke-pines'
-      preLoaderRoute: typeof MoldInspectionPembrokePinesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-palm-city': {
-      id: '/mold-inspection-palm-city'
-      path: '/mold-inspection-palm-city'
-      fullPath: '/mold-inspection-palm-city'
-      preLoaderRoute: typeof MoldInspectionPalmCityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-palm-beach-gardens': {
-      id: '/mold-inspection-palm-beach-gardens'
-      path: '/mold-inspection-palm-beach-gardens'
-      fullPath: '/mold-inspection-palm-beach-gardens'
-      preLoaderRoute: typeof MoldInspectionPalmBeachGardensRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-loxahatchee': {
-      id: '/mold-inspection-loxahatchee'
-      path: '/mold-inspection-loxahatchee'
-      fullPath: '/mold-inspection-loxahatchee'
-      preLoaderRoute: typeof MoldInspectionLoxahatcheeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-lake-worth-beach': {
-      id: '/mold-inspection-lake-worth-beach'
-      path: '/mold-inspection-lake-worth-beach'
-      fullPath: '/mold-inspection-lake-worth-beach'
-      preLoaderRoute: typeof MoldInspectionLakeWorthBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-jupiter': {
-      id: '/mold-inspection-jupiter'
-      path: '/mold-inspection-jupiter'
-      fullPath: '/mold-inspection-jupiter'
-      preLoaderRoute: typeof MoldInspectionJupiterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-jensen-beach': {
-      id: '/mold-inspection-jensen-beach'
-      path: '/mold-inspection-jensen-beach'
-      fullPath: '/mold-inspection-jensen-beach'
-      preLoaderRoute: typeof MoldInspectionJensenBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-hollywood': {
-      id: '/mold-inspection-hollywood'
-      path: '/mold-inspection-hollywood'
-      fullPath: '/mold-inspection-hollywood'
-      preLoaderRoute: typeof MoldInspectionHollywoodRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-hobe-sound': {
-      id: '/mold-inspection-hobe-sound'
-      path: '/mold-inspection-hobe-sound'
-      fullPath: '/mold-inspection-hobe-sound'
-      preLoaderRoute: typeof MoldInspectionHobeSoundRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-greenacres': {
-      id: '/mold-inspection-greenacres'
-      path: '/mold-inspection-greenacres'
-      fullPath: '/mold-inspection-greenacres'
-      preLoaderRoute: typeof MoldInspectionGreenacresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-fort-lauderdale': {
-      id: '/mold-inspection-fort-lauderdale'
-      path: '/mold-inspection-fort-lauderdale'
-      fullPath: '/mold-inspection-fort-lauderdale'
-      preLoaderRoute: typeof MoldInspectionFortLauderdaleRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-delray-beach': {
-      id: '/mold-inspection-delray-beach'
-      path: '/mold-inspection-delray-beach'
-      fullPath: '/mold-inspection-delray-beach'
-      preLoaderRoute: typeof MoldInspectionDelrayBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-deerfield-beach': {
-      id: '/mold-inspection-deerfield-beach'
-      path: '/mold-inspection-deerfield-beach'
-      fullPath: '/mold-inspection-deerfield-beach'
-      preLoaderRoute: typeof MoldInspectionDeerfieldBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-davie': {
-      id: '/mold-inspection-davie'
-      path: '/mold-inspection-davie'
-      fullPath: '/mold-inspection-davie'
-      preLoaderRoute: typeof MoldInspectionDavieRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-coral-springs': {
-      id: '/mold-inspection-coral-springs'
-      path: '/mold-inspection-coral-springs'
-      fullPath: '/mold-inspection-coral-springs'
-      preLoaderRoute: typeof MoldInspectionCoralSpringsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-boynton-beach': {
-      id: '/mold-inspection-boynton-beach'
-      path: '/mold-inspection-boynton-beach'
-      fullPath: '/mold-inspection-boynton-beach'
-      preLoaderRoute: typeof MoldInspectionBoyntonBeachRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection-boca-raton': {
-      id: '/mold-inspection-boca-raton'
-      path: '/mold-inspection-boca-raton'
-      fullPath: '/mold-inspection-boca-raton'
-      preLoaderRoute: typeof MoldInspectionBocaRatonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection': {
-      id: '/mold-inspection'
-      path: '/mold-inspection'
-      fullPath: '/mold-inspection'
-      preLoaderRoute: typeof MoldInspectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -917,88 +693,249 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection': {
+      id: '/mold-inspection'
+      path: '/mold-inspection'
+      fullPath: '/mold-inspection'
+      preLoaderRoute: typeof MoldInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-boca-raton': {
+      id: '/mold-inspection-boca-raton'
+      path: '/mold-inspection-boca-raton'
+      fullPath: '/mold-inspection-boca-raton'
+      preLoaderRoute: typeof MoldInspectionBocaRatonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-boynton-beach': {
+      id: '/mold-inspection-boynton-beach'
+      path: '/mold-inspection-boynton-beach'
+      fullPath: '/mold-inspection-boynton-beach'
+      preLoaderRoute: typeof MoldInspectionBoyntonBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-coral-springs': {
+      id: '/mold-inspection-coral-springs'
+      path: '/mold-inspection-coral-springs'
+      fullPath: '/mold-inspection-coral-springs'
+      preLoaderRoute: typeof MoldInspectionCoralSpringsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-davie': {
+      id: '/mold-inspection-davie'
+      path: '/mold-inspection-davie'
+      fullPath: '/mold-inspection-davie'
+      preLoaderRoute: typeof MoldInspectionDavieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-deerfield-beach': {
+      id: '/mold-inspection-deerfield-beach'
+      path: '/mold-inspection-deerfield-beach'
+      fullPath: '/mold-inspection-deerfield-beach'
+      preLoaderRoute: typeof MoldInspectionDeerfieldBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-delray-beach': {
+      id: '/mold-inspection-delray-beach'
+      path: '/mold-inspection-delray-beach'
+      fullPath: '/mold-inspection-delray-beach'
+      preLoaderRoute: typeof MoldInspectionDelrayBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-fort-lauderdale': {
+      id: '/mold-inspection-fort-lauderdale'
+      path: '/mold-inspection-fort-lauderdale'
+      fullPath: '/mold-inspection-fort-lauderdale'
+      preLoaderRoute: typeof MoldInspectionFortLauderdaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-greenacres': {
+      id: '/mold-inspection-greenacres'
+      path: '/mold-inspection-greenacres'
+      fullPath: '/mold-inspection-greenacres'
+      preLoaderRoute: typeof MoldInspectionGreenacresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-hobe-sound': {
+      id: '/mold-inspection-hobe-sound'
+      path: '/mold-inspection-hobe-sound'
+      fullPath: '/mold-inspection-hobe-sound'
+      preLoaderRoute: typeof MoldInspectionHobeSoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-hollywood': {
+      id: '/mold-inspection-hollywood'
+      path: '/mold-inspection-hollywood'
+      fullPath: '/mold-inspection-hollywood'
+      preLoaderRoute: typeof MoldInspectionHollywoodRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-jensen-beach': {
+      id: '/mold-inspection-jensen-beach'
+      path: '/mold-inspection-jensen-beach'
+      fullPath: '/mold-inspection-jensen-beach'
+      preLoaderRoute: typeof MoldInspectionJensenBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-jupiter': {
+      id: '/mold-inspection-jupiter'
+      path: '/mold-inspection-jupiter'
+      fullPath: '/mold-inspection-jupiter'
+      preLoaderRoute: typeof MoldInspectionJupiterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-lake-worth-beach': {
+      id: '/mold-inspection-lake-worth-beach'
+      path: '/mold-inspection-lake-worth-beach'
+      fullPath: '/mold-inspection-lake-worth-beach'
+      preLoaderRoute: typeof MoldInspectionLakeWorthBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-loxahatchee': {
+      id: '/mold-inspection-loxahatchee'
+      path: '/mold-inspection-loxahatchee'
+      fullPath: '/mold-inspection-loxahatchee'
+      preLoaderRoute: typeof MoldInspectionLoxahatcheeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-palm-beach-gardens': {
+      id: '/mold-inspection-palm-beach-gardens'
+      path: '/mold-inspection-palm-beach-gardens'
+      fullPath: '/mold-inspection-palm-beach-gardens'
+      preLoaderRoute: typeof MoldInspectionPalmBeachGardensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-palm-city': {
+      id: '/mold-inspection-palm-city'
+      path: '/mold-inspection-palm-city'
+      fullPath: '/mold-inspection-palm-city'
+      preLoaderRoute: typeof MoldInspectionPalmCityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-pembroke-pines': {
+      id: '/mold-inspection-pembroke-pines'
+      path: '/mold-inspection-pembroke-pines'
+      fullPath: '/mold-inspection-pembroke-pines'
+      preLoaderRoute: typeof MoldInspectionPembrokePinesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-plantation': {
+      id: '/mold-inspection-plantation'
+      path: '/mold-inspection-plantation'
+      fullPath: '/mold-inspection-plantation'
+      preLoaderRoute: typeof MoldInspectionPlantationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-pompano-beach': {
+      id: '/mold-inspection-pompano-beach'
+      path: '/mold-inspection-pompano-beach'
+      fullPath: '/mold-inspection-pompano-beach'
+      preLoaderRoute: typeof MoldInspectionPompanoBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-port-salerno': {
+      id: '/mold-inspection-port-salerno'
+      path: '/mold-inspection-port-salerno'
+      fullPath: '/mold-inspection-port-salerno'
+      preLoaderRoute: typeof MoldInspectionPortSalernoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-riviera-beach': {
+      id: '/mold-inspection-riviera-beach'
+      path: '/mold-inspection-riviera-beach'
+      fullPath: '/mold-inspection-riviera-beach'
+      preLoaderRoute: typeof MoldInspectionRivieraBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-royal-palm-beach': {
+      id: '/mold-inspection-royal-palm-beach'
+      path: '/mold-inspection-royal-palm-beach'
+      fullPath: '/mold-inspection-royal-palm-beach'
+      preLoaderRoute: typeof MoldInspectionRoyalPalmBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-stuart': {
+      id: '/mold-inspection-stuart'
+      path: '/mold-inspection-stuart'
+      fullPath: '/mold-inspection-stuart'
+      preLoaderRoute: typeof MoldInspectionStuartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-sunrise': {
+      id: '/mold-inspection-sunrise'
+      path: '/mold-inspection-sunrise'
+      fullPath: '/mold-inspection-sunrise'
+      preLoaderRoute: typeof MoldInspectionSunriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-wellington': {
+      id: '/mold-inspection-wellington'
+      path: '/mold-inspection-wellington'
+      fullPath: '/mold-inspection-wellington'
+      preLoaderRoute: typeof MoldInspectionWellingtonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-west-palm-beach': {
+      id: '/mold-inspection-west-palm-beach'
+      path: '/mold-inspection-west-palm-beach'
+      fullPath: '/mold-inspection-west-palm-beach'
+      preLoaderRoute: typeof MoldInspectionWestPalmBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-weston': {
+      id: '/mold-inspection-weston'
+      path: '/mold-inspection-weston'
+      fullPath: '/mold-inspection-weston'
+      preLoaderRoute: typeof MoldInspectionWestonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/realtors': {
+      id: '/realtors'
+      path: '/realtors'
+      fullPath: '/realtors'
+      preLoaderRoute: typeof RealtorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-areas': {
+      id: '/service-areas'
+      path: '/service-areas'
+      fullPath: '/service-areas'
+      preLoaderRoute: typeof ServiceAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
     }
     '/services/': {
       id: '/services/'
       path: '/services'
       fullPath: '/services/'
       preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/water-damage-inspection': {
-      id: '/services/water-damage-inspection'
-      path: '/services/water-damage-inspection'
-      fullPath: '/services/water-damage-inspection'
-      preLoaderRoute: typeof ServicesWaterDamageInspectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/thermal-imaging': {
-      id: '/services/thermal-imaging'
-      path: '/services/thermal-imaging'
-      fullPath: '/services/thermal-imaging'
-      preLoaderRoute: typeof ServicesThermalImagingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/surface-sampling': {
-      id: '/services/surface-sampling'
-      path: '/services/surface-sampling'
-      fullPath: '/services/surface-sampling'
-      preLoaderRoute: typeof ServicesSurfaceSamplingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/real-estate-mold-inspection': {
-      id: '/services/real-estate-mold-inspection'
-      path: '/services/real-estate-mold-inspection'
-      fullPath: '/services/real-estate-mold-inspection'
-      preLoaderRoute: typeof ServicesRealEstateMoldInspectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/post-remediation-verification': {
-      id: '/services/post-remediation-verification'
-      path: '/services/post-remediation-verification'
-      fullPath: '/services/post-remediation-verification'
-      preLoaderRoute: typeof ServicesPostRemediationVerificationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/mold-testing': {
-      id: '/services/mold-testing'
-      path: '/services/mold-testing'
-      fullPath: '/services/mold-testing'
-      preLoaderRoute: typeof ServicesMoldTestingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/mold-inspection': {
-      id: '/services/mold-inspection'
-      path: '/services/mold-inspection'
-      fullPath: '/services/mold-inspection'
-      preLoaderRoute: typeof ServicesMoldInspectionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/mold-assessment-report': {
-      id: '/services/mold-assessment-report'
-      path: '/services/mold-assessment-report'
-      fullPath: '/services/mold-assessment-report'
-      preLoaderRoute: typeof ServicesMoldAssessmentReportRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/humidity-testing': {
-      id: '/services/humidity-testing'
-      path: '/services/humidity-testing'
-      fullPath: '/services/humidity-testing'
-      preLoaderRoute: typeof ServicesHumidityTestingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/commercial-mold-inspection': {
-      id: '/services/commercial-mold-inspection'
-      path: '/services/commercial-mold-inspection'
-      fullPath: '/services/commercial-mold-inspection'
-      preLoaderRoute: typeof ServicesCommercialMoldInspectionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/air-quality-testing': {
@@ -1008,12 +945,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAirQualityTestingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+    '/services/commercial-mold-inspection': {
+      id: '/services/commercial-mold-inspection'
+      path: '/services/commercial-mold-inspection'
+      fullPath: '/services/commercial-mold-inspection'
+      preLoaderRoute: typeof ServicesCommercialMoldInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/humidity-testing': {
+      id: '/services/humidity-testing'
+      path: '/services/humidity-testing'
+      fullPath: '/services/humidity-testing'
+      preLoaderRoute: typeof ServicesHumidityTestingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/mold-assessment-report': {
+      id: '/services/mold-assessment-report'
+      path: '/services/mold-assessment-report'
+      fullPath: '/services/mold-assessment-report'
+      preLoaderRoute: typeof ServicesMoldAssessmentReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/mold-inspection': {
+      id: '/services/mold-inspection'
+      path: '/services/mold-inspection'
+      fullPath: '/services/mold-inspection'
+      preLoaderRoute: typeof ServicesMoldInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/mold-testing': {
+      id: '/services/mold-testing'
+      path: '/services/mold-testing'
+      fullPath: '/services/mold-testing'
+      preLoaderRoute: typeof ServicesMoldTestingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/post-remediation-verification': {
+      id: '/services/post-remediation-verification'
+      path: '/services/post-remediation-verification'
+      fullPath: '/services/post-remediation-verification'
+      preLoaderRoute: typeof ServicesPostRemediationVerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/real-estate-mold-inspection': {
+      id: '/services/real-estate-mold-inspection'
+      path: '/services/real-estate-mold-inspection'
+      fullPath: '/services/real-estate-mold-inspection'
+      preLoaderRoute: typeof ServicesRealEstateMoldInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/surface-sampling': {
+      id: '/services/surface-sampling'
+      path: '/services/surface-sampling'
+      fullPath: '/services/surface-sampling'
+      preLoaderRoute: typeof ServicesSurfaceSamplingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/thermal-imaging': {
+      id: '/services/thermal-imaging'
+      path: '/services/thermal-imaging'
+      fullPath: '/services/thermal-imaging'
+      preLoaderRoute: typeof ServicesThermalImagingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/water-damage-inspection': {
+      id: '/services/water-damage-inspection'
+      path: '/services/water-damage-inspection'
+      fullPath: '/services/water-damage-inspection'
+      preLoaderRoute: typeof ServicesWaterDamageInspectionRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -1081,3 +1081,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

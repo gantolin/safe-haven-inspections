@@ -11,6 +11,11 @@ node_modules
 dist
 dist-ssr
 .output
+
+# Local env files (.env.example is committed on purpose)
+.env
+.env.*
+!.env.example
 .vinxi
 .tanstack/**
 .nitro

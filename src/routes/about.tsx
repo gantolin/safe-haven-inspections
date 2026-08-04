@@ -16,9 +16,9 @@ import { webpVariant } from "@/lib/images";
 import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } from "@/lib/seo";
 
 const CANONICAL = absoluteUrl("/about");
-const TITLE = "Meet Landon Heinrichs | Safe Haven Inspections";
+const TITLE = "Independent Mold Assessor, South Florida | Landon Heinrichs";
 const DESCRIPTION =
-  "Meet Landon Heinrichs — founder of Safe Haven Inspections, FL State-Licensed Mold Assessor (MRSA3366) & Mold Remediator (MRSR3536). Assessment & testing only.";
+  "Landon Heinrichs, founder of Safe Haven Inspections — FL-licensed Mold Assessor (MRSA3366) serving Martin, Palm Beach & Broward. Assessment and testing only, never remediation.";
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -150,7 +150,7 @@ function AboutPage() {
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
                 >
-                  Schedule an inspection <ArrowRight className="h-4 w-4" />
+                  Request an inspection <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href="tel:+15616326387"
@@ -164,64 +164,8 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* BIO */}
-      <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
-        <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
-          A licensed assessor who works only for you
-        </h2>
-        <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
-          <p>
-            Landon Heinrichs is the founder of Safe Haven Inspections LLC. He
-            holds both Florida DBPR licenses that regulate this industry —
-            <span className="font-mono-data text-primary"> MRSA3366</span> (Mold
-            Assessor) and
-            <span className="font-mono-data text-primary"> MRSR3536</span> (Mold
-            Remediator) — and is trained and certified in the full remediation
-            workflow. Safe Haven, by design, provides inspection, testing, and
-            assessment only. Being fully credentialed on the remediation side
-            means Landon knows exactly what proper cleanup looks like and can
-            hold any remediator to that standard — without ever selling the
-            cleanup himself.
-          </p>
-          <p>
-            Before founding Safe Haven Inspections, Landon spent years in the
-            remediation side of the industry — seeing firsthand what proper
-            cleanup requires and where shortcuts show up. He no longer performs
-            remediation; Safe Haven is inspection and testing only. That
-            hands-on background is exactly why his assessments and clearance
-            testing are so rigorous: he knows the standard a remediator should
-            meet, and he can hold them to it while staying completely
-            independent — with no cleanup to sell, there is no conflict of
-            interest. With 14 years of hands-on
-            experience in South Florida properties, Landon has walked the range
-            of the region's problem stack — coastal salt-air HVAC wear, older
-            inland housing stock, post-storm intrusion, condo stack leaks, and
-            slab moisture in newer construction.
-          </p>
-          <p>
-            Beyond the Florida DBPR licenses, Landon maintains IICRC
-            certifications in Water Damage Restoration (WRT), Applied Microbial
-            Remediation (AMRT), and Trauma &amp; Crime Scene (TCST); a
-            Certified Asbestos Inspector credential; and a full stack of
-            NAERMC certifications — Certified Mold Hygienist, Green Indoor
-            Air Quality Specialist, Green Mold Remediation Contractor, Water
-            Damage Mitigation Assessor, and Remediation Technologist. Every
-            Safe Haven inspection is performed by a licensed team member,
-            sampled per protocol, and analyzed at an independent
-            AIHA-accredited laboratory — the same labs a remediator or
-            insurance carrier would use, delivered without a middleman.
-          </p>
-          <p>
-            Safe Haven serves Martin, Palm Beach, and Broward Counties. When
-            you call (561) 632-6387, you reach the local team directly —
-            never an answering service — and the person writing your report
-            is the person who walked your property.
-          </p>
-        </div>
-      </section>
-
       {/* IN LANDON'S WORDS */}
-      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+      <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
         <p className="text-sm font-medium uppercase tracking-wider text-accent">
           In Landon's words
         </p>
@@ -229,7 +173,7 @@ function AboutPage() {
           Why I built Safe Haven the way I did
         </h2>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-secondary/50 p-6 sm:p-8">
-          <div className="max-w-3xl space-y-4 text-muted-foreground">
+          <div className="max-w-3xl space-y-4 text-base text-muted-foreground sm:text-lg">
             <p>
               I'm a lifelong South Florida resident — born and raised here. This
               is the place I grew up in, and that's really the reason I do this
@@ -255,6 +199,39 @@ function AboutPage() {
           </div>
           <p className="mt-6 font-[Bricolage_Grotesque] text-sm font-semibold text-primary">
             — Landon Heinrichs, Founder
+          </p>
+        </div>
+      </section>
+
+      {/* BACKGROUND */}
+      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+        <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
+          A licensed mold assessor who works only for you
+        </h2>
+        <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
+          <p>
+            Landon holds both Florida DBPR licenses that regulate this industry —
+            <span className="font-mono-data text-primary"> MRSA3366</span> (Mold
+            Assessor) and
+            <span className="font-mono-data text-primary"> MRSR3536</span> (Mold
+            Remediator). Safe Haven, by design, provides inspection, testing, and
+            assessment only; the remediation credential is there so he knows
+            exactly what proper cleanup requires and can hold any contractor to
+            that standard.
+          </p>
+          <p>
+            Fourteen years across South Florida properties covers the range of
+            the region's problem stack — coastal salt-air HVAC wear, older inland
+            housing stock, post-storm intrusion, condo stack leaks, and slab
+            moisture in newer construction. Every inspection is sampled per
+            protocol and analyzed at an independent AIHA-accredited laboratory,
+            the same labs a remediator or insurance carrier would use.
+          </p>
+          <p>
+            Safe Haven serves Martin, Palm Beach, and Broward Counties. When you
+            call (561) 632-6387, you reach the local team directly — never an
+            answering service — and the person writing your report is the person
+            who walked your property.
           </p>
         </div>
       </section>
@@ -309,12 +286,8 @@ function AboutPage() {
           Credentials &amp; certifications
         </h2>
         <p className="mt-3 max-w-3xl text-muted-foreground">
-          Landon is licensed and certified on both sides of this industry —
-          assessment <em>and</em> remediation. Safe Haven, by policy, performs
-          inspection, testing, and assessment only. Full remediation training
-          means he knows exactly what proper cleanup requires and can hold any
-          contractor to that standard — with no cleanup revenue on the line,
-          so there is no conflict of interest.
+          Licensed and certified on both sides of this industry — assessment{" "}
+          <em>and</em> remediation — while practising only one.
         </p>
 
         {/* Florida DBPR licenses */}
@@ -379,43 +352,6 @@ function AboutPage() {
             ))}
           </ul>
 
-          {/* Badge seal placeholders — drop in official logo images later. */}
-          <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Official badge seals
-            </p>
-            <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
-              {[
-                { alt: "IICRC WRT certification badge", label: "IICRC WRT" },
-                { alt: "IICRC AMRT certification badge", label: "IICRC AMRT" },
-                { alt: "IICRC TCST certification badge", label: "IICRC TCST" },
-                { alt: "Certified Asbestos Inspector badge", label: "Asbestos Inspector" },
-                { alt: "NAERMC Certified Mold Hygienist badge", label: "Mold Hygienist" },
-                { alt: "NAERMC Certified Green Indoor Air Quality Specialist badge", label: "Green IAQ" },
-                { alt: "NAERMC Certified Green Mold Remediation Contractor badge", label: "Green Remediation" },
-                { alt: "NAERMC Certified Water Damage Mitigation Assessor badge", label: "Water Damage Mitigation" },
-                { alt: "NAERMC Certified Remediation Technologist badge", label: "Remediation Technologist" },
-                { alt: "Florida DBPR licensed mold professional badge", label: "FL DBPR" },
-              ].map((b) => (
-                <div
-                  key={b.label}
-                  className="flex flex-col items-center gap-2 rounded-xl border border-dashed border-border bg-secondary/40 p-3"
-                >
-                  {/* BADGE: {b.label} — drop the official seal image here.
-                      Use b.alt as its alt text. Rendered as an empty box until
-                      then: an <img src=""> makes the browser re-request the
-                      page URL, once per badge. */}
-                  <div
-                    aria-hidden="true"
-                    className="h-16 w-16 rounded-md bg-background/60"
-                  />
-                  <span className="text-center text-[11px] font-medium text-muted-foreground">
-                    {b.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Standards / how we work */}
@@ -447,20 +383,17 @@ function AboutPage() {
         <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
           <p>
             Every Safe Haven inspection combines a hands-on walkthrough with
-            instrument-based testing: moisture meters, humidity logging,
-            thermal imaging, and — when needed — air or surface sampling sent
-            to an independent AIHA-accredited lab. The written report ties
-            photos, readings, and lab results into a plain-language document
-            you (or your realtor, insurer, or attorney) can actually use.
-          </p>
-          <p>
-            Explore the details on the{" "}
+            instrument-based testing: moisture meters, humidity logging, thermal
+            imaging, and — when needed — air or surface sampling sent to an
+            independent AIHA-accredited lab. The written report ties photos,
+            readings, and lab results into a plain-language document you (or your
+            realtor, insurer, or attorney) can actually use. See the{" "}
             <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
               mold inspection overview
             </Link>{" "}
-            page, or jump straight to a specific{" "}
+            or browse all{" "}
             <Link to="/services" className="font-semibold text-accent hover:underline">
-              service
+              services
             </Link>
             .
           </p>
@@ -475,7 +408,7 @@ function AboutPage() {
               <div className="flex items-center gap-3">
                 <ShieldCheck className="h-6 w-6" />
                 <h2 className="text-2xl font-semibold sm:text-3xl">
-                  Schedule with Landon directly
+                  Work with Landon directly
                 </h2>
               </div>
               <p className="mt-2 max-w-xl text-sm opacity-90 sm:text-base">
@@ -488,7 +421,7 @@ function AboutPage() {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
-                Request a quote <ArrowRight className="h-4 w-4" />
+                Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"

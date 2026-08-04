@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { submitContactForm } from "@/lib/contact";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Safe Haven Inspections | Free Phone Consultation" },
-      { name: "description", content: "Request a free phone consultation in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 or email us." },
+      { title: "Request an Inspection — Safe Haven Inspections, South Florida" },
+      { name: "description", content: "Request a mold inspection in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 — the phone consultation is free." },
       { property: "og:title", content: "Contact Safe Haven Inspections" },
       { property: "og:url", content: "https://www.safehaveninspectionsllc.com/contact" },
     ],
@@ -51,22 +52,53 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const email = String(data.get("email") ?? "");
-    const address = String(data.get("address") ?? "");
-    const message = String(data.get("message") ?? "");
-    const subject = encodeURIComponent(`Mold inspection request — ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProperty address: ${address}\n\n${message}`,
-    );
-    window.location.href = `mailto:safehaveninspectionsllc@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+
+    // Honeypot: a real person never sees this field, so anything that ticks it
+    // is a bot. Show the normal confirmation and drop it silently.
+    if (data.get("botcheck")) {
+      setSubmitted(true);
+      form.reset();
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await submitContactForm({
+        data: {
+          name: String(data.get("name") ?? ""),
+          phone: String(data.get("phone") ?? ""),
+          email: String(data.get("email") ?? ""),
+          address: String(data.get("address") ?? ""),
+          timing: String(data.get("timing") ?? ""),
+          message: String(data.get("message") ?? ""),
+        },
+      });
+
+      if (result.success) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setError(
+          result.error ||
+            "We couldn't submit your request. Please call (561) 632-6387.",
+        );
+      }
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
+      setError(
+        "Something went wrong on our end. Please call (561) 632-6387 and we'll help right away.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -75,11 +107,12 @@ function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Contact</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Get a free phone consultation.
+            Request an inspection.
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Tell us about your property and what you're seeing. We'll follow up with a
-            quote and available appointment times. Prefer to talk? Call us directly.
+            Tell us about your property and what you're seeing, and we'll get back to
+            you within one business day. Rather just talk it through? Calling is
+            faster, and the call costs nothing.
           </p>
         </div>
       </section>
@@ -87,30 +120,54 @@ function ContactPage() {
       <section className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
           <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-semibold text-primary">Request a free phone consultation</h2>
+            <h2 className="text-xl font-semibold text-primary">Request an inspection</h2>
+            <p className="mt-3 rounded-lg border border-border bg-secondary/60 p-4 text-sm text-muted-foreground">
+              <span className="font-semibold text-primary">How this works:</span> talking
+              to us is free — call and we'll tell you honestly whether you even need an
+              inspection. The inspection itself is a paid service, and we'll go over the
+              scope and the price with you before anything is booked. We don't send
+              someone out to price a job on spec.
+            </p>
             {submitted ? (
               <div className="mt-6 rounded-xl border border-accent/30 bg-accent/10 p-6 text-sm">
                 <div className="flex items-center gap-2 font-semibold text-primary">
-                  <CheckCircle2 className="h-5 w-5 text-accent" /> One last step — hit send
+                  <CheckCircle2 className="h-5 w-5 text-accent" /> Request received
                 </div>
                 <p className="mt-2 text-muted-foreground">
-                  We've opened a draft email with your details already filled in.
-                  Your request doesn't reach us until you send it, so give it a
-                  quick look and press send.
+                  Thanks — your request is in, and we'll get back to you within one
+                  business day.
                 </p>
                 <p className="mt-3 text-muted-foreground">
-                  No draft appear? Your device may not have email set up. Reach us
-                  directly at{" "}
-                  <a className="font-semibold text-accent" href="mailto:safehaveninspectionsllc@gmail.com">
-                    safehaveninspectionsllc@gmail.com
-                  </a>{" "}
-                  or call{" "}
+                  Need an answer sooner? Call{" "}
                   <a className="font-semibold text-accent" href="tel:+15616326387">(561) 632-6387</a>{" "}
-                  — we answer directly, never an answering service.
+                  — you'll reach our local team directly, never an answering
+                  service.
                 </p>
               </div>
             ) : (
-              <form onSubmit={onSubmit} className="mt-6 grid gap-4">
+              <>
+                {error && (
+                  <div
+                    role="alert"
+                    className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4 text-sm"
+                  >
+                    <div className="flex items-center gap-2 font-semibold text-red-900">
+                      <AlertCircle className="h-5 w-5" /> We couldn't send that
+                    </div>
+                    <p className="mt-2 text-red-800">{error}</p>
+                  </div>
+                )}
+                <form onSubmit={onSubmit} className="mt-6 grid gap-4">
+                {/* Honeypot: hidden from people, tempting to bots. Web3Forms
+                    silently drops any submission where this is filled in. */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Full name" name="name" required />
                   <Field label="Phone" name="phone" type="tel" required />
@@ -119,6 +176,22 @@ function ContactPage() {
                   <Field label="Email" name="email" type="email" required />
                   <Field label="Property address" name="address" required />
                 </div>
+                <label className="block">
+                  <span className="text-sm font-medium text-primary">
+                    When works best?
+                  </span>
+                  <select
+                    name="timing"
+                    defaultValue="As soon as possible"
+                    className="mt-1.5 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                  >
+                    <option>As soon as possible</option>
+                    <option>Weekday mornings</option>
+                    <option>Weekday afternoons</option>
+                    <option>I'm flexible</option>
+                    <option>Just have a question for now</option>
+                  </select>
+                </label>
                 <label className="block">
                   <span className="text-sm font-medium text-primary">
                     What are you seeing or smelling?
@@ -133,9 +206,10 @@ function ContactPage() {
                 </label>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-all hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                  disabled={loading}
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-all hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
                 >
-                  <Send className="h-4 w-4" /> Send request
+                  <Send className="h-4 w-4" /> {loading ? "Sending…" : "Send request"}
                 </button>
                 <p className="text-sm text-muted-foreground">
                   Not sure if it's mold?{" "}
@@ -148,6 +222,7 @@ function ContactPage() {
                   We respond within one business day. For same-day scheduling, please call.
                 </p>
               </form>
+              </>
             )}
           </div>
 
@@ -160,10 +235,13 @@ function ContactPage() {
                 <Phone className="h-5 w-5" />
               </span>
               <span>
-                <span className="block text-xs uppercase tracking-wider text-white/80">Call now</span>
+                <span className="block text-xs uppercase tracking-wider text-white/80">
+                  Free phone consultation
+                </span>
                 <span className="block text-lg font-semibold sm:text-xl">(561) 632-6387</span>
                 <span className="mt-1 block text-xs font-normal text-white/85">
-                  You'll reach our local team directly — never an answering service.
+                  No charge to talk — we'll tell you if you even need an inspection.
+                  You'll reach our local team directly, never an answering service.
                 </span>
               </span>
             </a>

@@ -83,7 +83,7 @@ export function CityMoldPage({
   const sharedFaqs: Array<{ q: string; a: string }> = [
     {
       q: `How much does a mold inspection cost in ${city}?`,
-      a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation and we'll walk through what your specific property needs.`,
+      a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection and we'll walk through what your specific property needs.`,
     },
     {
       q: "How long does a mold inspection take?",
@@ -590,7 +590,7 @@ export function CityMoldPage({
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
-                Request a quote <ArrowRight className="h-4 w-4" />
+                Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"

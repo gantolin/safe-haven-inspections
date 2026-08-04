@@ -17,7 +17,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Can you do clearance if you didn't do the original inspection?",
-    a: "Yes. In fact, that's one of the situations where independent verification matters most. We'll ask for the original scope of work or protocol, walk the site, and design a clearance plan that matches. Every clearance job is different — we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request a free phone consultation.",
+    a: "Yes. In fact, that's one of the situations where independent verification matters most. We'll ask for the original scope of work or protocol, walk the site, and design a clearance plan that matches. Every clearance job is different — we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection.",
   },
 ];
 

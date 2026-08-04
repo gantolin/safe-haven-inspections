@@ -1,0 +1,60 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it — a half-published
+# site is worse than a slightly stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build (prerender to static HTML)
+        run: npm run build
+        env:
+          # Public by design — only permits posting to the one inbox it was
+          # issued for. Stored as a repository variable, not a secret.
+          VITE_WEB3FORMS_KEY: ${{ vars.VITE_WEB3FORMS_KEY }}
+
+      - name: Fail if the contact form key is missing
+        run: |
+          if ! grep -rq "api.web3forms.com" dist/client/assets; then
+            echo "::error::Contact form endpoint missing from the bundle - the form would silently fail."
+            exit 1
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -26,14 +26,14 @@ export const posts: Post[] = [
       "Step 2 — Have a licensed remediation company do the cleanup. With the report and protocol in hand, you hire a licensed mold remediation company of your choice to safely remove the mold and correct the moisture source. Safe Haven does not perform remediation and takes no referral fees, so you're free to choose any qualified remediator — and the protocol gives every bidder the same clear scope.",
       "Step 3 — Confirm success with post-remediation verification. After the remediation company finishes, the assessor returns for clearance testing (post-remediation verification) to confirm the work succeeded and that indoor spore levels and fungal ecology have returned to normal. This clearance visit is a separate service from the initial assessment. It's the step that gives you documented proof the problem is resolved before walls close up.",
       "Because Safe Haven only inspects, tests, and verifies — never remediates — you get an honest, lab-backed picture at both ends of the process, with no incentive to inflate the problem or steer you toward a particular cleanup crew.",
-      "Ready to start the process the right way? Request a free phone consultation or call (561) 632-6387 to schedule an independent assessment across Martin, Palm Beach, and Broward Counties.",
+      "Ready to start the process the right way? Request an inspection or call (561) 632-6387 to schedule an independent assessment across Martin, Palm Beach, and Broward Counties.",
     ],
     related: [
       { to: "/services/mold-assessment-report", label: "Mold Assessment & Written Protocol" },
       { to: "/services/post-remediation-verification", label: "Post-Remediation Verification" },
       { to: "/services/thermal-imaging", label: "Moisture Mapping & Thermal Imaging" },
       { to: "/services/mold-inspection", label: "Full Mold Inspection" },
-      { to: "/contact", label: "Request a free phone consultation" },
+      { to: "/contact", label: "Request an inspection" },
     ],
   },
   {
@@ -93,14 +93,14 @@ export const posts: Post[] = [
       "In Palm Beach County specifically, a few property types deserve extra attention before listing: older CBS (concrete block) homes with jalousie or single-pane windows, coastal properties east of the Intracoastal that have taken repeated storm exposure, condos where prior stack leaks are common, and homes that sat vacant for a snowbird season with the AC turned off. In each case, moisture history matters more than surface appearance — a freshly painted ceiling doesn't mean the leak that stained it was addressed correctly.",
       "Independence matters here more than most sellers realize. Safe Haven is a mold assessment company only — we do not perform, subcontract, or refer remediation. That means the report you hand your listing agent or a prospective buyer isn't a scope of work our own crew wrote to sell itself. It reads as a neutral document, which is exactly how buyer's agents, attorneys, and insurance adjusters expect a legitimate assessment to look.",
       "Cost is almost always dwarfed by the negotiation risk it removes. Buyers who see a clean, independent report from a licensed Florida mold assessor rarely re-open the topic. Buyers who see a report you commissioned from a company that also does the cleanup often treat it as suspect. Independent equals credible.",
-      "If you're getting ready to list anywhere from Jupiter and Palm Beach Gardens down through Boca Raton and Delray Beach, this is the right time to schedule. Call (561) 632-6387 or request a quote and we'll walk through what your specific property needs.",
+      "If you're getting ready to list anywhere from Jupiter and Palm Beach Gardens down through Boca Raton and Delray Beach, this is the right time to schedule. Call (561) 632-6387 or request an inspection and we'll walk through what your specific property needs.",
     ],
     related: [
       { to: "/services/real-estate-mold-inspection", label: "Real Estate Mold Inspection" },
       { to: "/mold-inspection-west-palm-beach", label: "Mold Inspection in West Palm Beach" },
       { to: "/mold-inspection-boca-raton", label: "Mold Inspection in Boca Raton" },
       { to: "/mold-inspection-delray-beach", label: "Mold Inspection in Delray Beach" },
-      { to: "/contact", label: "Request a quote" },
+      { to: "/contact", label: "Request an inspection" },
     ],
   },
   {
@@ -146,7 +146,7 @@ export const posts: Post[] = [
       { to: "/services/commercial-mold-inspection", label: "Commercial & Property Manager Inspection" },
       { to: "/services/mold-assessment-report", label: "Mold Assessment Report" },
       { to: "/services/air-quality-testing", label: "Air Quality Testing" },
-      { to: "/contact", label: "Request an independent inspection" },
+      { to: "/contact", label: "Request an inspection" },
     ],
   },
   {
@@ -241,7 +241,7 @@ export const posts: Post[] = [
       { to: "/about", label: "Meet Landon Heinrichs" },
       { to: "/services/mold-inspection", label: "Mold Inspection Overview" },
       { to: "/services", label: "All Services" },
-      { to: "/contact", label: "Request a quote" },
+      { to: "/contact", label: "Request an inspection" },
     ],
   },
 ];
