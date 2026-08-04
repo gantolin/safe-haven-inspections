@@ -28,7 +28,6 @@ import {
 import { GoogleReviews } from "@/components/google-reviews";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
 import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
-import landonPhoto from "@/assets/landon-heinrichs.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
 import stepVisual from "@/assets/step-visual.jpg.asset.json";
 import stepSampling from "@/assets/step-sampling.jpg.asset.json";
@@ -37,6 +36,12 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 
 const heroImg = heroDesktopAsset.url;
 const heroImgMobile = heroMobileAsset.url;
+
+// Dedicated head crop for the 56px trust-bar avatar. The full portrait on
+// /about is 1122x1402; handing that to the browser to scale down ~20x for this
+// slot renders soft, and at 56px the face is too small to read. This is a
+// 168px (3x) crop framed on the head.
+const landonAvatar = "/landon-avatar.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -203,9 +208,9 @@ function Index() {
           <div className="flex flex-col items-center gap-5 md:flex-row md:justify-between">
             <div className="flex items-center gap-4">
               <picture>
-                <source srcSet={webpVariant(landonPhoto.url)} type="image/webp" />
+                <source srcSet={webpVariant(landonAvatar)} type="image/webp" />
                 <img
-                  src={landonPhoto.url}
+                  src={landonAvatar}
                   alt="Landon Heinrichs, owner of Safe Haven Inspections"
                   width={56}
                   height={56}
