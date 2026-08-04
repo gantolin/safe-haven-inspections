@@ -29,11 +29,13 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-28 sm:px-6">
+      {/* Taller on phones than on desktop: the lockup stacks there, so it needs
+          room for two rows rather than one. */}
+      <div className="mx-auto flex h-[8rem] max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC — Home"
-          className="flex shrink-0 items-center gap-2 sm:gap-3"
+          className="flex shrink-0 flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3"
           onClick={() => setOpen(false)}
         >
           <span className="relative flex items-center">
@@ -46,19 +48,22 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-[clamp(3.375rem,15vw,4.5rem)] w-auto max-w-none mix-blend-multiply sm:h-20"
+                className="h-[clamp(4.5rem,19vw,5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:max-[1151px]:h-20"
                 width={988}
                 height={489}
                 decoding="async"
               />
             </picture>
           </span>
-          {/* Logo and wordmark scale with the viewport rather than stepping at
-            breakpoints — the header is a single line that has to clear the
-            hamburger, and fixed sizes either overflow at 360px or leave the
-            mark undersized at 430px. Tracking is tightened on phones for the
-            same reason and relaxes back to 0.14em from sm up. */}
-        <span className="font-[Bricolage_Grotesque] whitespace-nowrap text-[clamp(1rem,4.4vw,1.375rem)] font-semibold uppercase tracking-[0.07em] text-primary sm:text-xl sm:tracking-[0.14em]">
+          {/* On phones the lockup stacks, which is what lets it be this large:
+            inline, the logo and wordmark had to share one row with the
+            hamburger, capping both. Stacked, the binding constraint is header
+            height rather than width. Sizes scale with the viewport so the mark
+            grows on a 430px phone without overflowing a 320px one. */}
+        {/* The lg step down is not cosmetic: the desktop nav appears at 1024px
+            but the container only reaches its max-w-6xl cap at 1152px, so
+            1024–1151px is the one band where the wordmark and "Home" collide. */}
+        <span className="font-[Bricolage_Grotesque] whitespace-nowrap text-[clamp(1.375rem,6vw,1.625rem)] font-semibold uppercase leading-none tracking-[0.1em] text-primary sm:text-2xl sm:tracking-[0.14em] lg:max-[1151px]:text-xl">
             Inspections <span className="text-muted-foreground">LLC</span>
           </span>
         </Link>
@@ -68,7 +73,7 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100"
+              className="relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100 lg:max-[1151px]:px-2"
             >
               {l.label}
             </Link>
@@ -76,7 +81,7 @@ export function SiteNav() {
           <div className="ml-2 flex flex-col items-end">
             <a
               href="tel:+15616326387"
-              className="font-mono-data inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--accent)_88%,black)] hover:shadow-md hover:shadow-accent/40"
+              className="font-mono-data inline-flex items-center whitespace-nowrap rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--accent)_88%,black)] hover:shadow-md hover:shadow-accent/40 lg:max-[1151px]:px-3"
             >
               (561) 632-6387
             </a>

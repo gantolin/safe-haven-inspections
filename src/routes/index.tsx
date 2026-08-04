@@ -132,15 +132,16 @@ function Index() {
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="h-full w-full object-cover object-[center_78%] brightness-[1.12] saturate-[1.06] sm:object-[center_62%] sm:brightness-100 sm:saturate-100"
+            className="h-full w-full object-cover object-[center_78%] brightness-[1.12] saturate-[1.06] sm:object-[center_62%] sm:brightness-[1.06] sm:saturate-[1.04]"
           />
         </picture>
-        {/* Overall darkening to tame brightness. Suppressed below sm, where it
-            stacked with the scrim and buried the family. The breakpoint matches
-            the one that restores the long hero copy — the dense text is what
-            needs the extra backing. */}
+        {/* Flat darkening, now only in the 640–767px band. Below that the scrim
+            below already does the work; above it the directional gradient does.
+            Everywhere it applied, it was stacking on top of a gradient and
+            washing the photo out — on desktop the right-hand side sat at ~0.35
+            combined, which is what made the family look grey. */}
         <div
-          className="absolute inset-0 -z-10 hidden sm:block"
+          className="absolute inset-0 -z-10 hidden sm:block md:hidden"
           style={{ backgroundColor: "rgba(11,37,69,0.28)" }}
         />
         {/* Mobile: scrim is heavy behind the headline and falls away fast, so the
@@ -152,12 +153,15 @@ function Index() {
               "linear-gradient(to bottom, rgba(11,37,69,0.86) 0%, rgba(11,37,69,0.74) 34%, rgba(11,37,69,0.30) 66%, rgba(11,37,69,0.10) 100%)",
           }}
         />
-        {/* Desktop: directional gradient anchored behind the headline (left) */}
+        {/* Desktop: directional gradient anchored behind the headline (left).
+            Carries the text contrast alone now that the flat layer is gone, so
+            it starts heavier and falls away much further right — the family
+            sits in the 55–90% band and needs to be close to unscrimmed. */}
         <div
           className="absolute inset-0 -z-10 hidden md:block"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(11,37,69,0.72) 0%, rgba(11,37,69,0.55) 35%, rgba(11,37,69,0.22) 65%, rgba(11,37,69,0.10) 100%)",
+              "linear-gradient(to right, rgba(11,37,69,0.88) 0%, rgba(11,37,69,0.82) 30%, rgba(11,37,69,0.52) 52%, rgba(11,37,69,0.16) 78%, rgba(11,37,69,0.04) 100%)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24 md:min-h-[640px] md:py-28">
