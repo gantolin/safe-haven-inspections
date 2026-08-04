@@ -29,13 +29,11 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      {/* Taller on phones than on desktop: the lockup stacks there, so it needs
-          room for two rows rather than one. */}
-      <div className="mx-auto flex h-[8rem] max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6">
+      <div className="mx-auto flex h-28 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC — Home"
-          className="flex shrink-0 flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3"
+          className="flex shrink-0 items-center gap-2 sm:gap-3"
           onClick={() => setOpen(false)}
         >
           <span className="relative flex items-center">
@@ -48,22 +46,23 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-[clamp(4.5rem,19vw,5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:max-[1151px]:h-20"
+                className="h-[clamp(3.75rem,18.5vw,5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:max-[1151px]:h-20"
                 width={988}
                 height={489}
                 decoding="async"
               />
             </picture>
           </span>
-          {/* On phones the lockup stacks, which is what lets it be this large:
-            inline, the logo and wordmark had to share one row with the
-            hamburger, capping both. Stacked, the binding constraint is header
-            height rather than width. Sizes scale with the viewport so the mark
-            grows on a 430px phone without overflowing a 320px one. */}
-        {/* The lg step down is not cosmetic: the desktop nav appears at 1024px
-            but the container only reaches its max-w-6xl cap at 1152px, so
-            1024–1151px is the one band where the wordmark and "Home" collide. */}
-        <span className="font-[Bricolage_Grotesque] whitespace-nowrap text-[clamp(1.375rem,6vw,1.625rem)] font-semibold uppercase leading-none tracking-[0.1em] text-primary sm:text-2xl sm:tracking-[0.14em] lg:max-[1151px]:text-xl">
+          {/* Logo and wordmark share one row with the hamburger on phones, so
+              the two are sized against each other: the wordmark is deliberately
+              the smaller of the pair to leave the logo as much of the row as
+              possible. Both scale with the viewport so the pair stays on one
+              line from 320px up.
+
+              The lg step down is a separate problem: the desktop nav appears at
+              1024px but the container only reaches its max-w-6xl cap at 1152px,
+              so 1024–1151px is the one band where the wordmark hits "Home". */}
+          <span className="font-[Bricolage_Grotesque] whitespace-nowrap text-[clamp(0.8125rem,4.2vw,1.5rem)] font-semibold uppercase leading-none tracking-[0.07em] text-primary sm:text-2xl sm:tracking-[0.14em] lg:max-[1151px]:text-xl">
             Inspections <span className="text-muted-foreground">LLC</span>
           </span>
         </Link>
