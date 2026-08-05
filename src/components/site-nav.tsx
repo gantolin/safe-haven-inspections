@@ -163,9 +163,9 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-1 text-muted-foreground">
             <li>FL Mold Assessor · <span className="font-mono-data">MRSA3366</span></li>
             <li>FL Mold Remediator · <span className="font-mono-data">MRSR3536</span></li>
-            <li className="pt-1 text-xs text-muted-foreground/90">
-              IICRC WRT / AMRT / TCST · Certified Asbestos Inspector · NAERMC-certified
-            </li>
+            {/* The IICRC / NAERMC credentials now appear as real badge artwork
+                in the certifications section on the home page and on /about,
+                so the fine-print restatement here was redundant. */}
             <li className="text-xs text-muted-foreground/80">
               Inspection &amp; testing only — no remediation.
             </li>

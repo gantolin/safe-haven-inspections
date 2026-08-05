@@ -39,3 +39,11 @@ dist-ssr
 # Playwright
 test-results/
 playwright-report/
+
+# Client work product. This repo is PUBLIC — inspection reports carry the
+# property address, lab results, and interior photographs of someone's home,
+# and must never be committed. Badge artwork extracted from a report belongs
+# in public/ as a standalone asset; the report itself does not belong here.
+*.pdf
+/IMG_*.JPG
+/IMG_*.jpg

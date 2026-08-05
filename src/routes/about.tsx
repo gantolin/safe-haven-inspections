@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import landonPhoto from "@/assets/landon-heinrichs.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
+import { CertBadgeGrid } from "@/components/cert-badges";
 import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } from "@/lib/seo";
 
 const CANONICAL = absoluteUrl("/about");
@@ -330,28 +331,25 @@ function AboutPage() {
               Industry certifications
             </h3>
           </div>
-          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+          <CertBadgeGrid className="mt-6 grid-cols-2 sm:grid-cols-3" />
+
+          {/* The badge set does not cover every credential: the single IICRC
+              mark stands for WRT, AMRT and TCST together, and the asbestos
+              certification has no badge artwork at all. Kept as text so the
+              qualification is not lost by switching to imagery. */}
+          <ul className="mt-7 space-y-2 border-t border-border pt-5">
             {[
               "IICRC Certified — WRT (Water Damage Restoration Technician)",
               "IICRC Certified — AMRT (Applied Microbial Remediation Technician)",
               "IICRC Certified — TCST (Trauma & Crime Scene Technician)",
               "Certified Asbestos Inspector",
-              "Certified Mold Hygienist (NAERMC)",
-              "Certified Green Indoor Air Quality Specialist (NAERMC)",
-              "Certified Green Mold Remediation Contractor (NAERMC)",
-              "Certified Water Damage Mitigation Assessor (NAERMC)",
-              "Certified Remediation Technologist (NAERMC)",
             ].map((cert) => (
-              <li
-                key={cert}
-                className="flex items-start gap-2 rounded-lg border border-border bg-secondary/60 px-3 py-2 text-sm text-primary"
-              >
+              <li key={cert} className="flex items-start gap-2 text-sm text-primary">
                 <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                 <span>{cert}</span>
               </li>
             ))}
           </ul>
-
         </div>
 
         {/* Standards / how we work */}

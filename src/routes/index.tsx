@@ -25,6 +25,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { GoogleReviews } from "@/components/google-reviews";
+import { CertBadgeGrid } from "@/components/cert-badges";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
 import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
@@ -663,6 +664,44 @@ function Index() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Certifications — real badge artwork, replacing the credential
+          fine-print that used to live only in the footer. The badge canvases
+          are white, so they need this bg-card wrapper to blend rather than
+          reading as white tiles on the off-white page. */}
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="text-center">
+            <p className="text-sm font-medium uppercase tracking-wider text-accent">
+              Certified &amp; accredited
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
+              Credentials you can check.
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
+              Florida DBPR licensed as both a mold assessor and a mold remediator —
+              and certified by the IICRC and NAERMC.
+            </p>
+          </div>
+
+          <CertBadgeGrid
+            size="sm"
+            className="mt-9 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6"
+          />
+
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 border-t border-border pt-6 text-xs">
+            <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
+              FL Mold Assessor · <span className="font-mono-data">MRSA3366</span>
+            </span>
+            <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
+              FL Mold Remediator · <span className="font-mono-data">MRSR3536</span>
+            </span>
+            <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
+              Certified Asbestos Inspector
+            </span>
+          </div>
         </div>
       </section>
 
