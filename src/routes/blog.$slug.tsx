@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, BadgeCheck, Calendar, Clock, Phone } from "lucide-react";
 import { findPost, posts } from "@/data/posts";
+import { webpVariant } from "@/lib/images";
 import heroHomeAsset from "../assets/hero-home.jpg.asset.json";
 
 const heroImg = heroHomeAsset.url;
@@ -82,28 +83,82 @@ function PostPage() {
   const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
   return (
     <>
-      <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
-        <Link to="/blog" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
-          <ArrowLeft className="h-4 w-4" /> All posts
-        </Link>
-        <h1 className="mt-6 text-3xl font-semibold text-primary sm:text-4xl">{post.title}</h1>
-        <div className="mt-4 flex items-center gap-4 text-sm text-muted-foreground">
-          <span className="inline-flex items-center gap-1.5">
-            <BadgeCheck className="h-4 w-4 text-accent" />
-            By Landon Heinrichs, Licensed FL Mold Assessor
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Calendar className="h-4 w-4" />
-            {/* Local-midnight parse — see the note in blog.tsx. */}
-            {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <Clock className="h-4 w-4" /> {post.readMinutes} min read
-          </span>
+      {/* One header for both cases: with a photo it becomes a scrimmed hero in
+          white, without one it falls back to the plain secondary band. Keeping
+          a single code path avoids duplicating the title and meta markup. */}
+      <section
+        className={`relative isolate overflow-hidden border-b border-border ${
+          post.image ? "" : "bg-secondary"
+        }`}
+      >
+        {post.image && (
+          <>
+            <picture className="absolute inset-0 -z-10 h-full w-full">
+              <source media="(min-width: 640px)" srcSet={webpVariant(post.image.src)} type="image/webp" />
+              <source media="(min-width: 640px)" srcSet={post.image.src} />
+              <source srcSet={webpVariant(post.image.mobileSrc)} type="image/webp" />
+              <img
+                src={post.image.mobileSrc}
+                alt={post.image.alt}
+                width={1920}
+                height={780}
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-cover object-[center_45%]"
+              />
+            </picture>
+            <div
+              className="absolute inset-0 -z-10"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(11,37,69,0.90) 0%, rgba(11,37,69,0.82) 40%, rgba(11,37,69,0.62) 72%, rgba(11,37,69,0.48) 100%)",
+              }}
+            />
+          </>
+        )}
+        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
+          <Link
+            to="/blog"
+            className={`inline-flex items-center gap-1.5 text-sm font-medium ${
+              post.image ? "text-white/85 hover:text-white" : "text-accent"
+            }`}
+          >
+            <ArrowLeft className="h-4 w-4" /> All posts
+          </Link>
+          <h1
+            className={`mt-6 text-3xl font-semibold sm:text-4xl ${
+              post.image
+                ? "text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.5)]"
+                : "text-primary"
+            }`}
+          >
+            {post.title}
+          </h1>
+          <div
+            className={`mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm ${
+              post.image ? "text-white/85" : "text-muted-foreground"
+            }`}
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <BadgeCheck className={`h-4 w-4 ${post.image ? "text-white" : "text-accent"}`} />
+              By Landon Heinrichs, Licensed FL Mold Assessor
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" />
+              {/* Local-midnight parse — see the note in blog.index.tsx. */}
+              {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Clock className="h-4 w-4" /> {post.readMinutes} min read
+            </span>
+          </div>
         </div>
+      </section>
+
+      <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
         {/* space-y is not used here: headings need a larger gap above than
             between paragraphs, which a single uniform rhythm cannot express. */}
-        <div className="prose mt-8 max-w-none text-[15px] leading-relaxed text-foreground">
+        <div className="prose max-w-none text-[15px] leading-relaxed text-foreground">
           {post.body.map((block, i) =>
             typeof block === "string" ? (
               <p key={i} className="mt-5 first:mt-0">

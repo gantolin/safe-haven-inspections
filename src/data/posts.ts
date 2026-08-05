@@ -14,6 +14,13 @@ export interface Post {
   description: string;
   date: string;
   readMinutes: number;
+  /**
+   * Optional header photo. Both files live in /public with .webp siblings;
+   * the mobile crop exists because the header band is wide and short on
+   * desktop but nearly square on a phone. Posts without one fall back to the
+   * plain secondary-coloured header.
+   */
+  image?: { src: string; mobileSrc: string; alt: string };
   body: PostBlock[];
   related?: { to: string; label: string }[];
 }
@@ -33,6 +40,12 @@ export const posts: Post[] = [
       "Lost power after a storm? Five practical ways to stop mold before it starts — air flow, keeping the house clean, humidity, water damage, and what to do before you evacuate.",
     date: "2026-08-04",
     readMinutes: 5,
+    // Unsplash AAHL8DtvBcg by Dorin Vancea, standard Unsplash License.
+    image: {
+      src: "/post-hurricane.jpg",
+      mobileSrc: "/post-hurricane-mobile.jpg",
+      alt: "Dark storm clouds gathering over a lit house at dusk.",
+    },
     body: [
       { heading: "Air flow" },
       "One thing that mold spores need to begin to grow is time. If there is humid stagnant air for a long enough period of time, mold growth is inevitable. If you've lost power and the indoor humidity begins to reach levels above 60% relative humidity, cracking windows to allow a breeze to flow through the house can be enough to prevent any mold growth. Also, if you happen to have a battery-operated fan, now would be a clever time to use it — especially in areas where air flow is limited.",

@@ -34,10 +34,12 @@ function BlogIndex() {
   return (
     <>
       <section className="relative isolate overflow-hidden border-b border-border">
-        {/* Photo: Unsplash AAHL8DtvBcg by Dorin Vancea, standard Unsplash
-            License (commercial use, attribution not required). Desktop and
+        {/* Photo: Unsplash wwaPIZfYtVY, "a palm tree lined driveway leading to
+            a house" by Scott Wyden Kivowitz (Florida), standard Unsplash
+            License — commercial use, attribution not required. Desktop and
             mobile crops differ because the band is wide and short on desktop
-            but nearly square on a phone. */}
+            but nearly square on a phone; both are weighted to the bottom of
+            the portrait source, where the house and drive actually are. */}
         <picture className="absolute inset-0 -z-10 h-full w-full">
           <source media="(min-width: 640px)" srcSet={webpVariant(HERO)} type="image/webp" />
           <source media="(min-width: 640px)" srcSet={HERO} />
