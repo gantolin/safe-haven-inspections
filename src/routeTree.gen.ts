@@ -247,14 +247,14 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
@@ -662,6 +662,7 @@ export interface RootRouteChildren {
   RealtorsRoute: typeof RealtorsRoute
   ServiceAreasRoute: typeof ServiceAreasRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ServicesAirQualityTestingRoute: typeof ServicesAirQualityTestingRoute
   ServicesCommercialMoldInspectionRoute: typeof ServicesCommercialMoldInspectionRoute
   ServicesHumidityTestingRoute: typeof ServicesHumidityTestingRoute
@@ -673,6 +674,7 @@ export interface RootRouteChildren {
   ServicesSurfaceSamplingRoute: typeof ServicesSurfaceSamplingRoute
   ServicesThermalImagingRoute: typeof ServicesThermalImagingRoute
   ServicesWaterDamageInspectionRoute: typeof ServicesWaterDamageInspectionRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -918,17 +920,17 @@ declare module '@tanstack/react-router' {
     }
     '/blog/': {
       id: '/blog/'
-      path: '/'
+      path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
       id: '/blog/$slug'
-      path: '/$slug'
+      path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/': {
       id: '/services/'
@@ -1052,6 +1054,7 @@ const rootRouteChildren: RootRouteChildren = {
   RealtorsRoute: RealtorsRoute,
   ServiceAreasRoute: ServiceAreasRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ServicesAirQualityTestingRoute: ServicesAirQualityTestingRoute,
   ServicesCommercialMoldInspectionRoute: ServicesCommercialMoldInspectionRoute,
   ServicesHumidityTestingRoute: ServicesHumidityTestingRoute,
@@ -1064,6 +1067,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesSurfaceSamplingRoute: ServicesSurfaceSamplingRoute,
   ServicesThermalImagingRoute: ServicesThermalImagingRoute,
   ServicesWaterDamageInspectionRoute: ServicesWaterDamageInspectionRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
