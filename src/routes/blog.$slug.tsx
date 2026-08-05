@@ -58,7 +58,9 @@ export const Route = createFileRoute("/blog/$slug")({
                 url: heroImg,
               },
             },
-            articleBody: post.body.join(" "),
+            articleBody: post.body
+              .map((b) => (typeof b === "string" ? b : b.heading))
+              .join(" "),
           }),
         },
       ],
@@ -99,10 +101,23 @@ function PostPage() {
             <Clock className="h-4 w-4" /> {post.readMinutes} min read
           </span>
         </div>
-        <div className="prose mt-8 max-w-none space-y-5 text-[15px] leading-relaxed text-foreground">
-          {post.body.map((p: string, i: number) => (
-            <p key={i}>{p}</p>
-          ))}
+        {/* space-y is not used here: headings need a larger gap above than
+            between paragraphs, which a single uniform rhythm cannot express. */}
+        <div className="prose mt-8 max-w-none text-[15px] leading-relaxed text-foreground">
+          {post.body.map((block, i) =>
+            typeof block === "string" ? (
+              <p key={i} className="mt-5 first:mt-0">
+                {block}
+              </p>
+            ) : (
+              <h2
+                key={i}
+                className="mt-10 text-xl font-semibold text-primary first:mt-0 sm:text-2xl"
+              >
+                {block.heading}
+              </h2>
+            ),
+          )}
         </div>
 
         {post.related && post.related.length > 0 && (

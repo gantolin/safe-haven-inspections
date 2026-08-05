@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts } from "@/data/posts";
+import { webpVariant } from "@/lib/images";
+
+const HERO = "/blog-hero.jpg";
+const HERO_MOBILE = "/blog-hero-mobile.jpg";
 
 /*
  * This is blog.index.tsx, not blog.tsx, and the path is "/blog/" rather than
@@ -29,13 +33,41 @@ export const Route = createFileRoute("/blog/")({
 function BlogIndex() {
   return (
     <>
-      <section className="border-b border-border bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-          <p className="text-sm font-medium uppercase tracking-wider text-accent">Blog</p>
-          <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
+      <section className="relative isolate overflow-hidden border-b border-border">
+        {/* Photo: Unsplash AAHL8DtvBcg by Dorin Vancea, standard Unsplash
+            License (commercial use, attribution not required). Desktop and
+            mobile crops differ because the band is wide and short on desktop
+            but nearly square on a phone. */}
+        <picture className="absolute inset-0 -z-10 h-full w-full">
+          <source media="(min-width: 640px)" srcSet={webpVariant(HERO)} type="image/webp" />
+          <source media="(min-width: 640px)" srcSet={HERO} />
+          <source srcSet={webpVariant(HERO_MOBILE)} type="image/webp" />
+          <img
+            src={HERO_MOBILE}
+            alt="Dark storm clouds gathering over a lit house at dusk."
+            width={1920}
+            height={780}
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover object-[center_40%]"
+          />
+        </picture>
+        {/* Left-anchored scrim, same treatment as the home hero, so the
+            headline keeps contrast while the sky stays legible on the right. */}
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(11,37,69,0.90) 0%, rgba(11,37,69,0.80) 38%, rgba(11,37,69,0.55) 68%, rgba(11,37,69,0.40) 100%)",
+          }}
+        />
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+          <p className="text-sm font-medium uppercase tracking-wider text-white/80">Blog</p>
+          <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.5)] sm:text-5xl">
             Straight talk about mold in South Florida.
           </h1>
-          <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
+          <span aria-hidden className="spectrum-rule mt-5" />
+          <p className="mt-5 max-w-2xl text-base text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)] sm:text-lg">
             Practical, honest guides from a licensed, independent mold assessment
             team — written for homeowners, not for contractors.
           </p>
