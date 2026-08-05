@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MoldInspectionRouteImport } from './routes/mold-inspection'
 import { Route as MoldInspectionBocaRatonRouteImport } from './routes/mold-inspection-boca-raton'
@@ -44,6 +43,7 @@ import { Route as MoldInspectionWestonRouteImport } from './routes/mold-inspecti
 import { Route as RealtorsRouteImport } from './routes/realtors'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesAirQualityTestingRouteImport } from './routes/services.air-quality-testing'
@@ -66,11 +66,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -251,6 +246,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -326,7 +326,6 @@ const ServicesWaterDamageInspectionRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
@@ -371,12 +370,12 @@ export interface FileRoutesByFullPath {
   '/services/surface-sampling': typeof ServicesSurfaceSamplingRoute
   '/services/thermal-imaging': typeof ServicesThermalImagingRoute
   '/services/water-damage-inspection': typeof ServicesWaterDamageInspectionRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
@@ -421,13 +420,13 @@ export interface FileRoutesByTo {
   '/services/surface-sampling': typeof ServicesSurfaceSamplingRoute
   '/services/thermal-imaging': typeof ServicesThermalImagingRoute
   '/services/water-damage-inspection': typeof ServicesWaterDamageInspectionRoute
+  '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
@@ -472,6 +471,7 @@ export interface FileRoutesById {
   '/services/surface-sampling': typeof ServicesSurfaceSamplingRoute
   '/services/thermal-imaging': typeof ServicesThermalImagingRoute
   '/services/water-damage-inspection': typeof ServicesWaterDamageInspectionRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -479,7 +479,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/mold-inspection'
     | '/mold-inspection-boca-raton'
@@ -524,12 +523,12 @@ export interface FileRouteTypes {
     | '/services/surface-sampling'
     | '/services/thermal-imaging'
     | '/services/water-damage-inspection'
+    | '/blog/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/mold-inspection'
     | '/mold-inspection-boca-raton'
@@ -574,12 +573,12 @@ export interface FileRouteTypes {
     | '/services/surface-sampling'
     | '/services/thermal-imaging'
     | '/services/water-damage-inspection'
+    | '/blog'
     | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/mold-inspection'
     | '/mold-inspection-boca-raton'
@@ -624,13 +623,13 @@ export interface FileRouteTypes {
     | '/services/surface-sampling'
     | '/services/thermal-imaging'
     | '/services/water-damage-inspection'
+    | '/blog/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   MoldInspectionRoute: typeof MoldInspectionRoute
   MoldInspectionBocaRatonRoute: typeof MoldInspectionBocaRatonRoute
@@ -691,13 +690,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -924,6 +916,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
@@ -1018,20 +1017,9 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   MoldInspectionRoute: MoldInspectionRoute,
   MoldInspectionBocaRatonRoute: MoldInspectionBocaRatonRoute,

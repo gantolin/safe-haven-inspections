@@ -2,7 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts } from "@/data/posts";
 
-export const Route = createFileRoute("/blog")({
+/*
+ * This is blog.index.tsx, not blog.tsx, and the path is "/blog/" rather than
+ * "/blog", on purpose.
+ *
+ * As blog.tsx it declared createFileRoute("/blog"), which makes it a *layout*
+ * route wrapping /blog/$slug. It renders the listing and no <Outlet />, so the
+ * article route never got a chance to render and every post URL showed this
+ * listing instead of the post. Declaring it as an index route makes the
+ * listing and the article siblings — the same shape services.index.tsx already
+ * uses alongside services.<name>.tsx.
+ */
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Mold Inspection Blog — South Florida | Safe Haven" },
@@ -42,7 +53,10 @@ function BlogIndex() {
             >
               <div className="flex items-center gap-3 text-xs text-muted-foreground">
                 <span className="inline-flex items-center gap-1">
-                  <Calendar className="h-3.5 w-3.5" /> {new Date(p.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                  {/* "T00:00:00" forces local-midnight parsing. A bare
+                      "YYYY-MM-DD" is parsed as UTC, which then renders a day
+                      early everywhere west of Greenwich — including Florida. */}
+                  <Calendar className="h-3.5 w-3.5" /> {new Date(`${p.date}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                 </span>
                 <span className="inline-flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" /> {p.readMinutes} min read

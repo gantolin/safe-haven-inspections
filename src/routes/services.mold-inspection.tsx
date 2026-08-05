@@ -186,17 +186,6 @@ function MoldInspectionPage() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm text-muted-foreground">
-            Want the full walk-through of how mold is properly handled in Florida?{" "}
-            <Link
-              to="/blog/$slug"
-              params={{ slug: "mold-removal-process-florida" }}
-              className="font-semibold text-accent hover:underline"
-            >
-              Read the full process guide
-            </Link>
-            .
-          </p>
         </div>
       </section>
 

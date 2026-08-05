@@ -92,7 +92,8 @@ function PostPage() {
           </span>
           <span className="inline-flex items-center gap-1.5">
             <Calendar className="h-4 w-4" />
-            {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+            {/* Local-midnight parse — see the note in blog.tsx. */}
+            {new Date(`${post.date}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
           </span>
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-4 w-4" /> {post.readMinutes} min read
