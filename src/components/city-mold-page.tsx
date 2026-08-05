@@ -18,7 +18,15 @@ import {
   Check,
   X,
 } from "lucide-react";
-import { faqSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import {
+  faqSchema,
+  breadcrumbSchema,
+  serviceSchema,
+  cityBusinessSchema,
+} from "@/lib/seo";
+import { getCityProfile, citySlug } from "@/data/city-profiles";
+import { cities } from "@/data/cities";
+import { webpVariant } from "@/lib/images";
 
 export interface CityMoldPageProps {
   city: string;
@@ -139,25 +147,106 @@ export function CityMoldPage({
     },
   ];
 
-  // City-specific questions win. They also *displace* shared ones rather than
-  // simply being appended: the page keeps a fixed FAQ count, so every local
-  // question added removes one templated answer that would otherwise be
-  // byte-identical across all 27 city pages.
-  const MAX_FAQS = 15;
-  const locals = localFaqs ?? [];
+  // Route files are named /mold-inspection-<city-slug>, so the path — and the
+  // local-SEO profile — are both derivable from the city name rather than
+  // threaded through every one of the 27 pages.
+  const slug = citySlug(city);
+  const profile = getCityProfile(slug);
+
+  // Routes pass county as "Martin County"; cities.ts stores "Martin".
+  const countyKey = county.replace(/\s*County\s*$/i, "").trim();
+
+  // Peers = same county, excluding this city and the 3 already linked above,
+  // so the cluster block adds links rather than repeating them.
+  const alreadyLinked = new Set(
+    otherCities.map((c) => c.to.replace("/mold-inspection-", ""))
+  );
+  const countyPeers = cities.filter(
+    (c) => c.county === countyKey && c.slug !== slug && !alreadyLinked.has(c.slug)
+  );
+
+  /**
+   * FAQs generated from the city profile. These are phrased as natural-language
+   * questions ("Which X neighborhoods do you serve?") because that's the form
+   * voice search and featured-snippet extraction actually reward — and every
+   * answer is city-unique, which is the entire point.
+   */
+  const profileFaqs: Array<{ q: string; a: string }> = profile
+    ? [
+        {
+          q: `Which ${city} neighborhoods do you serve?`,
+          a: `We inspect throughout ${city}, including ${profile.neighborhoods
+            .map((n) => n.name)
+            .join(", ")}. Our ${city} service area covers ZIP codes ${profile.zips.join(
+            ", "
+          )} and the surrounding ${county} area. If you're near ${profile.landmarks[0]} or anywhere else in ${city}, we cover you — call (561) 632-6387 to confirm.`,
+        },
+        {
+          q: `What causes mold in ${city} homes?`,
+          a: `In ${city} specifically, the recurring causes we document are: ${profile.commonIssues
+            .map((c) => c.charAt(0).toLowerCase() + c.slice(1))
+            .join("; ")}. ${profile.seasonal}`,
+        },
+        {
+          q: `When is the worst time of year for mold in ${city}?`,
+          a: `${profile.seasonal} That's why we recommend ${city} homeowners schedule an assessment either heading into the June-through-October wet season or immediately after it, rather than waiting for a visible problem.`,
+        },
+        {
+          q: `How old are most ${city} homes, and does that matter for mold?`,
+          a: `${city}'s housing stock is predominantly ${profile.housingEra}, and yes — build era is one of the strongest predictors of how a home will fail. ${profile.stats[1]?.note ?? ""} We scope the inspection to the era of your specific property rather than applying a generic checklist.`,
+        },
+      ]
+    : [];
+
+  // City-specific questions win, and they *displace* shared ones rather than
+  // being appended: the page keeps a fixed FAQ count, so every local question
+  // added removes one templated answer that would otherwise be byte-identical
+  // across all 27 city pages.
+  //
+  // The cap is deliberately LOW. With 6-7 genuinely local questions per page,
+  // a cap of 12 means roughly half the FAQ block is city-unique. Raising the
+  // cap does not add value — it just re-admits the duplicate answers this
+  // whole design exists to push out. The shared answers still have a home:
+  // they live in full on /services/mold-inspection, which is the page that
+  // should rank for non-geographic queries like "how much does mold
+  // inspection cost" anyway.
+  const MAX_FAQS = 12;
+
+  // Rotate WHICH shared FAQs each city shows, keyed deterministically off the
+  // slug. Sitewide the full set stays covered, but no two city pages present
+  // the same templated subset — which is what the duplicate-content check
+  // actually measures.
+  const rotation = Array.from(slug).reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  const rotatedShared = sharedFaqs.map(
+    (_, i) => sharedFaqs[(i + rotation) % sharedFaqs.length]
+  );
+
+  const locals = [...(localFaqs ?? []), ...profileFaqs];
   const localQuestions = new Set(locals.map((f) => f.q));
   const faqItems = [
     ...locals,
-    ...sharedFaqs
+    ...rotatedShared
       .filter((f) => !localQuestions.has(f.q))
       .slice(0, Math.max(0, MAX_FAQS - locals.length)),
   ];
 
   const faqLd = faqSchema(faqItems);
 
-  // Route files are named /mold-inspection-<city-slug>, so the path is derivable
-  // from the city name rather than threaded through every one of the 27 pages.
-  const cityPath = `/mold-inspection-${city.toLowerCase().replace(/\s+/g, "-")}`;
+  const cityPath = `/mold-inspection-${slug}`;
+
+  // Per-city LocalBusiness node with an explicit geo centre and service radius.
+  // For a service-area business with no street address, this is the strongest
+  // "we actually operate here" signal available.
+  const cityBusinessLd = profile
+    ? cityBusinessSchema({
+        city,
+        county,
+        path: cityPath,
+        geo: profile.geo,
+        zips: profile.zips,
+        description: intro,
+      })
+    : null;
 
   const breadcrumbLd = breadcrumbSchema([
     { name: "Home", path: "/" },
@@ -396,6 +485,151 @@ export function CityMoldPage({
         </div>
       </section>
 
+      {/* ---- CITY-PROFILE SECTIONS (unique per city; skipped if no profile) ---- */}
+      {profile ? (
+        <>
+          {/* NEIGHBOURHOODS — carries "mold inspection near {neighborhood}" intent */}
+          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+            <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
+              Mold inspection near {city} neighborhoods
+            </h2>
+            <p className="mt-3 max-w-3xl text-muted-foreground">
+              We inspect throughout {city} and the surrounding {county} area.
+              Each neighborhood below carries its own moisture profile — build
+              era, elevation, and exposure all change what we look for first.
+            </p>
+            <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+              {profile.neighborhoods.map((n) => (
+                <div
+                  key={n.name}
+                  className="rounded-xl border border-border bg-card p-5"
+                >
+                  <h3 className="flex items-start gap-2 text-base font-semibold text-primary">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    {n.name}
+                  </h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">
+                    Mold testing near {n.name} — {n.note}.
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 max-w-3xl text-sm text-muted-foreground">
+              Service area: {city}, FL and surrounding {county} —{" "}
+              <span className="font-mono-data">ZIP {profile.zips.join(", ")}</span>.
+              Near {profile.landmarks.slice(0, 3).join(", ")}? That's well inside
+              our coverage.{" "}
+              <a href="tel:+15616326387" className="font-semibold text-accent hover:underline">
+                Call (561) 632-6387
+              </a>{" "}
+              to confirm your address.
+            </p>
+          </section>
+
+          {/* LOCAL STATS — featured-snippet bait, structured as a scannable grid */}
+          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+            <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
+              {city} housing &amp; climate profile
+            </h2>
+            <p className="mt-3 max-w-3xl text-muted-foreground">
+              Why mold inspection matters in {city}: the local building code,
+              housing stock, and water table shape how homes here actually fail.
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {profile.stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-border bg-card p-5"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    {s.label}
+                  </p>
+                  <p className="mt-1 font-mono-data text-2xl font-semibold text-primary">
+                    {s.value}
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.note}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* COMMON ISSUES + IMAGE */}
+          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+            <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+              <div>
+                <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
+                  Common home issues in {city}
+                </h2>
+                <p className="mt-3 text-muted-foreground">
+                  Across {profile.housingEra} housing stock, these are the
+                  moisture failures our {city} inspections document most often:
+                </p>
+                <ul className="mt-5 space-y-3">
+                  {profile.commonIssues.map((issue) => (
+                    <li key={issue} className="flex gap-3 text-sm text-muted-foreground">
+                      <Droplets className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      <span>{issue}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+                {/* step-visual.jpg is used because it HAS a .webp sibling.
+                    service-*.jpg files do not — pointing a <source> at a
+                    missing .webp renders a broken image, it does not fall back. */}
+                <picture>
+                  <source srcSet={webpVariant("/step-visual.jpg")} type="image/webp" />
+                  <img
+                    src="/step-visual.jpg"
+                    alt={`Licensed mold inspector performing a mold inspection in ${city}, FL — moisture reading on interior wall`}
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                </picture>
+                <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+                  Moisture mapping during a {city} mold inspection — readings are
+                  recorded in your report, not just described.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          {/* SEASONAL + MARKET */}
+          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-card p-6 sm:p-7">
+                <div className="flex items-center gap-2">
+                  <Thermometer className="h-5 w-5 text-accent" />
+                  <h2 className="text-xl font-semibold text-primary">
+                    Seasonal mold risks in {city}
+                  </h2>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{profile.seasonal}</p>
+              </div>
+              <div className="rounded-2xl border border-border bg-card p-6 sm:p-7">
+                <div className="flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-accent" />
+                  <h2 className="text-xl font-semibold text-primary">
+                    Buying or selling in {city}
+                  </h2>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{profile.market}</p>
+                <Link
+                  to="/services/real-estate-mold-inspection"
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
+                >
+                  Real estate mold inspection in {city}{" "}
+                  <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : null}
+
       {/* INDEPENDENCE COMPARISON */}
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
@@ -532,6 +766,49 @@ export function CityMoldPage({
             </Link>
           ))}
         </div>
+
+        {/*
+          COUNTY TOPIC CLUSTER.
+          The hand-picked `otherCities` above are the 3 closest neighbours. This
+          block completes the silo by linking every remaining city in the SAME
+          county, with the target keyword as the anchor text. That gives each
+          county a densely interlinked cluster pointing back up to
+          /service-areas, instead of 27 near-orphan pages with 3 links each.
+
+          Plain <a> rather than <Link>: the route tree types `to` as a literal
+          union, and these hrefs are computed. Every page is prerendered static
+          HTML, so there is no routing benefit being given up here.
+        */}
+        {countyPeers.length > 0 ? (
+          <>
+            <h3 className="mt-10 text-lg font-semibold text-primary">
+              More mold inspection service areas in {county}
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {countyPeers.map((c) => (
+                <a
+                  key={c.slug}
+                  href={`/mold-inspection-${c.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary transition-colors hover:border-accent hover:text-accent"
+                >
+                  <MapPin className="h-3 w-3 text-accent" />
+                  {c.name} mold inspection
+                </a>
+              ))}
+            </div>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Browse every city we cover on the{" "}
+              <Link to="/service-areas" className="font-semibold text-accent hover:underline">
+                South Florida mold inspection service areas
+              </Link>{" "}
+              page, or read the{" "}
+              <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+                complete guide to mold inspection
+              </Link>
+              .
+            </p>
+          </>
+        ) : null}
       </section>
 
       {/* CLOSING CTA */}
@@ -570,6 +847,13 @@ export function CityMoldPage({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
         />
+        {cityBusinessLd ? (
+          <script
+            type="application/ld+json"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(cityBusinessLd) }}
+          />
+        ) : null}
       </section>
 
       <section className="mx-auto my-16 max-w-6xl px-4 sm:px-6">

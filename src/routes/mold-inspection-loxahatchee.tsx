@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-loxahatchee")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-loxahatchee",
-      title: "Mold Inspection Loxahatchee FL | Safe Haven",
+      title: "Mold Inspection Loxahatchee FL | Licensed Mold Assessor",
       description:
         "Licensed, independent mold inspection and testing in Loxahatchee and The Acreage. Third-party lab results for well-water and post-storm moisture concerns.",
     }),

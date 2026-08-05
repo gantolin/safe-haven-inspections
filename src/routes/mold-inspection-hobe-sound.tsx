@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-hobe-sound")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-hobe-sound",
-      title: "Mold Inspection Hobe Sound FL | Safe Haven",
+      title: "Mold Inspection Hobe Sound FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Hobe Sound, FL. Lab-backed reports for older cottages, wooded estates, and well-water properties.",
     }),

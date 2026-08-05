@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-weston")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-weston",
-      title: "Mold Inspection Weston FL | Safe Haven",
+      title: "Mold Inspection Weston FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Weston, FL. Lab-backed reports for upscale master-planned homes, HOA properties, and finished interiors.",
     }),

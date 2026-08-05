@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-port-salerno")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-port-salerno",
-      title: "Mold Inspection Port Salerno FL | Safe Haven",
+      title: "Mold Inspection Port Salerno FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Port Salerno, FL. Lab-backed reports for waterfront homes, older CBS builds, and manufactured housing.",
     }),

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-stuart")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-stuart",
-      title: "Mold Inspection Stuart FL | Safe Haven",
+      title: "Mold Inspection Stuart FL | Licensed Mold Assessor",
       description:
         "Independent, state-licensed mold inspection and testing in Stuart, FL. Lab-backed reports for historic downtown, waterfront homes, and flood-zone properties.",
     }),

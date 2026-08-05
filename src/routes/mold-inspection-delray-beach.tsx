@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-delray-beach")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-delray-beach",
-      title: "Mold Inspection Delray Beach FL | Safe Haven",
+      title: "Mold Inspection Delray Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Delray Beach, FL. Lab-backed reports for historic downtown bungalows, beach rentals, and older homes with additions.",
     }),

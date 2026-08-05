@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-fort-lauderdale")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-fort-lauderdale",
-      title: "Mold Inspection Fort Lauderdale FL | Safe Haven",
+      title: "Mold Inspection Fort Lauderdale FL | Licensed Mold Assessor",
       description:
         "Independent, state-licensed mold inspection in Fort Lauderdale, FL. Lab-backed reports for canal-front homes, high-rise condos, and mid-century houses.",
     }),

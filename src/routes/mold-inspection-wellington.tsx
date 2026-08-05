@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-wellington")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-wellington",
-      title: "Mold Inspection Wellington FL | Safe Haven",
+      title: "Mold Inspection Wellington FL | Licensed Mold Assessor",
       description:
         "Independent, state-licensed mold inspection and testing in Wellington, FL. Lab-backed reports for equestrian estates, family homes, and HOA properties.",
     }),

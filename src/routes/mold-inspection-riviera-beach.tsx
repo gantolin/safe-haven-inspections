@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-riviera-beach")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-riviera-beach",
-      title: "Mold Inspection Riviera Beach FL | Safe Haven",
+      title: "Mold Inspection Riviera Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Riviera Beach, FL. Lab-backed reports for Singer Island condos, older inland homes, and high-water-table properties.",
     }),

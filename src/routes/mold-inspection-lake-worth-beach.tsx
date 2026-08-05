@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-lake-worth-beach")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-lake-worth-beach",
-      title: "Mold Inspection Lake Worth Beach FL | Safe Haven",
+      title: "Mold Inspection Lake Worth Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Lake Worth Beach, FL. Lab-backed reports for historic cottages, dense-lot older homes, and downtown rentals.",
     }),

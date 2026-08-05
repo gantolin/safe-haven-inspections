@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-coral-springs")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-coral-springs",
-      title: "Mold Inspection Coral Springs FL | Safe Haven",
+      title: "Mold Inspection Coral Springs FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Coral Springs, FL. Lab-backed reports for 1980s-90s subdivisions, tile-roof homes, and screened-lanai properties.",
     }),

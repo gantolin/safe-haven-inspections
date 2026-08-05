@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-greenacres")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-greenacres",
-      title: "Mold Inspection Greenacres FL | Safe Haven",
+      title: "Mold Inspection Greenacres FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Greenacres, FL. Lab-backed reports for 1970s-80s CBS single-family homes and working-family neighborhoods.",
     }),

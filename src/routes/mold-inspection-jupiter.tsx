@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-jupiter")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-jupiter",
-      title: "Mold Inspection Jupiter FL | Safe Haven",
+      title: "Mold Inspection Jupiter FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Jupiter, FL. Lab-backed reports for coastal and Loxahatchee River homes and storm-exposed properties.",
     }),

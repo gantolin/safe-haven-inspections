@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-pembroke-pines")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-pembroke-pines",
-      title: "Mold Inspection Pembroke Pines FL | Safe Haven",
+      title: "Mold Inspection Pembroke Pines FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Pembroke Pines, FL. Lab-backed reports for master-planned communities, newer construction, and HOA properties.",
     }),

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-deerfield-beach")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-deerfield-beach",
-      title: "Mold Inspection Deerfield Beach FL | Safe Haven",
+      title: "Mold Inspection Deerfield Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Deerfield Beach, FL. Lab-backed reports for coastal condos, 55+ communities, and seasonally occupied properties.",
     }),

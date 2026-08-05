@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-pompano-beach")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-pompano-beach",
-      title: "Mold Inspection Pompano Beach FL | Safe Haven",
+      title: "Mold Inspection Pompano Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Pompano Beach, FL. Lab-backed reports for beachfront condos, older inland homes, and flat-roof properties.",
     }),

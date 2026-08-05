@@ -6,7 +6,7 @@ export const Route = createFileRoute("/mold-inspection-davie")({
   head: () =>
     pageMeta({
       path: "/mold-inspection-davie",
-      title: "Mold Inspection Davie FL | Safe Haven",
+      title: "Mold Inspection Davie FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Davie, FL. Lab-backed reports for equestrian estates, well-water properties, and older ranch homes.",
     }),
