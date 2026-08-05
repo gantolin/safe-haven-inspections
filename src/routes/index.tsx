@@ -5,7 +5,6 @@ import {
   Search,
   FlaskConical,
   FileText,
-  Microscope,
   Thermometer,
   Wind,
   Camera,
@@ -492,11 +491,10 @@ function Index() {
               catching hidden moisture and mold requires more than a flashlight.
             </p>
           </div>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { icon: Thermometer, title: "Moisture meters", body: "Pin and pinless meters to detect elevated moisture in drywall, wood, and flooring." },
               { icon: Camera, title: "Infrared / thermal cameras", body: "Locate hidden leaks and cold-spot condensation without cutting into walls." },
-              { icon: Microscope, title: "Borescopes", body: "Fiber-optic cameras to inspect inside wall cavities, HVAC ducts, and tight spaces." },
               { icon: Wrench, title: "Air sampling pumps", body: "Calibrated pumps with spore-trap cassettes for accurate indoor and outdoor comparisons." },
             ].map(({ icon: Icon, title, body }) => (
               <div key={title} className="rounded-xl border border-border bg-card p-5">
