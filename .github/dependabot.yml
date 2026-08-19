@@ -1,0 +1,30 @@
+version: 2
+updates:
+  # Keeps the SHA pins in .github/workflows current. Without this, pinning
+  # actions to commit SHAs means they silently go stale and stop receiving
+  # upstream security fixes.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      # One PR per ecosystem rather than a dozen: this is a marketing site,
+      # not a library, and the churn is not worth the review time.
+      radix:
+        patterns:
+          - "@radix-ui/*"
+      tanstack:
+        patterns:
+          - "@tanstack/*"
+      dev-tooling:
+        dependency-type: development

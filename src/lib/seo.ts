@@ -302,9 +302,22 @@ export function articleSchema(input: ArticleSchemaInput) {
   };
 }
 
+/**
+ * Serialise a JSON-LD payload for embedding in a <script> block.
+ *
+ * JSON.stringify does not escape "<", so a value containing "</script>" would
+ * close the block early and everything after it would parse as markup. Nothing
+ * in the current data is attacker-controlled, but this is the sink that turns a
+ * content edit into an XSS, so escape at the boundary rather than relying on
+ * every future caller passing trusted input.
+ */
+export function serializeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 export function jsonLdScript(data: unknown) {
   return {
     type: "application/ld+json",
-    children: JSON.stringify(data),
+    children: serializeJsonLd(data),
   };
 }

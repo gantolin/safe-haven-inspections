@@ -64,10 +64,10 @@ export async function submitContactForm({
     // Email is the only capture path. If it failed, the lead is lost — say so
     // rather than showing a confirmation for an enquiry that never arrived.
     if (!delivered) {
-      console.error("Contact submission was not delivered - lead lost.", {
-        name: validated.name,
-        email: validated.email,
-      });
+      // Deliberately logs no submitter details. This runs in the visitor's own
+      // browser console, which any installed extension can read — the enquiry
+      // is the visitor's PII, not ours to spill for debugging convenience.
+      console.error("Contact submission was not delivered - lead lost.");
       return {
         success: false,
         error: `We couldn't submit your request. ${CALL_US}`,

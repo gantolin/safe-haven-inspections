@@ -23,6 +23,7 @@ import {
   breadcrumbSchema,
   serviceSchema,
   cityBusinessSchema,
+  serializeJsonLd,
 } from "@/lib/seo";
 import { getCityProfile, citySlug } from "@/data/city-profiles";
 import { cities } from "@/data/cities";
@@ -835,23 +836,23 @@ export function CityMoldPage({
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqLd) }}
         />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}
         />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(serviceLd) }}
         />
         {cityBusinessLd ? (
           <script
             type="application/ld+json"
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(cityBusinessLd) }}
+            dangerouslySetInnerHTML={{ __html: serializeJsonLd(cityBusinessLd) }}
           />
         ) : null}
       </section>
