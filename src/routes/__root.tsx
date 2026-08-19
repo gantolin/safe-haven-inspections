@@ -80,6 +80,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      // GitHub Pages cannot set response headers, so the policy ships as a
+      // meta tag. Directives that only work as a real header — frame-ancestors,
+      // Strict-Transport-Security, X-Content-Type-Options, Permissions-Policy,
+      // and CSP reporting — are NOT enforceable here and need a proxy (e.g.
+      // Cloudflare) in front of Pages.
+      //
+      // script-src carries 'unsafe-inline' because TanStack Start emits a
+      // per-page inline hydration script (id="$tsr-stream-barrier") whose
+      // contents differ on every route, so a fixed set of sha256 hashes cannot
+      // cover them. Do NOT add hashes alongside it — a hash makes browsers
+      // ignore 'unsafe-inline' entirely and the site stops hydrating. The
+      // protection that still holds is the origin allow-list: no external
+      // script file can be loaded, and connect-src stops any injected code
+      // from posting scraped form data anywhere but Web3Forms.
+      {
+        httpEquiv: "Content-Security-Policy",
+        content: [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline'",
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+          "font-src 'self' https://fonts.gstatic.com",
+          "img-src 'self' data:",
+          "connect-src 'self' https://api.web3forms.com",
+          "form-action 'self'",
+          "base-uri 'self'",
+          "object-src 'none'",
+          "frame-src 'none'",
+          "upgrade-insecure-requests",
+        ].join("; "),
+      },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
       { title: "Safe Haven Inspections LLC — South Florida Mold Assessment" },
       { name: "description", content: "Independent, state-licensed mold inspection, testing, and air quality assessment across Martin, Palm Beach & Broward Counties. We test — we don't upsell." },
       { name: "author", content: "Safe Haven Inspections LLC" },

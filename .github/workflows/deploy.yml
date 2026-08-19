@@ -5,10 +5,12 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Default to read-only; each job widens only to what it actually needs. The
+# build job runs third-party code (bun install), so it deliberately does NOT
+# get id-token: write — only the deploy job, which runs no untrusted code,
+# can mint an OIDC token.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Let a running deploy finish rather than cancelling it — a half-published
 # site is worse than a slightly stale one.
@@ -19,14 +21,23 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
     steps:
-      - uses: actions/checkout@v4
+      # Actions are pinned to full commit SHAs, not tags. Tags are mutable: if
+      # an action's repo is compromised the attacker repoints the tag and their
+      # code runs here with write access to what this job holds. Renovate or
+      # Dependabot (see .github/dependabot.yml) keeps these current.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       # bun.lock is the committed lockfile — package-lock.json is excluded via
       # .git/info/exclude, so npm has nothing to install from here.
-      - uses: oven-sh/setup-bun@v2
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
         with:
-          bun-version: latest
+          # Pinned rather than `latest`: an unpinned toolchain is an unreviewed
+          # binary running in CI on every build.
+          bun-version: 1.3.14
 
       - run: bun install --frozen-lockfile
 
@@ -44,18 +55,21 @@ jobs:
             exit 1
           fi
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: dist/client
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

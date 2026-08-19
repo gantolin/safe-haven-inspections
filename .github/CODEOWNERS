@@ -1,0 +1,13 @@
+# Every change needs the owner's review, but these paths especially:
+#
+#   public/CNAME        controls which domain this site claims. A silent change
+#                       here repoints the custom domain.
+#   .github/            controls what runs in CI and with what permissions.
+#
+# GitHub only enforces this when "Require review from Code Owners" is enabled
+# in the branch protection rule for main.
+
+* @gantolin
+
+/public/CNAME @gantolin
+/.github/ @gantolin
