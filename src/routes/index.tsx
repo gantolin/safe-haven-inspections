@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { localBusinessSchema } from "@/lib/seo";
 import {
   ShieldCheck,
   Scale,
@@ -24,7 +25,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { GoogleReviews } from "@/components/google-reviews";
+import { GoogleReviews, GoogleRatingBadge } from "@/components/google-reviews";
 import { CertBadgeGrid } from "@/components/cert-badges";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
 import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
@@ -69,36 +70,16 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
+        // Spreads the canonical LocalBusiness node so this page cannot drift
+        // from it. Previously this block hand-rolled its own copy with a
+        // relative "@id" ("/#business" vs the absolute one), a non-existent
+        // addressLocality ("South Florida"), and a different email casing —
+        // which registered a second, conflicting business entity.
         children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "/#business",
-          name: "Safe Haven Inspections LLC",
-          url: "/",
-          telephone: "+1-561-632-6387",
-          email: "Safehaveninspectionsllc@gmail.com",
+          ...localBusinessSchema(),
           image: heroImg,
-          description: "Independent, state-licensed mold inspection and assessment company serving South Florida.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "South Florida",
-            addressRegion: "FL",
-            addressCountry: "US",
-          },
-          areaServed: [
-            { "@type": "AdministrativeArea", name: "Martin County, FL" },
-            { "@type": "AdministrativeArea", name: "Palm Beach County, FL" },
-            { "@type": "AdministrativeArea", name: "Broward County, FL" },
-          ],
           serviceType: ["Mold inspection", "Mold assessment", "Air quality testing", "Post-remediation verification"],
           founder: { "@type": "Person", name: "Landon Heinrichs" },
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+1-561-632-6387",
-            contactType: "Customer Service",
-            areaServed: ["Martin County, FL", "Palm Beach County, FL", "Broward County, FL"],
-            availableLanguage: "English",
-          },
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Mold Inspection Services",
@@ -171,8 +152,14 @@ function Index() {
               can be pulled above the CTA (see order-1 below) without moving it
               on desktop. items-start keeps the pill badge from stretching. */}
           <div className="flex max-w-2xl flex-col items-start sm:block">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
-              <ShieldCheck className="h-3.5 w-3.5" /> Independent · Licensed · Insured
+            {/* Trust row. The Google rating sits beside the licensing pill so
+                the social proof is visible on landing rather than only in the
+                carousel further down the page. Wraps to its own line on phones. */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
+                <ShieldCheck className="h-3.5 w-3.5" /> Independent · Licensed · Insured
+              </div>
+              <GoogleRatingBadge onDark />
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
               Mold Inspection & Testing

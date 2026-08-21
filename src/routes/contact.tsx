@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { submitContactForm } from "@/lib/contact";
+import { localBusinessSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,35 +16,9 @@ export const Route = createFileRoute("/contact")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "@id": "/#business",
-          name: "Safe Haven Inspections LLC",
-          url: "/",
-          telephone: "+1-561-632-6387",
-          email: "safehaveninspectionsllc@gmail.com",
-          description: "Independent, state-licensed mold inspection and assessment company serving South Florida.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "South Florida",
-            addressRegion: "FL",
-            addressCountry: "US",
-          },
-          areaServed: [
-            { "@type": "AdministrativeArea", name: "Martin County, FL" },
-            { "@type": "AdministrativeArea", name: "Palm Beach County, FL" },
-            { "@type": "AdministrativeArea", name: "Broward County, FL" },
-          ],
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+1-561-632-6387",
-            email: "safehaveninspectionsllc@gmail.com",
-            contactType: "Customer Service",
-            areaServed: ["Martin County, FL", "Palm Beach County, FL", "Broward County, FL"],
-            availableLanguage: "English",
-          },
-        }),
+        // See the note in routes/index.tsx: this used to hand-roll a second
+        // LocalBusiness node that conflicted with the canonical one.
+        children: JSON.stringify(localBusinessSchema()),
       },
     ],
   }),

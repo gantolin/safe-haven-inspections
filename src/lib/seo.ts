@@ -88,14 +88,31 @@ const COUNTIES_SERVED = [
 // Sitewide LocalBusiness schema (place on __root.tsx).
 //
 // MODELED AS A SERVICE-AREA BUSINESS (SAB): work happens at the client's
-// property, so there is deliberately NO `streetAddress`. This mirrors a
-// hidden-address Google Business Profile. Do not add a residential street
-// address here — it would contradict the GBP listing and re-expose the address
-// that WHOIS privacy was enabled to hide.
+// property, so there is deliberately NO `streetAddress` here.
 //
-// `openingHoursSpecification` is intentionally omitted: hours published here
-// that disagree with the GBP actively damage local ranking, and the real hours
-// are unconfirmed. Add them only once they match the GBP exactly.
+// NOTE (verified 2026-08-15 against the live listing): the Google Business
+// Profile is NOT hidden-address — it publicly displays
+// "5880 Corson Pl, Lake Worth Beach, FL 33463". The earlier note here claimed
+// this schema mirrored a hidden-address GBP; that premise was wrong.
+// `addressLocality` was also "West Palm Beach", which contradicted the GBP
+// outright.
+//
+// On the city name: use "Lake Worth", not "Lake Worth Beach". Google renders
+// the listing as "Lake Worth Beach", but that is a Google-side normalisation —
+// the USPS postal city for 33463 is Lake Worth, and this repo's own
+// `city-profiles.ts` assigns 33460/33461 to Lake Worth Beach and 33463 to the
+// Greenacres profile. Confirmed by the owner. Matching the postal city keeps
+// this consistent with every other citation, which is what NAP checks compare.
+//
+// Omitting `streetAddress` while the GBP publishes one is a deliberate,
+// defensible middle ground: the locality now agrees, and nothing here
+// re-publishes the street line. Adding the full street address is a judgement
+// call for the owner — it is already public on the GBP, and in this market
+// most map-pack winners do display one — so it is left out until asked for.
+//
+// `openingHoursSpecification` was previously omitted pending confirmation that
+// published hours match the GBP exactly. Confirmed 2026-08-15: the GBP shows
+// "Open 24 hours", which is what is declared below.
 export function localBusinessSchema() {
   return {
     "@context": "https://schema.org",
@@ -110,12 +127,30 @@ export function localBusinessSchema() {
       "Independent, family-operated, state-licensed mold inspection, testing, and indoor air-quality assessment company serving Martin, Palm Beach & Broward Counties. Founded and run by a lifelong South Florida resident whose background is in mold remediation.",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "West Palm Beach",
+      addressLocality: "Lake Worth",
       addressRegion: "FL",
+      postalCode: "33463",
       addressCountry: "US",
     },
     areaServed: COUNTIES_SERVED,
     serviceArea: COUNTIES_SERVED,
+    // Matches the GBP exactly: "Open 24 hours", every day.
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+    ],
     aggregateRating: aggregateRatingSchema(),
     knowsAbout: [
       "Mold inspection",
