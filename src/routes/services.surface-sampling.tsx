@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/surface-sampling")({
   head: () => {
     const base = pageMeta({
       path: "/services/surface-sampling",
-      title: "Surface & Swab Mold Sampling | Safe Haven",
+      title: "Surface & Swab Mold Sampling, South Florida | Safe Haven",
       description:
         "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth — no remediation upsell.",
     });

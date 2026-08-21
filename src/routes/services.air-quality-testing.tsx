@@ -29,7 +29,7 @@ export const Route = createFileRoute("/services/air-quality-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/air-quality-testing",
-      title: "Air Quality & Mold Testing | Safe Haven",
+      title: "Air Quality & Mold Testing, South Florida | Safe Haven",
       description:
         "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
     });

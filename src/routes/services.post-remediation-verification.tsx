@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
   head: () => {
     const base = pageMeta({
       path: "/services/post-remediation-verification",
-      title: "Post-Remediation Verification | Safe Haven",
+      title: "Post-Remediation Verification, South Florida | Safe Haven",
       description:
         "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
     });

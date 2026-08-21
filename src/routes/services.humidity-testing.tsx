@@ -19,7 +19,7 @@ export const Route = createFileRoute("/services/humidity-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/humidity-testing",
-      title: "Humidity & Psychrometric Testing FL | Safe Haven",
+      title: "Humidity & Psychrometric Testing, South Florida | Safe Haven",
       description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
     });
     return {

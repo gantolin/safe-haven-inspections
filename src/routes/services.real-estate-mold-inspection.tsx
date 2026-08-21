@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/real-estate-mold-inspection",
-      title: "Real Estate Mold Inspection FL | Safe Haven",
+      title: "Real Estate Mold Inspection, South Florida | Safe Haven",
       description:
         "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
     });

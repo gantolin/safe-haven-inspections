@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-assessment-report",
-      title: "Mold Assessment Report & Protocol | Safe Haven",
+      title: "Mold Assessment Report & Protocol, South Florida | Safe Haven",
       description:
         "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
     });

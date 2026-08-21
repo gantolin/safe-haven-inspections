@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/thermal-imaging")({
   head: () => {
     const base = pageMeta({
       path: "/services/thermal-imaging",
-      title: "Moisture Mapping & Thermal Imaging | Safe Haven",
+      title: "Moisture Mapping & Thermal Imaging, South Florida | Safe Haven",
       description:
         "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
     });

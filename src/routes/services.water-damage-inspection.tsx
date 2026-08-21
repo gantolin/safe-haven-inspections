@@ -19,7 +19,7 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/water-damage-inspection",
-      title: "Water Damage Inspection FL | Safe Haven",
+      title: "Water Damage Inspection, South Florida | Safe Haven",
       description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
     });
     return {

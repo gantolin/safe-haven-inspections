@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/commercial-mold-inspection",
-      title: "Commercial Mold Inspection FL | Safe Haven",
+      title: "Commercial Mold Inspection, South Florida | Safe Haven",
       description:
         "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
     });
