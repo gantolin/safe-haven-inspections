@@ -68,21 +68,23 @@ function GoogleGBadge() {
  *
  * Social proof belongs high on the page, not halfway down — the full review
  * carousel below stays where it is, this just puts the rating where it is seen
- * on landing. Rating and count both come from ON_PAGE_REVIEWS, the same source
- * the AggregateRating schema uses, so the badge cannot drift from the number
- * Google itself shows.
+ * on landing. The rating comes from ON_PAGE_REVIEWS, the same source the
+ * AggregateRating schema uses, so the badge cannot drift from the number Google
+ * itself shows. The review *count* is deliberately not shown: five reviews is a
+ * small number to advertise above the fold, and the 5.0 carries the proof on its
+ * own. The count still goes to AggregateRating, where Google requires it.
  *
  * `onDark` is the hero variant: translucent white on the photo scrim, matching
  * the trust pill beside it. Default is the light-background variant.
  */
 export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
-  const { ratingValue, reviewCount } = ON_PAGE_REVIEWS;
+  const { ratingValue } = ON_PAGE_REVIEWS;
   return (
     <a
       href={GOOGLE_REVIEWS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${ratingValue.toFixed(1)} out of 5 stars from ${reviewCount} Google reviews — read them on Google`}
+      aria-label={`${ratingValue.toFixed(1)} out of 5 stars on Google — read the reviews on Google`}
       className={
         onDark
           ? "inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white transition hover:bg-white/20"
@@ -91,9 +93,7 @@ export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
     >
       <Stars className="h-3.5 w-3.5" />
       <span className="font-semibold">{ratingValue.toFixed(1)}</span>
-      <span className={onDark ? "text-white/80" : "text-muted-foreground"}>
-        on Google · {reviewCount} reviews
-      </span>
+      <span className={onDark ? "text-white/80" : "text-muted-foreground"}>on Google</span>
     </a>
   );
 }
