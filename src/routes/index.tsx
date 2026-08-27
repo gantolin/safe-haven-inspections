@@ -148,9 +148,8 @@ function Index() {
           }}
         />
         <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24 md:min-h-[640px] md:py-28">
-          {/* Column is a flex container on phones only, so the reassurance line
-              can be pulled above the CTA (see order-1 below) without moving it
-              on desktop. items-start keeps the pill badge from stretching. */}
+          {/* Column is a flex container on phones only; items-start keeps the
+              pill badge from stretching. */}
           <div className="flex max-w-2xl flex-col items-start sm:block">
             {/* Trust row. The Google rating sits beside the licensing pill so
                 the social proof is visible on landing rather than only in the
@@ -180,7 +179,7 @@ function Index() {
               company serving South Florida. Our focus is inspection and testing, so
               every answer you get is unbiased, lab-backed, and written for you.
             </p>
-            <div className="order-1 mt-6 flex w-full flex-col gap-3 sm:order-none sm:mt-7 sm:w-auto sm:flex-row">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3.5 text-sm font-semibold text-cta-foreground shadow-lg shadow-cta/30 transition hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
@@ -196,14 +195,7 @@ function Index() {
                 <Phone className="h-4 w-4" /> Call (561) 632-6387
               </a>
             </div>
-            {/* Sits over the brightest part of the photo on phones, where the
-                scrim has deliberately fallen away — needs a hard shadow of its
-                own rather than re-darkening the family behind it. */}
-            <p className="mt-4 max-w-xl text-xs font-medium text-white [text-shadow:0_1px_3px_rgba(11,37,69,0.95),0_2px_16px_rgba(11,37,69,0.9)] sm:mt-3 sm:font-normal sm:text-sm sm:text-white/90 sm:[text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
-              The call is free — we'll tell you honestly whether you need an inspection
-              at all.
-            </p>
-            <p className="mt-2 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm">
+            <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm">
               Not sure if it's mold?{" "}
               <a href="sms:+15616326387" className="font-semibold text-white underline underline-offset-2 hover:text-accent">
                 Text a photo to (561) 632-6387
