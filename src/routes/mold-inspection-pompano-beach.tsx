@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-pompano-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-pompano-beach",
+      path: "/mold-inspection-pompano-beach/",
       title: "Mold Inspection Pompano Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Pompano Beach, FL. Lab-backed reports for beachfront condos, older inland homes, and flat-roof properties.",
@@ -41,9 +41,9 @@ function PompanoBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-fort-lauderdale", label: "Fort Lauderdale" },
-        { to: "/mold-inspection-deerfield-beach", label: "Deerfield Beach" },
-        { to: "/mold-inspection-coral-springs", label: "Coral Springs" },
+        { to: "/mold-inspection-fort-lauderdale/", label: "Fort Lauderdale" },
+        { to: "/mold-inspection-deerfield-beach/", label: "Deerfield Beach" },
+        { to: "/mold-inspection-coral-springs/", label: "Coral Springs" },
       ]}
     />
   );

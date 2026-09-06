@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-deerfield-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-deerfield-beach",
+      path: "/mold-inspection-deerfield-beach/",
       title: "Mold Inspection Deerfield Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Deerfield Beach, FL. Lab-backed reports for coastal condos, 55+ communities, and seasonally occupied properties.",
@@ -41,9 +41,9 @@ function DeerfieldBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-pompano-beach", label: "Pompano Beach" },
-        { to: "/mold-inspection-coral-springs", label: "Coral Springs" },
-        { to: "/mold-inspection-fort-lauderdale", label: "Fort Lauderdale" },
+        { to: "/mold-inspection-pompano-beach/", label: "Pompano Beach" },
+        { to: "/mold-inspection-coral-springs/", label: "Coral Springs" },
+        { to: "/mold-inspection-fort-lauderdale/", label: "Fort Lauderdale" },
       ]}
     />
   );

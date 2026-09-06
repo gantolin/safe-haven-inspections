@@ -24,7 +24,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/commercial-mold-inspection")({
   head: () => {
     const base = pageMeta({
-      path: "/services/commercial-mold-inspection",
+      path: "/services/commercial-mold-inspection/",
       title: "Commercial Mold Inspection, South Florida | Safe Haven",
       description:
         "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
@@ -35,16 +35,16 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Commercial Mold Inspection FL",
+            name: "Commercial Mold Inspection",
             description: "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
-            path: "/services/commercial-mold-inspection",
+            path: "/services/commercial-mold-inspection/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Commercial Mold Inspection FL", path: "/services/commercial-mold-inspection" },
+            { name: "Services", path: "/services/" },
+            { name: "Commercial Mold Inspection", path: "/services/commercial-mold-inspection/" },
           ]),
         ),
       ],
@@ -129,9 +129,9 @@ function CommercialPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/mold-assessment-report", label: "Mold assessment & written protocol", blurb: "The formal document commercial insurers, remediators, and attorneys read." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Trace envelope and mechanical moisture across multi-unit or multi-zone properties." },
-        { to: "/services/post-remediation-verification", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
+        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal document commercial insurers, remediators, and attorneys read." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Trace envelope and mechanical moisture across multi-unit or multi-zone properties." },
+        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
       ]}
       ctaTitle="Talk about a commercial project"
       ctaBody="Property managers, boards, and building owners — get a quote for an independent, licensed inspection tailored to your building."

@@ -10,6 +10,10 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // GitHub Pages serves each route from a folder index, so /about 301s to
+    // /about/. Emitting the bare form from every <Link> pointed ~862 internal
+    // links at a redirect. Render the trailing-slash form, which returns 200.
+    trailingSlash: "always",
   });
 
   return router;

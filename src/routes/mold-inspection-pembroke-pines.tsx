@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-pembroke-pines")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-pembroke-pines",
+      path: "/mold-inspection-pembroke-pines/",
       title: "Mold Inspection Pembroke Pines FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Pembroke Pines, FL. Lab-backed reports for master-planned communities, newer construction, and HOA properties.",
@@ -37,9 +37,9 @@ function PembrokePinesPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-hollywood", label: "Hollywood" },
-        { to: "/mold-inspection-weston", label: "Weston" },
-        { to: "/mold-inspection-davie", label: "Davie" },
+        { to: "/mold-inspection-hollywood/", label: "Hollywood" },
+        { to: "/mold-inspection-weston/", label: "Weston" },
+        { to: "/mold-inspection-davie/", label: "Davie" },
       ]}
     />
   );

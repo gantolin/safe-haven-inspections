@@ -16,10 +16,27 @@ export interface PageMetaInput {
   noindex?: boolean;
 }
 
+/**
+ * GitHub Pages serves every route from a folder index (`/about/index.html`), so
+ * the bare `/about` permanently redirects to `/about/`. Canonical, og:url and
+ * every JSON-LD `url` / `@id` must therefore name the trailing-slash form, the
+ * one that actually returns 200 — otherwise every page canonicalises to a
+ * redirect and Google is pointed at a URL that never resolves directly.
+ *
+ * Asset paths are left alone: `/og-image.jpg/` would 404. Anything whose last
+ * segment carries a file extension is treated as an asset.
+ */
+export function withTrailingSlash(path: string): string {
+  if (path.endsWith("/")) return path;
+  const lastSegment = path.slice(path.lastIndexOf("/") + 1);
+  if (lastSegment.includes(".")) return path;
+  return `${path}/`;
+}
+
 export function absoluteUrl(path: string): string {
   if (/^https?:\/\//i.test(path)) return path;
   const p = path.startsWith("/") ? path : `/${path}`;
-  return `${SITE_URL}${p}`;
+  return `${SITE_URL}${withTrailingSlash(p)}`;
 }
 
 export function pageMeta(input: PageMetaInput) {
@@ -120,7 +137,7 @@ export function localBusinessSchema() {
     "@id": `${SITE_URL}/#business`,
     name: "Safe Haven Inspections LLC",
     alternateName: "Safe Haven Inspections",
-    url: SITE_URL,
+    url: absoluteUrl("/"),
     telephone: BUSINESS_PHONE,
     email: BUSINESS_EMAIL,
     description:
@@ -325,12 +342,12 @@ export function articleSchema(input: ArticleSchemaInput) {
     author: {
       "@type": "Organization",
       name: input.authorName ?? "Safe Haven Inspections LLC",
-      url: SITE_URL,
+      url: absoluteUrl("/"),
     },
     publisher: {
       "@type": "Organization",
       name: "Safe Haven Inspections LLC",
-      url: SITE_URL,
+      url: absoluteUrl("/"),
     },
     ...(input.datePublished ? { datePublished: input.datePublished } : {}),
     ...(input.dateModified ? { dateModified: input.dateModified } : {}),

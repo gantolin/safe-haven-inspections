@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-boynton-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-boynton-beach",
+      path: "/mold-inspection-boynton-beach/",
       title: "Mold Inspection Boynton Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Boynton Beach, FL. Lab-backed reports for 55+ communities, seasonally occupied condos, and older coastal properties.",
@@ -41,9 +41,9 @@ function BoyntonBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-delray-beach", label: "Delray Beach" },
-        { to: "/mold-inspection-lake-worth-beach", label: "Lake Worth Beach" },
-        { to: "/mold-inspection-greenacres", label: "Greenacres" },
+        { to: "/mold-inspection-delray-beach/", label: "Delray Beach" },
+        { to: "/mold-inspection-lake-worth-beach/", label: "Lake Worth Beach" },
+        { to: "/mold-inspection-greenacres/", label: "Greenacres" },
       ]}
     />
   );

@@ -24,7 +24,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/thermal-imaging")({
   head: () => {
     const base = pageMeta({
-      path: "/services/thermal-imaging",
+      path: "/services/thermal-imaging/",
       title: "Moisture Mapping & Thermal Imaging, South Florida | Safe Haven",
       description:
         "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/thermal-imaging")({
           serviceSchema({
             name: "Moisture Mapping & Thermal Imaging",
             description: "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
-            path: "/services/thermal-imaging",
+            path: "/services/thermal-imaging/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Moisture Mapping & Thermal Imaging", path: "/services/thermal-imaging" },
+            { name: "Services", path: "/services/" },
+            { name: "Moisture Mapping & Thermal Imaging", path: "/services/thermal-imaging/" },
           ]),
         ),
       ],
@@ -122,9 +122,9 @@ function ThermalImagingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Confirm whether a moisture finding has already produced elevated indoor spore counts." },
-        { to: "/services/surface-sampling", label: "Surface & swab sampling", blurb: "Positively identify any visible material found near a documented moisture source." },
-        { to: "/services/post-remediation-verification", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Confirm whether a moisture finding has already produced elevated indoor spore counts." },
+        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "Positively identify any visible material found near a documented moisture source." },
+        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
       ]}
       ctaTitle="Schedule moisture mapping"
       ctaBody="Find hidden water before it becomes hidden mold. Non-destructive, documented, and independent."

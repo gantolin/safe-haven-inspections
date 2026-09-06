@@ -24,7 +24,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/post-remediation-verification")({
   head: () => {
     const base = pageMeta({
-      path: "/services/post-remediation-verification",
+      path: "/services/post-remediation-verification/",
       title: "Post-Remediation Verification, South Florida | Safe Haven",
       description:
         "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
           serviceSchema({
             name: "Post-Remediation Verification",
             description: "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
-            path: "/services/post-remediation-verification",
+            path: "/services/post-remediation-verification/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Post-Remediation Verification", path: "/services/post-remediation-verification" },
+            { name: "Services", path: "/services/" },
+            { name: "Post-Remediation Verification", path: "/services/post-remediation-verification/" },
           ]),
         ),
       ],
@@ -123,10 +123,15 @@ function PostRemediationPage() {
         },
       ]}
       faqs={faqs}
+      furtherReading={{
+        href: "/blog/hurricane-mold-prevention-tips/",
+        label: "Hurricane Mold Prevention Tips",
+        blurb: "What to do in the days after a storm, while the window to stop mold from establishing is still open.",
+      }}
       related={[
-        { to: "/services/mold-assessment-report", label: "Mold assessment & written protocol", blurb: "The formal scope of work the remediator is measured against at clearance." },
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Air samples are the core measurable behind a clearance pass or fail." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
+        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal scope of work the remediator is measured against at clearance." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Air samples are the core measurable behind a clearance pass or fail." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
       ]}
       ctaTitle="Book independent clearance testing"
       ctaBody="Get an unbiased pass/fail decision before the drywall goes back up. Talk to our licensed team."

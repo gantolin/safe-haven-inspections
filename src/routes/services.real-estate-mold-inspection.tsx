@@ -24,7 +24,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/real-estate-mold-inspection")({
   head: () => {
     const base = pageMeta({
-      path: "/services/real-estate-mold-inspection",
+      path: "/services/real-estate-mold-inspection/",
       title: "Real Estate Mold Inspection, South Florida | Safe Haven",
       description:
         "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
@@ -35,16 +35,16 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Real Estate Mold Inspection FL",
+            name: "Real Estate Mold Inspection",
             description: "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
-            path: "/services/real-estate-mold-inspection",
+            path: "/services/real-estate-mold-inspection/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Real Estate Mold Inspection FL", path: "/services/real-estate-mold-inspection" },
+            { name: "Services", path: "/services/" },
+            { name: "Real Estate Mold Inspection", path: "/services/real-estate-mold-inspection/" },
           ]),
         ),
       ],
@@ -130,9 +130,9 @@ function RealEstatePage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "The lab-backed indoor air data most transactions ultimately turn on." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Non-destructive scan for hidden moisture, ideal within an inspection window." },
-        { to: "/services/mold-assessment-report", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "The lab-backed indoor air data most transactions ultimately turn on." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Non-destructive scan for hidden moisture, ideal within an inspection window." },
+        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
       ]}
       ctaTitle="Schedule a real estate mold inspection"
       ctaBody="Get an independent report inside your inspection window. Fast scheduling for buyers, sellers, and agents."

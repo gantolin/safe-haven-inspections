@@ -83,7 +83,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/mold-inspection")({
   head: () => {
     const base = pageMeta({
-      path: "/services/mold-inspection",
+      path: "/services/mold-inspection/",
       title: "Mold Inspection South Florida | Safe Haven",
       description:
         "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
@@ -98,15 +98,15 @@ export const Route = createFileRoute("/services/mold-inspection")({
             name: "Mold Inspection South Florida",
             description:
               "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
-            path: "/services/mold-inspection",
+            path: "/services/mold-inspection/",
             serviceType: "Mold inspection and assessment",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Mold Inspection South Florida", path: "/services/mold-inspection" },
+            { name: "Services", path: "/services/" },
+            { name: "Mold Inspection South Florida", path: "/services/mold-inspection/" },
           ]),
         ),
       ],
@@ -135,7 +135,7 @@ function MoldInspectionPage() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
             >
               Request an inspection <ArrowRight className="h-4 w-4" />
@@ -369,9 +369,9 @@ function MoldInspectionPage() {
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            { to: "/services/mold-testing" as const, label: "Mold Testing", blurb: "Air and surface testing overview — what each test measures and when it's used." },
-            { to: "/services/thermal-imaging" as const, label: "Moisture Mapping & Thermal Imaging", blurb: "Non-destructive infrared and moisture-meter survey for hidden water intrusion." },
-            { to: "/services/post-remediation-verification" as const, label: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation, before walls close." },
+            { to: "/services/mold-testing/" as const, label: "Mold Testing", blurb: "Air and surface testing overview — what each test measures and when it's used." },
+            { to: "/services/thermal-imaging/" as const, label: "Moisture Mapping & Thermal Imaging", blurb: "Non-destructive infrared and moisture-meter survey for hidden water intrusion." },
+            { to: "/services/post-remediation-verification/" as const, label: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation, before walls close." },
           ].map((r) => (
             <Link
               key={r.to}
@@ -401,9 +401,9 @@ function MoldInspectionPage() {
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           {[
-            { to: "/mold-inspection-west-palm-beach" as const, label: "West Palm Beach" },
-            { to: "/mold-inspection-wellington" as const, label: "Wellington" },
-            { to: "/mold-inspection-boca-raton" as const, label: "Boca Raton" },
+            { to: "/mold-inspection-west-palm-beach/" as const, label: "West Palm Beach" },
+            { to: "/mold-inspection-wellington/" as const, label: "Wellington" },
+            { to: "/mold-inspection-boca-raton/" as const, label: "Boca Raton" },
           ].map((c) => (
             <Link
               key={c.to}
@@ -417,7 +417,7 @@ function MoldInspectionPage() {
         </div>
         <p className="mt-4 text-sm text-muted-foreground">
           Don't see your city? See our{" "}
-          <Link to="/service-areas" className="font-semibold text-accent hover:underline">
+          <Link to="/service-areas/" className="font-semibold text-accent hover:underline">
             full South Florida service areas
           </Link>{" "}
           or call us directly.
@@ -471,7 +471,7 @@ function MoldInspectionPage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />

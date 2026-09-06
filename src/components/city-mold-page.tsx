@@ -39,33 +39,33 @@ export interface CityMoldPageProps {
   };
   otherCities: Array<{
     to:
-      | "/mold-inspection-wellington"
-      | "/mold-inspection-royal-palm-beach"
-      | "/mold-inspection-loxahatchee"
-      | "/mold-inspection-stuart"
-      | "/mold-inspection-palm-city"
-      | "/mold-inspection-jensen-beach"
-      | "/mold-inspection-hobe-sound"
-      | "/mold-inspection-port-salerno"
-      | "/mold-inspection-fort-lauderdale"
-      | "/mold-inspection-hollywood"
-      | "/mold-inspection-pembroke-pines"
-      | "/mold-inspection-coral-springs"
-      | "/mold-inspection-pompano-beach"
-      | "/mold-inspection-davie"
-      | "/mold-inspection-plantation"
-      | "/mold-inspection-sunrise"
-      | "/mold-inspection-deerfield-beach"
-      | "/mold-inspection-weston"
-      | "/mold-inspection-west-palm-beach"
-      | "/mold-inspection-boca-raton"
-      | "/mold-inspection-delray-beach"
-      | "/mold-inspection-boynton-beach"
-      | "/mold-inspection-jupiter"
-      | "/mold-inspection-palm-beach-gardens"
-      | "/mold-inspection-lake-worth-beach"
-      | "/mold-inspection-greenacres"
-      | "/mold-inspection-riviera-beach";
+      | "/mold-inspection-wellington/"
+      | "/mold-inspection-royal-palm-beach/"
+      | "/mold-inspection-loxahatchee/"
+      | "/mold-inspection-stuart/"
+      | "/mold-inspection-palm-city/"
+      | "/mold-inspection-jensen-beach/"
+      | "/mold-inspection-hobe-sound/"
+      | "/mold-inspection-port-salerno/"
+      | "/mold-inspection-fort-lauderdale/"
+      | "/mold-inspection-hollywood/"
+      | "/mold-inspection-pembroke-pines/"
+      | "/mold-inspection-coral-springs/"
+      | "/mold-inspection-pompano-beach/"
+      | "/mold-inspection-davie/"
+      | "/mold-inspection-plantation/"
+      | "/mold-inspection-sunrise/"
+      | "/mold-inspection-deerfield-beach/"
+      | "/mold-inspection-weston/"
+      | "/mold-inspection-west-palm-beach/"
+      | "/mold-inspection-boca-raton/"
+      | "/mold-inspection-delray-beach/"
+      | "/mold-inspection-boynton-beach/"
+      | "/mold-inspection-jupiter/"
+      | "/mold-inspection-palm-beach-gardens/"
+      | "/mold-inspection-lake-worth-beach/"
+      | "/mold-inspection-greenacres/"
+      | "/mold-inspection-riviera-beach/";
     label: string;
   }>;
   /**
@@ -251,7 +251,7 @@ export function CityMoldPage({
 
   const breadcrumbLd = breadcrumbSchema([
     { name: "Home", path: "/" },
-    { name: "Service Areas", path: "/service-areas" },
+    { name: "Service Areas", path: "/service-areas/" },
     { name: city, path: cityPath },
   ]);
 
@@ -273,23 +273,29 @@ export function CityMoldPage({
 
   const serviceCards: Array<{
     to:
-      | "/services/air-quality-testing"
-      | "/services/surface-sampling"
-      | "/services/thermal-imaging"
-      | "/services/post-remediation-verification"
-      | "/services/real-estate-mold-inspection"
-      | "/services/commercial-mold-inspection"
-      | "/services/mold-assessment-report";
+      | "/services/air-quality-testing/"
+      | "/services/surface-sampling/"
+      | "/services/thermal-imaging/"
+      | "/services/post-remediation-verification/"
+      | "/services/real-estate-mold-inspection/"
+      | "/services/commercial-mold-inspection/"
+      | "/services/mold-assessment-report/"
+      | "/services/mold-testing/"
+      | "/services/humidity-testing/"
+      | "/services/water-damage-inspection/";
     title: string;
     blurb: string;
   }> = [
-    { to: "/services/air-quality-testing", title: "Air Quality Testing", blurb: "Indoor spore-trap sampling with paired outdoor controls to quantify what's actually in the air you breathe." },
-    { to: "/services/surface-sampling", title: "Surface & Swab Sampling", blurb: "Targeted swab, tape-lift, and bulk samples that identify specific mold genera on visible growth." },
-    { to: "/services/thermal-imaging", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry — non-invasively." },
-    { to: "/services/post-remediation-verification", title: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation so you know the work actually met protocol." },
-    { to: "/services/real-estate-mold-inspection", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
-    { to: "/services/commercial-mold-inspection", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
-    { to: "/services/mold-assessment-report", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps — usable by insurers and remediators." },
+    { to: "/services/air-quality-testing/", title: "Air Quality Testing", blurb: "Indoor spore-trap sampling with paired outdoor controls to quantify what's actually in the air you breathe." },
+    { to: "/services/surface-sampling/", title: "Surface Sampling & Swab Testing", blurb: "Targeted swab, tape-lift, and bulk samples that identify specific mold genera on visible growth." },
+    { to: "/services/thermal-imaging/", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry — non-invasively." },
+    { to: "/services/post-remediation-verification/", title: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation so you know the work actually met protocol." },
+    { to: "/services/real-estate-mold-inspection/", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
+    { to: "/services/commercial-mold-inspection/", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
+    { to: "/services/mold-assessment-report/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps — usable by insurers and remediators." },
+    { to: "/services/mold-testing/", title: "Mold Testing", blurb: "Air and surface sampling analyzed by an independent AIHA-accredited lab, with results explained in plain language." },
+    { to: "/services/humidity-testing/", title: "Humidity Testing & Psychrometrics", blurb: "Temperature, relative humidity, and dew-point readings that explain humidity-driven mildew when there is no obvious leak." },
+    { to: "/services/water-damage-inspection/", title: "Water Damage Inspection", blurb: "Post-leak, post-storm, and post-flood assessment documenting what got wet and how far the moisture traveled." },
   ];
 
   const whatToExpect: Array<{
@@ -297,28 +303,28 @@ export function CityMoldPage({
     title: string;
     body: string;
     to?:
-      | "/services/air-quality-testing"
-      | "/services/surface-sampling"
-      | "/services/thermal-imaging"
-      | "/services/mold-assessment-report";
+      | "/services/air-quality-testing/"
+      | "/services/surface-sampling/"
+      | "/services/thermal-imaging/"
+      | "/services/mold-assessment-report/";
   }> = [
     {
       icon: Wind,
       title: "Air quality / spore-trap samples",
       body: "We collect calibrated air samples inside the home and pair them with an outdoor control taken the same day. The lab counts spore types and concentrations from both, and the comparison is what tells us whether indoor air actually contains more mold than the outdoor baseline.",
-      to: "/services/air-quality-testing",
+      to: "/services/air-quality-testing/",
     },
     {
       icon: Microscope,
       title: "Surface & swab samples",
       body: "When we see suspect growth on drywall, grout, framing, or HVAC surfaces, we collect a swab, tape-lift, or bulk sample directly from it. That lets the lab identify the specific mold genera present rather than guessing from color or texture.",
-      to: "/services/surface-sampling",
+      to: "/services/surface-sampling/",
     },
     {
       icon: Thermometer,
       title: "Thermal imaging",
       body: "An infrared camera reveals temperature differences that flag hidden moisture — behind drywall, above ceilings, inside built-in cabinets, and around window and roof penetrations. It doesn't diagnose mold on its own, but it points our moisture meter to the right spots.",
-      to: "/services/thermal-imaging",
+      to: "/services/thermal-imaging/",
     },
     {
       icon: Droplets,
@@ -334,7 +340,7 @@ export function CityMoldPage({
       icon: FileCheck2,
       title: "Certified 3rd-party lab reporting",
       body: "All samples ship to an AIHA-accredited independent laboratory. Because we don't own the lab and don't sell remediation, the results you receive are unfiltered — the same numbers a remediator or insurance carrier would get.",
-      to: "/services/mold-assessment-report",
+      to: "/services/mold-assessment-report/",
     },
   ];
 
@@ -368,7 +374,7 @@ export function CityMoldPage({
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
             >
               Schedule an inspection <ArrowRight className="h-4 w-4" />
@@ -416,7 +422,7 @@ export function CityMoldPage({
         <p className="mt-3 max-w-3xl text-muted-foreground">
           Every inspection is tailored to the property and the reason you called.
           Explore the individual services below or jump to the{" "}
-          <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+          <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
             mold inspection overview
           </Link>
           .
@@ -619,7 +625,7 @@ export function CityMoldPage({
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{profile.market}</p>
                 <Link
-                  to="/services/real-estate-mold-inspection"
+                  to="/services/real-estate-mold-inspection/"
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
                 >
                   Real estate mold inspection in {city}{" "}
@@ -750,7 +756,7 @@ export function CityMoldPage({
         </p>
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <Link
-            to="/services/mold-inspection"
+            to="/services/mold-inspection/"
             className="group flex items-center justify-between rounded-xl border border-border bg-card px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-accent"
           >
             Mold inspection overview
@@ -789,7 +795,7 @@ export function CityMoldPage({
               {countyPeers.map((c) => (
                 <a
                   key={c.slug}
-                  href={`/mold-inspection-${c.slug}`}
+                  href={`/mold-inspection-${c.slug}/`}
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary transition-colors hover:border-accent hover:text-accent"
                 >
                   <MapPin className="h-3 w-3 text-accent" />
@@ -799,11 +805,11 @@ export function CityMoldPage({
             </div>
             <p className="mt-5 text-sm text-muted-foreground">
               Browse every city we cover on the{" "}
-              <Link to="/service-areas" className="font-semibold text-accent hover:underline">
+              <Link to="/service-areas/" className="font-semibold text-accent hover:underline">
                 South Florida mold inspection service areas
               </Link>{" "}
               page, or read the{" "}
-              <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+              <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
                 complete guide to mold inspection
               </Link>
               .
@@ -872,7 +878,7 @@ export function CityMoldPage({
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />

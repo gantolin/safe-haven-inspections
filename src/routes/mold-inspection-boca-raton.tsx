@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-boca-raton")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-boca-raton",
+      path: "/mold-inspection-boca-raton/",
       title: "Mold Inspection Boca Raton FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Boca Raton, FL. Lab-backed reports for Mediterranean estates, country-club homes, and luxury high-rise condos.",
@@ -41,9 +41,9 @@ function BocaRatonPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-delray-beach", label: "Delray Beach" },
-        { to: "/mold-inspection-boynton-beach", label: "Boynton Beach" },
-        { to: "/mold-inspection-deerfield-beach", label: "Deerfield Beach" },
+        { to: "/mold-inspection-delray-beach/", label: "Delray Beach" },
+        { to: "/mold-inspection-boynton-beach/", label: "Boynton Beach" },
+        { to: "/mold-inspection-deerfield-beach/", label: "Deerfield Beach" },
       ]}
     />
   );

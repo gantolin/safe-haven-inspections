@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, BadgeCheck, Calendar, Clock, Phone } from "lucide-react";
 import { findPost, posts } from "@/data/posts";
 import { webpVariant } from "@/lib/images";
+import { absoluteUrl, withTrailingSlash } from "@/lib/seo";
 import heroHomeAsset from "../assets/hero-home.jpg.asset.json";
 
 const heroImg = heroHomeAsset.url;
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/blog/$slug")({
     }
     const { post } = loaderData;
     const path = `/blog/${params.slug}`;
-    const url = `https://www.safehaveninspectionsllc.com${path}`;
+    const url = absoluteUrl(path);
     return {
       meta: [
         { title: post.titleTag ?? `${post.title} — Safe Haven Inspections` },
@@ -47,7 +48,7 @@ export const Route = createFileRoute("/blog/$slug")({
             author: {
               "@type": "Person",
               name: "Landon Heinrichs",
-              url: "/about",
+              url: "/about/",
             },
             publisher: {
               "@type": "Organization",
@@ -71,7 +72,7 @@ export const Route = createFileRoute("/blog/$slug")({
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-4 py-24 text-center sm:px-6">
       <h1 className="text-3xl font-semibold text-primary">Post not found</h1>
-      <Link to="/blog" className="mt-6 inline-flex items-center gap-1.5 text-accent">
+      <Link to="/blog/" className="mt-6 inline-flex items-center gap-1.5 text-accent">
         <ArrowLeft className="h-4 w-4" /> All posts
       </Link>
     </div>
@@ -118,7 +119,7 @@ function PostPage() {
         )}
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
           <Link
-            to="/blog"
+            to="/blog/"
             className={`inline-flex items-center gap-1.5 text-sm font-medium ${
               post.image ? "text-white/85 hover:text-white" : "text-accent"
             }`}
@@ -184,7 +185,7 @@ function PostPage() {
               {post.related.map((r: { to: string; label: string }) => (
                 <li key={r.to}>
                   <a
-                    href={r.to}
+                    href={withTrailingSlash(r.to)}
                     className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent"
                   >
                     {r.label}
@@ -203,7 +204,7 @@ function PostPage() {
             unbiased, lab-backed report across Martin, Palm Beach & Broward Counties.
           </p>
           <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-5 py-2.5 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
+            <Link to="/contact/" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-5 py-2.5 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
               Request an inspection
             </Link>
             <a href="tel:+15616326387" className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-sm font-semibold text-primary">
@@ -220,7 +221,7 @@ function PostPage() {
             {related.map((p) => (
               <Link
                 key={p.slug}
-                to="/blog/$slug"
+                to="/blog/$slug/"
                 params={{ slug: p.slug }}
                 className="rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-0.5 hover:border-accent/50"
               >

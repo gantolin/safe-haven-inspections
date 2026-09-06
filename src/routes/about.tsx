@@ -16,7 +16,7 @@ import { webpVariant } from "@/lib/images";
 import { CertBadgeGrid } from "@/components/cert-badges";
 import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } from "@/lib/seo";
 
-const CANONICAL = absoluteUrl("/about");
+const CANONICAL = absoluteUrl("/about/");
 const TITLE = "Independent Mold Assessor, South Florida | Landon Heinrichs";
 const DESCRIPTION =
   "Landon Heinrichs, founder of Safe Haven Inspections — FL-licensed Mold Assessor (MRSA3366) serving Martin, Palm Beach & Broward. Assessment and testing only, never remediation.";
@@ -148,7 +148,7 @@ function AboutPage() {
               </p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
                 >
                   Request an inspection <ArrowRight className="h-4 w-4" />
@@ -386,11 +386,11 @@ function AboutPage() {
             independent AIHA-accredited lab. The written report ties photos,
             readings, and lab results into a plain-language document you (or your
             realtor, insurer, or attorney) can actually use. See the{" "}
-            <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+            <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
               mold inspection overview
             </Link>{" "}
             or browse all{" "}
-            <Link to="/services" className="font-semibold text-accent hover:underline">
+            <Link to="/services/" className="font-semibold text-accent hover:underline">
               services
             </Link>
             .
@@ -416,7 +416,7 @@ function AboutPage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />

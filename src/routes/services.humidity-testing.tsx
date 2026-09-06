@@ -18,8 +18,8 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/humidity-testing")({
   head: () => {
     const base = pageMeta({
-      path: "/services/humidity-testing",
-      title: "Humidity & Psychrometric Testing, South Florida | Safe Haven",
+      path: "/services/humidity-testing/",
+      title: "Humidity Testing & Psychrometrics, South Florida | Safe Haven",
       description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
     });
     return {
@@ -28,16 +28,16 @@ export const Route = createFileRoute("/services/humidity-testing")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Humidity & Psychrometric Testing FL",
+            name: "Humidity Testing & Psychrometrics",
             description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
-            path: "/services/humidity-testing",
+            path: "/services/humidity-testing/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Humidity & Psychrometric Testing FL", path: "/services/humidity-testing" },
+            { name: "Services", path: "/services/" },
+            { name: "Humidity Testing & Psychrometrics", path: "/services/humidity-testing/" },
           ]),
         ),
       ],
@@ -50,7 +50,7 @@ function HumidityPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Humidity & Psychrometric Testing"
+      h1="Humidity Testing & Psychrometrics"
       intro={
         <>
           Humidity testing is a psychrometric evaluation of the indoor
@@ -116,9 +116,9 @@ function HumidityPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Pair with psychrometric readings to see whether humidity has already driven airborne spore counts up." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Find the specific cold surfaces where condensation is landing." },
-        { to: "/services/mold-inspection", label: "Full mold inspection", blurb: "The umbrella service — combines humidity, moisture, visual, and lab testing in one visit." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Pair with psychrometric readings to see whether humidity has already driven airborne spore counts up." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the specific cold surfaces where condensation is landing." },
+        { to: "/services/mold-inspection/", label: "Full mold inspection", blurb: "The umbrella service — combines humidity, moisture, visual, and lab testing in one visit." },
       ]}
       ctaTitle="Recurring mildew with no leak in sight?"
       ctaBody="Independent, data-backed humidity testing across South Florida. Find out whether ambient moisture — not a leak — is driving the problem."

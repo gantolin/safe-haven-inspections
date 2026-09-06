@@ -32,17 +32,17 @@ export interface ServiceSection {
 
 export interface RelatedService {
   to:
-    | "/services/air-quality-testing"
-    | "/services/surface-sampling"
-    | "/services/thermal-imaging"
-    | "/services/post-remediation-verification"
-    | "/services/real-estate-mold-inspection"
-    | "/services/commercial-mold-inspection"
-    | "/services/mold-assessment-report"
-    | "/services/mold-inspection"
-    | "/services/mold-testing"
-    | "/services/water-damage-inspection"
-    | "/services/humidity-testing";
+    | "/services/air-quality-testing/"
+    | "/services/surface-sampling/"
+    | "/services/thermal-imaging/"
+    | "/services/post-remediation-verification/"
+    | "/services/real-estate-mold-inspection/"
+    | "/services/commercial-mold-inspection/"
+    | "/services/mold-assessment-report/"
+    | "/services/mold-inspection/"
+    | "/services/mold-testing/"
+    | "/services/water-damage-inspection/"
+    | "/services/humidity-testing/";
   label: string;
   blurb: string;
 }
@@ -54,6 +54,12 @@ export interface ServicePageProps {
   sections: ServiceSection[];
   faqs: Array<{ q: string; a: string }>;
   related: RelatedService[];
+  /**
+   * Optional link out to a blog article. Rendered as a plain <a> because blog
+   * posts live under the dynamic /blog/$slug route, which a typed <Link> would
+   * need params for. Trailing slash: GitHub Pages serves folder indexes.
+   */
+  furtherReading?: { href: string; label: string; blurb: string };
   ctaTitle: string;
   ctaBody: string;
 }
@@ -65,6 +71,7 @@ export function ServicePage({
   sections,
   faqs,
   related,
+  furtherReading,
   ctaTitle,
   ctaBody,
 }: ServicePageProps) {
@@ -84,7 +91,7 @@ export function ServicePage({
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
             >
               Request an inspection <ArrowRight className="h-4 w-4" />
@@ -99,7 +106,7 @@ export function ServicePage({
           <p className="mt-6 max-w-2xl text-xs text-muted-foreground">
             Part of our{" "}
             <Link
-              to="/services/mold-inspection"
+              to="/services/mold-inspection/"
               className="font-semibold text-accent hover:underline"
             >
               Palm Beach County mold inspection
@@ -231,13 +238,27 @@ export function ServicePage({
             </Link>
           ))}
         </div>
+        {furtherReading ? (
+          <div className="mt-6 rounded-2xl border border-border bg-secondary/50 p-5">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">
+              Further reading
+            </p>
+            <a
+              href={furtherReading.href}
+              className="mt-2 inline-block font-semibold text-primary hover:text-accent"
+            >
+              {furtherReading.label}
+            </a>
+            <p className="mt-1 text-sm text-muted-foreground">{furtherReading.blurb}</p>
+          </div>
+        ) : null}
         <p className="mt-6 text-sm text-muted-foreground">
           See all{" "}
-          <Link to="/services" className="font-semibold text-accent hover:underline">
+          <Link to="/services/" className="font-semibold text-accent hover:underline">
             mold assessment services
           </Link>{" "}
           or return to the{" "}
-          <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+          <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
             mold inspection overview
           </Link>
           .
@@ -255,7 +276,7 @@ export function ServicePage({
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />

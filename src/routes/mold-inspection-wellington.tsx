@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-wellington")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-wellington",
+      path: "/mold-inspection-wellington/",
       title: "Mold Inspection Wellington FL | Licensed Mold Assessor",
       description:
         "Independent, state-licensed mold inspection and testing in Wellington, FL. Lab-backed reports for equestrian estates, family homes, and HOA properties.",
@@ -37,8 +37,8 @@ function WellingtonPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-royal-palm-beach", label: "Royal Palm Beach" },
-        { to: "/mold-inspection-loxahatchee", label: "Loxahatchee" },
+        { to: "/mold-inspection-royal-palm-beach/", label: "Royal Palm Beach" },
+        { to: "/mold-inspection-loxahatchee/", label: "Loxahatchee" },
       ]}
     />
   );

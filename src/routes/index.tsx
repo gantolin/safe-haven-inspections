@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { localBusinessSchema } from "@/lib/seo";
+import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
 import {
   ShieldCheck,
   Scale,
@@ -51,13 +51,13 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Unbiased, lab-backed answers for your home. Call (561) 632-6387." },
       { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
       { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/" },
+      { property: "og:url", content: absoluteUrl("/") },
       // og:image intentionally omitted — __root.tsx supplies the absolute
       // branded card sitewide. This previously passed the bare asset path,
       // which is relative, so the homepage rendered no preview image at all.
     ],
     links: [
-      { rel: "canonical", href: "https://www.safehaveninspectionsllc.com/" },
+      { rel: "canonical", href: absoluteUrl("/") },
       {
         rel: "preload",
         as: "image",
@@ -78,7 +78,6 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           ...localBusinessSchema(),
           image: heroImg,
-          serviceType: ["Mold inspection", "Mold assessment", "Air quality testing", "Post-remediation verification"],
           founder: { "@type": "Person", name: "Landon Heinrichs" },
           hasOfferCatalog: {
             "@type": "OfferCatalog",
@@ -161,7 +160,7 @@ function Index() {
               <GoogleRatingBadge onDark />
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
-              Mold Inspection & Testing
+              Independent Mold Inspection & Testing in South Florida
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Protect your home and the air you breathe.
@@ -181,7 +180,7 @@ function Index() {
             </p>
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3.5 text-sm font-semibold text-cta-foreground shadow-lg shadow-cta/30 transition hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
@@ -280,13 +279,13 @@ function Index() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/about"
+                to="/about/"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
               >
                 About Us <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/services"
+                to="/services/"
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-2.5 text-sm font-semibold text-primary"
               >
                 Our services
@@ -342,7 +341,7 @@ function Index() {
               — Landon Heinrichs, Founder
             </p>
             <Link
-              to="/about"
+              to="/about/"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:underline"
             >
               Read more about Landon <ArrowRight className="h-3.5 w-3.5" />
@@ -560,7 +559,7 @@ function Index() {
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  to="/contact"
+                  to="/contact/"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] shadow-md shadow-accent/25 transition hover:-translate-y-0.5"
                 >
                   Request an inspection <ArrowRight className="h-4 w-4" />
@@ -700,7 +699,7 @@ function Index() {
             </div>
             <div className="flex flex-col gap-2 sm:flex-row md:flex-col">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-md shadow-cta/30 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
               >
                 Request an inspection

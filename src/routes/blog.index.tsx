@@ -2,13 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { posts } from "@/data/posts";
 import { webpVariant } from "@/lib/images";
+import { absoluteUrl } from "@/lib/seo";
 
 const HERO = "/blog-hero.jpg";
 const HERO_MOBILE = "/blog-hero-mobile.jpg";
 
 /*
  * This is blog.index.tsx, not blog.tsx, and the path is "/blog/" rather than
- * "/blog", on purpose.
+ * "/blog/", on purpose.
  *
  * As blog.tsx it declared createFileRoute("/blog"), which makes it a *layout*
  * route wrapping /blog/$slug. It renders the listing and no <Outlet />, so the
@@ -23,9 +24,9 @@ export const Route = createFileRoute("/blog/")({
       { title: "Mold Inspection Blog — South Florida | Safe Haven" },
       { name: "description", content: "Practical guides from an independent South Florida mold assessor: hidden mold signs, post-storm mold, pre-purchase mold testing, and more." },
       { property: "og:title", content: "Safe Haven Inspections Blog" },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/blog" },
+      { property: "og:url", content: absoluteUrl("/blog/") },
     ],
-    links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/blog" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/blog/") }],
   }),
   component: BlogIndex,
 });
@@ -76,12 +77,47 @@ function BlogIndex() {
         </div>
       </section>
 
+      <section className="mx-auto mt-14 max-w-3xl px-4 sm:px-6">
+        <h2 className="text-2xl font-semibold text-primary">What you will find here</h2>
+        <p className="mt-4 text-muted-foreground">
+          Safe Haven Inspections is a small, family-operated mold assessment
+          company working across Martin, Palm Beach, and Broward Counties.
+          Landon Heinrichs founded it after 14 years in the field, most of them
+          on the remediation side, cleaning up the problems these articles are
+          about. That background is why the guides here go further than most:
+          he has seen what happens when a moisture problem gets papered over
+          instead of found and fixed.
+        </p>
+        <p className="mt-4 text-muted-foreground">
+          Everything is written for homeowners, renters, buyers, and property
+          managers rather than for contractors. Expect plain explanations of
+          what mold testing can and cannot tell you, how South Florida humidity
+          and storm season change the picture, what a laboratory report
+          actually means once it lands in your inbox, and when a problem is
+          small enough to handle yourself.
+        </p>
+        <p className="mt-4 text-muted-foreground">
+          One thing worth stating up front: Safe Haven inspects and tests only,
+          and never performs remediation. The company assessing your property
+          has no financial stake in how large the cleanup turns out to be. If
+          you want the detail behind that, start with{" "}
+          <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
+            what a mold inspection covers
+          </Link>
+          , or see the{" "}
+          <Link to="/service-areas/" className="font-semibold text-accent hover:underline">
+            cities we serve
+          </Link>
+          .
+        </p>
+      </section>
+
       <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
             <Link
               key={p.slug}
-              to="/blog/$slug"
+              to="/blog/$slug/"
               params={{ slug: p.slug }}
               className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5"
             >

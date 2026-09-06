@@ -18,7 +18,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/water-damage-inspection")({
   head: () => {
     const base = pageMeta({
-      path: "/services/water-damage-inspection",
+      path: "/services/water-damage-inspection/",
       title: "Water Damage Inspection, South Florida | Safe Haven",
       description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
     });
@@ -28,16 +28,16 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Water Damage Inspection FL",
+            name: "Water Damage Inspection",
             description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
-            path: "/services/water-damage-inspection",
+            path: "/services/water-damage-inspection/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Water Damage Inspection FL", path: "/services/water-damage-inspection" },
+            { name: "Services", path: "/services/" },
+            { name: "Water Damage Inspection", path: "/services/water-damage-inspection/" },
           ]),
         ),
       ],
@@ -112,10 +112,15 @@ function WaterDamagePage() {
         },
       ]}
       faqs={faqs}
+      furtherReading={{
+        href: "/blog/hurricane-mold-prevention-tips/",
+        label: "Hurricane Mold Prevention Tips",
+        blurb: "What to do in the days after a storm, while the window to stop mold from establishing is still open.",
+      }}
       related={[
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "The non-destructive backbone of any water-damage inspection." },
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Sample the air after a water event to see whether spore levels are already elevated." },
-        { to: "/services/post-remediation-verification", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "The non-destructive backbone of any water-damage inspection." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Sample the air after a water event to see whether spore levels are already elevated." },
+        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
       ]}
       ctaTitle="Just had a leak or a storm event?"
       ctaBody="Get an independent, insurance-ready water-damage assessment before decisions get made. Prioritized scheduling for storm and emergency calls."

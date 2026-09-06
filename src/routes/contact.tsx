@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { cities } from "@/data/cities";
 import { submitContactForm } from "@/lib/contact";
-import { localBusinessSchema } from "@/lib/seo";
+import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -10,9 +11,9 @@ export const Route = createFileRoute("/contact")({
       { title: "Request an Inspection — Safe Haven Inspections, South Florida" },
       { name: "description", content: "Request a mold inspection in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 — the phone consultation is free." },
       { property: "og:title", content: "Contact Safe Haven Inspections" },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/contact" },
+      { property: "og:url", content: absoluteUrl("/contact/") },
     ],
-    links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/contact" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/contact/") }],
     scripts: [
       {
         type: "application/ld+json",
@@ -257,6 +258,81 @@ function ContactPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* WHAT HAPPENS NEXT */}
+      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+        <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
+          What happens after you get in touch
+        </h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Step one</p>
+            <h3 className="mt-2 text-base font-semibold text-primary">A conversation first</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Every request starts with a phone call. Landon asks what you are
+              seeing, smelling, or reacting to, how long it has been going on,
+              and whether there has been a leak, a storm, or recent
+              construction. Some callers do not need an inspection at all, and
+              he will tell you so on the phone.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Step two</p>
+            <h3 className="mt-2 text-base font-semibold text-primary">The inspection itself</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              A hands-on walkthrough paired with instrument work: moisture
+              meters, thermal imaging where it earns its place, and air or
+              surface sampling where a sample answers a real question.
+              Sampling is targeted rather than routine, because a sample that
+              settles nothing is a cost with no return.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-accent">Step three</p>
+            <h3 className="mt-2 text-base font-semibold text-primary">The written report</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Samples go to an independent AIHA-accredited laboratory, and the
+              written report follows within 24 hours of the results. Plain
+              language, photographs, lab data, and a clear description of what
+              to do next, written so it can be handed straight to a remediator,
+              an insurer, or the other side of a transaction.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-accent/30 bg-secondary/50 p-6">
+          <h3 className="text-base font-semibold text-primary">Independent by design</h3>
+          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+            Safe Haven inspects and tests only, and never performs remediation.
+            That separation is deliberate. A company that tells you how large
+            your problem is should have nothing to gain from the answer, and a
+            post-remediation clearance test means very little when the company
+            running it also did the cleanup. If a property needs remediation,
+            you get the documentation to hire a remediator on your own terms.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold text-primary sm:text-3xl">Where we work</h2>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            Inspections are scheduled across Martin, Palm Beach, and Broward
+            Counties. If your city is not listed, call anyway, because the
+            service area is drawn by drive time rather than by county line.
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <a
+                  href={`/mold-inspection-${c.slug}/`}
+                  className="inline-flex rounded-full border border-border bg-card px-3 py-1.5 text-sm text-primary transition hover:border-accent hover:text-accent"
+                >
+                  {c.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

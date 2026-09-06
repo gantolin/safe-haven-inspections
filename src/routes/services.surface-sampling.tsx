@@ -24,8 +24,8 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/surface-sampling")({
   head: () => {
     const base = pageMeta({
-      path: "/services/surface-sampling",
-      title: "Surface & Swab Mold Sampling, South Florida | Safe Haven",
+      path: "/services/surface-sampling/",
+      title: "Surface Sampling & Swab Testing, South Florida | Safe Haven",
       description:
         "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth — no remediation upsell.",
     });
@@ -35,16 +35,16 @@ export const Route = createFileRoute("/services/surface-sampling")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Surface & Swab Mold Sampling",
+            name: "Surface Sampling & Swab Testing",
             description: "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth — no remediation upsell.",
-            path: "/services/surface-sampling",
+            path: "/services/surface-sampling/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Surface & Swab Mold Sampling", path: "/services/surface-sampling" },
+            { name: "Services", path: "/services/" },
+            { name: "Surface Sampling & Swab Testing", path: "/services/surface-sampling/" },
           ]),
         ),
       ],
@@ -57,7 +57,7 @@ function SurfaceSamplingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Surface & Swab Mold Sampling"
+      h1="Surface Sampling & Swab Testing"
       intro={
         <>
           Surface and swab mold sampling positively identifies whether a
@@ -122,9 +122,9 @@ function SurfaceSamplingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Complement targeted surface samples with lab-analyzed air data." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Find the moisture source feeding what your surface sample identified." },
-        { to: "/services/mold-assessment-report", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Complement targeted surface samples with lab-analyzed air data." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the moisture source feeding what your surface sample identified." },
+        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
       ]}
       ctaTitle="Get a surface sample analyzed"
       ctaBody="Stop guessing whether a spot is mold. Get a lab-backed answer from an independent, state-licensed assessor."

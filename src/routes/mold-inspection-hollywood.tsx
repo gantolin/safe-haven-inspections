@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-hollywood")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-hollywood",
+      path: "/mold-inspection-hollywood/",
       title: "Mold Inspection Hollywood FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Hollywood, FL. Lab-backed reports for beach rentals, older bungalows, and coastal condos exposed to salt air.",
@@ -41,9 +41,9 @@ function HollywoodPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-fort-lauderdale", label: "Fort Lauderdale" },
-        { to: "/mold-inspection-pembroke-pines", label: "Pembroke Pines" },
-        { to: "/mold-inspection-davie", label: "Davie" },
+        { to: "/mold-inspection-fort-lauderdale/", label: "Fort Lauderdale" },
+        { to: "/mold-inspection-pembroke-pines/", label: "Pembroke Pines" },
+        { to: "/mold-inspection-davie/", label: "Davie" },
       ]}
     />
   );

@@ -6,12 +6,12 @@ import { webpVariant } from "@/lib/images";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/service-areas", label: "Areas" },
-  { to: "/realtors", label: "Realtors" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
+  { to: "/about/", label: "About" },
+  { to: "/services/", label: "Services" },
+  { to: "/service-areas/", label: "Areas" },
+  { to: "/realtors/", label: "Realtors" },
+  { to: "/blog/", label: "Blog" },
+  { to: "/contact/", label: "Contact" },
 ] as const;
 
 export function SiteNav() {
@@ -152,7 +152,7 @@ export function SiteFooter() {
             </li>
             <li><a className="text-accent break-all hover:underline" href="mailto:safehaveninspectionsllc@gmail.com">safehaveninspectionsllc@gmail.com</a></li>
             <li>
-              <a href="/service-areas" className="text-accent hover:underline">
+              <a href="/service-areas/" className="text-accent hover:underline">
                 Martin · Palm Beach · Broward
               </a>
             </li>

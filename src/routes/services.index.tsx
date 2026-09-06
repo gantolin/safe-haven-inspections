@@ -15,7 +15,7 @@ import {
   Gauge,
   Microscope,
 } from "lucide-react";
-import { breadcrumbSchema, jsonLdScript } from "@/lib/seo";
+import { absoluteUrl, breadcrumbSchema, jsonLdScript } from "@/lib/seo";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -23,14 +23,14 @@ export const Route = createFileRoute("/services/")({
       { title: "Mold Inspection & Testing Services, South Florida | Safe Haven" },
       { name: "description", content: "Independent mold inspection, assessment, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
       { property: "og:title", content: "Our Services — Safe Haven Inspections" },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/services" },
+      { property: "og:url", content: absoluteUrl("/services/") },
     ],
-    links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/services" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/services/") }],
     scripts: [
       jsonLdScript(
         breadcrumbSchema([
           { name: "Home", path: "/" },
-          { name: "Services", path: "/services" },
+          { name: "Services", path: "/services/" },
         ]),
       ),
     ],
@@ -39,17 +39,17 @@ export const Route = createFileRoute("/services/")({
 });
 
 type ServiceLink =
-  | "/services/mold-inspection"
-  | "/services/mold-testing"
-  | "/services/air-quality-testing"
-  | "/services/surface-sampling"
-  | "/services/thermal-imaging"
-  | "/services/water-damage-inspection"
-  | "/services/humidity-testing"
-  | "/services/post-remediation-verification"
-  | "/services/real-estate-mold-inspection"
-  | "/services/commercial-mold-inspection"
-  | "/services/mold-assessment-report";
+  | "/services/mold-inspection/"
+  | "/services/mold-testing/"
+  | "/services/air-quality-testing/"
+  | "/services/surface-sampling/"
+  | "/services/thermal-imaging/"
+  | "/services/water-damage-inspection/"
+  | "/services/humidity-testing/"
+  | "/services/post-remediation-verification/"
+  | "/services/real-estate-mold-inspection/"
+  | "/services/commercial-mold-inspection/"
+  | "/services/mold-assessment-report/";
 
 const services: Array<{
   to: ServiceLink;
@@ -58,67 +58,67 @@ const services: Array<{
   body: string;
 }> = [
   {
-    to: "/services/mold-inspection",
+    to: "/services/mold-inspection/",
     icon: Search,
     title: "Mold Inspection",
     body: "The flagship service. Licensed on-site visual, moisture, thermal, and lab-backed evaluation of the property. Start here if you're not sure what you need.",
   },
   {
-    to: "/services/mold-testing",
+    to: "/services/mold-testing/",
     icon: Microscope,
     title: "Mold Testing",
     body: "The lab-analyzed sampling piece — air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
   },
   {
-    to: "/services/air-quality-testing",
+    to: "/services/air-quality-testing/",
     icon: Wind,
     title: "Airborne Mold & Air Quality Testing",
     body: "Spore-trap air sampling with outdoor controls, analyzed at an AIHA-accredited third-party lab. The core indoor air data behind most decisions.",
   },
   {
-    to: "/services/surface-sampling",
+    to: "/services/surface-sampling/",
     icon: FlaskConical,
-    title: "Surface & Swab Sampling",
+    title: "Surface Sampling & Swab Testing",
     body: "Tape-lift, swab, and bulk sampling of visible material for positive species identification. Complements air testing when there's something to point at.",
   },
   {
-    to: "/services/thermal-imaging",
+    to: "/services/thermal-imaging/",
     icon: Thermometer,
     title: "Moisture Mapping & Thermal Imaging",
     body: "Non-destructive infrared and moisture-meter surveys that locate hidden water intrusion behind walls, ceilings, and floors before it becomes mold.",
   },
   {
-    to: "/services/water-damage-inspection",
+    to: "/services/water-damage-inspection/",
     icon: Droplets,
     title: "Water Damage & Moisture Intrusion Assessment",
     body: "Post-leak, post-storm, and post-flood inspection. Insurance-ready documentation of what got wet and how far the moisture traveled.",
   },
   {
-    to: "/services/humidity-testing",
+    to: "/services/humidity-testing/",
     icon: Gauge,
-    title: "Humidity & Psychrometric Testing",
+    title: "Humidity Testing & Psychrometrics",
     body: "Temperature, RH, and dew-point measurement across the home to diagnose humidity-driven mildew when there's no obvious leak.",
   },
   {
-    to: "/services/post-remediation-verification",
+    to: "/services/post-remediation-verification/",
     icon: ShieldCheck,
     title: "Post-Remediation Verification",
     body: "Independent clearance testing after any remediation company finishes. Third-party pass/fail decisions before walls close and occupants return.",
   },
   {
-    to: "/services/real-estate-mold-inspection",
+    to: "/services/real-estate-mold-inspection/",
     icon: Home,
     title: "Real Estate Mold Inspection",
     body: "Pre-purchase and pre-sale inspections scheduled to fit inside real inspection-period windows. Reports designed for buyers, sellers, and agents.",
   },
   {
-    to: "/services/commercial-mold-inspection",
+    to: "/services/commercial-mold-inspection/",
     icon: Building2,
     title: "Commercial & Property Management",
     body: "Offices, rentals, HOAs, condos, and retail. Multi-stakeholder documentation for owners, managers, tenants, and insurers.",
   },
   {
-    to: "/services/mold-assessment-report",
+    to: "/services/mold-assessment-report/",
     icon: FileText,
     title: "Mold Assessment & Written Protocol",
     body: "The formal Florida assessment report — and, when needed, the remediation protocol remediators bid and clearance is graded against.",
@@ -144,7 +144,7 @@ function ServicesPage() {
           </div>
           <p className="mt-6 max-w-2xl text-sm text-muted-foreground">
             New here? Start with our{" "}
-            <Link to="/services/mold-inspection" className="font-semibold text-accent hover:underline">
+            <Link to="/services/mold-inspection/" className="font-semibold text-accent hover:underline">
               mold inspection overview
             </Link>{" "}
             for the full process and FAQs.
@@ -173,7 +173,7 @@ function ServicesPage() {
           ))}
 
           <Link
-            to="/contact"
+            to="/contact/"
             className="group flex flex-col justify-between rounded-2xl border border-dashed border-accent/40 bg-accent/5 p-6 transition hover:border-accent hover:bg-accent/10 lg:min-h-[24rem]"
           >
             <div>

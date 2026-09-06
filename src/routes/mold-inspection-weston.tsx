@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-weston")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-weston",
+      path: "/mold-inspection-weston/",
       title: "Mold Inspection Weston FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Weston, FL. Lab-backed reports for upscale master-planned homes, HOA properties, and finished interiors.",
@@ -37,9 +37,9 @@ function WestonPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-pembroke-pines", label: "Pembroke Pines" },
-        { to: "/mold-inspection-davie", label: "Davie" },
-        { to: "/mold-inspection-sunrise", label: "Sunrise" },
+        { to: "/mold-inspection-pembroke-pines/", label: "Pembroke Pines" },
+        { to: "/mold-inspection-davie/", label: "Davie" },
+        { to: "/mold-inspection-sunrise/", label: "Sunrise" },
       ]}
     />
   );

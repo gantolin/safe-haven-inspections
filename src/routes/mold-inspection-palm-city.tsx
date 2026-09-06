@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-palm-city")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-palm-city",
+      path: "/mold-inspection-palm-city/",
       title: "Mold Inspection Palm City FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Palm City, FL. Lab-backed reports for canal-front homes, gated communities, and newer suburban builds.",
@@ -37,9 +37,9 @@ function PalmCityPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-stuart", label: "Stuart" },
-        { to: "/mold-inspection-jensen-beach", label: "Jensen Beach" },
-        { to: "/mold-inspection-hobe-sound", label: "Hobe Sound" },
+        { to: "/mold-inspection-stuart/", label: "Stuart" },
+        { to: "/mold-inspection-jensen-beach/", label: "Jensen Beach" },
+        { to: "/mold-inspection-hobe-sound/", label: "Hobe Sound" },
       ]}
     />
   );

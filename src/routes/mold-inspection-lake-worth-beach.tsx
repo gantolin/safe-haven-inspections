@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-lake-worth-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-lake-worth-beach",
+      path: "/mold-inspection-lake-worth-beach/",
       title: "Mold Inspection Lake Worth Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Lake Worth Beach, FL. Lab-backed reports for historic cottages, dense-lot older homes, and downtown rentals.",
@@ -37,9 +37,9 @@ function LakeWorthBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-west-palm-beach", label: "West Palm Beach" },
-        { to: "/mold-inspection-boynton-beach", label: "Boynton Beach" },
-        { to: "/mold-inspection-greenacres", label: "Greenacres" },
+        { to: "/mold-inspection-west-palm-beach/", label: "West Palm Beach" },
+        { to: "/mold-inspection-boynton-beach/", label: "Boynton Beach" },
+        { to: "/mold-inspection-greenacres/", label: "Greenacres" },
       ]}
     />
   );

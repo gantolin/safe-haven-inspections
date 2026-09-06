@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-jupiter")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-jupiter",
+      path: "/mold-inspection-jupiter/",
       title: "Mold Inspection Jupiter FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Jupiter, FL. Lab-backed reports for coastal and Loxahatchee River homes and storm-exposed properties.",
@@ -37,9 +37,9 @@ function JupiterPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-palm-beach-gardens", label: "Palm Beach Gardens" },
-        { to: "/mold-inspection-hobe-sound", label: "Hobe Sound" },
-        { to: "/mold-inspection-west-palm-beach", label: "West Palm Beach" },
+        { to: "/mold-inspection-palm-beach-gardens/", label: "Palm Beach Gardens" },
+        { to: "/mold-inspection-hobe-sound/", label: "Hobe Sound" },
+        { to: "/mold-inspection-west-palm-beach/", label: "West Palm Beach" },
       ]}
     />
   );

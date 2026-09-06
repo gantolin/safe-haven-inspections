@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { cities, counties, type City } from "@/data/cities";
+import { absoluteUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/service-areas")({
   head: () => ({
@@ -8,9 +9,9 @@ export const Route = createFileRoute("/service-areas")({
       { title: "Service Areas — South Florida Mold Inspection | Safe Haven" },
       { name: "description", content: "Independent mold inspection across Martin, Palm Beach & Broward Counties — Stuart, West Palm Beach, Boca Raton, Fort Lauderdale, and more." },
       { property: "og:title", content: "South Florida Service Areas — Safe Haven Inspections" },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/service-areas" },
+      { property: "og:url", content: absoluteUrl("/service-areas/") },
     ],
-    links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/service-areas" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/service-areas/") }],
   }),
   component: ServiceAreasPage,
 });
@@ -19,7 +20,10 @@ export const Route = createFileRoute("/service-areas")({
 // The Link component is typed against the route tree, so we cast per-item
 // to keep the mapping generic without listing all 27 literal paths here.
 function cityHref(city: City): string {
-  return `/mold-inspection-${city.slug}`;
+  // Trailing slash: GitHub Pages serves /mold-inspection-{slug}/index.html, so
+  // the bare form 301s. This is a raw <a>, so the router's trailingSlash
+  // setting does not reach it.
+  return `/mold-inspection-${city.slug}/`;
 }
 
 function ServiceAreasPage() {
@@ -74,7 +78,7 @@ function ServiceAreasPage() {
         <div className="rounded-2xl border border-border bg-secondary p-6 sm:p-8">
           <p className="text-sm text-muted-foreground">
             Don't see your city?{" "}
-            <Link to="/contact" className="font-semibold text-accent hover:underline">
+            <Link to="/contact/" className="font-semibold text-accent hover:underline">
               Get in touch
             </Link>{" "}
             — we likely cover it across Martin, Palm Beach &amp; Broward Counties.

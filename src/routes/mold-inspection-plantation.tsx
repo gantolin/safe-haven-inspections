@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-plantation")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-plantation",
+      path: "/mold-inspection-plantation/",
       title: "Mold Inspection Plantation FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Plantation, FL. Lab-backed reports for established slab-on-grade homes with mature landscaping and drainage issues.",
@@ -37,9 +37,9 @@ function PlantationPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-fort-lauderdale", label: "Fort Lauderdale" },
-        { to: "/mold-inspection-sunrise", label: "Sunrise" },
-        { to: "/mold-inspection-davie", label: "Davie" },
+        { to: "/mold-inspection-fort-lauderdale/", label: "Fort Lauderdale" },
+        { to: "/mold-inspection-sunrise/", label: "Sunrise" },
+        { to: "/mold-inspection-davie/", label: "Davie" },
       ]}
     />
   );

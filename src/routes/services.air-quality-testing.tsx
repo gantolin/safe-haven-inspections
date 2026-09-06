@@ -28,7 +28,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/air-quality-testing")({
   head: () => {
     const base = pageMeta({
-      path: "/services/air-quality-testing",
+      path: "/services/air-quality-testing/",
       title: "Air Quality & Mold Testing, South Florida | Safe Haven",
       description:
         "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
@@ -41,14 +41,14 @@ export const Route = createFileRoute("/services/air-quality-testing")({
           serviceSchema({
             name: "Air Quality & Mold Testing",
             description: "Independent airborne mold and indoor air quality testing in South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
-            path: "/services/air-quality-testing",
+            path: "/services/air-quality-testing/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Air Quality & Mold Testing", path: "/services/air-quality-testing" },
+            { name: "Services", path: "/services/" },
+            { name: "Air Quality & Mold Testing", path: "/services/air-quality-testing/" },
           ]),
         ),
       ],
@@ -130,9 +130,9 @@ function AirQualityTestingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/surface-sampling", label: "Surface & swab sampling", blurb: "When visible material needs species-level identification, tape lifts and swabs complement air testing." },
-        { to: "/services/thermal-imaging", label: "Moisture mapping & thermal imaging", blurb: "Find the hidden moisture source that's driving elevated indoor spore counts." },
-        { to: "/services/post-remediation-verification", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation — with air samples front and center." },
+        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "When visible material needs species-level identification, tape lifts and swabs complement air testing." },
+        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the hidden moisture source that's driving elevated indoor spore counts." },
+        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation — with air samples front and center." },
       ]}
       ctaTitle="Schedule air quality testing"
       ctaBody="Get objective, lab-backed answers about the air inside your home. Talk to our local, state-licensed team directly."

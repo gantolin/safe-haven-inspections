@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Handshake, FileCheck2, Building2, ArrowRight, CheckCircle2, Phone } from "lucide-react";
+import { absoluteUrl } from "@/lib/seo";
 
 export const Route = createFileRoute("/realtors")({
   head: () => ({
@@ -7,9 +8,9 @@ export const Route = createFileRoute("/realtors")({
       { title: "Realtor & Property Manager Mold Inspection | Safe Haven" },
       { name: "description", content: "Fast, independent pre-closing mold inspection for South Florida real-estate professionals. Clear reports buyers can negotiate with. Partner with Safe Haven." },
       { property: "og:title", content: "For Realtors & Property Managers — Safe Haven Inspections" },
-      { property: "og:url", content: "https://www.safehaveninspectionsllc.com/realtors" },
+      { property: "og:url", content: absoluteUrl("/realtors/") },
     ],
-    links: [{ rel: "canonical", href: "https://www.safehaveninspectionsllc.com/realtors" }],
+    links: [{ rel: "canonical", href: absoluteUrl("/realtors/") }],
   }),
   component: RealtorsPage,
 });
@@ -29,7 +30,7 @@ function RealtorsPage() {
             that keep transactions moving and clients protected.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
+            <Link to="/contact/" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
               Partner with Safe Haven <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="tel:+15616326387" className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary">
@@ -103,7 +104,7 @@ function RealtorsPage() {
                 independent perspective they deserve.
               </p>
             </div>
-            <Link to="/contact" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
+            <Link to="/contact/" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
               Contact Our Team <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

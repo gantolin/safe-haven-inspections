@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-davie")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-davie",
+      path: "/mold-inspection-davie/",
       title: "Mold Inspection Davie FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Davie, FL. Lab-backed reports for equestrian estates, well-water properties, and older ranch homes.",
@@ -37,9 +37,9 @@ function DaviePage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-plantation", label: "Plantation" },
-        { to: "/mold-inspection-pembroke-pines", label: "Pembroke Pines" },
-        { to: "/mold-inspection-weston", label: "Weston" },
+        { to: "/mold-inspection-plantation/", label: "Plantation" },
+        { to: "/mold-inspection-pembroke-pines/", label: "Pembroke Pines" },
+        { to: "/mold-inspection-weston/", label: "Weston" },
       ]}
     />
   );

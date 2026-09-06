@@ -24,7 +24,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/mold-assessment-report")({
   head: () => {
     const base = pageMeta({
-      path: "/services/mold-assessment-report",
+      path: "/services/mold-assessment-report/",
       title: "Mold Assessment Report & Protocol, South Florida | Safe Haven",
       description:
         "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
           serviceSchema({
             name: "Mold Assessment Report & Protocol",
             description: "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
-            path: "/services/mold-assessment-report",
+            path: "/services/mold-assessment-report/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Mold Assessment Report & Protocol", path: "/services/mold-assessment-report" },
+            { name: "Services", path: "/services/" },
+            { name: "Mold Assessment Report & Protocol", path: "/services/mold-assessment-report/" },
           ]),
         ),
       ],
@@ -121,9 +121,9 @@ function MoldAssessmentReportPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/post-remediation-verification", label: "Post-remediation verification", blurb: "Independent clearance graded against the criteria written into the protocol." },
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "The lab data most often referenced by the report's findings and recommendations." },
-        { to: "/services/commercial-mold-inspection", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
+        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance graded against the criteria written into the protocol." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "The lab data most often referenced by the report's findings and recommendations." },
+        { to: "/services/commercial-mold-inspection/", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
       ]}
       ctaTitle="Request a formal assessment report"
       ctaBody="Get a documented, defensible assessment report — and, where needed, a written remediation protocol — from an independent licensed assessor."

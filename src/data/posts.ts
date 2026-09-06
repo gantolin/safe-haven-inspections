@@ -61,10 +61,10 @@ export const posts: Post[] = [
       "An independent assessment will tell you what's actually growing and where, before repairs close everything up. Call (561) 632-6387 or request an inspection across Martin, Palm Beach, and Broward Counties.",
     ],
     related: [
-      { to: "/services/water-damage-inspection", label: "Water Damage & Post-Storm Inspection" },
-      { to: "/services/humidity-testing", label: "Humidity & Moisture Testing" },
-      { to: "/services/mold-inspection", label: "Full Mold Inspection" },
-      { to: "/contact", label: "Request an inspection" },
+      { to: "/services/water-damage-inspection/", label: "Water Damage & Post-Storm Inspection" },
+      { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics" },
+      { to: "/services/mold-inspection/", label: "Full Mold Inspection" },
+      { to: "/contact/", label: "Request an inspection" },
     ],
   },
 ];

@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-west-palm-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-west-palm-beach",
+      path: "/mold-inspection-west-palm-beach/",
       title: "Mold Inspection West Palm Beach FL | Licensed Mold Assessor",
       description:
         "Independent, state-licensed mold inspection in West Palm Beach, FL. Lab-backed reports for historic districts, downtown condos, and Intracoastal homes.",
@@ -41,9 +41,9 @@ function WestPalmBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-lake-worth-beach", label: "Lake Worth Beach" },
-        { to: "/mold-inspection-riviera-beach", label: "Riviera Beach" },
-        { to: "/mold-inspection-palm-beach-gardens", label: "Palm Beach Gardens" },
+        { to: "/mold-inspection-lake-worth-beach/", label: "Lake Worth Beach" },
+        { to: "/mold-inspection-riviera-beach/", label: "Riviera Beach" },
+        { to: "/mold-inspection-palm-beach-gardens/", label: "Palm Beach Gardens" },
       ]}
     />
   );

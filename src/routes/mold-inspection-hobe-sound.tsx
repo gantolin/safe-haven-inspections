@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-hobe-sound")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-hobe-sound",
+      path: "/mold-inspection-hobe-sound/",
       title: "Mold Inspection Hobe Sound FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Hobe Sound, FL. Lab-backed reports for older cottages, wooded estates, and well-water properties.",
@@ -37,9 +37,9 @@ function HobeSoundPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-stuart", label: "Stuart" },
-        { to: "/mold-inspection-jensen-beach", label: "Jensen Beach" },
-        { to: "/mold-inspection-port-salerno", label: "Port Salerno" },
+        { to: "/mold-inspection-stuart/", label: "Stuart" },
+        { to: "/mold-inspection-jensen-beach/", label: "Jensen Beach" },
+        { to: "/mold-inspection-port-salerno/", label: "Port Salerno" },
       ]}
     />
   );

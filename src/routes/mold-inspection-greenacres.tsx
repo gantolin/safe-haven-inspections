@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-greenacres")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-greenacres",
+      path: "/mold-inspection-greenacres/",
       title: "Mold Inspection Greenacres FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Greenacres, FL. Lab-backed reports for 1970s-80s CBS single-family homes and working-family neighborhoods.",
@@ -37,9 +37,9 @@ function GreenacresPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-lake-worth-beach", label: "Lake Worth Beach" },
-        { to: "/mold-inspection-boynton-beach", label: "Boynton Beach" },
-        { to: "/mold-inspection-royal-palm-beach", label: "Royal Palm Beach" },
+        { to: "/mold-inspection-lake-worth-beach/", label: "Lake Worth Beach" },
+        { to: "/mold-inspection-boynton-beach/", label: "Boynton Beach" },
+        { to: "/mold-inspection-royal-palm-beach/", label: "Royal Palm Beach" },
       ]}
     />
   );

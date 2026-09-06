@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-riviera-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-riviera-beach",
+      path: "/mold-inspection-riviera-beach/",
       title: "Mold Inspection Riviera Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Riviera Beach, FL. Lab-backed reports for Singer Island condos, older inland homes, and high-water-table properties.",
@@ -41,9 +41,9 @@ function RivieraBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-west-palm-beach", label: "West Palm Beach" },
-        { to: "/mold-inspection-palm-beach-gardens", label: "Palm Beach Gardens" },
-        { to: "/mold-inspection-jupiter", label: "Jupiter" },
+        { to: "/mold-inspection-west-palm-beach/", label: "West Palm Beach" },
+        { to: "/mold-inspection-palm-beach-gardens/", label: "Palm Beach Gardens" },
+        { to: "/mold-inspection-jupiter/", label: "Jupiter" },
       ]}
     />
   );

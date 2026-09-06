@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-sunrise")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-sunrise",
+      path: "/mold-inspection-sunrise/",
       title: "Mold Inspection Sunrise FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Sunrise, FL. Lab-backed reports for townhomes, condos, and planned communities with shared-wall HVAC condensation.",
@@ -41,9 +41,9 @@ function SunrisePage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-plantation", label: "Plantation" },
-        { to: "/mold-inspection-coral-springs", label: "Coral Springs" },
-        { to: "/mold-inspection-weston", label: "Weston" },
+        { to: "/mold-inspection-plantation/", label: "Plantation" },
+        { to: "/mold-inspection-coral-springs/", label: "Coral Springs" },
+        { to: "/mold-inspection-weston/", label: "Weston" },
       ]}
     />
   );

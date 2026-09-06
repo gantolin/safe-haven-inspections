@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-loxahatchee")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-loxahatchee",
+      path: "/mold-inspection-loxahatchee/",
       title: "Mold Inspection Loxahatchee FL | Licensed Mold Assessor",
       description:
         "Licensed, independent mold inspection and testing in Loxahatchee and The Acreage. Third-party lab results for well-water and post-storm moisture concerns.",
@@ -37,8 +37,8 @@ function LoxahatcheePage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-wellington", label: "Wellington" },
-        { to: "/mold-inspection-royal-palm-beach", label: "Royal Palm Beach" },
+        { to: "/mold-inspection-wellington/", label: "Wellington" },
+        { to: "/mold-inspection-royal-palm-beach/", label: "Royal Palm Beach" },
       ]}
     />
   );

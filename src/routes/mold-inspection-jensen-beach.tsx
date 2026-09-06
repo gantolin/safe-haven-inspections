@@ -5,7 +5,7 @@ import { pageMeta } from "@/lib/seo";
 export const Route = createFileRoute("/mold-inspection-jensen-beach")({
   head: () =>
     pageMeta({
-      path: "/mold-inspection-jensen-beach",
+      path: "/mold-inspection-jensen-beach/",
       title: "Mold Inspection Jensen Beach FL | Licensed Mold Assessor",
       description:
         "Independent mold inspection and testing in Jensen Beach, FL. Lab-backed reports for oceanfront condos, seasonal rentals, and coastal single-family homes.",
@@ -41,9 +41,9 @@ function JensenBeachPage() {
         ],
       }}
       otherCities={[
-        { to: "/mold-inspection-stuart", label: "Stuart" },
-        { to: "/mold-inspection-palm-city", label: "Palm City" },
-        { to: "/mold-inspection-hobe-sound", label: "Hobe Sound" },
+        { to: "/mold-inspection-stuart/", label: "Stuart" },
+        { to: "/mold-inspection-palm-city/", label: "Palm City" },
+        { to: "/mold-inspection-hobe-sound/", label: "Hobe Sound" },
       ]}
     />
   );

@@ -18,7 +18,7 @@ const faqs: FaqItem[] = [
 export const Route = createFileRoute("/services/mold-testing")({
   head: () => {
     const base = pageMeta({
-      path: "/services/mold-testing",
+      path: "/services/mold-testing/",
       title: "Mold Testing South Florida | Safe Haven",
       description: "Independent, lab-analyzed mold testing — air and surface sampling — across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
     });
@@ -30,14 +30,14 @@ export const Route = createFileRoute("/services/mold-testing")({
           serviceSchema({
             name: "Mold Testing South Florida",
             description: "Independent, lab-analyzed mold testing — air and surface sampling — across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
-            path: "/services/mold-testing",
+            path: "/services/mold-testing/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
-            { name: "Services", path: "/services" },
-            { name: "Mold Testing South Florida", path: "/services/mold-testing" },
+            { name: "Services", path: "/services/" },
+            { name: "Mold Testing South Florida", path: "/services/mold-testing/" },
           ]),
         ),
       ],
@@ -123,9 +123,9 @@ function MoldTestingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing", label: "Airborne mold & air quality testing", blurb: "Spore-trap air sampling with outdoor control — the core lab-backed indoor air dataset." },
-        { to: "/services/surface-sampling", label: "Surface & swab sampling", blurb: "Tape-lift and swab sampling of visible material for positive species identification." },
-        { to: "/services/mold-inspection", label: "Full mold inspection", blurb: "The umbrella service: visual, moisture, thermal, and lab-backed sampling combined." },
+        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Spore-trap air sampling with outdoor control — the core lab-backed indoor air dataset." },
+        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "Tape-lift and swab sampling of visible material for positive species identification." },
+        { to: "/services/mold-inspection/", label: "Full mold inspection", blurb: "The umbrella service: visual, moisture, thermal, and lab-backed sampling combined." },
       ]}
       ctaTitle="Get lab-backed answers about your indoor air"
       ctaBody="Independent, AIHA-accredited lab testing across South Florida. Results and written report typically within 24 hours."
