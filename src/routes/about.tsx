@@ -19,7 +19,7 @@ import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } f
 const CANONICAL = absoluteUrl("/about/");
 const TITLE = "Independent Mold Assessor, South Florida | Landon Heinrichs";
 const DESCRIPTION =
-  "Landon Heinrichs, founder of Safe Haven Inspections — FL-licensed Mold Assessor (MRSA3366) serving Martin, Palm Beach & Broward. Assessment and testing only, never remediation.";
+  "Landon Heinrichs, founder of Safe Haven Inspections and FL-licensed Mold Assessor MRSA3366, serving Martin, Palm Beach and Broward. We test, we never remediate.";
 
 const personSchema = {
   "@context": "https://schema.org",

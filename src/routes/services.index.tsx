@@ -21,7 +21,7 @@ export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Mold Inspection & Testing Services, South Florida | Safe Haven" },
-      { name: "description", content: "Independent mold inspection, assessment, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
+      { name: "description", content: "Independent mold inspection, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
       { property: "og:title", content: "Our Services — Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/services/") },
     ],

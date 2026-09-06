@@ -144,6 +144,10 @@ export function localBusinessSchema() {
       "Independent, family-operated, state-licensed mold inspection, testing, and indoor air-quality assessment company serving Martin, Palm Beach & Broward Counties. Founded and run by a lifelong South Florida resident whose background is in mold remediation.",
     address: {
       "@type": "PostalAddress",
+      // The landing page now displays this address and embeds a map of it, and
+      // the GBP displays it publicly too, so omitting it here would leave the
+      // structured data saying less than the page it describes.
+      streetAddress: "5880 Corson Pl",
       addressLocality: "Lake Worth",
       addressRegion: "FL",
       postalCode: "33463",

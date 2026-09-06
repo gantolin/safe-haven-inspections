@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Independent Mold Inspection, South Florida | Safe Haven" },
-      { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Unbiased, lab-backed answers for your home. Call (561) 632-6387." },
+      { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Lab-backed answers, no upsell. Call (561) 632-6387." },
       { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
       { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
       { property: "og:url", content: absoluteUrl("/") },
@@ -679,6 +679,49 @@ function Index() {
             <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
               Certified Asbestos Inspector
             </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Where we're based — map embed of the GBP location */}
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-8 md:grid-cols-[1fr_1.15fr] md:items-center">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-wider text-accent">
+              Where we work from
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
+              Based in Lake Worth Beach, covering three counties.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Safe Haven is run out of Lake Worth Beach, which puts most of
+              central Palm Beach County inside a short drive and keeps Martin
+              and Broward well within reach. Inspections are scheduled at your
+              property, not at an office, so the address below is where the
+              business is registered rather than somewhere you need to visit.
+            </p>
+            <address className="mt-5 not-italic text-sm font-semibold text-primary">
+              5880 Corson Pl, Lake Worth Beach, FL 33463
+            </address>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Serving Martin, Palm Beach, and Broward Counties.{" "}
+              <Link to="/service-areas/" className="font-semibold text-accent hover:underline">
+                See every city we cover
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+            {/* Keyless Google Maps embed: no API key ships to the browser.
+                Lazy-loaded so the iframe never competes with the hero for
+                LCP, and titled because an untitled iframe is a WCAG failure. */}
+            <iframe
+              title="Map showing Safe Haven Inspections in Lake Worth Beach, Florida"
+              src="https://www.google.com/maps?q=5880%20Corson%20Pl,%20Lake%20Worth%20Beach,%20FL%2033463&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[320px] w-full border-0 sm:h-[380px]"
+            />
           </div>
         </div>
       </section>

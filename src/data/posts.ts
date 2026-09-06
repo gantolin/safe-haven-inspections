@@ -37,7 +37,7 @@ export const posts: Post[] = [
     title: "Hurricane Mold Prevention Tips",
     titleTag: "Hurricane Mold Prevention Tips | Safe Haven",
     description:
-      "Lost power after a storm? Five practical ways to stop mold before it starts — air flow, keeping the house clean, humidity, water damage, and what to do before you evacuate.",
+      "Lost power after a storm? Five practical ways to stop mold before it starts: air flow, cleanliness, humidity, water damage, and what to do before you evacuate.",
     date: "2026-08-04",
     readMinutes: 5,
     // Unsplash AAHL8DtvBcg by Dorin Vancea, standard Unsplash License.
