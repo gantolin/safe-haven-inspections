@@ -125,6 +125,7 @@ function SurfaceSamplingPage() {
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Complement targeted surface samples with lab-analyzed air data." },
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the moisture source feeding what your surface sample identified." },
         { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
+        { to: "/services/mold-testing/", label: "Mold Testing", blurb: "How surface results sit alongside air sampling in a complete testing package." },
       ]}
       ctaTitle="Get a surface sample analyzed"
       ctaBody="Stop guessing whether a spot is mold. Get a lab-backed answer from an independent, state-licensed assessor."

@@ -133,6 +133,7 @@ function AirQualityTestingPage() {
         { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "When visible material needs species-level identification, tape lifts and swabs complement air testing." },
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the hidden moisture source that's driving elevated indoor spore counts." },
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation — with air samples front and center." },
+        { to: "/services/mold-testing/", label: "Mold Testing", blurb: "The broader testing picture: air and surface sampling together, and when each one answers the question." },
       ]}
       ctaTitle="Schedule air quality testing"
       ctaBody="Get objective, lab-backed answers about the air inside your home. Talk to our local, state-licensed team directly."

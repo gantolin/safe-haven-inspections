@@ -109,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           // Google Maps embed of the business location on the landing page.
           // The keyless /maps?output=embed form is used, so no API key ships
           // in the bundle; only the frame origin needs allowing.
-          "frame-src https://www.google.com",
+          "frame-src https://maps.google.com https://www.google.com",
           "upgrade-insecure-requests",
         ].join("; "),
       },

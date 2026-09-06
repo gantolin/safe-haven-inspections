@@ -121,6 +121,7 @@ function WaterDamagePage() {
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "The non-destructive backbone of any water-damage inspection." },
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Sample the air after a water event to see whether spore levels are already elevated." },
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
+        { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "After the water is gone, ambient humidity is what decides whether mold returns." },
       ]}
       ctaTitle="Just had a leak or a storm event?"
       ctaBody="Get an independent, insurance-ready water-damage assessment before decisions get made. Prioritized scheduling for storm and emergency calls."

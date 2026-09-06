@@ -132,6 +132,7 @@ function CommercialPage() {
         { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal document commercial insurers, remediators, and attorneys read." },
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Trace envelope and mechanical moisture across multi-unit or multi-zone properties." },
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
+        { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Post-leak and post-storm assessment for commercial roofs, risers, and shared walls." },
       ]}
       ctaTitle="Talk about a commercial project"
       ctaBody="Property managers, boards, and building owners — get a quote for an independent, licensed inspection tailored to your building."

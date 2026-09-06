@@ -125,6 +125,7 @@ function ThermalImagingPage() {
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Confirm whether a moisture finding has already produced elevated indoor spore counts." },
         { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "Positively identify any visible material found near a documented moisture source." },
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
+        { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Thermal imaging is usually how the extent of a leak gets mapped; this is the full post-water assessment around it." },
       ]}
       ctaTitle="Schedule moisture mapping"
       ctaBody="Find hidden water before it becomes hidden mold. Non-destructive, documented, and independent."

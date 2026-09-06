@@ -717,7 +717,7 @@ function Index() {
                 LCP, and titled because an untitled iframe is a WCAG failure. */}
             <iframe
               title="Map showing Safe Haven Inspections in Lake Worth Beach, Florida"
-              src="https://www.google.com/maps?q=5880%20Corson%20Pl,%20Lake%20Worth%20Beach,%20FL%2033463&output=embed"
+              src="https://maps.google.com/maps?q=5880%20Corson%20Pl,%20Lake%20Worth%20Beach,%20FL%2033463&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[320px] w-full border-0 sm:h-[380px]"

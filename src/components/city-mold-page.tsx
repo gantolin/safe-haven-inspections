@@ -293,9 +293,6 @@ export function CityMoldPage({
     { to: "/services/real-estate-mold-inspection/", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
     { to: "/services/commercial-mold-inspection/", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
     { to: "/services/mold-assessment-report/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps — usable by insurers and remediators." },
-    { to: "/services/mold-testing/", title: "Mold Testing", blurb: "Air and surface sampling analyzed by an independent AIHA-accredited lab, with results explained in plain language." },
-    { to: "/services/humidity-testing/", title: "Humidity Testing & Psychrometrics", blurb: "Temperature, relative humidity, and dew-point readings that explain humidity-driven mildew when there is no obvious leak." },
-    { to: "/services/water-damage-inspection/", title: "Water Damage Inspection", blurb: "Post-leak, post-storm, and post-flood assessment documenting what got wet and how far the moisture traveled." },
   ];
 
   const whatToExpect: Array<{

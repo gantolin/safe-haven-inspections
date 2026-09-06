@@ -132,6 +132,7 @@ function PostRemediationPage() {
         { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal scope of work the remediator is measured against at clearance." },
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Air samples are the core measurable behind a clearance pass or fail." },
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
+        { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "Clearance can pass while the conditions that caused the growth are still in place." },
       ]}
       ctaTitle="Book independent clearance testing"
       ctaBody="Get an unbiased pass/fail decision before the drywall goes back up. Talk to our licensed team."
