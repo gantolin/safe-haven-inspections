@@ -160,7 +160,7 @@ function Index() {
               <GoogleRatingBadge onDark />
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
-              Independent Mold Inspection & Testing in Greenacres
+              Mold Inspection & Testing in Greenacres, FL
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Protect your home and the air you breathe.
