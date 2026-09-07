@@ -22,6 +22,13 @@ export interface Post {
    */
   image?: { src: string; mobileSrc: string; alt: string };
   body: PostBlock[];
+  /**
+   * Primary sources for the factual claims in the post, rendered as a list at
+   * the end of the article. These are deliberately dofollow: linking out to
+   * EPA, CDC, CPSC and the Florida Statutes is the citation trail that backs
+   * the claims up, and burying it behind nofollow would defeat the point.
+   */
+  sources?: { label: string; href: string; note?: string }[];
   related?: { to: string; label: string }[];
 }
 
@@ -59,6 +66,9 @@ export const posts: Post[] = [
       "If you leave your home or evacuate, shut off the water supply to your house and take before pictures. You never know what condition your house will be in when you come back, and having pictures of what it looked like beforehand can really help if anything goes wrong, especially from a coverage standpoint. Shutting off your water also ensures that any water line going into your house will not have pressure behind it in the case where it cracks or breaks. Having years of remediation experience, we can't tell you how many times a homeowner called after coming home from an extended weekend to find their furniture floating. Trust us, it happens, so it's better to play it safe.",
       { heading: "If a storm has already hit" },
       "An independent assessment will tell you what's actually growing and where, before repairs close everything up. Call (561) 632-6387 or request an inspection across Martin, Palm Beach, and Broward Counties.",
+    ],
+    sources: [
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on keeping indoor relative humidity below 60 percent." },
     ],
     related: [
       { to: "/services/water-damage-inspection/", label: "Water Damage & Post-Storm Inspection" },
@@ -115,6 +125,11 @@ export const posts: Post[] = [
       { heading: "If you already ran a kit" },
       "Bring the result. Genuinely. It is a data point and we will look at it. Just let us put a proper baseline, a moisture map, and a set of eyes around it before you decide what it means. Call (561) 632-6387 or request an inspection anywhere in Palm Beach, Broward, or Martin County.",
     ],
+    sources: [
+      { label: "EPA, Mold Testing or Sampling", href: "https://www.epa.gov/mold/mold-testing-or-sampling", note: "on why sampling should be done by professionals with specific experience, and on the absence of any EPA or federal standard for airborne mold." },
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on sampling being unnecessary when growth is visible, and on the 30 to 60 percent humidity range." },
+      { label: "CDC, Mold and Health", href: "https://www.cdc.gov/mold-health/about/index.html", note: "on species identification: you do not need to know the type of mold." },
+    ],
     related: [
       { to: "/services/mold-testing/", label: "Mold Testing: air, surface, and bulk sampling" },
       { to: "/services/air-quality-testing/", label: "Indoor Air Quality Testing" },
@@ -165,6 +180,10 @@ export const posts: Post[] = [
       "We test only. We do not remove asbestos, we do not subcontract abatement, and we take nothing from the contractors who do. A negative result from us is worth the same as a positive one, which is the entire point of hiring the person who has nothing to sell you afterward.",
       "Call (561) 632-6387 or request testing anywhere in Palm Beach, Broward, or Martin County.",
     ],
+    sources: [
+      { label: "EPA, Protect Your Family from Exposures to Asbestos", href: "https://www.epa.gov/asbestos/protect-your-family-exposures-asbestos", note: "on leaving intact asbestos-containing material undisturbed and using trained professionals." },
+      { label: "CPSC, Asbestos In The Home", href: "https://www.cpsc.gov/safety-education/safety-guides/home/asbestos-home", note: "on sampling: taking samples yourself is not recommended, and analysis belongs at an NVLAP-accredited laboratory." },
+    ],
     related: [
       { to: "/services/asbestos-testing/", label: "Asbestos Testing" },
       { to: "/services/mold-inspection/", label: "Full Mold Inspection" },
@@ -212,6 +231,11 @@ export const posts: Post[] = [
       "Photograph everything before you move it, including the source if you can see it. Stop the water. Call your carrier and open the claim. Do not let anyone start cutting until the condition has been documented, because once the wall is open the evidence of what happened is in a dumpster.",
       "Then get an assessment from someone who does not sell the cleanup. Read more about how we build documentation for adjusters, or call (561) 632-6387 anywhere in Palm Beach, Broward, or Martin County. We are a licensed mold assessor, not a public adjuster and not an attorney. We document the property accurately and hand you a report. Arguing the claim is somebody else's job, and keeping those jobs separate is exactly what makes the report worth something.",
     ],
+    sources: [
+      { label: "Florida Statutes 627.70131, Insurer duties and claim deadlines", href: "https://www.flsenate.gov/Laws/Statutes/2024/627.70131", note: "the insurer acknowledgement, inspection and pay-or-deny windows, as amended in December 2022. Confirm the current text before relying on any specific number." },
+      { label: "Florida Statutes 468.8419, Prohibitions and penalties", href: "https://www.flsenate.gov/Laws/Statutes/2024/468.8419", note: "the bar on assessing and remediating the same property within twelve months." },
+      { label: "EPA, Flood Cleanup to Protect Indoor Air Quality", href: "https://www.epa.gov/indoor-air-quality-iaq/flood-cleanup-protect-indoor-air-quality", note: "on the 24 to 48 hour window before wet material is assumed to be growing mold." },
+    ],
     related: [
       { to: "/services/insurance-claim-mold-inspection/", label: "Mold Inspection for Insurance Claims" },
       { to: "/services/water-damage-inspection/", label: "Water Damage & Moisture Intrusion Assessment" },
@@ -255,6 +279,11 @@ export const posts: Post[] = [
       "If you have a dark patch, the sequence is not glamorous. We look at it, we take moisture readings in the material around it, we scan for what is happening behind the surface, and we work out whether there is an active water source or a historical one. If a name is needed, black mold testing is a swab, tape lift, or bulk sample sent to an accredited lab, and the answer comes back in about a day.",
       "Most of the time the finding that changes your life is not the species. It is the failed window seal three feet away that nobody had looked at.",
       "Call (561) 632-6387 if you have something dark on a wall and want a straight answer about it. We test and report only, so if it turns out to be nothing, we get to tell you it is nothing.",
+    ],
+    sources: [
+      { label: "CDC, Mold and Health", href: "https://www.cdc.gov/mold-health/about/index.html", note: "on treating all indoor mold the same way for cleanup purposes, and on the fact that you do not need to know the species." },
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on dampness, health effects, and fixing the moisture source rather than the growth alone." },
+      { label: "EPA, Mold Testing or Sampling", href: "https://www.epa.gov/mold/mold-testing-or-sampling", note: "on the limits of sampling and the absence of federal standards to compare a result against." },
     ],
     related: [
       { to: "/services/surface-sampling/", label: "Black Mold Testing & Surface Sampling" },
@@ -302,6 +331,10 @@ export const posts: Post[] = [
       "The whole point of the equipment is that it is non-destructive. A moisture meter reads what is actually in the material rather than what it looks like. Thermal imaging shows temperature differences that flag wet areas behind surfaces, because evaporating moisture makes a wall cooler than its neighbors. Humidity and dew point logging tells us whether the house as a system is capable of drying itself out.",
       "Air sampling comes last and only where it helps, always against an outdoor control taken the same day, because indoor numbers without an outdoor baseline cannot be interpreted.",
       "Usually the smell has a boring explanation and a fixable one. Call (561) 632-6387 and describe what you are smelling and where, and we will tell you honestly whether it sounds like something worth a visit.",
+    ],
+    sources: [
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on humidity control, condensation on cool surfaces, and the 30 to 60 percent target range." },
+      { label: "EPA, Mold Testing or Sampling", href: "https://www.epa.gov/mold/mold-testing-or-sampling", note: "on when sampling adds something and when it does not." },
     ],
     related: [
       { to: "/services/air-quality-testing/", label: "Indoor Air Quality Testing" },
@@ -352,6 +385,11 @@ export const posts: Post[] = [
       "For a leak this week, we can document moisture readings and thermal patterns while they still exist, which is worth far more than the same visit a month from now. Call (561) 632-6387 across Palm Beach, Broward, and Martin County.",
       "If the water came from a storm rather than a pipe, the sequence is a little different and we wrote about that separately in our hurricane mold prevention guide.",
     ],
+    sources: [
+      { label: "EPA, Flood Cleanup to Protect Indoor Air Quality", href: "https://www.epa.gov/indoor-air-quality-iaq/flood-cleanup-protect-indoor-air-quality", note: "on drying within 24 to 48 hours, and on assuming growth where that was not achieved." },
+      { label: "EPA, Mold Cleanup in Your Home", href: "https://www.epa.gov/mold/mold-cleanup-your-home", note: "on which materials can be dried and saved and which are normally discarded." },
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on fixing the water source as the first step." },
+    ],
     related: [
       { to: "/services/water-damage-inspection/", label: "Water Damage & Moisture Intrusion Assessment" },
       { to: "/services/thermal-imaging/", label: "Thermal Imaging Mold Inspection" },
@@ -400,6 +438,10 @@ export const posts: Post[] = [
       "This is not a rare failure. It is the most predictable thing in our calendar. Homes across the 55-plus and snowbird communities from Boynton to Jensen Beach sit closed from May through October, through the entire wet season, on a thermostat setting chosen to save money. We find the same growth in the same places year after year: primary bedroom exterior walls, master closets, and the underside of ceiling drywall in the coolest rooms.",
       "It is also almost entirely preventable, which is why it is worth a page rather than a shrug. Control the humidity, kill the water supply, and have someone look at the place.",
       "If you are back and something smells off, call (561) 632-6387. We inspect and test only, so if the house is fine we will tell you it is fine and you can stop worrying about it.",
+    ],
+    sources: [
+      { label: "EPA, A Brief Guide to Mold, Moisture and Your Home", href: "https://www.epa.gov/mold/brief-guide-mold-moisture-and-your-home", note: "on keeping indoor relative humidity between 30 and 60 percent to prevent condensation and growth." },
+      { label: "EPA, Mold Cleanup in Your Home", href: "https://www.epa.gov/mold/mold-cleanup-your-home", note: "on moisture control as the controlling variable for indoor mold." },
     ],
     related: [
       { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics" },

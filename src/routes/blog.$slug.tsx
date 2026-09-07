@@ -176,6 +176,32 @@ function PostPage() {
           )}
         </div>
 
+        {post.sources && post.sources.length > 0 && (
+          <div className="mt-10 border-t border-border pt-6">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-accent">
+              Sources
+            </h2>
+            <ol className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {post.sources.map((s: { label: string; href: string; note?: string }, i: number) => (
+                <li key={s.href} className="flex gap-2">
+                  <span className="shrink-0 tabular-nums text-muted-foreground/70">{i + 1}.</span>
+                  <span>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener"
+                      className="font-medium text-primary underline underline-offset-2 hover:text-accent"
+                    >
+                      {s.label}
+                    </a>
+                    {s.note ? <span className="text-muted-foreground"> {s.note}</span> : null}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
         {post.related && post.related.length > 0 && (
           <div className="mt-10 rounded-2xl border border-border bg-card p-6">
             <h2 className="text-sm font-semibold uppercase tracking-wider text-accent">
