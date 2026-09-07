@@ -135,7 +135,7 @@ function InsuranceClaimPage() {
       ]}
       faqs={faqs}
       furtherReading={{
-        href: "/blog/hurricane-mold-prevention-tips/",
+        href: "/blog/does-homeowners-insurance-cover-mold-in-florida/",
         label: "Hurricane Mold Prevention Tips",
         blurb: "Storm losses are the most common route into a Florida mold claim. This is what to do in the first days, before the evidence changes.",
       }}

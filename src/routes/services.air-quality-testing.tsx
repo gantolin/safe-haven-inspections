@@ -135,6 +135,12 @@ function AirQualityTestingPage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation, with air samples front and center." },
         { to: "/services/mold-testing/", label: "Mold Testing", blurb: "The broader testing picture: air and surface sampling together, and when each one answers the question." },
       ]}
+      furtherReading={{
+        href: "/blog/musty-smell-but-no-visible-mold/",
+        label: "Musty smell but no visible mold? Start here",
+        blurb:
+          "What that odour actually is, the six places it hides in a Florida house, and why you stop noticing it.",
+      }}
       ctaTitle="Schedule air quality testing"
       ctaBody="Get objective, lab-backed answers about the air inside your home. Talk to our local, state-licensed team directly."
     />

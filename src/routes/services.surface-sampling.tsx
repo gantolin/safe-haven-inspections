@@ -127,6 +127,12 @@ function SurfaceSamplingPage() {
         { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
         { to: "/services/mold-testing/", label: "Mold Testing", blurb: "How surface results sit alongside air sampling in a complete testing package." },
       ]}
+      furtherReading={{
+        href: "/blog/what-black-mold-actually-is/",
+        label: "What black mold actually is, and what it isn't",
+        blurb:
+          "Colour tells you almost nothing. When a species name genuinely changes what you should do, and when it does not.",
+      }}
       ctaTitle="Get a surface sample analyzed"
       ctaBody="Stop guessing whether a spot is mold. Get a lab-backed answer from an independent, state-licensed assessor."
     />

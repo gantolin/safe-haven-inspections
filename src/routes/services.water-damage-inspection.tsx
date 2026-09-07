@@ -113,7 +113,7 @@ function WaterDamagePage() {
       ]}
       faqs={faqs}
       furtherReading={{
-        href: "/blog/hurricane-mold-prevention-tips/",
+        href: "/blog/first-48-hours-after-a-water-leak/",
         label: "Hurricane Mold Prevention Tips",
         blurb: "What to do in the days after a storm, while the window to stop mold from establishing is still open.",
       }}

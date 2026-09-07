@@ -127,6 +127,12 @@ function ThermalImagingPage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
         { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Thermal imaging is usually how the extent of a leak gets mapped; this is the full post-water assessment around it." },
       ]}
+      furtherReading={{
+        href: "/blog/first-48-hours-after-a-water-leak/",
+        label: "The first 48 hours after a water leak",
+        blurb:
+          "Why moisture readings taken while the material is still wet are worth more than the same visit a month later.",
+      }}
       ctaTitle="Schedule moisture mapping"
       ctaBody="Find hidden water before it becomes hidden mold. Non-destructive, documented, and independent."
     />

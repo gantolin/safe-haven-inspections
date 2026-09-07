@@ -120,6 +120,12 @@ function HumidityPage() {
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the specific cold surfaces where condensation is landing." },
         { to: "/services/mold-inspection/", label: "Full mold inspection", blurb: "The umbrella service: combines humidity, moisture, visual, and lab testing in one visit." },
       ]}
+      furtherReading={{
+        href: "/blog/leaving-a-florida-house-empty-for-the-summer/",
+        label: "Leaving a Florida house empty for the summer",
+        blurb:
+          "The thermostat setting that saves money is the one that grows mold. What to set, and what to shut off, before you go.",
+      }}
       ctaTitle="Recurring mildew with no leak in sight?"
       ctaBody="Independent, data-backed humidity testing across South Florida. Find out whether ambient moisture (not a leak) is driving the problem."
     />
