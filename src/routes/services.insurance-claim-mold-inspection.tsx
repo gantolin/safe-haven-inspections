@@ -16,7 +16,7 @@ const faqs: FaqItem[] = [
 ];
 
 const DESCRIPTION =
-  "Independent, Florida-licensed mold assessment for insurance claims. Documentation built for adjusters, written by an assessor who never does the remediation.";
+  "Mold inspection for insurance claims across Palm Beach, Broward, and Martin County. Independent, Florida-licensed documentation built for adjusters, from an assessor who never does the remediation.";
 
 export const Route = createFileRoute("/services/insurance-claim-mold-inspection")({
   head: () => {
@@ -59,9 +59,10 @@ function InsuranceClaimPage() {
         <>
           An insurance-claim mold inspection is an independent, Florida-licensed
           assessment that documents what happened, where the moisture came from,
-          and how far it spread, in a format an adjuster can act on. It is written
-          by an assessor legally barred from doing the remediation, which is a good
-          part of why it carries weight.
+          and how far it spread, in a format an adjuster can act on. We cover Palm
+          Beach, Broward, and Martin County. The report is written by an assessor
+          legally barred from doing the remediation, which is a good part of why it
+          carries weight.
         </>
       }
       sections={[
@@ -73,7 +74,7 @@ function InsuranceClaimPage() {
           ],
         },
         {
-          h2: "What actually decides a Florida mold claim",
+          h2: "When homeowners insurance covers mold damage in Florida",
           intro:
             "Most denials are not really arguments about whether mold is present. They are arguments about two things.",
           subsections: [
