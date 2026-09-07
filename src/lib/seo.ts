@@ -107,19 +107,17 @@ const COUNTIES_SERVED = [
 // MODELED AS A SERVICE-AREA BUSINESS (SAB): work happens at the client's
 // property, so there is deliberately NO `streetAddress` here.
 //
-// NOTE (verified 2026-08-15 against the live listing): the Google Business
-// Profile is NOT hidden-address — it publicly displays
-// "5880 Corson Pl, Lake Worth Beach, FL 33463". The earlier note here claimed
-// this schema mirrored a hidden-address GBP; that premise was wrong.
-// `addressLocality` was also "West Palm Beach", which contradicted the GBP
-// outright.
+// NOTE: the Google Business Profile is NOT hidden-address. It publicly
+// displays "5880 Corson Pl, Greenacres, FL 33463".
 //
-// On the city name: use "Lake Worth", not "Lake Worth Beach". Google renders
-// the listing as "Lake Worth Beach", but that is a Google-side normalisation —
-// the USPS postal city for 33463 is Lake Worth, and this repo's own
-// `city-profiles.ts` assigns 33460/33461 to Lake Worth Beach and 33463 to the
-// Greenacres profile. Confirmed by the owner. Matching the postal city keeps
-// this consistent with every other citation, which is what NAP checks compare.
+// On the city name: it is GREENACRES. Corrected by the owner 2026-09-06.
+// "Lake Worth" and "Lake Worth Beach" were both wrong here. 33463 is the
+// Greenacres profile in this repo's own `city-profiles.ts` (33460/33461 are
+// the Lake Worth Beach ones), and the Semrush Map Rank Tracker campaign also
+// records the listing as Greenacres. Lake Worth Beach remains a legitimate
+// SERVICE-AREA city with its own page; it is simply not where the business
+// is. Do not "normalise" this back — NAP checks compare it character for
+// character against the profile.
 //
 // Omitting `streetAddress` while the GBP publishes one is a deliberate,
 // defensible middle ground: the locality now agrees, and nothing here
@@ -148,7 +146,7 @@ export function localBusinessSchema() {
       // the GBP displays it publicly too, so omitting it here would leave the
       // structured data saying less than the page it describes.
       streetAddress: "5880 Corson Pl",
-      addressLocality: "Lake Worth",
+      addressLocality: "Greenacres",
       addressRegion: "FL",
       postalCode: "33463",
       addressCountry: "US",

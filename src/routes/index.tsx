@@ -691,17 +691,17 @@ function Index() {
               Where we work from
             </p>
             <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
-              Based in Lake Worth Beach, covering three counties.
+              Based in Greenacres, covering three counties.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Safe Haven is run out of Lake Worth Beach, which puts most of
+              Safe Haven is run out of Greenacres, which puts most of
               central Palm Beach County inside a short drive and keeps Martin
               and Broward well within reach. Inspections are scheduled at your
               property, not at an office, so the address below is where the
               business is registered rather than somewhere you need to visit.
             </p>
             <address className="mt-5 not-italic text-sm font-semibold text-primary">
-              5880 Corson Pl, Lake Worth Beach, FL 33463
+              5880 Corson Pl, Greenacres, FL 33463
             </address>
             <p className="mt-4 text-sm text-muted-foreground">
               Serving Martin, Palm Beach, and Broward Counties.{" "}
@@ -716,8 +716,8 @@ function Index() {
                 Lazy-loaded so the iframe never competes with the hero for
                 LCP, and titled because an untitled iframe is a WCAG failure. */}
             <iframe
-              title="Map showing Safe Haven Inspections in Lake Worth Beach, Florida"
-              src="https://maps.google.com/maps?q=5880%20Corson%20Pl,%20Lake%20Worth%20Beach,%20FL%2033463&output=embed"
+              title="Map showing Safe Haven Inspections in Greenacres, Florida"
+              src="https://maps.google.com/maps?q=5880%20Corson%20Pl,%20Greenacres,%20FL%2033463&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-[320px] w-full border-0 sm:h-[380px]"
