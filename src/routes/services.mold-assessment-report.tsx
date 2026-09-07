@@ -124,6 +124,7 @@ function MoldAssessmentReportPage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance graded against the criteria written into the protocol." },
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "The lab data most often referenced by the report's findings and recommendations." },
         { to: "/services/commercial-mold-inspection/", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
+        { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "The same report, packaged for an adjuster, with causation and scope documented." },
       ]}
       ctaTitle="Request a formal assessment report"
       ctaBody="Get a documented, defensible assessment report — and, where needed, a written remediation protocol — from an independent licensed assessor."

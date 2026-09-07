@@ -42,7 +42,8 @@ export interface RelatedService {
     | "/services/mold-inspection/"
     | "/services/mold-testing/"
     | "/services/water-damage-inspection/"
-    | "/services/humidity-testing/";
+    | "/services/humidity-testing/"
+    | "/services/insurance-claim-mold-inspection/";
   label: string;
   blurb: string;
 }

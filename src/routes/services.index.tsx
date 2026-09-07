@@ -46,6 +46,7 @@ type ServiceLink =
   | "/services/thermal-imaging/"
   | "/services/water-damage-inspection/"
   | "/services/humidity-testing/"
+  | "/services/insurance-claim-mold-inspection/"
   | "/services/post-remediation-verification/"
   | "/services/real-estate-mold-inspection/"
   | "/services/commercial-mold-inspection/"
@@ -98,6 +99,12 @@ const services: Array<{
     icon: Gauge,
     title: "Humidity Testing & Psychrometrics",
     body: "Temperature, RH, and dew-point measurement across the home to diagnose humidity-driven mildew when there's no obvious leak.",
+  },
+  {
+    to: "/services/insurance-claim-mold-inspection/",
+    icon: ShieldCheck,
+    title: "Insurance Claim Documentation",
+    body: "Independent assessment built for adjusters: causation, moisture mapping, and lab results, from an assessor who never does the cleanup.",
   },
   {
     to: "/services/post-remediation-verification/",

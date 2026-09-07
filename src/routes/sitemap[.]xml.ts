@@ -29,6 +29,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/services/real-estate-mold-inspection/",
           "/services/commercial-mold-inspection/",
           "/services/mold-assessment-report/",
+          "/services/insurance-claim-mold-inspection/",
           "/service-areas/",
           "/realtors/",
           "/blog/",

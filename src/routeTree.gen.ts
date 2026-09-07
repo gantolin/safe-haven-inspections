@@ -53,6 +53,7 @@ import { Route as ServicesPostRemediationVerificationRouteImport } from './route
 import { Route as ServicesMoldTestingRouteImport } from './routes/services.mold-testing'
 import { Route as ServicesMoldInspectionRouteImport } from './routes/services.mold-inspection'
 import { Route as ServicesMoldAssessmentReportRouteImport } from './routes/services.mold-assessment-report'
+import { Route as ServicesInsuranceClaimMoldInspectionRouteImport } from './routes/services.insurance-claim-mold-inspection'
 import { Route as ServicesHumidityTestingRouteImport } from './routes/services.humidity-testing'
 import { Route as ServicesCommercialMoldInspectionRouteImport } from './routes/services.commercial-mold-inspection'
 import { Route as ServicesAirQualityTestingRouteImport } from './routes/services.air-quality-testing'
@@ -300,6 +301,12 @@ const ServicesMoldAssessmentReportRoute =
     path: '/services/mold-assessment-report',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesInsuranceClaimMoldInspectionRoute =
+  ServicesInsuranceClaimMoldInspectionRouteImport.update({
+    id: '/services/insurance-claim-mold-inspection',
+    path: '/services/insurance-claim-mold-inspection',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesHumidityTestingRoute = ServicesHumidityTestingRouteImport.update({
   id: '/services/humidity-testing',
   path: '/services/humidity-testing',
@@ -362,6 +369,7 @@ export interface FileRoutesByFullPath {
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
+  '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
   '/services/mold-assessment-report': typeof ServicesMoldAssessmentReportRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing': typeof ServicesMoldTestingRoute
@@ -412,6 +420,7 @@ export interface FileRoutesByTo {
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
+  '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
   '/services/mold-assessment-report': typeof ServicesMoldAssessmentReportRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing': typeof ServicesMoldTestingRoute
@@ -463,6 +472,7 @@ export interface FileRoutesById {
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
+  '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
   '/services/mold-assessment-report': typeof ServicesMoldAssessmentReportRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing': typeof ServicesMoldTestingRoute
@@ -515,6 +525,7 @@ export interface FileRouteTypes {
     | '/services/air-quality-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
+    | '/services/insurance-claim-mold-inspection'
     | '/services/mold-assessment-report'
     | '/services/mold-inspection'
     | '/services/mold-testing'
@@ -565,6 +576,7 @@ export interface FileRouteTypes {
     | '/services/air-quality-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
+    | '/services/insurance-claim-mold-inspection'
     | '/services/mold-assessment-report'
     | '/services/mold-inspection'
     | '/services/mold-testing'
@@ -615,6 +627,7 @@ export interface FileRouteTypes {
     | '/services/air-quality-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
+    | '/services/insurance-claim-mold-inspection'
     | '/services/mold-assessment-report'
     | '/services/mold-inspection'
     | '/services/mold-testing'
@@ -666,6 +679,7 @@ export interface RootRouteChildren {
   ServicesAirQualityTestingRoute: typeof ServicesAirQualityTestingRoute
   ServicesCommercialMoldInspectionRoute: typeof ServicesCommercialMoldInspectionRoute
   ServicesHumidityTestingRoute: typeof ServicesHumidityTestingRoute
+  ServicesInsuranceClaimMoldInspectionRoute: typeof ServicesInsuranceClaimMoldInspectionRoute
   ServicesMoldAssessmentReportRoute: typeof ServicesMoldAssessmentReportRoute
   ServicesMoldInspectionRoute: typeof ServicesMoldInspectionRoute
   ServicesMoldTestingRoute: typeof ServicesMoldTestingRoute
@@ -988,6 +1002,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesMoldAssessmentReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/insurance-claim-mold-inspection': {
+      id: '/services/insurance-claim-mold-inspection'
+      path: '/services/insurance-claim-mold-inspection'
+      fullPath: '/services/insurance-claim-mold-inspection'
+      preLoaderRoute: typeof ServicesInsuranceClaimMoldInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/humidity-testing': {
       id: '/services/humidity-testing'
       path: '/services/humidity-testing'
@@ -1058,6 +1079,8 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesAirQualityTestingRoute: ServicesAirQualityTestingRoute,
   ServicesCommercialMoldInspectionRoute: ServicesCommercialMoldInspectionRoute,
   ServicesHumidityTestingRoute: ServicesHumidityTestingRoute,
+  ServicesInsuranceClaimMoldInspectionRoute:
+    ServicesInsuranceClaimMoldInspectionRoute,
   ServicesMoldAssessmentReportRoute: ServicesMoldAssessmentReportRoute,
   ServicesMoldInspectionRoute: ServicesMoldInspectionRoute,
   ServicesMoldTestingRoute: ServicesMoldTestingRoute,
