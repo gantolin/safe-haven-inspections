@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
 
 export type ServiceSlug =
+  | "asbestos-testing"
   | "air-quality-testing"
   | "surface-sampling"
   | "thermal-imaging"
@@ -32,6 +33,7 @@ export interface ServiceSection {
 
 export interface RelatedService {
   to:
+    | "/services/asbestos-testing/"
     | "/services/air-quality-testing/"
     | "/services/surface-sampling/"
     | "/services/thermal-imaging/"
@@ -61,6 +63,12 @@ export interface ServicePageProps {
    * need params for. Trailing slash: GitHub Pages serves folder indexes.
    */
   furtherReading?: { href: string; label: string; blurb: string };
+  /**
+   * The independence block defaults to the mold wording. The asbestos page
+   * overrides it: there the conflict of interest being disclaimed is
+   * abatement, not remediation, and the licence line differs.
+   */
+  independence?: { h2: string; body: string };
   ctaTitle: string;
   ctaBody: string;
 }
@@ -73,6 +81,7 @@ export function ServicePage({
   faqs,
   related,
   furtherReading,
+  independence,
   ctaTitle,
   ctaBody,
 }: ServicePageProps) {
@@ -112,7 +121,7 @@ export function ServicePage({
             >
               Palm Beach County mold inspection
             </Link>{" "}
-            services — independent, licensed, and lab-backed.
+            services: independent, licensed, and lab-backed.
           </p>
         </div>
       </section>
@@ -181,14 +190,12 @@ export function ServicePage({
             <ShieldCheck className="mt-0.5 h-5 w-5 text-accent" />
             <div>
               <h2 className="text-xl font-semibold text-primary">
-                Independent assessor — no remediation, no conflict of interest
+                {independence?.h2 ??
+                  "Independent assessor, no remediation, no conflict of interest"}
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Safe Haven Inspections is a Florida-licensed mold assessment
-                company (FL Mold Assessor MRSA3366 / FL Mold Remediator MRSR3536). We perform
-                inspection and testing only. We do not sell, subcontract, or
-                refer paid remediation, so every finding on your report reflects
-                what's actually there.
+                {independence?.body ??
+                  "Safe Haven Inspections is a Florida-licensed mold assessment company (FL Mold Assessor MRSA3366 / FL Mold Remediator MRSR3536). We perform inspection and testing only. We do not sell, subcontract, or refer paid remediation, so every finding on your report reflects what's actually there."}
               </p>
             </div>
           </div>

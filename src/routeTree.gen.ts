@@ -56,6 +56,7 @@ import { Route as ServicesMoldAssessmentReportRouteImport } from './routes/servi
 import { Route as ServicesInsuranceClaimMoldInspectionRouteImport } from './routes/services.insurance-claim-mold-inspection'
 import { Route as ServicesHumidityTestingRouteImport } from './routes/services.humidity-testing'
 import { Route as ServicesCommercialMoldInspectionRouteImport } from './routes/services.commercial-mold-inspection'
+import { Route as ServicesAsbestosTestingRouteImport } from './routes/services.asbestos-testing'
 import { Route as ServicesAirQualityTestingRouteImport } from './routes/services.air-quality-testing'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -318,6 +319,11 @@ const ServicesCommercialMoldInspectionRoute =
     path: '/services/commercial-mold-inspection',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesAsbestosTestingRoute = ServicesAsbestosTestingRouteImport.update({
+  id: '/services/asbestos-testing',
+  path: '/services/asbestos-testing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesAirQualityTestingRoute =
   ServicesAirQualityTestingRouteImport.update({
     id: '/services/air-quality-testing',
@@ -367,6 +373,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
+  '/services/asbestos-testing': typeof ServicesAsbestosTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
   '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
@@ -418,6 +425,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
+  '/services/asbestos-testing': typeof ServicesAsbestosTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
   '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
@@ -470,6 +478,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing': typeof ServicesAirQualityTestingRoute
+  '/services/asbestos-testing': typeof ServicesAsbestosTestingRoute
   '/services/commercial-mold-inspection': typeof ServicesCommercialMoldInspectionRoute
   '/services/humidity-testing': typeof ServicesHumidityTestingRoute
   '/services/insurance-claim-mold-inspection': typeof ServicesInsuranceClaimMoldInspectionRoute
@@ -523,6 +532,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing'
+    | '/services/asbestos-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
     | '/services/insurance-claim-mold-inspection'
@@ -574,6 +584,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing'
+    | '/services/asbestos-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
     | '/services/insurance-claim-mold-inspection'
@@ -625,6 +636,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing'
+    | '/services/asbestos-testing'
     | '/services/commercial-mold-inspection'
     | '/services/humidity-testing'
     | '/services/insurance-claim-mold-inspection'
@@ -677,6 +689,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServicesAirQualityTestingRoute: typeof ServicesAirQualityTestingRoute
+  ServicesAsbestosTestingRoute: typeof ServicesAsbestosTestingRoute
   ServicesCommercialMoldInspectionRoute: typeof ServicesCommercialMoldInspectionRoute
   ServicesHumidityTestingRoute: typeof ServicesHumidityTestingRoute
   ServicesInsuranceClaimMoldInspectionRoute: typeof ServicesInsuranceClaimMoldInspectionRoute
@@ -1023,6 +1036,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesCommercialMoldInspectionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/asbestos-testing': {
+      id: '/services/asbestos-testing'
+      path: '/services/asbestos-testing'
+      fullPath: '/services/asbestos-testing'
+      preLoaderRoute: typeof ServicesAsbestosTestingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/air-quality-testing': {
       id: '/services/air-quality-testing'
       path: '/services/air-quality-testing'
@@ -1077,6 +1097,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
   ServicesAirQualityTestingRoute: ServicesAirQualityTestingRoute,
+  ServicesAsbestosTestingRoute: ServicesAsbestosTestingRoute,
   ServicesCommercialMoldInspectionRoute: ServicesCommercialMoldInspectionRoute,
   ServicesHumidityTestingRoute: ServicesHumidityTestingRoute,
   ServicesInsuranceClaimMoldInspectionRoute:

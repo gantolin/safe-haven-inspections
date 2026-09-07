@@ -70,12 +70,12 @@ function codeStat(county: County): CityStat {
     ? {
         label: "Building code",
         value: "HVHZ",
-        note: "Broward sits in the High-Velocity Hurricane Zone, so openings and roof assemblies meet stricter sealing standards — tighter homes trap interior humidity.",
+        note: "Broward sits in the High-Velocity Hurricane Zone, so openings and roof assemblies meet stricter sealing standards: tighter homes trap interior humidity.",
       }
     : {
         label: "Building code",
         value: "Standard FBC",
-        note: `${county} County is outside the High-Velocity Hurricane Zone, so housing stock is mixed — original single-glazed openings alongside tighter impact retrofits.`,
+        note: `${county} County is outside the High-Velocity Hurricane Zone, so housing stock is mixed: original single-glazed openings alongside tighter impact retrofits.`,
       };
 }
 
@@ -88,7 +88,7 @@ const climateStat: CityStat = {
 const humidityStat: CityStat = {
   label: "Avg. humidity",
   value: "~74%",
-  note: "Mold grows on cool interior surfaces once indoor relative humidity holds above roughly 60% — no leak required.",
+  note: "Mold grows on cool interior surfaces once indoor relative humidity holds above roughly 60%, no leak required.",
 };
 
 export const cityProfiles: Record<string, CityProfile> = {
@@ -119,7 +119,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Condensation on single-pane windows during humid months",
       "Residual subfloor moisture in homes that have flooded before",
     ],
-    seasonal: "Wet-season storms driven up the St. Lucie River push water at windows and roof penetrations from June through October, while winter brings the opposite failure — snowbird homes closed up with the AC set high, letting humidity climb unchecked for months.",
+    seasonal: "Wet-season storms driven up the St. Lucie River push water at windows and roof penetrations from June through October, while winter brings the opposite failure: snowbird homes closed up with the AC set high, letting humidity climb unchecked for months.",
     market: "Stuart's split between historic downtown stock and newer outlying subdivisions means two very different inspections. Buyers under a short inspection period on a pre-1980 riverfront home should budget for moisture mapping, not just a visual walkthrough.",
   },
   "palm-city": {
@@ -206,7 +206,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Original single-pane glazing condensing through humid months",
       "Air-handler closet condensation in homes with retrofitted AC",
     ],
-    seasonal: "Hobe Sound's seasonal-resident pattern is the real driver — homes closed from May through October sit through the entire wet season with minimal dehumidification, which is why September and October return the highest airborne spore counts we sample here.",
+    seasonal: "Hobe Sound's seasonal-resident pattern is the real driver: homes closed from May through October sit through the entire wet season with minimal dehumidification, which is why September and October return the highest airborne spore counts we sample here.",
     market: "Hobe Sound buyers frequently purchase sight-unseen from out of state. An independent, lab-backed assessment before closing is the only reliable way to know what a seasonally vacant home has been doing all summer.",
   },
   "port-salerno": {
@@ -226,7 +226,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     stats: [
       codeStat("Martin"),
       { label: "Housing era", value: "1920s-2000s", note: "New Monrovia's 1920s grid holds the oldest stock; surrounding development is far newer." },
-      { label: "Marine exposure", value: "Direct", note: "Manatee Pocket is a working harbor — salt air and near-constant waterfront humidity." },
+      { label: "Marine exposure", value: "Direct", note: "Manatee Pocket is a working harbor: salt air and near-constant waterfront humidity." },
       climateStat,
     ],
     commonIssues: [
@@ -235,7 +235,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Original wall assemblies in the 1920s New Monrovia grid",
       "Marine humidity condensing in poorly ventilated interiors",
     ],
-    seasonal: "Manatee Pocket's reputation as a hurricane hole means boats shelter here — but the homes around it still take the full wet season, and the harbor's marine humidity never really lets interiors dry between June and October.",
+    seasonal: "Manatee Pocket's reputation as a hurricane hole means boats shelter here, but the homes around it still take the full wet season, and the harbor's marine humidity never really lets interiors dry between June and October.",
     market: "Port Salerno's mix of century-old platted lots and recent construction produces wildly different inspection findings block to block. Age of the specific structure, not the address, determines what we look for first.",
   },
 
@@ -295,7 +295,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Condensation in 2000s tight-envelope homes with oversized AC",
       "Lakefront slab moisture in Isles at Wellington",
     ],
-    seasonal: "Wellington's population swings with the winter equestrian season, which inverts the usual pattern — many homes and guest quarters sit empty and minimally cooled through the entire summer wet season, then get occupied in January when the humidity damage is already months old.",
+    seasonal: "Wellington's population swings with the winter equestrian season, which inverts the usual pattern: many homes and guest quarters sit empty and minimally cooled through the entire summer wet season, then get occupied in January when the humidity damage is already months old.",
     market: "Equestrian properties trade on the condition of both the residence and the ancillary structures. A mold assessment scoped only to the house misses the barn, tack room, and groom's quarters that often drive the actual moisture load.",
   },
   "royal-palm-beach": {
@@ -324,7 +324,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "AC condensate line failures flooding air-handler closets",
       "Condensation in newer tight-envelope homes with oversized cooling",
     ],
-    seasonal: "Royal Palm Beach's inland position means storm surge is not the concern — sustained wet-season humidity is. From June through October, homes with aging or oversized AC systems cool the air without removing enough moisture, and that shows up as growth on cool interior surfaces.",
+    seasonal: "Royal Palm Beach's inland position means storm surge is not the concern: sustained wet-season humidity is. From June through October, homes with aging or oversized AC systems cool the air without removing enough moisture, and that shows up as growth on cool interior surfaces.",
     market: "The 30-year spread in Royal Palm Beach construction dates means two homes a mile apart can present completely different moisture profiles. Buyers should scope the inspection to the build era, not the ZIP code.",
   },
   loxahatchee: {
@@ -343,7 +343,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1980s-2000s rural acreage",
     stats: [
       codeStat("Palm Beach"),
-      { label: "Water & sewer", value: "Well & septic", note: "There is no municipal water system across most of Loxahatchee Groves — homes draw from private wells into the Biscayne Aquifer." },
+      { label: "Water & sewer", value: "Well & septic", note: "There is no municipal water system across most of Loxahatchee Groves: homes draw from private wells into the Biscayne Aquifer." },
       { label: "Lot character", value: "Rural acreage", note: "Large parcels, dirt roads, and equestrian use create ground-moisture conditions unlike any suburb we serve." },
       climateStat,
     ],
@@ -354,7 +354,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Slow-draining acreage keeping crawl spaces and slabs damp for days",
     ],
     seasonal: "Wet-season rainfall on large, slow-draining rural parcels is the defining issue here. After heavy summer rain, surface water can reach well depth quickly on equestrian properties, and the same saturated ground keeps structures damp long after a paved suburb would have dried.",
-    market: "Loxahatchee acreage carries variables no municipal-serviced suburb does — private well, septic field, outbuildings, and slow-draining ground. A pre-purchase assessment that ignores the site and inspects only the house is answering the wrong question.",
+    market: "Loxahatchee acreage carries variables no municipal-serviced suburb does: private well, septic field, outbuildings, and slow-draining ground. A pre-purchase assessment that ignores the site and inspects only the house is answering the wrong question.",
   },
   "lake-worth-beach": {
     slug: "lake-worth-beach",
@@ -372,7 +372,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1920s-1940s historic core",
     stats: [
       codeStat("Palm Beach"),
-      { label: "Housing era", value: "1920s-1940s", note: "One of the oldest intact housing stocks in Palm Beach County — largely pre-vapor-barrier construction." },
+      { label: "Housing era", value: "1920s-1940s", note: "One of the oldest intact housing stocks in Palm Beach County: largely pre-vapor-barrier construction." },
       { label: "Historic districts", value: "Several", note: "Historic-district rules frequently keep original wall and floor assemblies in service behind updated finishes." },
       humidityStat,
     ],
@@ -382,8 +382,8 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Condensation on single-pane glazing throughout humid months",
       "Undersized AC retrofits failing to control humidity in historic homes",
     ],
-    seasonal: "A 1920s bungalow was designed to breathe — cross-ventilated, unconditioned, and tolerant of humidity. Sealing one up and air conditioning it to 74 degrees creates condensation inside assemblies that have no vapor barrier, and the wet season from June through October is when that becomes visible.",
-    market: "Lake Worth Beach's historic bungalow stock is the draw and the risk. Renovated interiors routinely sit on original, un-remediated floor and wall assemblies — which is exactly what a moisture-mapped inspection is for.",
+    seasonal: "A 1920s bungalow was designed to breathe: cross-ventilated, unconditioned, and tolerant of humidity. Sealing one up and air conditioning it to 74 degrees creates condensation inside assemblies that have no vapor barrier, and the wet season from June through October is when that becomes visible.",
+    market: "Lake Worth Beach's historic bungalow stock is the draw and the risk. Renovated interiors routinely sit on original, un-remediated floor and wall assemblies, which is exactly what a moisture-mapped inspection is for.",
   },
   greenacres: {
     slug: "greenacres",
@@ -401,7 +401,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1970s-1990s",
     stats: [
       codeStat("Palm Beach"),
-      { label: "Housing era", value: "1970s-1990s", note: "Much of the stock is now 30-50 years old — original roofs and AC systems are well past service life." },
+      { label: "Housing era", value: "1970s-1990s", note: "Much of the stock is now 30-50 years old: original roofs and AC systems are well past service life." },
       { label: "Attached housing", value: "Common", note: "Condo and villa sections mean a neighbor's leak becomes your moisture problem through a shared assembly." },
       humidityStat,
     ],
@@ -469,7 +469,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Salt-air degradation of window and door flashing in Seagate",
       "Condensation in renovated interiors sitting on original envelopes",
     ],
-    seasonal: "Delray's beachside blocks take wind-driven rain from June through October that finds every gap salt air has opened in flashing and glazing over the preceding year. Inland historic districts fail differently — sealed, air-conditioned, and condensing inside walls built to breathe.",
+    seasonal: "Delray's beachside blocks take wind-driven rain from June through October that finds every gap salt air has opened in flashing and glazing over the preceding year. Inland historic districts fail differently, sealed, air-conditioned, and condensing inside walls built to breathe.",
     market: "Delray's renovation-heavy market produces beautiful interiors over original envelopes. A moisture-mapped assessment separates a genuine full-envelope renovation from a cosmetic one, which is precisely the distinction that changes an offer.",
   },
   "boca-raton": {
@@ -498,7 +498,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Oversized AC short-cycling and leaving humidity uncontrolled in large homes",
       "Original stucco and plaster assemblies in Old Floresta",
     ],
-    seasonal: "Boca's country-club irrigation runs year-round regardless of rainfall, so stucco elevations that never dry are a twelve-month problem here — then the June-through-October wet season adds storm loading on roof assemblies already at the end of their service life.",
+    seasonal: "Boca's country-club irrigation runs year-round regardless of rainfall, so stucco elevations that never dry are a twelve-month problem here: then the June-through-October wet season adds storm loading on roof assemblies already at the end of their service life.",
     market: "Boca's luxury market rewards presentation, and presentation hides envelope condition well. On a 1980s country-club home with a recent cosmetic renovation, thermal imaging and moisture readings tell you what the finishes will not.",
   },
   jupiter: {
@@ -527,7 +527,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Coastal wind-driven rain at sliders in waterfront communities",
       "First-cycle roof failures in 1990s subdivisions",
     ],
-    seasonal: "Jupiter's coastal blocks take wind-driven rain through the June-to-October wet season, while Jupiter Farms acreage faces the opposite issue — large, slow-draining parcels where saturated ground keeps structures damp for days after the same storm.",
+    seasonal: "Jupiter's coastal blocks take wind-driven rain through the June-to-October wet season, while Jupiter Farms acreage faces the opposite issue: large, slow-draining parcels where saturated ground keeps structures damp for days after the same storm.",
     market: "Jupiter spans oceanfront estates and rural acreage within one municipality. The inspection scope that makes sense in Admirals Cove is not the one that makes sense in Jupiter Farms, and pricing an assessment off the city name alone misses that.",
   },
   "palm-beach-gardens": {
@@ -557,7 +557,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Intracoastal humidity condensing in waterfront community homes",
     ],
     seasonal: "Seasonal residency is the driver in Palm Beach Gardens' country-club communities. Homes closed from May through October ride out the entire wet season with the thermostat set high and no dehumidification, which is why we sample the highest spore counts here in early fall.",
-    market: "Gardens buyers frequently close remotely on seasonally vacant homes. An independent assessment before closing documents what a summer of minimal cooling actually did — something a walkthrough in January will not reveal.",
+    market: "Gardens buyers frequently close remotely on seasonally vacant homes. An independent assessment before closing documents what a summer of minimal cooling actually did: something a walkthrough in January will not reveal.",
   },
   "riviera-beach": {
     slug: "riviera-beach",
@@ -586,7 +586,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Original 1950s-60s wall assemblies in mainland single-family stock",
     ],
     seasonal: "Singer Island's oceanfront exposure means salt air works on flashing and fasteners all year, quietly opening the gaps that the June-through-October wet season then drives water through. The two seasons compound rather than alternate.",
-    market: "Singer Island's high-rise condo market has moisture dynamics single-family inspections do not cover — stack effect, shared risers, and building-wide envelope performance. Unit-level findings often trace to building-level causes.",
+    market: "Singer Island's high-rise condo market has moisture dynamics single-family inspections do not cover: stack effect, shared risers, and building-wide envelope performance. Unit-level findings often trace to building-level causes.",
   },
 
   // --------------------------------------------------------------- BROWARD
@@ -617,7 +617,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "HVHZ-tight renovations trapping humidity in historic envelopes",
     ],
     seasonal: "Fort Lauderdale's wet season combines heavy rainfall with king tides that raise groundwater under slabs already at sea level. Homes that stayed dry in June routinely show baseboard moisture by October without any roof or plumbing failure at all.",
-    market: "Fort Lauderdale's historic neighborhoods sell renovated interiors over 1920s-50s envelopes. Because Broward is an HVHZ county, impact-window retrofits seal those old assemblies tighter than they were designed to be — which changes how they fail.",
+    market: "Fort Lauderdale's historic neighborhoods sell renovated interiors over 1920s-50s envelopes. Because Broward is an HVHZ county, impact-window retrofits seal those old assemblies tighter than they were designed to be, which changes how they fail.",
   },
   hollywood: {
     slug: "hollywood",
@@ -645,7 +645,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Aging roof assemblies leaking at penetrations in 1960s-70s stock",
       "Impact-window retrofits sealing humidity into old assemblies",
     ],
-    seasonal: "Hollywood's beachside blocks take wind-driven rain and salt loading from June through October, while inland historic stock fails from the inside — sealed by HVHZ-compliant retrofits and condensing humidity in walls built to breathe.",
+    seasonal: "Hollywood's beachside blocks take wind-driven rain and salt loading from June through October, while inland historic stock fails from the inside, sealed by HVHZ-compliant retrofits and condensing humidity in walls built to breathe.",
     market: "Hollywood's historic and mid-century inventory routinely sells with new impact windows over original wall assemblies. That combination looks like an upgrade and behaves like a vapor trap, and only moisture readings distinguish the two.",
   },
   "pembroke-pines": {
@@ -664,7 +664,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1980s-2000s master-planned",
     stats: [
       codeStat("Broward"),
-      { label: "Housing era", value: "1980s-2000s", note: "Rapid master-planned growth means large tracts share the same build year — and the same failure timeline." },
+      { label: "Housing era", value: "1980s-2000s", note: "Rapid master-planned growth means large tracts share the same build year, and the same failure timeline." },
       { label: "Western position", value: "Everglades edge", note: "Western communities sit near the Water Conservation Area, where high groundwater slows post-rain drying." },
       humidityStat,
     ],
@@ -675,7 +675,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Shared-assembly moisture in Century Village condo stock",
     ],
     seasonal: "Because so much of Pembroke Pines went up in the same few years, roof and AC systems across whole subdivisions reach end of life simultaneously. Wet seasons from June to October now expose that at scale, street by street.",
-    market: "In tract-built Pembroke Pines communities, what we find in one home is often true of its neighbors — same builder, same year, same assemblies. That makes a documented assessment useful leverage in negotiation.",
+    market: "In tract-built Pembroke Pines communities, what we find in one home is often true of its neighbors: same builder, same year, same assemblies. That makes a documented assessment useful leverage in negotiation.",
   },
   "coral-springs": {
     slug: "coral-springs",
@@ -693,7 +693,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1970s-1990s master-planned",
     stats: [
       codeStat("Broward"),
-      { label: "Housing era", value: "1970s-1990s", note: "A planned city built in distinct waves — envelope quality tracks closely to subdivision build year." },
+      { label: "Housing era", value: "1970s-1990s", note: "A planned city built in distinct waves: envelope quality tracks closely to subdivision build year." },
       { label: "Inland position", value: "Low surge risk", note: "Inland location reduces storm surge exposure but not rainfall loading or ambient humidity." },
       humidityStat,
     ],
@@ -732,7 +732,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Shared-assembly moisture in Palm Aire and Cypress Bend condos",
       "Wind-driven rain intrusion at aging sliders",
     ],
-    seasonal: "Pompano's beachside blocks take salt loading all year and wind-driven rain from June through October — the first opens the gaps and the second exploits them. Condo stock adds stack effect, which moves humid air upward through the building regardless of season.",
+    seasonal: "Pompano's beachside blocks take salt loading all year and wind-driven rain from June through October: the first opens the gaps and the second exploits them. Condo stock adds stack effect, which moves humid air upward through the building regardless of season.",
     market: "Pompano's inventory splits between aging beachside single-family stock and large condo communities. The condo question is almost always whether a unit-level symptom has a building-level cause, which unit-only inspections rarely answer.",
   },
   davie: {
@@ -752,7 +752,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     stats: [
       codeStat("Broward"),
       { label: "Housing era", value: "1970s-1990s", note: "Suburban stock now cycling through second roof and AC replacements." },
-      { label: "Lot character", value: "Equestrian & acreage", note: "Davie retains agricultural and equestrian zoning — barns, paddocks, and irrigation create ground moisture atypical for Broward." },
+      { label: "Lot character", value: "Equestrian & acreage", note: "Davie retains agricultural and equestrian zoning: barns, paddocks, and irrigation create ground moisture atypical for Broward." },
       humidityStat,
     ],
     commonIssues: [
@@ -790,7 +790,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "Canal-front slab moisture in Plantation Isles",
       "Shared-assembly moisture in condo and villa communities",
     ],
-    seasonal: "Plantation Acres' large western lots drain slowly, so wet-season rain from June through October leaves ground saturated for days. Central Plantation's older, denser stock fails differently — through roof assemblies that have simply run out of service life.",
+    seasonal: "Plantation Acres' large western lots drain slowly, so wet-season rain from June through October leaves ground saturated for days. Central Plantation's older, denser stock fails differently: through roof assemblies that have simply run out of service life.",
     market: "Plantation's western acreage and central subdivisions present different inspection profiles entirely. Lot size and drainage matter as much as build year on the acreage side, and barely at all in the dense central neighborhoods.",
   },
   sunrise: {
@@ -867,7 +867,7 @@ export const cityProfiles: Record<string, CityProfile> = {
     housingEra: "1990s-2000s master-planned",
     stats: [
       codeStat("Broward"),
-      { label: "Housing era", value: "1990s-2000s", note: "One of the newest housing stocks we serve — and now uniformly reaching first-cycle roof and AC replacement." },
+      { label: "Housing era", value: "1990s-2000s", note: "One of the newest housing stocks we serve, and now uniformly reaching first-cycle roof and AC replacement." },
       { label: "Western position", value: "Everglades edge", note: "Weston borders the Water Conservation Area directly; groundwater sits high and drains slowly after rain." },
       humidityStat,
     ],
@@ -877,7 +877,7 @@ export const cityProfiles: Record<string, CityProfile> = {
       "High groundwater at the Everglades edge slowing post-rain drainage",
       "Irrigation overspray saturating stucco in golf communities",
     ],
-    seasonal: "Weston's newness misleads people. The homes are tight and well-built, which means wet-season humidity that gets inside has no easy way out — and with entire subdivisions sharing a build year, roof and AC systems now fail on the same schedule street by street.",
+    seasonal: "Weston's newness misleads people. The homes are tight and well-built, which means wet-season humidity that gets inside has no easy way out, and with entire subdivisions sharing a build year, roof and AC systems now fail on the same schedule street by street.",
     market: "Weston buyers often assume a 1990s master-planned home is too new to have moisture problems. It is exactly old enough: original roofs and AC systems across the city are now at or past service life, and tight envelopes punish that harder than leaky ones.",
   },
 };

@@ -6,9 +6,9 @@ import { absoluteUrl } from "@/lib/seo";
 export const Route = createFileRoute("/service-areas")({
   head: () => ({
     meta: [
-      { title: "Service Areas — South Florida Mold Inspection | Safe Haven" },
-      { name: "description", content: "Independent mold inspection across Martin, Palm Beach & Broward Counties — Stuart, West Palm Beach, Boca Raton, Fort Lauderdale, and more." },
-      { property: "og:title", content: "South Florida Service Areas — Safe Haven Inspections" },
+      { title: "Service Areas: South Florida Mold Inspection | Safe Haven" },
+      { name: "description", content: "Independent mold inspection across Martin, Palm Beach & Broward Counties: Stuart, West Palm Beach, Boca Raton, Fort Lauderdale, and more." },
+      { property: "og:title", content: "South Florida Service Areas: Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/service-areas/") },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/service-areas/") }],
@@ -38,7 +38,7 @@ function ServiceAreasPage() {
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Safe Haven Inspections provides independent mold inspection and testing
             across Martin, Palm Beach & Broward Counties. Don't see your city?
-            Give us a call — we likely cover it.
+            Give us a call. We likely cover it.
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ function ServiceAreasPage() {
             <Link to="/contact/" className="font-semibold text-accent hover:underline">
               Get in touch
             </Link>{" "}
-            — we likely cover it across Martin, Palm Beach &amp; Broward Counties.
+           . We likely cover it across Martin, Palm Beach &amp; Broward Counties.
           </p>
         </div>
       </section>

@@ -7,7 +7,7 @@ export const Route = createFileRoute("/realtors")({
     meta: [
       { title: "Realtor & Property Manager Mold Inspection | Safe Haven" },
       { name: "description", content: "Fast, independent pre-closing mold inspection for South Florida real-estate professionals. Clear reports buyers can negotiate with. Partner with Safe Haven." },
-      { property: "og:title", content: "For Realtors & Property Managers — Safe Haven Inspections" },
+      { property: "og:title", content: "For Realtors & Property Managers | Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/realtors/") },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/realtors/") }],
@@ -45,7 +45,7 @@ function RealtorsPage() {
           {[
             { icon: Clock, title: "Fast turnaround", body: "Pre-closing inspections scheduled quickly, with reports back in time for inspection-period deadlines." },
             { icon: FileCheck2, title: "Clear, negotiable reports", body: "Plain-language findings and lab data buyers can use to negotiate repairs, credits, or price adjustments." },
-            { icon: Handshake, title: "Truly independent", body: "Our focus is assessment only, so your clients receive an objective report they can rely on — protecting your reputation." },
+            { icon: Handshake, title: "Truly independent", body: "Our focus is assessment only, so your clients receive an objective report they can rely on: protecting your reputation." },
             { icon: Building2, title: "Portfolio-friendly", body: "Recurring inspections for rentals, HOAs, and property-management portfolios across the tri-county area." },
           ].map(({ icon: Icon, title, body }) => (
             <div key={title} className="rounded-2xl border border-border bg-card p-6">

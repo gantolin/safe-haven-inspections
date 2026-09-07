@@ -14,6 +14,7 @@ import {
   Droplets,
   Gauge,
   Microscope,
+  Layers,
 } from "lucide-react";
 import { absoluteUrl, breadcrumbSchema, jsonLdScript } from "@/lib/seo";
 
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/services/")({
     meta: [
       { title: "Mold Inspection & Testing Services, South Florida | Safe Haven" },
       { name: "description", content: "Independent mold inspection, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
-      { property: "og:title", content: "Our Services — Safe Haven Inspections" },
+      { property: "og:title", content: "Our Services: Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/services/") },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/services/") }],
@@ -39,6 +40,7 @@ export const Route = createFileRoute("/services/")({
 });
 
 type ServiceLink =
+  | "/services/asbestos-testing/"
   | "/services/mold-inspection/"
   | "/services/mold-testing/"
   | "/services/air-quality-testing/"
@@ -68,7 +70,7 @@ const services: Array<{
     to: "/services/mold-testing/",
     icon: Microscope,
     title: "Mold Testing",
-    body: "The lab-analyzed sampling piece — air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
+    body: "The lab-analyzed sampling piece: air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
   },
   {
     to: "/services/air-quality-testing/",
@@ -125,10 +127,16 @@ const services: Array<{
     body: "Offices, rentals, HOAs, condos, and retail. Multi-stakeholder documentation for owners, managers, tenants, and insurers.",
   },
   {
+    to: "/services/asbestos-testing/",
+    icon: Layers,
+    title: "Asbestos Testing",
+    body: "Sampling and accredited lab analysis for popcorn ceilings, floor tile, pipe wrap, and joint compound in pre-1980 buildings. Testing only, never abatement.",
+  },
+  {
     to: "/services/mold-assessment-report/",
     icon: FileText,
     title: "Mold Assessment & Written Protocol",
-    body: "The formal Florida assessment report — and, when needed, the remediation protocol remediators bid and clearance is graded against.",
+    body: "The formal Florida assessment report, and, when needed, the remediation protocol remediators bid and clearance is graded against.",
   },
 ];
 
@@ -143,7 +151,7 @@ function ServicesPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Lab-backed inspection and testing for homeowners, buyers, sellers, and
-            property managers across South Florida — independent and unbiased.
+            property managers across South Florida: independent and unbiased.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-primary">
             <Clock className="h-4 w-4 text-accent" />
@@ -189,7 +197,7 @@ function ServicesPage() {
               </div>
               <h2 className="mt-5 text-lg font-semibold text-primary">Not sure what you need?</h2>
               <p className="mt-2 text-sm text-muted-foreground">
-                Tell us what you're seeing or smelling — we'll recommend the right level
+                Tell us what you're seeing or smelling, we'll recommend the right level
                 of inspection and testing for your situation.
               </p>
             </div>

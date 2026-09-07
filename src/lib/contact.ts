@@ -50,7 +50,7 @@ export async function submitContactForm({
       // Misconfigured build. Say so rather than showing a confirmation for an
       // enquiry that was never sent.
       console.error(
-        "VITE_WEB3FORMS_KEY is not set — the contact form cannot deliver.",
+        "VITE_WEB3FORMS_KEY is not set: the contact form cannot deliver.",
       );
       return {
         success: false,

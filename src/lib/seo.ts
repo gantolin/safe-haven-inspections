@@ -177,11 +177,14 @@ export function localBusinessSchema() {
       "Indoor air quality assessment",
       "Post-remediation verification",
       "Thermal imaging moisture detection",
+      "Asbestos testing",
+      "Asbestos inspection",
     ],
     // Florida DBPR mold assessor license numbers currently listed on site.
     identifier: [
       { "@type": "PropertyValue", name: "FL Mold Assessor License", value: "MRSA3366" },
       { "@type": "PropertyValue", name: "FL Mold Remediator License", value: "MRSR3536" },
+      { "@type": "PropertyValue", name: "Certification", value: "Certified Asbestos Inspector" },
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -217,7 +220,7 @@ export function cityBusinessSchema(input: CityBusinessSchemaInput) {
     "@type": ["LocalBusiness", "ProfessionalService"],
     "@id": `${absoluteUrl(input.path)}#business`,
     parentOrganization: { "@id": `${SITE_URL}/#business` },
-    name: `Safe Haven Inspections LLC — Mold Inspection in ${input.city}, FL`,
+    name: `Safe Haven Inspections LLC, Mold Inspection in ${input.city}, FL`,
     url: absoluteUrl(input.path),
     telephone: BUSINESS_PHONE,
     email: BUSINESS_EMAIL,

@@ -36,11 +36,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "How much does a mold inspection cost in South Florida?",
-    a: "Every property is different — home size, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection and we'll price your property specifically.",
+    a: "Every property is different: home size, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection and we'll price your property specifically.",
   },
   {
     q: "What's the difference between a mold inspection and mold testing?",
-    a: "A mold inspection is the licensed on-site evaluation — visual walk-through, moisture readings, thermal imaging, and inspection of hidden areas. Mold testing is the lab-analyzed sampling piece — air, surface, or bulk samples sent to an accredited laboratory. Most Safe Haven inspections include both because they answer different questions: the inspection finds where and why, the testing quantifies what.",
+    a: "A mold inspection is the licensed on-site evaluation: visual walk-through, moisture readings, thermal imaging, and inspection of hidden areas. Mold testing is the lab-analyzed sampling piece: air, surface, or bulk samples sent to an accredited laboratory. Most Safe Haven inspections include both because they answer different questions: the inspection finds where and why, the testing quantifies what.",
   },
   {
     q: "Do you charge extra for using thermal imaging or moisture meters?",
@@ -60,23 +60,23 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Do I need to leave the house during the inspection?",
-    a: "No. Staying home is fine and often helpful — you can point out areas you're concerned about, past leaks, or symptoms that show up in certain rooms. We do ask that HVAC systems stay in their normal operating state and windows stay closed for a period before air sampling so indoor readings aren't diluted.",
+    a: "No. Staying home is fine and often helpful. You can point out areas you're concerned about, past leaks, or symptoms that show up in certain rooms. We do ask that HVAC systems stay in their normal operating state and windows stay closed for a period before air sampling so indoor readings aren't diluted.",
   },
   {
     q: "How soon will I get my report?",
     a: "Lab-analyzed samples are typically returned within 24 hours, and the written assessment report follows the same timeline. If a real estate transaction or insurance deadline is driving the schedule, tell us up front and we'll build the visit around it.",
   },
   {
-    q: "What if the inspection finds mold — do you do the cleanup?",
+    q: "What if the inspection finds mold: do you do the cleanup?",
     a: "No. Safe Haven only inspects, tests, and verifies. We do not perform, subcontract, or take referral fees from mold remediation. That separation is deliberate: the company diagnosing the problem shouldn't be the same company profiting from the cleanup. You'll hire a licensed remediator of your choice using the protocol in our report as their scope.",
   },
   {
     q: "Do you do post-remediation clearance testing?",
-    a: "Yes — that's a separate service. After a remediation company finishes, we return to verify the work with clearance testing (post-remediation verification) before the walls close and occupants return. It's the last step of the Florida mold process and the one that gives you documented proof the problem is resolved.",
+    a: "Yes, that's a separate service. After a remediation company finishes, we return to verify the work with clearance testing (post-remediation verification) before the walls close and occupants return. It's the last step of the Florida mold process and the one that gives you documented proof the problem is resolved.",
   },
   {
     q: "Which South Florida cities do you serve?",
-    a: "We cover Martin, Palm Beach, and Broward Counties — from Stuart, Palm City, and Hobe Sound through Jupiter, Palm Beach Gardens, West Palm Beach, Wellington, Boca Raton, and down into Fort Lauderdale, Hollywood, Pembroke Pines, and Weston. See our service areas page for the full list.",
+    a: "We cover Martin, Palm Beach, and Broward Counties, from Stuart, Palm City, and Hobe Sound through Jupiter, Palm Beach Gardens, West Palm Beach, Wellington, Boca Raton, and down into Fort Lauderdale, Hollywood, Pembroke Pines, and Weston. See our service areas page for the full list.",
   },
 ];
 
@@ -84,9 +84,9 @@ export const Route = createFileRoute("/services/mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-inspection/",
-      title: "Mold Inspection South Florida | Safe Haven",
+      title: "Mold Inspection Services, Palm Beach County | Safe Haven",
       description:
-        "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
+        "Mold inspection services across Palm Beach, Broward, and Martin County. Florida-licensed, independent, visual and lab-backed sampling. Report in 24 hours.",
       ogType: "website",
     });
     return {
@@ -97,7 +97,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
           serviceSchema({
             name: "Mold Inspection South Florida",
             description:
-              "Independent, Florida-licensed mold inspection across Martin, Palm Beach & Broward Counties. Visual, moisture, and lab-backed sampling. Report in 24 hours.",
+              "Mold inspection services across Palm Beach, Broward, and Martin County. Florida-licensed, independent, visual and lab-backed sampling. Report in 24 hours.",
             path: "/services/mold-inspection/",
             serviceType: "Mold inspection and assessment",
           }),
@@ -122,16 +122,16 @@ function MoldInspectionPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Service</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Mold Inspection in South Florida
+            Mold Inspection Services in Palm Beach County
           </h1>
           <span aria-hidden className="spectrum-rule mt-5" />
           <p className="mt-5 max-w-3xl text-base text-muted-foreground sm:text-lg">
-            A mold inspection is a licensed, on-site evaluation of a property for
-            visible mold, hidden moisture, and elevated indoor spore levels — delivered
-            as a plain-language written report you can act on. Safe Haven Inspections
-            is an independent, Florida-licensed mold assessor that performs inspection,
-            testing, and assessment only, so every finding on your report reflects
-            what's actually there — never a scope of work written to sell a cleanup.
+            Our mold inspection services cover Palm Beach, Broward, and Martin County:
+            a licensed, on-site evaluation of the property for visible mold, hidden
+            moisture, and elevated indoor spore levels, written up in plain language you
+            can actually use. Safe Haven Inspections is an independent, Florida-licensed
+            mold assessor. We inspect, we test, and that is where our job ends. Nothing
+            in your report exists to sell you a cleanup.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
@@ -154,10 +154,10 @@ function MoldInspectionPage() {
       <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
         <div className="rounded-2xl border border-accent/20 bg-accent/5 p-6 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-            The Florida mold process — 3 steps
+            The Florida mold process: 3 steps
           </p>
           <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
-            Assessment, remediation, and clearance — kept in separate hands.
+            Assessment, remediation, and clearance: kept in separate hands.
           </h2>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
@@ -195,7 +195,7 @@ function MoldInspectionPage() {
         </h2>
         <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
           <p>
-            A mold inspection is not a single test — it's a structured evaluation
+            A mold inspection is not a single test, it's a structured evaluation
             performed by a licensed assessor. The goal is to answer three specific
             questions: is there mold present at levels that matter, where is the
             moisture that's feeding it, and what does the property need next? Every
@@ -206,7 +206,7 @@ function MoldInspectionPage() {
             Because Florida's climate keeps humidity high year-round and hurricane
             season regularly drives water intrusion, mold problems in South Florida
             homes are rarely limited to what you can see. Visible discoloration is
-            usually the last symptom to appear — a well-run inspection finds the
+            usually the last symptom to appear: a well-run inspection finds the
             moisture history that produced it and the airborne conditions that
             surround it, not just the spot on the ceiling.
           </p>
@@ -223,11 +223,11 @@ function MoldInspectionPage() {
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            { icon: Search, title: "Full visual inspection", body: "Walls, ceilings, baseboards, cabinetry, attics, HVAC returns, laundry areas, water heaters, and known problem spots — all photographed and documented." },
+            { icon: Search, title: "Full visual inspection", body: "Walls, ceilings, baseboards, cabinetry, attics, HVAC returns, laundry areas, water heaters, and known problem spots: all photographed and documented." },
             { icon: Thermometer, title: "Moisture mapping & thermal imaging", body: "Non-destructive infrared and moisture-meter surveys locate hidden intrusion behind finished surfaces before it becomes mold." },
             { icon: Wind, title: "Indoor air sampling", body: "Spore-trap air samples with an outdoor control so indoor spore levels can be interpreted against baseline outdoor conditions." },
             { icon: FlaskConical, title: "Surface & bulk sampling", body: "Tape-lift, swab, or bulk material samples where visible growth needs positive species identification." },
-            { icon: FileText, title: "Plain-language written report", body: "Findings, annotated photos, lab results, and prioritized recommendations — a homeowner can read it, and so can a lender or insurer." },
+            { icon: FileText, title: "Plain-language written report", body: "Findings, annotated photos, lab results, and prioritized recommendations: a homeowner can read it, and so can a lender or insurer." },
             { icon: ShieldCheck, title: "Independent, no upsell", body: "No remediation sales, no subcontracting, no referral fees. Our only product is an honest, lab-backed answer." },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-border bg-card p-6">
@@ -248,9 +248,9 @@ function MoldInspectionPage() {
             { n: "01", h: "Intake call", b: "We ask what you're seeing, smelling, or worried about, and confirm whether a full inspection is even the right next step before you spend a dollar." },
             { n: "02", h: "On-site visual inspection", b: "A licensed assessor walks the property, documents moisture readings and thermal anomalies, and photographs every finding." },
             { n: "03", h: "Air and surface sampling", b: "Air samples with an outdoor control, plus tape-lift, swab, or bulk samples where visible growth is present, using industry-standard protocols and chain-of-custody labeling." },
-            { n: "04", h: "AIHA-accredited lab analysis", b: "Samples go to an independent AIHA-accredited third-party laboratory — never analyzed in-house. Typical turnaround: within 24 hours." },
+            { n: "04", h: "AIHA-accredited lab analysis", b: "Samples go to an independent AIHA-accredited third-party laboratory, never analyzed in-house. Typical turnaround: within 24 hours." },
             { n: "05", h: "Written assessment report", b: "You receive a plain-language PDF report with findings, lab results, annotated photos, and a prioritized action plan. When applicable, a remediation protocol is included so any remediator can bid the same scope." },
-            { n: "06", h: "Follow-up call", b: "We walk you through the report so nothing gets misread — including what does and does not require remediation." },
+            { n: "06", h: "Follow-up call", b: "We walk you through the report so nothing gets misread, including what does and does not require remediation." },
           ].map((s) => (
             <li key={s.n} className="rounded-2xl border border-border bg-card p-6">
               <div className="text-sm font-semibold uppercase tracking-wider text-accent">{s.n}</div>
@@ -321,7 +321,7 @@ function MoldInspectionPage() {
             remediation protocol describing the scope, containment, PPE, work
             practices, and post-remediation clearance criteria a remediator should
             meet. That protocol becomes the shared scope every bidder responds to
-            — so you're comparing apples to apples, not opinions to opinions.
+           , so you're comparing apples to apples, not opinions to opinions.
           </p>
         </div>
       </section>
@@ -341,8 +341,7 @@ function MoldInspectionPage() {
             <FlaskConical className="h-5 w-5 text-accent" />
             <h3 className="mt-3 font-semibold text-primary">Third-party lab results</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Every sample is analyzed by an independent AIHA-accredited laboratory —
-              never by us — so the numbers on your report are defensible.
+              Every sample is analyzed by an independent AIHA-accredited laboratory (never by us) so the numbers on your report are defensible.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6">
@@ -359,19 +358,20 @@ function MoldInspectionPage() {
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">How this fits with our other services</h2>
         <p className="mt-3 max-w-3xl text-muted-foreground">
-          A mold inspection is the umbrella service — every other service we offer
+          A mold inspection is the umbrella service: every other service we offer
           is either a specialized subset (air-quality testing, surface sampling,
           moisture mapping, humidity testing) or a follow-up (post-remediation
           verification, real-estate inspections, commercial inspections, formal
           written protocols). If you're not sure which of those you need,
-          start here — a full inspection tells you which of the others actually
+          start here: a full inspection tells you which of the others actually
           apply.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            { to: "/services/mold-testing/" as const, label: "Mold Testing", blurb: "Air and surface testing overview — what each test measures and when it's used." },
+            { to: "/services/mold-testing/" as const, label: "Mold Testing", blurb: "Air and surface testing overview: what each test measures and when it's used." },
             { to: "/services/thermal-imaging/" as const, label: "Moisture Mapping & Thermal Imaging", blurb: "Non-destructive infrared and moisture-meter survey for hidden water intrusion." },
             { to: "/services/post-remediation-verification/" as const, label: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation, before walls close." },
+            { to: "/services/asbestos-testing/" as const, label: "Asbestos Testing", blurb: "Pre-1980 building? Sample the ceiling texture and floor tile on the same visit." },
           ].map((r) => (
             <Link
               key={r.to}
@@ -430,7 +430,7 @@ function MoldInspectionPage() {
             <ShieldCheck className="mt-0.5 h-5 w-5 text-accent" />
             <div>
               <h2 className="text-xl font-semibold text-primary">
-                Independent assessor — no remediation, no conflict of interest
+                Independent assessor, no remediation, no conflict of interest
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 Safe Haven Inspections is a Florida-licensed mold assessment
@@ -466,7 +466,7 @@ function MoldInspectionPage() {
             <div>
               <h2 className="text-2xl font-semibold sm:text-3xl">Ready to schedule an inspection?</h2>
               <p className="mt-2 max-w-xl text-sm opacity-90 sm:text-base">
-                Talk to our local, state-licensed team — no call center, no upsell.
+                Talk to our local, state-licensed team, no call center, no upsell.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">

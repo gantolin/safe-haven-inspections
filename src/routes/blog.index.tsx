@@ -21,7 +21,7 @@ const HERO_MOBILE = "/blog-hero-mobile.jpg";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Mold Inspection Blog — South Florida | Safe Haven" },
+      { title: "Mold Inspection Blog, South Florida | Safe Haven" },
       { name: "description", content: "Practical guides from an independent South Florida mold assessor: hidden mold signs, post-storm mold, pre-purchase mold testing, and more." },
       { property: "og:title", content: "Safe Haven Inspections Blog" },
       { property: "og:url", content: absoluteUrl("/blog/") },
@@ -72,7 +72,7 @@ function BlogIndex() {
           <span aria-hidden className="spectrum-rule mt-5" />
           <p className="mt-5 max-w-2xl text-base text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.5)] sm:text-lg">
             Practical, honest guides from a licensed, independent mold assessment
-            team — written for homeowners, not for contractors.
+            team, written for homeowners, not for contractors.
           </p>
         </div>
       </section>

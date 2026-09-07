@@ -15,14 +15,14 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ params, loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Post not found — Safe Haven Inspections" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Post not found | Safe Haven Inspections" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
     const path = `/blog/${params.slug}`;
     const url = absoluteUrl(path);
     return {
       meta: [
-        { title: post.titleTag ?? `${post.title} — Safe Haven Inspections` },
+        { title: post.titleTag ?? `${post.title} | Safe Haven Inspections` },
         { name: "description", content: post.description },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },

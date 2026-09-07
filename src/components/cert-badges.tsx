@@ -74,7 +74,7 @@ export function CertBadgeGrid({
             <source srcSet={webpVariant(c.src)} type="image/webp" />
             <img
               src={c.src}
-              alt={`${c.label}${c.sub === "NAERMC" ? " — NAERMC" : ""} certification badge`}
+              alt={`${c.label}${c.sub === "NAERMC" ? ", NAERMC" : ""} certification badge`}
               width={512}
               height={512}
               loading="lazy"

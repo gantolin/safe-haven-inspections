@@ -5,7 +5,7 @@ import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcr
 const faqs: FaqItem[] = [
   {
     q: "Why should an independent company do post-remediation verification?",
-    a: "Florida's mold rules separate assessment from remediation for a reason: the company that performed the work should not also grade its own outcome. An independent assessor has no financial stake in the remediation invoice, so a pass/fail decision reflects what was actually accomplished — not who's paying for it.",
+    a: "Florida's mold rules separate assessment from remediation for a reason: the company that performed the work should not also grade its own outcome. An independent assessor has no financial stake in the remediation invoice, so a pass/fail decision reflects what was actually accomplished, not who's paying for it.",
   },
   {
     q: "What does clearance testing actually check?",
@@ -13,11 +13,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "What is a pass vs. a fail?",
-    a: "Pass criteria depend on the original protocol, but generally require: visibly clean surfaces, moisture content within normal range for the material, and air-sample results not elevated relative to a control. A fail typically means visible residue remains, materials are still elevated in moisture, or lab counts remain elevated — pointing to more cleaning, more drying, or a missed moisture source.",
+    a: "Pass criteria depend on the original protocol, but generally require: visibly clean surfaces, moisture content within normal range for the material, and air-sample results not elevated relative to a control. A fail typically means visible residue remains, materials are still elevated in moisture, or lab counts remain elevated: pointing to more cleaning, more drying, or a missed moisture source.",
   },
   {
     q: "Can you do clearance if you didn't do the original inspection?",
-    a: "Yes. In fact, that's one of the situations where independent verification matters most. We'll ask for the original scope of work or protocol, walk the site, and design a clearance plan that matches. Every clearance job is different — we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection.",
+    a: "Yes. In fact, that's one of the situations where independent verification matters most. We'll ask for the original scope of work or protocol, walk the site, and design a clearance plan that matches. Every clearance job is different. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection.",
   },
 ];
 
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
   head: () => {
     const base = pageMeta({
       path: "/services/post-remediation-verification/",
-      title: "Post-Remediation Verification, South Florida | Safe Haven",
+      title: "Post Remediation Verification in Florida | Safe Haven",
       description:
         "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
     });
@@ -57,12 +57,12 @@ function PostRemediationPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Post-Remediation Verification & Clearance Testing"
+      h1="Post-Remediation Verification & Mold Clearance Testing"
       intro={
         <>
           Post-remediation verification is the independent, third-party check
           that confirms a mold remediation project actually returned the space
-          to a normal condition — visually, structurally dry, and free of
+          to a normal condition: visually, structurally dry, and free of
           elevated airborne spores. As a Florida-licensed mold assessor that
           performs no remediation, we grade the work objectively so you know
           whether it's safe to close up walls, move furniture back, and sign
@@ -73,15 +73,15 @@ function PostRemediationPage() {
         {
           h2: "Why independence is required for clearance",
           paragraphs: [
-            "Florida licensing draws a clear line between the mold assessor — who inspects, tests, and writes protocols — and the mold remediator, who executes the cleanup. That separation is deliberate. If the same company both diagnoses the problem and grades its own remediation, there is no independent measure of whether the job succeeded.",
-            "Safe Haven Inspections is exclusively on the assessment side of that line. We do not remediate, and we do not receive referral fees from remediation companies. When we say a job passes clearance, the pass reflects what was accomplished on site — not a business relationship.",
+            "Florida licensing draws a clear line between the mold assessor (who inspects, tests, and writes protocols) and the mold remediator, who executes the cleanup. That separation is deliberate. If the same company both diagnoses the problem and grades its own remediation, there is no independent measure of whether the job succeeded.",
+            "Safe Haven Inspections is exclusively on the assessment side of that line. We do not remediate, and we do not receive referral fees from remediation companies. When we say a job passes clearance, the pass reflects what was accomplished on site, not a business relationship.",
           ],
         },
         {
           h2: "What clearance testing actually checks",
           subsections: [
             { h3: "Visual re-inspection", body: "Inside the containment or work area, we look for any residual visible material, dust, or debris. Cleaning to a 'no visible dust or growth' standard is table stakes." },
-            { h3: "Moisture content", body: "Every material that was involved in the moisture event — drywall, framing, subfloor — is metered to confirm it has actually dried to normal ranges, not just the surface." },
+            { h3: "Moisture content", body: "Every material that was involved in the moisture event (drywall, framing, subfloor) is metered to confirm it has actually dried to normal ranges, not just the surface." },
             { h3: "Air sampling", body: "Post-remediation air samples are collected inside the work area, in adjacent occupied space, and outdoors as a control. Results are analyzed by an AIHA-accredited third-party lab." },
             { h3: "Surface sampling (as needed)", body: "Where a specific location is in question, tape lifts or swabs verify that cleaned surfaces come back to a background reading." },
           ],
@@ -118,7 +118,7 @@ function PostRemediationPage() {
         {
           h2: "How this fits with our other assessment services",
           paragraphs: [
-            "Post-remediation verification is the final step in a chain that often starts with a full mold inspection and a written protocol. When Safe Haven writes the protocol, the remediator has a clear scope; when we return for clearance, we're grading against that scope. If a different assessor wrote the original protocol, we'll match our clearance approach to it. Either way, the client — not the remediator — is the party we're working for.",
+            "Post-remediation verification is the final step in a chain that often starts with a full mold inspection and a written protocol. When Safe Haven writes the protocol, the remediator has a clear scope; when we return for clearance, we're grading against that scope. If a different assessor wrote the original protocol, we'll match our clearance approach to it. Either way, the client (not the remediator) is the party we're working for.",
           ],
         },
       ]}

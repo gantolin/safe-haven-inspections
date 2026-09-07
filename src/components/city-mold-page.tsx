@@ -92,15 +92,15 @@ export function CityMoldPage({
   const sharedFaqs: Array<{ q: string; a: string }> = [
     {
       q: `How much does a mold inspection cost in ${city}?`,
-      a: `Every ${city} property is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection and we'll walk through what your specific property needs.`,
+      a: `Every ${city} property is different: square footage, number of areas of concern, and how many samples the job actually needs all factor in. Rather than post a misleading flat rate, we give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection and we'll walk through what your specific property needs.`,
     },
     {
       q: "How long does a mold inspection take?",
-      a: "A typical residential inspection runs about one to two hours on site, depending on square footage, accessibility, and how many sample locations we need. Larger homes, multi-story properties, or inspections with extensive thermal imaging can take longer. We won't rush the walkthrough — the goal is to actually find the problem, not to hit a stopwatch.",
+      a: "A typical residential inspection runs about one to two hours on site, depending on square footage, accessibility, and how many sample locations we need. Larger homes, multi-story properties, or inspections with extensive thermal imaging can take longer. We won't rush the walkthrough: the goal is to actually find the problem, not to hit a stopwatch.",
     },
     {
       q: "What's the difference between a mold inspection and mold testing?",
-      a: "The inspection is the walkthrough: visual assessment, moisture readings, humidity logging, and thermal imaging to locate suspect areas. Testing is what happens when we collect air or surface samples and send them to an independent lab for analysis. Most jobs need both — the inspection tells us where to sample, and the lab tells us what's actually there.",
+      a: "The inspection is the walkthrough: visual assessment, moisture readings, humidity logging, and thermal imaging to locate suspect areas. Testing is what happens when we collect air or surface samples and send them to an independent lab for analysis. Most jobs need both: the inspection tells us where to sample, and the lab tells us what's actually there.",
     },
     {
       q: "What are the signs I need a mold inspection?",
@@ -112,7 +112,7 @@ export function CityMoldPage({
     },
     {
       q: "Will running the AC, fans, or air purifiers affect my mold test results?",
-      a: "Yes — running HVAC, box fans, or portable air purifiers right before an air sample can temporarily lower spore counts and mask the true baseline. We ask that those be turned off for a period before the visit so the sample reflects real conditions. We walk you through the exact prep when we schedule.",
+      a: "Yes: running HVAC, box fans, or portable air purifiers right before an air sample can temporarily lower spore counts and mask the true baseline. We ask that those be turned off for a period before the visit so the sample reflects real conditions. We walk you through the exact prep when we schedule.",
     },
     {
       q: "Can testing tell the difference between old and active mold growth?",
@@ -120,19 +120,19 @@ export function CityMoldPage({
     },
     {
       q: "Can you find hidden mold behind walls or in the AC system?",
-      a: "We use infrared thermal imaging and moisture meters to flag hidden moisture inside wall cavities, above ceilings, behind cabinetry, and around AC air handlers and return chases. When those readings suggest hidden growth, we recommend targeted cavity sampling or a small inspection opening — always the least-invasive path that still answers the question.",
+      a: "We use infrared thermal imaging and moisture meters to flag hidden moisture inside wall cavities, above ceilings, behind cabinetry, and around AC air handlers and return chases. When those readings suggest hidden growth, we recommend targeted cavity sampling or a small inspection opening, always the least-invasive path that still answers the question.",
     },
     {
       q: `Do I need a mold inspection when buying or selling a home in ${city}?`,
-      a: `It isn't required, but in ${city}'s climate — humid year-round, older housing stock in some neighborhoods, and storm exposure — it's one of the smartest add-ons to a home inspection. Buyers get a clear picture of what they're inheriting; sellers who test up front avoid last-minute renegotiations when a general inspector flags something ambiguous.`,
+      a: `It isn't required, but in ${city}'s climate (humid year-round, older housing stock in some neighborhoods, and storm exposure) it's one of the smartest add-ons to a home inspection. Buyers get a clear picture of what they're inheriting; sellers who test up front avoid last-minute renegotiations when a general inspector flags something ambiguous.`,
     },
     {
-      q: "What happens after mold is found — what are my next steps?",
-      a: "You get a plain-language report with photos, lab results, and moisture data, along with a recommended scope for a remediation contractor to follow. You choose the remediator — we don't refer to a preferred cleanup company. After remediation, we can come back for independent clearance testing to verify the work met protocol.",
+      q: "What happens after mold is found: what are my next steps?",
+      a: "You get a plain-language report with photos, lab results, and moisture data, along with a recommended scope for a remediation contractor to follow. You choose the remediator. We don't refer to a preferred cleanup company. After remediation, we can come back for independent clearance testing to verify the work met protocol.",
     },
     {
       q: "Do I need testing after mold removal (clearance testing)?",
-      a: "Strongly recommended. Post-remediation verification confirms the remediator actually met the containment, cleaning, and moisture goals in their protocol. Because we're independent, our clearance results aren't self-graded by the same company that did the work — which is the whole point of clearance testing.",
+      a: "Strongly recommended. Post-remediation verification confirms the remediator actually met the containment, cleaning, and moisture goals in their protocol. Because we're independent, our clearance results aren't self-graded by the same company that did the work, which is the whole point of clearance testing.",
     },
     {
       q: "Will a mold report help with an insurance claim or a landlord dispute?",
@@ -144,7 +144,7 @@ export function CityMoldPage({
     },
     {
       q: "How soon will I get my results?",
-      a: `Field observations and moisture data are captured the day of the visit. Lab-analyzed samples and your written ${city} report — with photos, readings, and recommendations — are typically delivered within 24 hours.`,
+      a: `Field observations and moisture data are captured the day of the visit. Lab-analyzed samples and your written ${city} report (with photos, readings, and recommendations) are typically delivered within 24 hours.`,
     },
   ];
 
@@ -180,7 +180,7 @@ export function CityMoldPage({
             .map((n) => n.name)
             .join(", ")}. Our ${city} service area covers ZIP codes ${profile.zips.join(
             ", "
-          )} and the surrounding ${county} area. If you're near ${profile.landmarks[0]} or anywhere else in ${city}, we cover you — call (561) 632-6387 to confirm.`,
+          )} and the surrounding ${county} area. If you're near ${profile.landmarks[0]} or anywhere else in ${city}, we cover you, call (561) 632-6387 to confirm.`,
         },
         {
           q: `What causes mold in ${city} homes?`,
@@ -194,7 +194,7 @@ export function CityMoldPage({
         },
         {
           q: `How old are most ${city} homes, and does that matter for mold?`,
-          a: `${city}'s housing stock is predominantly ${profile.housingEra}, and yes — build era is one of the strongest predictors of how a home will fail. ${profile.stats[1]?.note ?? ""} We scope the inspection to the era of your specific property rather than applying a generic checklist.`,
+          a: `${city}'s housing stock is predominantly ${profile.housingEra}, and yes: build era is one of the strongest predictors of how a home will fail. ${profile.stats[1]?.note ?? ""} We scope the inspection to the era of your specific property rather than applying a generic checklist.`,
         },
       ]
     : [];
@@ -267,7 +267,7 @@ export function CityMoldPage({
     { icon: ShieldCheck, label: "State licensed & insured" },
     { icon: FlaskConical, label: "Certified 3rd-party lab analysis" },
     { icon: Building2, label: "Residential & commercial" },
-    { icon: Award, label: "Independent — inspection & testing only" },
+    { icon: Award, label: "Independent: inspection & testing only" },
     { icon: Activity, label: "14 years of experience" },
   ];
 
@@ -288,11 +288,11 @@ export function CityMoldPage({
   }> = [
     { to: "/services/air-quality-testing/", title: "Air Quality Testing", blurb: "Indoor spore-trap sampling with paired outdoor controls to quantify what's actually in the air you breathe." },
     { to: "/services/surface-sampling/", title: "Surface Sampling & Swab Testing", blurb: "Targeted swab, tape-lift, and bulk samples that identify specific mold genera on visible growth." },
-    { to: "/services/thermal-imaging/", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry — non-invasively." },
+    { to: "/services/thermal-imaging/", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry, non-invasively." },
     { to: "/services/post-remediation-verification/", title: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation so you know the work actually met protocol." },
     { to: "/services/real-estate-mold-inspection/", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
     { to: "/services/commercial-mold-inspection/", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
-    { to: "/services/mold-assessment-report/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps — usable by insurers and remediators." },
+    { to: "/services/mold-assessment-report/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps, usable by insurers and remediators." },
   ];
 
   const whatToExpect: Array<{
@@ -320,13 +320,13 @@ export function CityMoldPage({
     {
       icon: Thermometer,
       title: "Thermal imaging",
-      body: "An infrared camera reveals temperature differences that flag hidden moisture — behind drywall, above ceilings, inside built-in cabinets, and around window and roof penetrations. It doesn't diagnose mold on its own, but it points our moisture meter to the right spots.",
+      body: "An infrared camera reveals temperature differences that flag hidden moisture: behind drywall, above ceilings, inside built-in cabinets, and around window and roof penetrations. It doesn't diagnose mold on its own, but it points our moisture meter to the right spots.",
       to: "/services/thermal-imaging/",
     },
     {
       icon: Droplets,
       title: "Moisture readings",
-      body: "Every suspect area is confirmed with a pinless or pin-type moisture meter directly against the material. Numbers, not opinions — we record readings in the report so anyone reviewing it later can see exactly where and how wet the assembly was.",
+      body: "Every suspect area is confirmed with a pinless or pin-type moisture meter directly against the material. Numbers, not opinions. We record readings in the report so anyone reviewing it later can see exactly where and how wet the assembly was.",
     },
     {
       icon: Gauge,
@@ -336,7 +336,7 @@ export function CityMoldPage({
     {
       icon: FileCheck2,
       title: "Certified 3rd-party lab reporting",
-      body: "All samples ship to an AIHA-accredited independent laboratory. Because we don't own the lab and don't sell remediation, the results you receive are unfiltered — the same numbers a remediator or insurance carrier would get.",
+      body: "All samples ship to an AIHA-accredited independent laboratory. Because we don't own the lab and don't sell remediation, the results you receive are unfiltered: the same numbers a remediator or insurance carrier would get.",
       to: "/services/mold-assessment-report/",
     },
   ];
@@ -350,7 +350,7 @@ export function CityMoldPage({
             <MapPin className="mr-1 inline h-4 w-4" /> {city}, {county}
           </p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            {city} Mold Inspection &amp; Testing
+            Mold Inspection &amp; Testing in {city}, FL
           </h1>
           <span aria-hidden className="spectrum-rule mt-5" />
           <p className="mt-5 max-w-3xl text-base text-muted-foreground sm:text-lg">
@@ -397,7 +397,7 @@ export function CityMoldPage({
             agents, buyers and sellers, contractors, and property managers who
             need a straight answer about mold. We're a Florida-licensed mold
             assessment company (FL Mold Assessor MRSA3366 / FL Mold Remediator MRSR3536), and
-            we perform inspection, sampling, and reporting only — never
+            we perform inspection, sampling, and reporting only, never
             remediation.
           </p>
           <p>
@@ -499,7 +499,7 @@ export function CityMoldPage({
             </h2>
             <p className="mt-3 max-w-3xl text-muted-foreground">
               We inspect throughout {city} and the surrounding {county} area.
-              Each neighborhood below carries its own moisture profile — build
+              Each neighborhood below carries its own moisture profile: build
               era, elevation, and exposure all change what we look for first.
             </p>
             <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -513,13 +513,13 @@ export function CityMoldPage({
                     {n.name}
                   </h3>
                   <p className="mt-1.5 text-sm text-muted-foreground">
-                    Mold testing near {n.name} — {n.note}.
+                    Mold testing near {n.name}: {n.note}.
                   </p>
                 </div>
               ))}
             </div>
             <p className="mt-5 max-w-3xl text-sm text-muted-foreground">
-              Service area: {city}, FL and surrounding {county} —{" "}
+              Service area: {city}, FL and surrounding {county},{" "}
               <span className="font-mono-data">ZIP {profile.zips.join(", ")}</span>.
               Near {profile.landmarks.slice(0, 3).join(", ")}? That's well inside
               our coverage.{" "}
@@ -585,7 +585,7 @@ export function CityMoldPage({
                   <source srcSet={webpVariant("/step-visual.jpg")} type="image/webp" />
                   <img
                     src="/step-visual.jpg"
-                    alt={`Licensed mold inspector performing a mold inspection in ${city}, FL — moisture reading on interior wall`}
+                    alt={`Licensed mold inspector performing a mold inspection in ${city}, FL: moisture reading on interior wall`}
                     width={1200}
                     height={800}
                     loading="lazy"
@@ -594,7 +594,7 @@ export function CityMoldPage({
                   />
                 </picture>
                 <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
-                  Moisture mapping during a {city} mold inspection — readings are
+                  Moisture mapping during a {city} mold inspection: readings are
                   recorded in your report, not just described.
                 </figcaption>
               </figure>
@@ -649,14 +649,14 @@ export function CityMoldPage({
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-accent" />
               <h3 className="text-lg font-semibold text-primary">
-                Safe Haven — Independent Assessor
+                Safe Haven: Independent Assessor
               </h3>
             </div>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {[
                 "No cleanup services to sell, so there's no financial reason to over-report or expand the scope.",
-                "Findings come from an AIHA-accredited third-party lab — we don't grade our own homework.",
-                "The report is written for you, your realtor, your insurer, or your attorney — not as an internal sales estimate.",
+                "Findings come from an AIHA-accredited third-party lab. We don't grade our own homework.",
+                "The report is written for you, your realtor, your insurer, or your attorney, not as an internal sales estimate.",
                 "Independent post-remediation verification available so clearance isn't self-certified.",
                 "You choose any qualified remediator. We don't refer to a preferred vendor.",
                 "State-licensed mold assessor (FL MRSA3366 / MRSR3536).",
@@ -677,7 +677,7 @@ export function CityMoldPage({
             </div>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               {[
-                "The more mold they find, the more cleanup work they book — a built-in incentive to expand findings.",
+                "The more mold they find, the more cleanup work they book: a built-in incentive to expand findings.",
                 "In-house lab or interpretation can blur the line between what was measured and what's being sold.",
                 "The report often reads as a scope of work for their own crew rather than a neutral diagnosis.",
                 "Clearance testing after their own remediation is essentially self-grading.",
@@ -711,7 +711,7 @@ export function CityMoldPage({
                 often need an independent assessment report to submit with a
                 homeowners insurance claim. Because Safe Haven is an independent
                 assessor and not a remediation contractor, our report is
-                positioned exactly the way most carriers prefer to receive it —
+                positioned exactly the way most carriers prefer to receive it:
                 a licensed third party documenting conditions with photos, lab
                 results, and moisture readings, separate from whoever performs
                 the cleanup.
@@ -728,13 +728,13 @@ export function CityMoldPage({
             <ShieldCheck className="mt-0.5 h-5 w-5 text-accent" />
             <div>
               <h2 className="text-xl font-semibold text-primary">
-                Independent and licensed — no remediation upsell
+                Independent and licensed, no remediation upsell
               </h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 Safe Haven Inspections is a Florida-licensed mold assessment
                 company (FL Mold Assessor MRSA3366 / FL Mold Remediator MRSR3536). We perform
                 inspection and testing only, so {city} homeowners get an
-                unbiased, lab-backed answer — never a sales pitch.
+                unbiased, lab-backed answer, never a sales pitch.
               </p>
             </div>
           </div>
@@ -819,7 +819,7 @@ export function CityMoldPage({
       {/* FAQ */}
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
-          {city} mold inspection — frequently asked questions
+          {city} mold inspection: frequently asked questions
         </h2>
         <p className="mt-3 max-w-3xl text-muted-foreground">
           Straight answers to the questions {city} homeowners, buyers, and
@@ -868,7 +868,7 @@ export function CityMoldPage({
                 Schedule a {city} mold inspection
               </h2>
               <p className="mt-2 max-w-xl text-sm opacity-90 sm:text-base">
-                Talk to our local, state-licensed team directly — never an
+                Talk to our local, state-licensed team directly, never an
                 answering service. Same-week appointments typically available
                 across Martin, Palm Beach &amp; Broward Counties.
               </p>

@@ -5,7 +5,7 @@ import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcr
 const faqs: FaqItem[] = [
   {
     q: "How is a commercial inspection different from a residential one?",
-    a: "The framework is similar — visual, moisture, air, and surface — but the scale, access, occupant impact, and documentation requirements are different. Commercial jobs typically require coordination with property managers or building engineers, after-hours access, and reporting that stands up to insurers, attorneys, and tenants.",
+    a: "The framework is similar (visual, moisture, air, and surface) but the scale, access, occupant impact, and documentation requirements are different. Commercial jobs typically require coordination with property managers or building engineers, after-hours access, and reporting that stands up to insurers, attorneys, and tenants.",
   },
   {
     q: "Do you work with property managers, HOAs, and condo associations?",
@@ -13,11 +13,11 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Can you handle tenant complaint inspections without escalating the conflict?",
-    a: "Yes — that's actually one of the highest-value scenarios for an independent assessor. We provide objective, lab-backed findings that both the landlord and tenant can point to, which typically de-escalates rather than inflames the dispute.",
+    a: "Yes, that's actually one of the highest-value scenarios for an independent assessor. We provide objective, lab-backed findings that both the landlord and tenant can point to, which typically de-escalates rather than inflames the dispute.",
   },
   {
     q: "What does a commercial inspection cost?",
-    a: "Every commercial project is different — square footage, number of units, number of samples, and access logistics all factor in. We give you a clear, upfront quote for the full scope before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection.",
+    a: "Every commercial project is different: square footage, number of units, number of samples, and access logistics all factor in. We give you a clear, upfront quote for the full scope before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection.",
   },
 ];
 
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/commercial-mold-inspection/",
-      title: "Commercial Mold Inspection, South Florida | Safe Haven",
+      title: "Commercial Mold Inspection, Palm Beach County | Safe Haven",
       description:
         "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
     });
@@ -57,13 +57,13 @@ function CommercialPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Commercial & Property Management Mold Inspection"
+      h1="Commercial Mold Inspection"
       intro={
         <>
           Commercial mold inspection is a scaled, documentation-heavy version
           of our residential assessment work, built for offices, rental
           buildings, HOAs, condos, and retail spaces where multiple
-          stakeholders — owners, managers, tenants, insurers — need to trust
+          stakeholders (owners, managers, tenants, insurers) need to trust
           the same report. As an independent, Florida-licensed mold assessor
           with no remediation arm, we produce that report without pulling the
           conclusion in any direction.
@@ -80,7 +80,7 @@ function CommercialPage() {
         {
           h2: "Property types we regularly assess",
           subsections: [
-            { h3: "Office & professional space", body: "Suites, medical offices, and executive floors — where HVAC design, ceiling plenums, and after-hours access shape the inspection plan." },
+            { h3: "Office & professional space", body: "Suites, medical offices, and executive floors, where HVAC design, ceiling plenums, and after-hours access shape the inspection plan." },
             { h3: "Multifamily rentals & apartments", body: "Individual units, common corridors, and shared mechanical rooms. Tenant complaint investigations included." },
             { h3: "HOAs, condos & mid-rises", body: "Boards and management companies dealing with unit-level complaints, envelope moisture, and stack-effect HVAC issues in taller buildings." },
             { h3: "Retail & mixed-use", body: "Storefronts, restaurants, and mixed-use buildings where kitchen exhaust, refrigeration, and roof drainage frequently intersect with mold conditions." },
@@ -100,7 +100,7 @@ function CommercialPage() {
           h2: "Landlord and tenant considerations",
           paragraphs: [
             "The most valuable thing an independent assessor brings to a landlord-tenant situation is a shared source of truth. When findings and lab results are produced by a company that does no remediation and takes no referral fees, both sides can rely on the same document without wondering whether the assessor is angling to sell more work.",
-            "In practice, that changes how conflicts resolve. A documented finding of elevated indoor Aspergillus/Penicillium with an active moisture source in a specific wall is very different from a tenant email that says 'I think there's mold.' The first is actionable; the second isn't. Our reports are designed to turn subjective complaints into the objective first category — whether the outcome is repair, remediation, or documented all-clear.",
+            "In practice, that changes how conflicts resolve. A documented finding of elevated indoor Aspergillus/Penicillium with an active moisture source in a specific wall is very different from a tenant email that says 'I think there's mold.' The first is actionable; the second isn't. Our reports are designed to turn subjective complaints into the objective first category, whether the outcome is repair, remediation, or documented all-clear.",
           ],
         },
         {
@@ -123,7 +123,7 @@ function CommercialPage() {
         {
           h2: "How this fits with our other services",
           paragraphs: [
-            "Commercial inspections often trigger follow-up work: moisture mapping to trace envelope leaks, targeted surface sampling on HVAC coils and pans, post-remediation verification when a remediation contractor completes work, and periodic re-testing to close out an insurance file. All of those services stay on the assessment side of the line — we never cross into remediation.",
+            "Commercial inspections often trigger follow-up work: moisture mapping to trace envelope leaks, targeted surface sampling on HVAC coils and pans, post-remediation verification when a remediation contractor completes work, and periodic re-testing to close out an insurance file. All of those services stay on the assessment side of the line. We never cross into remediation.",
           ],
         },
       ]}
@@ -135,7 +135,7 @@ function CommercialPage() {
         { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Post-leak and post-storm assessment for commercial roofs, risers, and shared walls." },
       ]}
       ctaTitle="Talk about a commercial project"
-      ctaBody="Property managers, boards, and building owners — get a quote for an independent, licensed inspection tailored to your building."
+      ctaBody="Property managers, boards, and building owners, get a quote for an independent, licensed inspection tailored to your building."
     />
   );
 }

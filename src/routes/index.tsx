@@ -47,10 +47,10 @@ const landonAvatar = "/landon-avatar.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Independent Mold Inspection, Greenacres FL | Safe Haven" },
-      { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Lab-backed answers, no upsell. Call (561) 632-6387." },
-      { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
-      { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
+      { title: "Mold Inspection in Greenacres, FL | Safe Haven" },
+      { name: "description", content: "Mold inspection and mold testing in Greenacres, FL and across Palm Beach, Broward, and Martin County. Licensed, lab-backed, no upsell. Call (561) 632-6387." },
+      { property: "og:title", content: "Mold Inspection in Greenacres, FL | Safe Haven Inspections" },
+      { property: "og:description", content: "Licensed mold inspection and air quality testing for South Florida homeowners, buyers, and property managers. Lab-backed reports, no remediation upsell." },
       { property: "og:url", content: absoluteUrl("/") },
       // og:image intentionally omitted — __root.tsx supplies the absolute
       // branded card sitewide. This previously passed the bare asset path,
@@ -170,13 +170,14 @@ function Index() {
                 returns from sm up. Four lines of body copy over the photo was
                 burying the image and pushing the CTA toward the fold. */}
             <p className="mt-5 text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:hidden">
-              Independent, state-licensed assessment across South Florida — unbiased,
-              lab-backed answers.
+              Independent, state-licensed mold inspection across South Florida.
+              Unbiased, lab-backed answers.
             </p>
             <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg">
-              Safe Haven Inspections is an independent, state-licensed mold assessment
-              company serving South Florida. Our focus is inspection and testing, so
-              every answer you get is unbiased, lab-backed, and written for you.
+              Safe Haven Inspections is an independent, state-licensed mold inspection
+              and testing company based in Greenacres, covering Palm Beach, Broward, and
+              Martin County. We never sell the cleanup, so the answer you get is the
+              honest one.
             </p>
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
               <Link
@@ -265,7 +266,7 @@ function Index() {
               Why we're different
             </p>
             <h2 className="mt-2 text-3xl font-semibold text-primary sm:text-4xl">
-              Assessment is our specialty — and your advantage.
+              Assessment is our specialty, and your advantage.
             </h2>
             <p className="mt-5 text-muted-foreground">
               Many companies handle both testing and repairs. We keep our focus on
@@ -274,7 +275,7 @@ function Index() {
             <p className="mt-4 text-muted-foreground">
               Safe Haven is an <strong className="text-primary">independent third-party assessor.</strong>{" "}
               Our reports give you an objective, lab-backed picture of your home,
-              along with clear recommendations — and complete freedom to choose your
+              along with clear recommendations, and complete freedom to choose your
               next step.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -323,7 +324,7 @@ function Index() {
           </p>
           <div className="mt-4 max-w-3xl space-y-4 text-muted-foreground">
             <p>
-              "I'm a lifelong South Florida resident — born and raised here. I
+              "I'm a lifelong South Florida resident, born and raised here. I
               wanted to build something trustworthy in the place I grew up in,
               for the people who live here. Safe Haven is a small,
               family-operated company, and the people I work with are people
@@ -332,13 +333,13 @@ function Index() {
             <p>
               "My background is in remediation. I spent years doing the
               hands-on cleanup work and learning which techniques actually
-              work — so when I inspect your home, I'm not guessing at what a
+              work, so when I inspect your home, I'm not guessing at what a
               remediation job will take. I know the process start to finish."
             </p>
           </div>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <p className="font-[Bricolage_Grotesque] text-sm font-semibold text-primary">
-              — Landon Heinrichs, Founder
+             Landon Heinrichs, Founder
             </p>
             <Link
               to="/about/"
@@ -392,7 +393,7 @@ function Index() {
               title: "Visual inspection",
               image: stepVisual.url,
               alt: "Licensed mold inspector kneeling to examine a baseboard with a flashlight during a residential mold inspection.",
-              body: "A full walk-through of the property — attic, HVAC, cabinetry, baseboards, bathrooms, and known problem areas.",
+              body: "A full walk-through of the property: attic, HVAC, cabinetry, baseboards, bathrooms, and known problem areas.",
             },
             {
               icon: Wind,
@@ -408,7 +409,7 @@ function Index() {
               title: "Accredited lab analysis",
               image: stepLab.url,
               alt: "AIHA-accredited lab technician analyzing a mold sample on a microscope slide in a professional laboratory.",
-              body: "Samples are analyzed by an independent AIHA-accredited laboratory — never by us.",
+              body: "Samples are analyzed by an independent AIHA-accredited laboratory, never by us.",
             },
             {
               icon: FileText,
@@ -466,7 +467,7 @@ function Index() {
               Professional-grade tools, top to bottom.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              We invest in the same equipment used by industrial hygienists — because
+              We invest in the same equipment used by industrial hygienists, because
               catching hidden moisture and mold requires more than a flashlight.
             </p>
           </div>
@@ -518,7 +519,7 @@ function Index() {
               Mold hides. Its effects don't.
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Mold thrives inside walls, under floors, and in HVAC systems — especially
+              Mold thrives inside walls, under floors, and in HVAC systems, especially
               after leaks, storms, or long-term humidity. Long before you see it, it
               can trigger respiratory issues, allergies, and worsen asthma for
               children, elderly family members, and anyone with a weakened immune
@@ -526,7 +527,7 @@ function Index() {
             </p>
             <p className="mt-4 text-muted-foreground">
               Catching mold early protects your family <em>and</em> your property. An
-              independent inspection tells you exactly what's there — before it turns
+              independent inspection tells you exactly what's there: before it turns
               into a much bigger, much more expensive problem.
             </p>
           </div>
@@ -549,7 +550,7 @@ function Index() {
                 failures create exactly the damp, humid conditions mold needs to
                 take hold. Mold can begin growing within{" "}
                 <strong className="text-primary">24–48 hours</strong> of water
-                intrusion — often behind walls or under flooring where you can't
+                intrusion, often behind walls or under flooring where you can't
                 see it.
               </p>
               <p className="mt-4 text-muted-foreground">
@@ -577,7 +578,7 @@ function Index() {
                 { icon: Droplets, title: "Hidden moisture", body: "Water travels through drywall, flooring, and framing long before it shows." },
                 { icon: Clock, title: "24–48 hours", body: "Mold can begin colonizing surfaces within a day or two of water intrusion." },
                 { icon: FileText, title: "Insurance-ready", body: "Independent, lab-backed documentation to support your claim." },
-                { icon: ShieldCheck, title: "Peace of mind", body: "Know exactly what's there — and what isn't — before repairs begin." },
+                { icon: ShieldCheck, title: "Peace of mind", body: "Know exactly what's there (and what isn't) before repairs begin." },
               ].map(({ icon: Icon, title, body }) => (
                 <div key={title} className="rounded-xl border border-border bg-card p-4">
                   <Icon className="h-5 w-5 text-accent" />
@@ -605,7 +606,7 @@ function Index() {
             {[
               {
                 q: "Do you also do mold removal?",
-                a: "No — our specialty is assessment. We inspect, test, and report, so the findings you receive are fully objective. If remediation turns out to be needed, our report gives you everything required to hire the right company with confidence, and we can verify the work afterward.",
+                a: "No. Our specialty is assessment. We inspect, test, and report, so the findings you receive are fully objective. If remediation turns out to be needed, our report gives you everything required to hire the right company with confidence, and we can verify the work afterward.",
               },
               {
                 q: "What's the difference between a mold assessment and mold remediation?",
@@ -625,7 +626,24 @@ function Index() {
               },
               {
                 q: "What does a mold inspection cost?",
-                a: "Every home is different — square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection for exact numbers.",
+                a: "Every home is different: square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection for exact numbers.",
+              },
+              {
+                q: "Do you test for asbestos as well as mold?",
+                a: (
+                  <>
+                    Yes. Landon is a certified asbestos inspector on top of his
+                    Florida mold assessor license, so popcorn ceilings, floor tile,
+                    and pipe wrap can be sampled on the same visit as the mold
+                    inspection. Results come back from an accredited lab within 24
+                    hours. See{" "}
+                    <Link to="/services/asbestos-testing/" className="font-semibold text-accent underline underline-offset-2">
+                      asbestos testing
+                    </Link>{" "}
+                    for what we sample and how it works. We test only, and never
+                    remove.
+                  </>
+                ),
               },
               {
                 q: "Which areas do you serve?",
@@ -659,7 +677,7 @@ function Index() {
               Credentials you can check.
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">
-              Florida DBPR licensed as both a mold assessor and a mold remediator —
+              Florida DBPR licensed as both a mold assessor and a mold remediator,
               and certified by the IICRC and NAERMC.
             </p>
           </div>

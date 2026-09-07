@@ -32,7 +32,7 @@ export function SiteNav() {
       <div className="mx-auto flex h-28 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6">
         <Link
           to="/"
-          aria-label="Safe Haven Inspections LLC — Home"
+          aria-label="Safe Haven Inspections LLC, Home"
           className="flex shrink-0 items-center gap-2 sm:gap-3"
           onClick={() => setOpen(false)}
         >
@@ -148,7 +148,7 @@ export function SiteFooter() {
           <ul className="mt-3 space-y-1 text-muted-foreground">
             <li>
               <a className="font-mono-data text-accent hover:underline" href="tel:+15616326387">(561) 632-6387</a>
-              <span className="block text-xs text-muted-foreground">You'll reach our local team directly — never an answering service.</span>
+              <span className="block text-xs text-muted-foreground">You'll reach our local team directly, never an answering service.</span>
             </li>
             <li><a className="text-accent break-all hover:underline" href="mailto:safehaveninspectionsllc@gmail.com">safehaveninspectionsllc@gmail.com</a></li>
             <li>
@@ -167,7 +167,7 @@ export function SiteFooter() {
                 in the certifications section on the home page and on /about,
                 so the fine-print restatement here was redundant. */}
             <li className="text-xs text-muted-foreground/80">
-              Inspection &amp; testing only — no remediation.
+              Inspection &amp; testing only, no remediation.
             </li>
           </ul>
         </div>

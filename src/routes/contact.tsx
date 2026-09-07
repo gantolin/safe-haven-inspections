@@ -8,8 +8,8 @@ import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Request an Inspection — Safe Haven Inspections, South Florida" },
-      { name: "description", content: "Request a mold inspection in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387 — the phone consultation is free." },
+      { title: "Request an Inspection, South Florida | Safe Haven" },
+      { name: "description", content: "Request a mold inspection in Martin, Palm Beach & Broward Counties. Independent, licensed, and insured. Call (561) 632-6387: the phone consultation is free." },
       { property: "og:title", content: "Contact Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/contact/") },
     ],
@@ -99,7 +99,7 @@ function ContactPage() {
             <h2 className="text-xl font-semibold text-primary">Request an inspection</h2>
             <p className="mt-3 rounded-lg border border-border bg-secondary/60 p-4 text-sm text-muted-foreground">
               <span className="font-semibold text-primary">How this works:</span> talking
-              to us is free — call and we'll tell you honestly whether you even need an
+              to us is free, call and we'll tell you honestly whether you even need an
               inspection. The inspection itself is a paid service, and we'll go over the
               scope and the price with you before anything is booked. We don't send
               someone out to price a job on spec.
@@ -110,13 +110,13 @@ function ContactPage() {
                   <CheckCircle2 className="h-5 w-5 text-accent" /> Request received
                 </div>
                 <p className="mt-2 text-muted-foreground">
-                  Thanks — your request is in, and we'll get back to you within one
+                  Thanks. Your request is in, and we'll get back to you within one
                   business day.
                 </p>
                 <p className="mt-3 text-muted-foreground">
                   Need an answer sooner? Call{" "}
                   <a className="font-semibold text-accent" href="tel:+15616326387">(561) 632-6387</a>{" "}
-                  — you'll reach our local team directly, never an answering
+                 , you'll reach our local team directly, never an answering
                   service.
                 </p>
               </div>
@@ -216,7 +216,7 @@ function ContactPage() {
                 </span>
                 <span className="block text-lg font-semibold sm:text-xl">(561) 632-6387</span>
                 <span className="mt-1 block text-xs font-normal text-white/85">
-                  No charge to talk — we'll tell you if you even need an inspection.
+                  No charge to talk, we'll tell you if you even need an inspection.
                   You'll reach our local team directly, never an answering service.
                 </span>
               </span>

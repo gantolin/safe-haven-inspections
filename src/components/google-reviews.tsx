@@ -84,7 +84,7 @@ export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
       href={GOOGLE_REVIEWS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${ratingValue.toFixed(1)} out of 5 stars on Google — read the reviews on Google`}
+      aria-label={`${ratingValue.toFixed(1)} out of 5 stars on Google, read the reviews on Google`}
       className={
         onDark
           ? "inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white transition hover:bg-white/20"
