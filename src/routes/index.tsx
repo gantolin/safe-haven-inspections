@@ -47,7 +47,7 @@ const landonAvatar = "/landon-avatar.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Independent Mold Inspection, South Florida | Safe Haven" },
+      { title: "Independent Mold Inspection, Greenacres FL | Safe Haven" },
       { name: "description", content: "Independent, state-licensed mold inspection and testing across Martin, Palm Beach & Broward Counties. Lab-backed answers, no upsell. Call (561) 632-6387." },
       { property: "og:title", content: "Independent Mold Inspection — Safe Haven Inspections" },
       { property: "og:description", content: "Third-party mold and air-quality assessment for South Florida homeowners and property managers. Unbiased, lab-backed reports." },
@@ -160,7 +160,7 @@ function Index() {
               <GoogleRatingBadge onDark />
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
-              Independent Mold Inspection & Testing in South Florida
+              Independent Mold Inspection & Testing in Greenacres
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Protect your home and the air you breathe.
