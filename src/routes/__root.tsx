@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter, MobileCallBar } from "../components/site-nav";
 import { localBusinessSchema, jsonLdScript, absoluteUrl } from "../lib/seo";
+import { analyticsHeadScripts, useAnalytics } from "../lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -98,11 +99,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         httpEquiv: "Content-Security-Policy",
         content: [
           "default-src 'self'",
-          "script-src 'self' 'unsafe-inline'",
+          // googletagmanager.com is the GA4 gtag loader. Without it the
+          // analytics tag is blocked outright by this policy and no hit is
+          // ever sent — the origin allow-list applies to the tag exactly as it
+          // does to anything else.
+          "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com",
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
           "font-src 'self' https://fonts.gstatic.com",
-          "img-src 'self' data:",
-          "connect-src 'self' https://api.web3forms.com",
+          "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
+          // GA4 posts its hits to google-analytics.com, and to a
+          // region-scoped analytics.google.com host for some visitors, so both
+          // wildcards are needed. This is the set Google documents for CSP.
+          "connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
           "form-action 'self'",
           "base-uri 'self'",
           "object-src 'none'",
@@ -151,7 +159,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
       { rel: "manifest", href: "/site.webmanifest" },
     ],
-    scripts: [jsonLdScript(localBusinessSchema())],
+    // GA4 first, so the tag is the earliest script in <head> on every route.
+    scripts: [...analyticsHeadScripts(), jsonLdScript(localBusinessSchema())],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -176,6 +185,10 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  // GA4: page_view on every client-side navigation, plus call/text/email
+  // conversion tracking. Production builds only.
+  useAnalytics();
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");

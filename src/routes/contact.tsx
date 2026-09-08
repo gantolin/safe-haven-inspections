@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } fro
 import { cities } from "@/data/cities";
 import { submitContactForm } from "@/lib/contact";
 import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
+import { trackEvent } from "@/lib/analytics";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -59,6 +60,10 @@ function ContactPage() {
       });
 
       if (result.success) {
+        // Counted only once Web3Forms has confirmed delivery, so the GA4 total
+        // matches the number of enquiries that actually reached the inbox.
+        // A honeypot hit returns above this and is deliberately never counted.
+        trackEvent("quote_request", { form_name: "contact" });
         setSubmitted(true);
         form.reset();
       } else {
