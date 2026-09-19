@@ -28,6 +28,8 @@ import {
   breadcrumbSchema,
   type FaqItem,
 } from "@/lib/seo";
+import { EQUIPMENT_FIGURES } from "@/data/figures";
+import { webpVariant } from "@/lib/images";
 
 const faqs: FaqItem[] = [
   {
@@ -119,7 +121,8 @@ function MoldInspectionPage() {
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Service</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
             Mold Inspection Services in Palm Beach County
@@ -147,6 +150,25 @@ function MoldInspectionPage() {
               <Phone className="h-4 w-4" /> (561) 632-6387
             </a>
           </div>
+          </div>
+          <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <picture>
+              <source srcSet={webpVariant("/hero-mold-inspection.jpg")} type="image/webp" />
+              <img
+                src="/hero-mold-inspection.jpg"
+                alt="Moisture meter held against an interior baseboard during a mold inspection"
+                width={1400}
+                height={875}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
+            <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+              Moisture readings are taken at baseboards, walls and ceilings on every
+              visit, and the numbers go into your report.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -261,7 +283,10 @@ function MoldInspectionPage() {
         </ol>
       </section>
 
-      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+      {/* Rendered as a full-bleed band: this page runs past 6,000px and was
+          otherwise an unbroken run of identical cards on identical background. */}
+      <section className="mt-16 border-y border-border bg-secondary py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
           Tools and methods we use
         </h2>
@@ -276,6 +301,31 @@ function MoldInspectionPage() {
           laboratory whose credentials, quality control, and chain of custody are
           documented in your report.
         </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {EQUIPMENT_FIGURES.map((fig) => (
+            <figure
+              key={fig.src}
+              className="overflow-hidden rounded-2xl border border-border bg-card"
+            >
+              <picture>
+                <source srcSet={webpVariant(fig.src)} type="image/webp" />
+                <img
+                  src={fig.src}
+                  alt={fig.alt}
+                  width={fig.width}
+                  height={fig.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[16/10] w-full object-cover"
+                />
+              </picture>
+              <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+                {fig.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        </div>
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">

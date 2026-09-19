@@ -126,6 +126,14 @@ function MoldAssessmentReportPage() {
         { to: "/services/commercial-mold-inspection/", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
         { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "The same report, packaged for an adjuster, with causation and scope documented." },
       ]}
+      heroImage={{
+        src: "/report-preview.jpg",
+        alt: "Two pages from a Safe Haven mold assessment report, showing the observations section and the specific recommendations section",
+        caption:
+          "Pages from a real assessment report: observations logged by category, then recommendations written so any remediator can bid the same scope.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Request a formal assessment report"
       ctaBody="Get a documented, defensible assessment report (and, where needed, a written remediation protocol) from an independent licensed assessor."
     />

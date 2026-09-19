@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
 import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+import { EQUIPMENT_FIGURES } from "@/data/figures";
 
 const faqs: FaqItem[] = [
   { q: "How soon after water damage should we get an inspection?", a: "As fast as you reasonably can. Mold can begin colonizing wet materials within 24 to 48 hours in South Florida conditions. Even if drying is already in progress, an independent moisture and mold inspection documents what actually got wet and how far the moisture traveled, so nothing gets sealed behind drywall by mistake." },
@@ -92,6 +93,8 @@ function WaterDamagePage() {
         },
         {
           h2: "Tools and methods we use",
+          tone: "band",
+          images: EQUIPMENT_FIGURES,
           paragraphs: [
             "Water-damage inspection depends heavily on the right instrumentation. We use pin and pinless moisture meters to quantify moisture in framing, drywall, and flooring; infrared thermal cameras to reveal temperature differentials that indicate hidden moisture; digital hygrometers to record indoor and outdoor temperature, relative humidity, and dew point; and, when needed, calibrated air sampling with spore-trap cassettes analyzed at an AIHA-accredited lab.",
             "All measurements are keyed to a floor plan and photographed in place. That makes the report legible to anyone reviewing it later: an adjuster, an attorney, a remediation contractor, or a future buyer.",
@@ -124,6 +127,14 @@ function WaterDamagePage() {
         { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "After the water is gone, ambient humidity is what decides whether mold returns." },
         { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "Packaging the same evidence for an adjuster, with causation documented." },
       ]}
+      heroImage={{
+        src: "/hero-water-damage.jpg",
+        alt: "Drywall paper delaminated along a ceiling and wall line with grey surface staining visible",
+        caption:
+          "Delaminated drywall paper along a ceiling line after a water event. Staining is sampled, never diagnosed by eye.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Just had a leak or a storm event?"
       ctaBody="Get an independent, insurance-ready water-damage assessment before decisions get made. Prioritized scheduling for storm and emergency calls."
     />

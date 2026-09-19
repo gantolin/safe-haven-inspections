@@ -134,6 +134,14 @@ function PostRemediationPage() {
         { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
         { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "Clearance can pass while the conditions that caused the growth are still in place." },
       ]}
+      heroImage={{
+        src: "/hero-post-remediation.jpg",
+        alt: "Containment sheeting still sealing a hallway while clearance testing is carried out",
+        caption:
+          "Clearance testing happens with containment still up. Taking it down first defeats the purpose of the test.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Book independent clearance testing"
       ctaBody="Get an unbiased pass/fail decision before the drywall goes back up. Talk to our licensed team."
     />

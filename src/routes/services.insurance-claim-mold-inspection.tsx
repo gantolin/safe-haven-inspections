@@ -145,6 +145,14 @@ function InsuranceClaimPage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent proof the cleanup your carrier paid for actually met protocol." },
         { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Lab-backed evidence of what is in the air, with a paired outdoor control." },
       ]}
+      heroImage={{
+        src: "/hero-insurance.jpg",
+        alt: "Infrared thermometer aimed at a wall and ceiling junction where the drywall paper has delaminated",
+        caption:
+          "Surface temperature recorded at the damaged band. Documented readings and photographs are what an adjuster can act on.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Filing, disputing, or appealing a mold claim?"
       ctaBody="Get an independent, licensed assessment before remediation starts and the evidence goes away. Reports are typically back within 24 hours."
     />

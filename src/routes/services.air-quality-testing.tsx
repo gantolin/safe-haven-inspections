@@ -141,6 +141,14 @@ function AirQualityTestingPage() {
         blurb:
           "What that odour actually is, the six places it hides in a Florida house, and why you stop noticing it.",
       }}
+      heroImage={{
+        src: "/hero-air-quality.jpg",
+        alt: "Spore trap cassette mounted on a balcony rail to collect an outdoor control sample",
+        caption:
+          "Outdoor control sample running alongside the indoor cassettes. Indoor spore counts mean very little without one.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Schedule air quality testing"
       ctaBody="Get objective, lab-backed answers about the air inside your home. Talk to our local, state-licensed team directly."
     />

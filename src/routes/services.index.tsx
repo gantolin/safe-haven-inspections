@@ -17,6 +17,7 @@ import {
   Layers,
 } from "lucide-react";
 import { absoluteUrl, breadcrumbSchema, jsonLdScript } from "@/lib/seo";
+import { webpVariant } from "@/lib/images";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -59,69 +60,86 @@ const services: Array<{
   icon: typeof Wind;
   title: string;
   body: string;
+  /**
+   * Card thumbnail. Optional: asbestos testing and the assessment report have
+   * no honest photograph yet, and those cards fall back to the icon alone.
+   * Every .jpg here has a .webp sibling in /public.
+   */
+  image?: { src: string; alt: string };
 }> = [
   {
     to: "/services/mold-inspection/",
+    image: { src: "/svc-mold-inspection.jpg", alt: "Moisture meter held against a baseboard during a mold inspection" },
     icon: Search,
     title: "Mold Inspection",
     body: "The flagship service. Licensed on-site visual, moisture, thermal, and lab-backed evaluation of the property. Start here if you're not sure what you need.",
   },
   {
     to: "/services/mold-testing/",
+    image: { src: "/svc-mold-testing.jpg", alt: "Air sampling stand and stopwatch running in a sealed off hallway" },
     icon: Microscope,
     title: "Mold Testing",
     body: "The lab-analyzed sampling piece: air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
   },
   {
     to: "/services/air-quality-testing/",
+    image: { src: "/svc-air-quality.jpg", alt: "Spore trap cassette mounted outdoors to collect a control sample" },
     icon: Wind,
     title: "Airborne Mold & Air Quality Testing",
     body: "Spore-trap air sampling with outdoor controls, analyzed at an AIHA-accredited third-party lab. The core indoor air data behind most decisions.",
   },
   {
     to: "/services/surface-sampling/",
+    image: { src: "/svc-surface-sampling.jpg", alt: "Surface sample bag sealed and labelled at a baseboard" },
     icon: FlaskConical,
     title: "Surface Sampling & Swab Testing",
     body: "Tape-lift, swab, and bulk sampling of visible material for positive species identification. Complements air testing when there's something to point at.",
   },
   {
     to: "/services/thermal-imaging/",
+    image: { src: "/svc-thermal-imaging.jpg", alt: "Infrared thermal image of a wall and floor junction" },
     icon: Thermometer,
     title: "Moisture Mapping & Thermal Imaging",
     body: "Non-destructive infrared and moisture-meter surveys that locate hidden water intrusion behind walls, ceilings, and floors before it becomes mold.",
   },
   {
     to: "/services/water-damage-inspection/",
+    image: { src: "/svc-water-damage.jpg", alt: "Drywall paper delaminated along a ceiling line after a water event" },
     icon: Droplets,
     title: "Water Damage & Moisture Intrusion Assessment",
     body: "Post-leak, post-storm, and post-flood inspection. Insurance-ready documentation of what got wet and how far the moisture traveled.",
   },
   {
     to: "/services/humidity-testing/",
+    image: { src: "/svc-humidity.jpg", alt: "Digital hygrometer displaying relative humidity and temperature" },
     icon: Gauge,
     title: "Humidity Testing & Psychrometrics",
     body: "Temperature, RH, and dew-point measurement across the home to diagnose humidity-driven mildew when there's no obvious leak.",
   },
   {
     to: "/services/insurance-claim-mold-inspection/",
+    image: { src: "/svc-insurance.jpg", alt: "Infrared thermometer recording surface temperature on a damaged wall" },
     icon: ShieldCheck,
     title: "Insurance Claim Documentation",
     body: "Independent assessment built for adjusters: causation, moisture mapping, and lab results, from an assessor who never does the cleanup.",
   },
   {
     to: "/services/post-remediation-verification/",
+    image: { src: "/svc-post-remediation.jpg", alt: "Containment sheeting still in place during clearance testing" },
     icon: ShieldCheck,
     title: "Post-Remediation Verification",
     body: "Independent clearance testing after any remediation company finishes. Third-party pass/fail decisions before walls close and occupants return.",
   },
   {
     to: "/services/real-estate-mold-inspection/",
+    image: { src: "/svc-real-estate.jpg", alt: "Air sampling set up in a vacant room during a pre purchase inspection" },
     icon: Home,
     title: "Real Estate Mold Inspection",
     body: "Pre-purchase and pre-sale inspections scheduled to fit inside real inspection-period windows. Reports designed for buyers, sellers, and agents.",
   },
   {
     to: "/services/commercial-mold-inspection/",
+    image: { src: "/svc-commercial.jpg", alt: "Opened ceiling exposing ductwork and insulation in a commercial unit" },
     icon: Building2,
     title: "Commercial & Property Management",
     body: "Offices, rentals, HOAs, condos, and retail. Multi-stakeholder documentation for owners, managers, tenants, and insurers.",
@@ -169,21 +187,43 @@ function ServicesPage() {
 
       <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ to, icon: Icon, title, body }) => (
+          {services.map(({ to, icon: Icon, title, body, image }) => (
             <Link
               key={to}
               to={to}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="grid h-11 w-11 place-items-center rounded-lg bg-secondary text-accent">
-                <Icon className="h-5 w-5" />
+              {image ? (
+                <picture>
+                  <source srcSet={webpVariant(image.src)} type="image/webp" />
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={800}
+                    height={500}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                  />
+                </picture>
+              ) : null}
+              <div className="flex flex-1 flex-col p-6">
+                {image ? null : (
+                  <div className="grid h-11 w-11 place-items-center rounded-lg bg-secondary text-accent">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                )}
+                <h2
+                  className={`${image ? "" : "mt-5 "}text-lg font-semibold text-primary`}
+                >
+                  {title}
+                </h2>
+                <p className="mt-2 flex-1 text-sm text-muted-foreground">{body}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
+                  Learn more{" "}
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                </span>
               </div>
-              <h2 className="mt-5 text-lg font-semibold text-primary">{title}</h2>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{body}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
-                Learn more{" "}
-                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-              </span>
             </Link>
           ))}
 

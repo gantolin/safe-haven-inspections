@@ -133,6 +133,14 @@ function ThermalImagingPage() {
         blurb:
           "Why moisture readings taken while the material is still wet are worth more than the same visit a month later.",
       }}
+      heroImage={{
+        src: "/hero-thermal-imaging.jpg",
+        alt: "Infrared thermal image of a wall and floor junction showing a cooler area consistent with moisture",
+        caption:
+          "Thermal image of a wall and floor junction. Infrared shows temperature difference, so every anomaly is confirmed with a moisture meter.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Schedule moisture mapping"
       ctaBody="Find hidden water before it becomes hidden mold. Non-destructive, documented, and independent."
     />

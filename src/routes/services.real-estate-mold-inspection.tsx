@@ -136,6 +136,14 @@ function RealEstatePage() {
         { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
         { to: "/services/asbestos-testing/", label: "Asbestos testing", blurb: "Buying a pre-1980 home? Test the popcorn ceiling before the inspection period closes." },
       ]}
+      heroImage={{
+        src: "/hero-real-estate.jpg",
+        alt: "Air sampling stand set up in an empty room during a pre purchase inspection",
+        caption:
+          "Sampling a vacant unit before closing, with results in writing inside the inspection period.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Schedule a real estate mold inspection"
       ctaBody="Get an independent report inside your inspection window. Fast scheduling for buyers, sellers, and agents."
     />

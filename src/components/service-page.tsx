@@ -1,6 +1,37 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
+import { webpVariant } from "@/lib/images";
+
+/** Photo plus caption, styled to match the card language used across the site. */
+function Figure({ fig, className = "" }: { fig: ServiceFigure; className?: string }) {
+  return (
+    <figure
+      className={`overflow-hidden rounded-2xl border border-border bg-card ${className}`}
+    >
+      <picture>
+        {/* Vectors have no .webp sibling. Emitting one anyway would hand the
+            browser an SVG labelled image/webp, which it selects and then fails
+            to decode: a broken image, with no fallback. */}
+        {/\.svg$/i.test(fig.src) ? null : (
+          <source srcSet={webpVariant(fig.src)} type="image/webp" />
+        )}
+        <img
+          src={fig.src}
+          alt={fig.alt}
+          width={fig.width}
+          height={fig.height}
+          loading="lazy"
+          decoding="async"
+          className="aspect-[16/10] h-full w-full object-cover"
+        />
+      </picture>
+      <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+        {fig.caption}
+      </figcaption>
+    </figure>
+  );
+}
 
 export type ServiceSlug =
   | "asbestos-testing"
@@ -22,6 +53,20 @@ export interface ServiceStep {
   b: string;
 }
 
+/**
+ * A photograph plus its caption. `src` must be a .jpg that has a .webp sibling
+ * in /public: a <source> pointing at a missing .webp renders a broken image and
+ * does not fall back. Captions describe what is visible and what was measured.
+ * They never assert that a photo shows mold, which is a lab determination.
+ */
+export interface ServiceFigure {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
 export interface ServiceSection {
   h2: string;
   intro?: string;
@@ -29,6 +74,14 @@ export interface ServiceSection {
   subsections?: Array<{ h3: string; body: string }>;
   bullets?: string[];
   steps?: ServiceStep[];
+  /** Figure row rendered after the section body. 2 up at 2, 4 up at 3+. */
+  images?: ServiceFigure[];
+  /**
+   * Renders the section as a full-bleed tinted band instead of plain flow.
+   * Used to break up the long pages, which otherwise run thousands of pixels
+   * of identical cards on identical background.
+   */
+  tone?: "band";
 }
 
 export interface RelatedService {
@@ -64,6 +117,11 @@ export interface ServicePageProps {
    */
   furtherReading?: { href: string; label: string; blurb: string };
   /**
+   * Photograph for the page header. Every service page shipped without any
+   * imagery at all, so this is the one image guaranteed above the fold.
+   */
+  heroImage?: ServiceFigure;
+  /**
    * The independence block defaults to the mold wording. The asbestos page
    * overrides it: there the conflict of interest being disclaimed is
    * abatement, not remediation, and the licence line differs.
@@ -81,6 +139,7 @@ export function ServicePage({
   faqs,
   related,
   furtherReading,
+  heroImage,
   independence,
   ctaTitle,
   ctaBody,
@@ -88,7 +147,12 @@ export function ServicePage({
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
+        <div
+          className={`mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 ${
+            heroImage ? "lg:grid-cols-[1.1fr_1fr] lg:items-center" : ""
+          }`}
+        >
+          <div>
           <p className="text-sm font-medium uppercase tracking-wider text-accent">
             {eyebrow}
           </p>
@@ -123,11 +187,21 @@ export function ServicePage({
             </Link>{" "}
             services: independent, licensed, and lab-backed.
           </p>
+          </div>
+          {heroImage ? <Figure fig={heroImage} className="shadow-sm" /> : null}
         </div>
       </section>
 
       {sections.map((s, i) => (
-        <section key={i} className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
+        <section
+          key={i}
+          className={
+            s.tone === "band"
+              ? "mt-14 border-y border-border bg-secondary py-14 sm:py-16"
+              : "mt-14"
+          }
+        >
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.h2}</h2>
           {s.intro ? (
             <p className="mt-3 max-w-3xl text-muted-foreground">{s.intro}</p>
@@ -181,6 +255,23 @@ export function ServicePage({
               ))}
             </ul>
           ) : null}
+          {s.images?.length ? (
+            <div
+              className={`mt-8 grid gap-5 ${
+                s.images.length >= 3
+                  ? "sm:grid-cols-2 lg:grid-cols-4"
+                  : s.images.length === 2
+                    ? "sm:grid-cols-2"
+                    : "" /* a lone figure spans the content width: diagrams
+                             with labelling are unreadable at half width */
+              }`}
+            >
+              {s.images.map((fig) => (
+                <Figure key={fig.src} fig={fig} />
+              ))}
+            </div>
+          ) : null}
+          </div>
         </section>
       ))}
 

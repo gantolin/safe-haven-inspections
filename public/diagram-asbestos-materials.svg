@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 875" width="1400" height="875" role="img" aria-labelledby="t d">
+  <title id="t">Where asbestos-containing materials are commonly found in older buildings</title>
+  <desc id="d">Cross section of a building showing five locations where asbestos-containing materials commonly occur: textured ceiling finish, duct wrap and pipe insulation, drywall joint compound, vinyl floor tile and its mastic, and cement siding, soffit and roofing sheet. Only laboratory analysis can confirm asbestos.</desc>
+
+  <style>
+    .ttl  { font: 600 34px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #0F5A63; }
+    .eyeb { font: 600 15px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #17787F; letter-spacing: 1.6px; }
+    .lbl  { font: 600 21px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #0F5A63; }
+    .sub  { font: 400 16px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #4A6468; }
+    .note { font: 400 15px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #4A6468; }
+    .num  { font: 700 17px "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: #FFFFFF; }
+    .ln   { fill: none; stroke: #0F5A63; stroke-width: 3; stroke-linejoin: round; }
+    .thin { fill: none; stroke: #7FA3A6; stroke-width: 2; }
+  </style>
+
+  <rect width="1400" height="875" fill="#F6F8F9"/>
+
+  <!-- ================= drawing ================= -->
+  <g>
+    <!-- ground -->
+    <line x1="52" y1="772" x2="726" y2="772" stroke="#CFDDDE" stroke-width="4"/>
+
+    <!-- roof -->
+    <path class="ln" d="M60 292 L390 104 L720 292 Z" fill="#E6EEEF"/>
+    <!-- attic void -->
+    <path d="M132 292 L390 145 L648 292 Z" fill="#FFFFFF" stroke="#CFDDDE" stroke-width="2"/>
+
+    <!-- walls (drawn as thickness, cut-away section) -->
+    <rect x="120" y="292" width="26" height="480" fill="#E6EEEF" stroke="#0F5A63" stroke-width="3"/>
+    <rect x="634" y="292" width="26" height="480" fill="#E6EEEF" stroke="#0F5A63" stroke-width="3"/>
+    <!-- interior -->
+    <rect x="146" y="380" width="488" height="320" fill="#FFFFFF" stroke="#CFDDDE" stroke-width="2"/>
+    <!-- ceiling plane -->
+    <rect x="146" y="368" width="488" height="14" fill="#E6EEEF" stroke="#0F5A63" stroke-width="3"/>
+    <!-- floor slab -->
+    <rect x="146" y="700" width="488" height="18" fill="#E6EEEF" stroke="#0F5A63" stroke-width="3"/>
+    <!-- floor tiles -->
+    <g class="thin">
+      <line x1="196" y1="700" x2="196" y2="718"/><line x1="246" y1="700" x2="246" y2="718"/>
+      <line x1="296" y1="700" x2="296" y2="718"/><line x1="346" y1="700" x2="346" y2="718"/>
+      <line x1="396" y1="700" x2="396" y2="718"/><line x1="446" y1="700" x2="446" y2="718"/>
+      <line x1="496" y1="700" x2="496" y2="718"/><line x1="546" y1="700" x2="546" y2="718"/>
+      <line x1="596" y1="700" x2="596" y2="718"/>
+    </g>
+
+    <!-- duct in the attic void -->
+    <rect x="404" y="212" width="196" height="54" rx="10" fill="#E6EEEF" stroke="#0F5A63" stroke-width="3"/>
+    <g class="thin">
+      <line x1="436" y1="212" x2="436" y2="266"/><line x1="470" y1="212" x2="470" y2="266"/>
+      <line x1="504" y1="212" x2="504" y2="266"/><line x1="538" y1="212" x2="538" y2="266"/>
+      <line x1="572" y1="212" x2="572" y2="266"/>
+    </g>
+    <!-- pipe dropping inside the right wall -->
+    <line x1="647" y1="292" x2="647" y2="700" stroke="#7FA3A6" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- drywall seam -->
+    <line x1="390" y1="382" x2="390" y2="700" stroke="#CFDDDE" stroke-width="6"/>
+
+    <!-- markers -->
+    <g>
+      <circle cx="248" cy="375" r="19" fill="#17787F"/><text class="num" x="248" y="382" text-anchor="middle">1</text>
+      <circle cx="502" cy="239" r="19" fill="#17787F"/><text class="num" x="502" y="246" text-anchor="middle">2</text>
+      <circle cx="390" cy="540" r="19" fill="#17787F"/><text class="num" x="390" y="547" text-anchor="middle">3</text>
+      <circle cx="270" cy="709" r="19" fill="#17787F"/><text class="num" x="270" y="716" text-anchor="middle">4</text>
+      <circle cx="610" cy="200" r="19" fill="#17787F"/><text class="num" x="610" y="207" text-anchor="middle">5</text>
+    </g>
+  </g>
+
+  <!-- ================= legend ================= -->
+  <g>
+    <text class="eyeb" x="784" y="118">ASBESTOS TESTING</text>
+    <text class="ttl"  x="784" y="164">Where it actually turns up</text>
+    <line x1="784" y1="192" x2="884" y2="192" stroke="#17787F" stroke-width="4"/>
+
+    <g transform="translate(784,238)">
+      <circle cx="17" cy="-5" r="17" fill="#17787F"/><text class="num" x="17" y="2" text-anchor="middle">1</text>
+      <text class="lbl" x="50" y="1">Textured ceiling finish</text>
+      <text class="sub" x="50" y="27">Sprayed or troweled "popcorn" coatings</text>
+    </g>
+    <g transform="translate(784,330)">
+      <circle cx="17" cy="-5" r="17" fill="#17787F"/><text class="num" x="17" y="2" text-anchor="middle">2</text>
+      <text class="lbl" x="50" y="1">Duct wrap and pipe insulation</text>
+      <text class="sub" x="50" y="27">Lagging, tape and sealant at joints</text>
+    </g>
+    <g transform="translate(784,422)">
+      <circle cx="17" cy="-5" r="17" fill="#17787F"/><text class="num" x="17" y="2" text-anchor="middle">3</text>
+      <text class="lbl" x="50" y="1">Drywall joint compound</text>
+      <text class="sub" x="50" y="27">Seams and patched areas behind paint</text>
+    </g>
+    <g transform="translate(784,514)">
+      <circle cx="17" cy="-5" r="17" fill="#17787F"/><text class="num" x="17" y="2" text-anchor="middle">4</text>
+      <text class="lbl" x="50" y="1">Vinyl floor tile and mastic</text>
+      <text class="sub" x="50" y="27">The black adhesive underneath counts too</text>
+    </g>
+    <g transform="translate(784,606)">
+      <circle cx="17" cy="-5" r="17" fill="#17787F"/><text class="num" x="17" y="2" text-anchor="middle">5</text>
+      <text class="lbl" x="50" y="1">Cement siding, soffit and roofing</text>
+      <text class="sub" x="50" y="27">Fiber cement sheet, shingle and panel</text>
+    </g>
+
+    <rect x="784" y="664" width="556" height="122" rx="14" fill="#FFFFFF" stroke="#CFDDDE" stroke-width="2"/>
+    <text class="note" x="808" y="696">Common in Florida construction built before the early 1990s.</text>
+    <text class="note" x="808" y="720">Appearance never confirms asbestos. Only laboratory analysis does.</text>
+    <text class="note" x="808" y="752">Safe Haven collects and submits samples. We do not perform</text>
+    <text class="note" x="808" y="772">removal or abatement.</text>
+  </g>
+</svg>

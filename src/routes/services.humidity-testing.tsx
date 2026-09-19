@@ -126,6 +126,14 @@ function HumidityPage() {
         blurb:
           "The thermostat setting that saves money is the one that grows mold. What to set, and what to shut off, before you go.",
       }}
+      heroImage={{
+        src: "/hero-humidity.jpg",
+        alt: "Digital hygrometer held in a hallway reading 59.6 percent relative humidity at 73.9 degrees Fahrenheit",
+        caption:
+          "Psychrometric reading logged on site. Indoor relative humidity and temperature both go into the report.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Recurring mildew with no leak in sight?"
       ctaBody="Independent, data-backed humidity testing across South Florida. Find out whether ambient moisture (not a leak) is driving the problem."
     />

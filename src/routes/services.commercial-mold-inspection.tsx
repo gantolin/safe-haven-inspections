@@ -134,6 +134,14 @@ function CommercialPage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
         { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Post-leak and post-storm assessment for commercial roofs, risers, and shared walls." },
       ]}
+      heroImage={{
+        src: "/hero-commercial.jpg",
+        alt: "Opened ceiling in a multi-storey building exposing ductwork, insulation and the concrete deck above",
+        caption:
+          "Above-ceiling inspection in a high-rise unit. Ductwork, insulation and the deck all get checked where the plenum runs.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Talk about a commercial project"
       ctaBody="Property managers, boards, and building owners, get a quote for an independent, licensed inspection tailored to your building."
     />

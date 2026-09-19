@@ -130,6 +130,17 @@ function AsbestosTestingPage() {
       sections={[
         {
           h2: "What we test",
+          tone: "band",
+          images: [
+            {
+              src: "/diagram-asbestos-materials.svg",
+              alt: "Cross section diagram showing five places asbestos-containing materials are commonly found: textured ceiling finish, duct wrap and pipe insulation, drywall joint compound, vinyl floor tile and mastic, and cement siding, soffit and roofing",
+              caption:
+                "Illustration, not a photograph. Appearance never confirms asbestos, only laboratory analysis does. Safe Haven collects and submits samples and does not perform removal or abatement.",
+              width: 1400,
+              height: 875,
+            },
+          ],
           intro:
             "Asbestos was valued because it was cheap, fireproof, and durable, so it ended up in dozens of ordinary building products. These are the materials we sample most often in Palm Beach, Broward, and Martin County homes.",
           bullets: [

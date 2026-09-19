@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
 import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
+import { EQUIPMENT_FIGURES } from "@/data/figures";
 
 const faqs: FaqItem[] = [
   { q: "What is mold testing, exactly?", a: "Mold testing is the lab-analyzed sampling portion of a mold assessment. Air samples measure how many spores of which types are in the air compared to an outdoor control. Surface samples identify what's growing on a specific spot. Testing quantifies and identifies; the on-site inspection tells you where and why." },
@@ -89,6 +90,8 @@ function MoldTestingPage() {
         },
         {
           h2: "Tools and methods we use",
+          tone: "band",
+          images: EQUIPMENT_FIGURES,
           paragraphs: [
             "Air sampling is performed with calibrated pumps and standard spore-trap cassettes drawn at a fixed flow rate for a controlled duration, so results are comparable across samples and against published data. Surface sampling uses adhesive tape lifts, sterile swabs, or bulk material collection depending on what's being sampled. All samples are labeled with time, location, and unique IDs, and chain of custody is documented from sample to lab.",
             "The laboratory work is handled by an AIHA-accredited third-party laboratory whose accreditation, methods, and quality control appear in your report. Safe Haven does not analyze samples in-house, that separation between assessor and lab is a core part of why the results are usable in real estate, insurance, and clearance contexts.",
@@ -131,6 +134,14 @@ function MoldTestingPage() {
         href: "/blog/do-mold-test-kits-work/",
         label: "Do mold test kits work?",
         blurb: "Why a hardware-store petri dish almost always finds mold, and what an outdoor baseline changes about the answer.",
+      }}
+      heroImage={{
+        src: "/hero-mold-testing.jpg",
+        alt: "Air sampling stand and stopwatch running inside a sealed off hallway",
+        caption:
+          "Timed air sample on a calibrated pump. Run time and flow rate are recorded so the lab can calculate spore counts.",
+        width: 1400,
+        height: 875,
       }}
       ctaTitle="Get lab-backed answers about your indoor air"
       ctaBody="Independent, AIHA-accredited lab testing across South Florida. Results and written report typically within 24 hours."

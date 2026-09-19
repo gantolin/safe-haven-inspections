@@ -133,6 +133,14 @@ function SurfaceSamplingPage() {
         blurb:
           "Colour tells you almost nothing. When a species name genuinely changes what you should do, and when it does not.",
       }}
+      heroImage={{
+        src: "/hero-surface-sampling.jpg",
+        alt: "Gloved hand collecting a surface sample at a baseboard with the sample bag sealed and labelled",
+        caption:
+          "Tape lift collected at a baseboard, then sealed and labelled on site for the laboratory.",
+        width: 1400,
+        height: 875,
+      }}
       ctaTitle="Get a surface sample analyzed"
       ctaBody="Stop guessing whether a spot is mold. Get a lab-backed answer from an independent, state-licensed assessor."
     />

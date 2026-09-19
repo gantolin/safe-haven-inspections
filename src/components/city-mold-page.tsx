@@ -81,6 +81,13 @@ export interface CityMoldPageProps {
   localFaqs?: Array<{ q: string; a: string }>;
 }
 
+const CITY_PHOTOS = [
+  "/city-moisture-1.jpg",
+  "/city-moisture-2.jpg",
+  "/city-moisture-3.jpg",
+  "/city-moisture-4.jpg",
+] as const;
+
 export function CityMoldPage({
   city,
   county,
@@ -89,6 +96,15 @@ export function CityMoldPage({
   otherCities,
   localFaqs,
 }: CityMoldPageProps) {
+  /**
+   * Four real moisture-reading photographs rotated across the city pages.
+   * Keyed off the city name so the choice is stable between builds: a page
+   * that changed photo on every deploy would churn the prerendered HTML.
+   */
+  const cityPhoto = CITY_PHOTOS[
+    [...city].reduce((a, c) => a + c.charCodeAt(0), 0) % CITY_PHOTOS.length
+  ];
+
   const sharedFaqs: Array<{ q: string; a: string }> = [
     {
       q: `How much does a mold inspection cost in ${city}?`,
@@ -578,19 +594,21 @@ export function CityMoldPage({
                 </ul>
               </div>
               <figure className="overflow-hidden rounded-2xl border border-border bg-card">
-                {/* step-visual.jpg is used because it HAS a .webp sibling.
-                    service-*.jpg files do not — pointing a <source> at a
+                {/* Real inspection photography, rotated across the city pages so
+                    all 27 are not visually identical. The index is derived from
+                    the city name, so a given city always renders the same photo.
+                    Every .jpg here has a .webp sibling: a <source> pointing at a
                     missing .webp renders a broken image, it does not fall back. */}
                 <picture>
-                  <source srcSet={webpVariant("/step-visual.jpg")} type="image/webp" />
+                  <source srcSet={webpVariant(cityPhoto)} type="image/webp" />
                   <img
-                    src="/step-visual.jpg"
-                    alt={`Licensed mold inspector performing a mold inspection in ${city}, FL: moisture reading on interior wall`}
+                    src={cityPhoto}
+                    alt={`Mold inspection in ${city}, FL: moisture meter reading taken at an interior baseboard`}
                     width={1200}
-                    height={800}
+                    height={750}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover"
+                    className="aspect-[16/10] h-full w-full object-cover"
                   />
                 </picture>
                 <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
