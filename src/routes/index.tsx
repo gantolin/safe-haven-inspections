@@ -18,6 +18,7 @@ import {
   Droplets,
   CloudRain,
   Clock,
+  Users,
 } from "lucide-react";
 import {
   Accordion,
@@ -153,6 +154,14 @@ function Index() {
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
                 <ShieldCheck className="h-3.5 w-3.5" /> Independent · Licensed · Insured
+              </div>
+              {/* "Family operated" is Landon's own wording on the About page, and
+                  the 14 years already appears on the city pages and the blog index.
+                  Both are repeated here because they were only discoverable by
+                  scrolling, and they are the two things that separate Safe Haven
+                  from a franchise. */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
+                <Users className="h-3.5 w-3.5" /> Family operated · 14 years in the field
               </div>
               <GoogleRatingBadge onDark />
             </div>
