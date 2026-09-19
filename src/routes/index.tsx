@@ -31,6 +31,9 @@ import { CertBadgeGrid } from "@/components/cert-badges";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
 import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
+import stepVisual from "@/assets/step-visual.jpg.asset.json";
+import stepSampling from "@/assets/step-sampling.jpg.asset.json";
+import stepLab from "@/assets/step-lab.jpg.asset.json";
 import stepReport from "@/assets/step-report.jpg.asset.json";
 
 const heroImg = heroDesktopAsset.url;
@@ -397,24 +400,24 @@ function Index() {
               icon: Search,
               step: "01",
               title: "Visual inspection",
-              image: "/step-visual-real.jpg",
-              alt: "Moisture meter held against a baseboard during a residential mold inspection.",
+              image: stepVisual.url,
+              alt: "Licensed mold inspector kneeling to examine a baseboard with a flashlight during a residential mold inspection.",
               body: "A full walk-through of the property: attic, HVAC, cabinetry, baseboards, bathrooms, and known problem areas.",
             },
             {
               icon: Wind,
               step: "02",
               title: "Air & surface sampling",
-              image: "/step-sampling-real.jpg",
-              alt: "Air sampling stand set up in a room to collect an indoor spore trap sample.",
+              image: stepSampling.url,
+              alt: "Certified inspector collecting an air sample with a spore trap cassette during indoor mold testing in a South Florida home.",
               body: "Indoor spore traps compared to an outdoor control, plus tape-lift or swab samples on suspect surfaces.",
             },
             {
               icon: FlaskConical,
               step: "03",
               title: "Accredited lab analysis",
-              image: "/step-cassette.jpg",
-              alt: "Sealed spore trap cassette on an outdoor control sample, ready to go to the laboratory.",
+              image: stepLab.url,
+              alt: "AIHA-accredited lab technician analyzing a mold sample on a microscope slide in a professional laboratory.",
               body: "Samples are analyzed by an independent AIHA-accredited laboratory, never by us.",
             },
             {
