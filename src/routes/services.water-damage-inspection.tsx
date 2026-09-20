@@ -70,6 +70,7 @@ function WaterDamagePage() {
         },
         {
           h2: "When to schedule one",
+          tone: "band",
           bullets: [
             "After a hurricane, tropical storm, or wind-driven rain event.",
             "After a roof leak, window leak, or wall-penetration failure.",
@@ -109,6 +110,7 @@ function WaterDamagePage() {
         },
         {
           h2: "How this fits with our other services",
+          tone: "band",
           paragraphs: [
             "A water-damage inspection sits at the front end of the process, it's what we do the moment moisture becomes an event, before any remediation decisions are made. From there, our other services follow naturally: moisture mapping continues if the source is unclear, air-quality and surface testing quantify what's airborne and what's growing, humidity testing addresses ongoing drying conditions, and post-remediation verification closes the loop after any cleanup is complete.",
           ],

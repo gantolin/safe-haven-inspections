@@ -78,6 +78,7 @@ function RealEstatePage() {
         },
         {
           h2: "What a real estate mold inspection includes",
+          tone: "band",
           subsections: [
             { h3: "Full visual inspection", body: "Accessible areas of the home (walls, ceilings, baseboards, cabinetry, attics, HVAC returns, and known problem areas) photographed and documented." },
             { h3: "Moisture mapping", body: "Infrared and moisture-meter survey of exterior walls, ceilings under wet rooms, HVAC closets, and around windows and doors to find hidden intrusion." },
@@ -107,6 +108,7 @@ function RealEstatePage() {
         },
         {
           h2: "For sellers and listing agents",
+          tone: "band",
           bullets: [
             "Head off surprises during the buyer's inspection period",
             "Present a clean third-party report as part of the listing package",

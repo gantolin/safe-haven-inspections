@@ -78,6 +78,7 @@ function ThermalImagingPage() {
         },
         {
           h2: "The tools we use",
+          tone: "band",
           subsections: [
             { h3: "Infrared thermal camera", body: "A calibrated infrared camera images surface temperature across walls, ceilings, and floors. Wet materials evaporate moisture at a different rate than dry ones, creating thermal patterns we can photograph and document." },
             { h3: "Pinless capacitance meter", body: "A pinless meter reads relative moisture content up to roughly three-quarters of an inch into a substrate without leaving marks, ideal for scanning large runs of drywall and finished floors." },
@@ -108,6 +109,7 @@ function ThermalImagingPage() {
         },
         {
           h2: "What your report includes",
+          tone: "band",
           paragraphs: [
             "Every moisture mapping report includes environmental readings, thermal images with locations marked on a floor plan or annotated photos, and matched moisture-meter readings. Findings are ranked so that the highest-risk areas: sustained elevated readings, active wetting, or patterns consistent with a specific water source: are clearly separated from cosmetic or ambiguous observations.",
             "Because we do not sell repairs, our recommendations focus on next steps: which trade to bring in (roofer, plumber, HVAC), which areas warrant further inspection, and where an air or surface sample should be taken to check for mold now that the moisture picture is clear.",

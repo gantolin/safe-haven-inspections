@@ -193,6 +193,7 @@ function AsbestosTestingPage() {
         },
         {
           h2: "Asbestos survey before renovation or demolition",
+          tone: "band",
           paragraphs: [
             "If you are gutting a kitchen, taking down walls, replacing a roof, or demolishing a structure outright, a pre demolition asbestos survey is the step that comes first. The survey is broader than a single spot check: it inventories every suspect material the project will disturb, samples each one, and produces an asbestos survey report your contractor and your building department can both work from.",
             "Doing it in that order is not just about compliance. A contractor who finds asbestos halfway through a demolition has to stop, and stopping mid-job costs far more than sampling would have. The survey also protects you as the property owner, because once material has been disturbed, proving what it was and who disturbed it becomes an argument rather than a document.",
@@ -217,6 +218,7 @@ function AsbestosTestingPage() {
         },
         {
           h2: "Asbestos testing near me: where we work",
+          tone: "band",
           intro:
             "Safe Haven is based in Greenacres and covers three counties. Asbestos testing services are available anywhere in the service area, typically within a few days of your call.",
           bullets: [

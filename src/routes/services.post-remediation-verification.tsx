@@ -79,6 +79,7 @@ function PostRemediationPage() {
         },
         {
           h2: "What clearance testing actually checks",
+          tone: "band",
           subsections: [
             { h3: "Visual re-inspection", body: "Inside the containment or work area, we look for any residual visible material, dust, or debris. Cleaning to a 'no visible dust or growth' standard is table stakes." },
             { h3: "Moisture content", body: "Every material that was involved in the moisture event (drywall, framing, subfloor) is metered to confirm it has actually dried to normal ranges, not just the surface." },
@@ -110,6 +111,7 @@ function PostRemediationPage() {
         },
         {
           h2: "What the clearance report includes",
+          tone: "band",
           paragraphs: [
             "The clearance report documents pre-visit condition, environmental readings, all lab results with their outdoor and unaffected-area controls, visual observations with photographs, and a stated verdict: pass, conditional pass with defined follow-up items, or fail with the specific reasons. Because the report is used by insurers, buyers, remediators, and sometimes attorneys, it is written to stand on its own without needing us to re-explain it later.",
             "If the space fails clearance, we don't just say 'not passed' and walk away. The report is specific about which criteria failed and what the remediator should address. That protects the homeowner and, in most cases, actually helps the remediation company deliver a better final result.",

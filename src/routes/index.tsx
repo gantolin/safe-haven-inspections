@@ -35,6 +35,7 @@ import stepVisual from "@/assets/step-visual.jpg.asset.json";
 import stepSampling from "@/assets/step-sampling.jpg.asset.json";
 import stepLab from "@/assets/step-lab.jpg.asset.json";
 import stepReport from "@/assets/step-report.jpg.asset.json";
+import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 const heroImg = heroDesktopAsset.url;
 const heroImgMobile = heroMobileAsset.url;
@@ -191,7 +192,7 @@ function Index() {
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3.5 text-sm font-semibold text-cta-foreground shadow-lg shadow-cta/30 transition hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
@@ -570,13 +571,13 @@ function Index() {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/contact/"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] shadow-md shadow-accent/25 transition hover:-translate-y-0.5"
+                  className={ctaPrimary}
                 >
                   Request an inspection <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href="tel:+15616326387"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary transition hover:bg-secondary"
+                  className={ctaSecondary}
                 >
                   <Phone className="h-4 w-4" /> Call (561) 632-6387
                 </a>
@@ -770,13 +771,13 @@ function Index() {
             <div className="flex flex-col gap-2 sm:flex-row md:flex-col">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-md shadow-cta/30 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection
               </Link>
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+                className={ctaOnDark}
               >
                 <Phone className="h-4 w-4" /> (561) 632-6387
               </a>

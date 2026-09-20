@@ -83,6 +83,7 @@ function AirQualityTestingPage() {
         },
         {
           h2: "How the process works, step by step",
+          tone: "band",
           steps: [
             { n: "01", h: "Scoping call", b: "We discuss what you're seeing, smelling, or worried about, and which rooms or HVAC zones matter most. That determines how many samples we take and where." },
             { n: "02", h: "Outdoor baseline sample", b: "Before entering the home, we collect an outdoor control sample. Outdoor spore levels vary by season, weather, and vegetation, without a baseline, indoor readings can't be interpreted correctly." },
@@ -115,6 +116,7 @@ function AirQualityTestingPage() {
         },
         {
           h2: "What your deliverable includes",
+          tone: "band",
           paragraphs: [
             "You receive a written PDF report that pairs the raw lab data with an assessor's interpretation. It includes the outdoor control result, each indoor sample by location, a genus-by-genus comparison, and clear language about what the numbers mean for your specific home, not a copy-pasted disclaimer.",
             "Where warranted, the report also lists prioritized next steps: further investigation in a particular room, a targeted moisture scan, or, if results are unremarkable, a plain statement that indoor air is consistent with outdoor conditions. Because we don't sell remediation, our recommendations are limited to what an independent assessor should say.",

@@ -70,6 +70,7 @@ function HumidityPage() {
         },
         {
           h2: "What we measure",
+          tone: "band",
           subsections: [
             { h3: "Temperature (dry bulb)", body: "Room-by-room and against the thermostat. Uneven cooling often points to duct or airflow problems that drive humidity issues." },
             { h3: "Relative humidity (RH)", body: "The metric most people know. Measured at multiple locations, not just one. Sustained readings above roughly 60% are what we're looking for." },
@@ -102,6 +103,7 @@ function HumidityPage() {
         },
         {
           h2: "What the report includes",
+          tone: "band",
           paragraphs: [
             "The written report lays out every measurement (temperature, relative humidity, and dew point) by location, alongside outdoor conditions at the time of the visit. Thermal images document surface temperatures on suspect exterior walls and cold spots. HVAC observations note supply and return conditions and any airflow issues that showed up in the walk-through.",
             "The recommendations section is prioritized: setpoint changes and behavioral adjustments first, then equipment or ductwork recommendations if the numbers justify them. Because we don't sell HVAC or dehumidification equipment, those recommendations reflect the data, not a product line.",

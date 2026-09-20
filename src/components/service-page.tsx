@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 import { webpVariant } from "@/lib/images";
+import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 /** Photo plus caption, styled to match the card language used across the site. */
 function Figure({ fig, className = "" }: { fig: ServiceFigure; className?: string }) {
@@ -144,6 +145,10 @@ export function ServicePage({
   ctaTitle,
   ctaBody,
 }: ServicePageProps) {
+  // Roughly 60% down: far enough that the reader has the substance,
+  // early enough that they are not scrolling back up to act on it.
+  const midCtaAfter = Math.max(0, Math.floor(sections.length * 0.6) - 1);
+
   return (
     <>
       <section className="border-b border-border bg-secondary">
@@ -166,13 +171,13 @@ export function ServicePage({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact/"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+              className={ctaPrimary}
             >
               Request an inspection <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+15616326387"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary"
+              className={ctaSecondary}
             >
               <Phone className="h-4 w-4" /> (561) 632-6387
             </a>
@@ -193,8 +198,8 @@ export function ServicePage({
       </section>
 
       {sections.map((s, i) => (
+        <Fragment key={i}>
         <section
-          key={i}
           className={
             s.tone === "band"
               ? "mt-14 border-y border-border bg-secondary py-14 sm:py-16"
@@ -273,6 +278,33 @@ export function ServicePage({
           ) : null}
           </div>
         </section>
+        {/* Mid-page CTA. These pages run 5,000px and the only other ask was at
+            the very bottom, so anyone convinced halfway down had to scroll past
+            everything to act. Deliberately lighter than the closing block so it
+            reads as an offer, not a second conclusion. */}
+        {i === midCtaAfter ? (
+          <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-col gap-4 rounded-2xl border border-accent/25 bg-accent/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div>
+                <p className="font-semibold text-primary">
+                  Seen enough? We can usually be out this week.
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Licensed, independent, and lab-backed. No remediation upsell.
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+                <Link to="/contact/" className={ctaPrimary}>
+                  Request an inspection <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a href="tel:+15616326387" className={ctaSecondary}>
+                  <Phone className="h-4 w-4" /> (561) 632-6387
+                </a>
+              </div>
+            </div>
+          </section>
+        ) : null}
+        </Fragment>
       ))}
 
       <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
@@ -376,13 +408,13 @@ export function ServicePage({
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-primary-foreground"
+                className={ctaOnDark}
               >
                 <Phone className="h-4 w-4" /> (561) 632-6387
               </a>

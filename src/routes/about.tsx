@@ -15,6 +15,7 @@ import landonPhoto from "@/assets/landon-heinrichs.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
 import { CertBadgeGrid } from "@/components/cert-badges";
 import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } from "@/lib/seo";
+import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 const CANONICAL = absoluteUrl("/about/");
 const TITLE = "Certified Mold Inspector, Palm Beach County | Safe Haven";
@@ -149,13 +150,13 @@ function AboutPage() {
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/contact/"
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                  className={ctaPrimary}
                 >
                   Request an inspection <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href="tel:+15616326387"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+                  className={ctaSecondary}
                 >
                   <Phone className="h-4 w-4" /> (561) 632-6387
                 </a>
@@ -417,13 +418,13 @@ function AboutPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-primary-foreground"
+                className={ctaOnDark}
               >
                 <Phone className="h-4 w-4" /> (561) 632-6387
               </a>

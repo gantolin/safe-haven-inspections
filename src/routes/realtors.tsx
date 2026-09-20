@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Handshake, FileCheck2, Building2, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { absoluteUrl } from "@/lib/seo";
+import { ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 export const Route = createFileRoute("/realtors")({
   head: () => ({
@@ -30,10 +31,10 @@ function RealtorsPage() {
             that keep transactions moving and clients protected.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact/" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
+            <Link to="/contact/" className={ctaPrimary}>
               Partner with Safe Haven <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href="tel:+15616326387" className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary">
+            <a href="tel:+15616326387" className={ctaSecondary}>
               <Phone className="h-4 w-4" /> (561) 632-6387
             </a>
           </div>
@@ -104,7 +105,7 @@ function RealtorsPage() {
                 independent perspective they deserve.
               </p>
             </div>
-            <Link to="/contact/" className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]">
+            <Link to="/contact/" className={ctaPrimary}>
               Contact Our Team <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

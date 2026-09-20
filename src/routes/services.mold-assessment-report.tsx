@@ -78,6 +78,7 @@ function MoldAssessmentReportPage() {
         },
         {
           h2: "What's inside a Safe Haven assessment report",
+          tone: "band",
           subsections: [
             { h3: "Executive summary", body: "A plain-language overview of the property, the reason for the assessment, key findings, and top-line recommendations. Written first so a busy reader can act without wading through details." },
             { h3: "Methodology", body: "What was inspected, which tools were used, and how samples were collected, including chain-of-custody notes and lab accreditation." },
@@ -107,6 +108,7 @@ function MoldAssessmentReportPage() {
         },
         {
           h2: "How insurers and attorneys use the report",
+          tone: "band",
           paragraphs: [
             "Insurance adjusters need documentation of cause, extent, and remediation scope to evaluate a claim. Attorneys involved in real-estate disputes, landlord-tenant issues, or construction defect matters need the same, written by someone whose license and independence are on the line. A well-structured assessment report gives both audiences a document that reads clearly without needing the assessor on the phone every time a question comes up.",
             "That's why the format matters as much as the substance. Executive summary at the top, methodology and controls explicit, lab reports attached, findings and recommendations clearly separated, and dates and signatures where they need to be.",

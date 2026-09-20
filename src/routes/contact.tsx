@@ -5,6 +5,7 @@ import { cities } from "@/data/cities";
 import { submitContactForm } from "@/lib/contact";
 import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
+import { ctaPrimary } from "@/lib/cta";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -188,7 +189,7 @@ function ContactPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-all hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+                  className={ctaPrimary}
                 >
                   <Send className="h-4 w-4" /> {loading ? "Sending…" : "Send request"}
                 </button>

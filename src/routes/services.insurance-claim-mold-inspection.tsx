@@ -75,6 +75,7 @@ function InsuranceClaimPage() {
         },
         {
           h2: "When homeowners insurance covers mold damage in Florida",
+          tone: "band",
           intro:
             "Most denials are not really arguments about whether mold is present. They are arguments about two things.",
           subsections: [
@@ -111,6 +112,7 @@ function InsuranceClaimPage() {
         },
         {
           h2: "How the assessment works",
+          tone: "band",
           steps: [
             { n: "01", h: "Intake and document review", b: "We review what already exists: your policy's mold provisions, the carrier's estimate or denial letter, prior reports, restoration invoices, and your own photographs." },
             { n: "02", h: "Non-destructive moisture mapping", b: "Moisture meters and infrared thermal imaging establish the true wet footprint behind finished surfaces, which is usually larger than the visible staining." },

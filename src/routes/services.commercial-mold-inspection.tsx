@@ -79,6 +79,7 @@ function CommercialPage() {
         },
         {
           h2: "Property types we regularly assess",
+          tone: "band",
           subsections: [
             { h3: "Office & professional space", body: "Suites, medical offices, and executive floors, where HVAC design, ceiling plenums, and after-hours access shape the inspection plan." },
             { h3: "Multifamily rentals & apartments", body: "Individual units, common corridors, and shared mechanical rooms. Tenant complaint investigations included." },
@@ -105,6 +106,7 @@ function CommercialPage() {
         },
         {
           h2: "When property managers request an inspection",
+          tone: "band",
           bullets: [
             "Tenant complaint of musty odor, visible growth, or respiratory symptoms",
             "After a plumbing failure, roof leak, or HVAC condensate event",

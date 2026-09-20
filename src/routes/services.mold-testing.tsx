@@ -71,6 +71,7 @@ function MoldTestingPage() {
         },
         {
           h2: "Types of mold testing we offer",
+          tone: "band",
           subsections: [
             { h3: "Airborne mold & air quality testing", body: "Spore-trap cassette air sampling with outdoor controls. The core dataset behind most decisions: real estate, health questions, and post-remediation clearance all start here." },
             { h3: "Surface & swab sampling", body: "Tape-lift, swab, and bulk sampling of visible growth for positive species identification. Useful when you can point at something and need to know what it is." },
@@ -112,6 +113,7 @@ function MoldTestingPage() {
         },
         {
           h2: "What the report includes",
+          tone: "band",
           paragraphs: [
             "Every testing engagement produces a written report you can hand to another professional: a lender, adjuster, real-estate attorney, or remediation contractor. Inside: the sample plan and locations, on-day temperature and humidity readings, all raw lab results with the outdoor control clearly labeled, a plain-language interpretation of what the numbers actually indicate for your property, and prioritized recommendations.",
             "When active mold is documented, the report includes a written remediation protocol describing scope, containment, and clearance criteria. That protocol becomes the shared scope for bidding remediators, so every quote you get is measured against the same target.",

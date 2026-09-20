@@ -30,6 +30,7 @@ import {
 } from "@/lib/seo";
 import { EQUIPMENT_FIGURES } from "@/data/figures";
 import { webpVariant } from "@/lib/images";
+import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 const faqs: FaqItem[] = [
   {
@@ -139,13 +140,13 @@ function MoldInspectionPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact/"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+              className={ctaPrimary}
             >
               Request an inspection <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+15616326387"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary"
+              className={ctaSecondary}
             >
               <Phone className="h-4 w-4" /> (561) 632-6387
             </a>
@@ -522,13 +523,13 @@ function MoldInspectionPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-primary-foreground"
+                className={ctaOnDark}
               >
                 <Phone className="h-4 w-4" /> (561) 632-6387
               </a>

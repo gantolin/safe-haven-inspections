@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone, MessageSquare } from "lucide-react";
 import logo from "@/assets/safe-haven-logo.png.asset.json";
 import { webpVariant } from "@/lib/images";
+import { ctaBarPrimary, ctaBarSecondary } from "@/lib/cta";
 
 const links = [
   { to: "/", label: "Home" },
@@ -191,14 +192,14 @@ export function MobileCallBar() {
       <a
         href="tel:+15616326387"
         aria-label="Call Safe Haven Inspections at (561) 632-6387"
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-cta px-4 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+        className={ctaBarPrimary}
       >
         <Phone className="h-4 w-4" aria-hidden /> Call Now
       </a>
       <a
         href="sms:+15616326387"
         aria-label="Text a photo to (561) 632-6387"
-        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[color-mix(in_oklab,var(--primary)_88%,black)]"
+        className={ctaBarSecondary}
       >
         <MessageSquare className="h-4 w-4" aria-hidden /> Text a Photo
       </a>

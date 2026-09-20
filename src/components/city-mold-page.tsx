@@ -28,6 +28,7 @@ import {
 import { getCityProfile, citySlug } from "@/data/city-profiles";
 import { cities } from "@/data/cities";
 import { webpVariant } from "@/lib/images";
+import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 export interface CityMoldPageProps {
   city: string;
@@ -574,13 +575,13 @@ export function CityMoldPage({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               to="/contact/"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+              className={ctaPrimary}
             >
               Schedule an inspection <ArrowRight className="h-4 w-4" />
             </Link>
             <a
               href="tel:+15616326387"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-secondary"
+              className={ctaSecondary}
             >
               <Phone className="h-4 w-4" /> Call now: (561) 632-6387
             </a>
@@ -808,7 +809,8 @@ export function CityMoldPage({
           </section>
 
           {/* LOCAL STATS — featured-snippet bait, structured as a scannable grid */}
-          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+          <section className="mt-16 border-y border-border bg-secondary py-14 sm:py-16">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
               {city} housing &amp; climate profile
             </h2>
@@ -831,6 +833,7 @@ export function CityMoldPage({
                   <p className="mt-2 text-sm text-muted-foreground">{s.note}</p>
                 </div>
               ))}
+            </div>
             </div>
           </section>
 
@@ -880,6 +883,28 @@ export function CityMoldPage({
           </section>
 
           {/* SEASONAL + MARKET */}
+          {/* Mid-page CTA. These run past 8,000px and the only other ask sat
+              at the very bottom. Lighter than the closing block on purpose. */}
+          <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-col gap-4 rounded-2xl border border-accent/25 bg-accent/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+              <div>
+                <p className="font-semibold text-primary">
+                  Seen enough? We cover {city} most weeks.
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Licensed, independent, and lab-backed. No remediation upsell.
+                </p>
+              </div>
+              <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
+                <Link to="/contact/" className={ctaPrimary}>
+                  Schedule an inspection <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a href="tel:+15616326387" className={ctaSecondary}>
+                  <Phone className="h-4 w-4" /> (561) 632-6387
+                </a>
+              </div>
+            </div>
+          </section>
           <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-border bg-card p-6 sm:p-7">
@@ -913,7 +938,8 @@ export function CityMoldPage({
       ) : null}
 
       {/* INDEPENDENCE COMPARISON */}
-      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+      <section className="mt-16 border-y border-border bg-secondary py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
           Why an Independent Assessor?
         </h2>
@@ -972,6 +998,7 @@ export function CityMoldPage({
               ))}
             </ul>
           </div>
+        </div>
         </div>
       </section>
 
@@ -1154,13 +1181,13 @@ export function CityMoldPage({
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/contact/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-cta px-6 py-3 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/25 transition-colors hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)]"
+                className={ctaPrimary}
               >
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </Link>
               <a
                 href="tel:+15616326387"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/5 px-6 py-3 text-sm font-semibold text-primary-foreground"
+                className={ctaOnDark}
               >
                 <Phone className="h-4 w-4" /> (561) 632-6387
               </a>

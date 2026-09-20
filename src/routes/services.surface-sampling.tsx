@@ -78,6 +78,7 @@ function SurfaceSamplingPage() {
         },
         {
           h2: "The three main sampling techniques",
+          tone: "band",
           subsections: [
             { h3: "Tape lift", body: "A clear adhesive strip is pressed against the surface, transferred to a slide, sealed, and labeled. The lab reads it by direct microscopy and reports the mold structures present. Fast and non-destructive." },
             { h3: "Swab", body: "A sterile swab collects material from textured surfaces or tight spaces where a tape lift can't sit flat. Depending on the question, swabs are read by microscopy or plated for culture." },
@@ -108,6 +109,7 @@ function SurfaceSamplingPage() {
         },
         {
           h2: "How surface sampling complements air testing",
+          tone: "band",
           paragraphs: [
             "Air sampling and surface sampling answer different questions. Air testing quantifies what people in the room are breathing: total spore load and species mix in a defined volume of air. Surface sampling verifies a specific location: what is growing on this wall, in this cabinet, on this coil?",
             "In practice, the two are complementary. When air data shows an elevated indoor genus, surface sampling can trace it to a physical source. When a homeowner sees visible growth, surface sampling identifies it and air testing measures how much of it is becoming airborne. Doing both means the written report can say not just 'there is mold here' but 'here is the type, here is the concentration in the air, and here is what should happen next.'",
