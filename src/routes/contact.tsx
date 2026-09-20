@@ -6,6 +6,7 @@ import { submitContactForm } from "@/lib/contact";
 import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { ctaPrimary } from "@/lib/cta";
+import { webpVariant } from "@/lib/images";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -306,6 +307,46 @@ function ContactPage() {
               an insurer, or the other side of a transaction.
             </p>
           </div>
+        </div>
+
+        {/* Two real photographs, matching steps two and three. Step one is a
+            phone call and has nothing honest to show, so it gets nothing. */}
+        <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+            <picture>
+              <source srcSet={webpVariant("/hero-mold-inspection.jpg")} type="image/webp" />
+              <img
+                src="/hero-mold-inspection.jpg"
+                alt="Moisture meter held against an interior baseboard during a mold inspection"
+                width={1400}
+                height={875}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
+            <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+              The visit: instrument readings taken room by room and written down.
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+            <picture>
+              <source srcSet={webpVariant("/report-preview.jpg")} type="image/webp" />
+              <img
+                src="/report-preview.jpg"
+                alt="Two pages of a Safe Haven mold assessment report, showing observations and specific recommendations"
+                width={1400}
+                height={875}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
+            <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+              The report: observations by category, then recommendations a
+              remediator can bid from.
+            </figcaption>
+          </figure>
         </div>
 
         <div className="mt-8 rounded-2xl border border-accent/30 bg-secondary/50 p-6">

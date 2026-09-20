@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Clock, Handshake, FileCheck2, Building2, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { absoluteUrl } from "@/lib/seo";
 import { ctaPrimary, ctaSecondary } from "@/lib/cta";
+import { webpVariant } from "@/lib/images";
 
 export const Route = createFileRoute("/realtors")({
   head: () => ({
@@ -20,24 +21,47 @@ function RealtorsPage() {
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-          <p className="text-sm font-medium uppercase tracking-wider text-accent">For real estate</p>
-          <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Independent mold inspection your clients can trust.
-          </h1>
-          <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            Deadlines matter. Safe Haven partners with South Florida realtors and
-            property managers to deliver fast, honest, third-party mold assessments
-            that keep transactions moving and clients protected.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/contact/" className={ctaPrimary}>
-              Partner with Safe Haven <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a href="tel:+15616326387" className={ctaSecondary}>
-              <Phone className="h-4 w-4" /> (561) 632-6387
-            </a>
+        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-wider text-accent">For real estate</p>
+            <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
+              Independent mold inspection your clients can trust.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
+              Deadlines matter. Safe Haven partners with South Florida realtors and
+              property managers to deliver fast, honest, third-party mold assessments
+              that keep transactions moving and clients protected.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link to="/contact/" className={ctaPrimary}>
+                Partner with Safe Haven <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a href="tel:+15616326387" className={ctaSecondary}>
+                <Phone className="h-4 w-4" /> (561) 632-6387
+              </a>
+            </div>
           </div>
+          {/* The deliverable, not a stock office scene. An agent's question is
+              what lands in the client's hands and how fast, so the report is the
+              honest thing to show here. */}
+          <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <picture>
+              <source srcSet={webpVariant("/report-preview.jpg")} type="image/webp" />
+              <img
+                src="/report-preview.jpg"
+                alt="Two pages of a Safe Haven mold assessment report, showing the observations section and the specific recommendations section"
+                width={1400}
+                height={875}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </picture>
+            <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+              What your client actually receives: observations logged by category,
+              then recommendations written so any remediator can bid the same scope.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
