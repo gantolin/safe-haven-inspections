@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
 import { cities, counties, type City } from "@/data/cities";
 import { absoluteUrl } from "@/lib/seo";
-import { CITY_SCENE } from "@/data/city-scenes";
 import { webpVariant } from "@/lib/images";
 
 export const Route = createFileRoute("/service-areas")({
@@ -57,40 +56,36 @@ function ServiceAreasPage() {
                 </h2>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {list.map((c) => {
-                  const scene = CITY_SCENE[c.name];
-                  return (
+                {list.map((c) => (
                   <a
                     key={c.slug}
                     href={cityHref(c)}
                     className="group flex items-center gap-4 rounded-xl border border-border bg-card p-3 pr-5 transition hover:-translate-y-0.5 hover:border-accent/50 hover:shadow-sm"
                   >
-                    {/* Decorative: the city name sits right beside it, so an alt
-                        would just repeat itself to a screen reader. Cities with
-                        no photograph get the pin tile, which keeps all 27 cards
-                        the same shape. */}
-                    {scene ? (
-                      <picture className="shrink-0">
-                        <source srcSet={webpVariant(scene.thumb)} type="image/webp" />
-                        <img
-                          src={scene.thumb}
-                          alt=""
-                          aria-hidden
-                          width={192}
-                          height={192}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-14 w-14 rounded-lg object-cover"
-                        />
-                      </picture>
-                    ) : (
-                      <span
+                    {/* Every city has a thumbnail at /thumb-{slug}: a photograph
+                        of the place where an honest one exists, and a map of it
+                        where one does not. The maps are tinted to the brand so
+                        the grid reads as one set rather than photos with gaps.
+
+                        Decorative, hence alt="" and aria-hidden: the city name
+                        sits immediately beside it, so an alt would only repeat
+                        itself to a screen reader. */}
+                    <picture className="shrink-0">
+                      <source
+                        srcSet={webpVariant(`/thumb-${c.slug}.jpg`)}
+                        type="image/webp"
+                      />
+                      <img
+                        src={`/thumb-${c.slug}.jpg`}
+                        alt=""
                         aria-hidden
-                        className="grid h-14 w-14 shrink-0 place-items-center rounded-lg bg-secondary text-accent"
-                      >
-                        <MapPin className="h-5 w-5" />
-                      </span>
-                    )}
+                        width={192}
+                        height={192}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-14 w-14 rounded-lg object-cover"
+                      />
+                    </picture>
                     <span className="min-w-0 flex-1">
                       <span className="block font-semibold text-primary">{c.name}</span>
                       <span className="block text-xs text-muted-foreground">
@@ -99,12 +94,37 @@ function ServiceAreasPage() {
                     </span>
                     <ArrowRight className="h-4 w-4 shrink-0 text-accent transition group-hover:translate-x-0.5" />
                   </a>
-                  );
-                })}
+                ))}
               </div>
             </div>
           );
         })}
+
+        {/* Attribution. Unsplash's API terms require crediting the photographer
+            and Unsplash wherever a photo is displayed, and the per-photographer
+            credit lives on each city page. OpenStreetMap's licence requires the
+            contributor credit wherever its map data appears. */}
+        <p className="text-xs text-muted-foreground">
+          City photography from{" "}
+          <a
+            href="https://unsplash.com/?utm_source=safe_haven_inspections&utm_medium=referral"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            className="underline hover:text-accent"
+          >
+            Unsplash
+          </a>
+          , with each photographer credited on the city page. Maps &copy;{" "}
+          <a
+            href="https://www.openstreetmap.org/copyright"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            className="underline hover:text-accent"
+          >
+            OpenStreetMap
+          </a>{" "}
+          contributors.
+        </p>
 
         <div className="rounded-2xl border border-border bg-secondary p-6 sm:p-8">
           <p className="text-sm text-muted-foreground">
