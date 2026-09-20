@@ -81,12 +81,180 @@ export interface CityMoldPageProps {
   localFaqs?: Array<{ q: string; a: string }>;
 }
 
+/**
+ * Real Safe Haven inspection photography, rotated across the 27 city pages.
+ *
+ * Ten variants rather than four: at four, the busiest image repeated on eight
+ * different city pages, which reads as a template. Each carries its own alt
+ * text and caption because the set is not all the same instrument, and an alt
+ * saying "moisture meter" over a photo of a sampling pump is simply wrong.
+ */
 const CITY_PHOTOS = [
-  "/city-moisture-1.jpg",
-  "/city-moisture-2.jpg",
-  "/city-moisture-3.jpg",
-  "/city-moisture-4.jpg",
+  {
+    src: "/city-moisture-1.jpg",
+    alt: "Moisture meter held into a baseboard corner during a mold inspection",
+    cap: "Moisture readings are taken at baseboards and wall bases, and the numbers go into your report.",
+  },
+  {
+    src: "/city-moisture-2.jpg",
+    alt: "Moisture meter run along a baseboard during a mold inspection",
+    cap: "Moisture mapping along a wall base. Readings are recorded, not just described.",
+  },
+  {
+    src: "/city-moisture-3.jpg",
+    alt: "Moisture meter checked at a baseboard above wood flooring",
+    cap: "Checking a wall base above wood flooring, where slow leaks show up first.",
+  },
+  {
+    src: "/city-moisture-4.jpg",
+    alt: "Moisture meter held to a ceiling edge beside exposed insulation",
+    cap: "Readings taken at a ceiling edge, where a roof or plumbing leak tends to surface.",
+  },
+  {
+    src: "/city-moisture-5.jpg",
+    alt: "Moisture meter run along a painted baseboard during an inspection",
+    cap: "Wall bases are checked room by room, not sampled at one spot.",
+  },
+  {
+    src: "/city-moisture-6.jpg",
+    alt: "Moisture meter used on a wall below an opened ceiling exposing ductwork",
+    cap: "Checking below an opened ceiling, where the duct run and the deck above can both be sources.",
+  },
+  {
+    src: "/city-moisture-7.jpg",
+    alt: "Infrared thermometer aimed at a wall where the drywall paper has delaminated",
+    cap: "Surface temperature logged at visible damage, then confirmed with a moisture meter.",
+  },
+  {
+    src: "/city-moisture-8.jpg",
+    alt: "Moisture meter held against patterned wallcovering during an inspection",
+    cap: "Wallcoverings trap moisture behind them, so the substrate is read rather than the surface.",
+  },
+  {
+    src: "/city-moisture-9.jpg",
+    alt: "Flow meter on an air sampling pump showing the calibrated litres per minute rate",
+    cap: "Air samples are drawn at a calibrated rate so the lab can compare counts between samples.",
+  },
+  {
+    src: "/city-moisture-10.jpg",
+    alt: "Moisture meter used beside taped containment sheeting during an inspection",
+    cap: "Readings taken at the containment edge, checking whether moisture has moved past it.",
+  },
 ] as const;
+
+/**
+ * Photograph of the city itself, where a real one exists.
+ *
+ * Only 13 of the 27 cities do. Unsplash returns nothing at all for Coral
+ * Springs, Greenacres, Hobe Sound, Pembroke Pines, Port Salerno, Royal Palm
+ * Beach and Weston, and for several others it matches the word rather than the
+ * place: "Sunrise" returns sunsets, "Plantation" returns farmland, and
+ * "Loxahatchee" returns zebras. Those cities deliberately get no photo rather
+ * than a wrong one, and lead with the map instead.
+ *
+ * Subjects were picked for contrast, not just correctness. Most Unsplash
+ * results for these cities are near-identical turquoise beach aerials, so the
+ * set spans a lighthouse, a boardwalk, a marina, a skyline and a sailboat.
+ *
+ * Unsplash's API terms require crediting the photographer and Unsplash
+ * wherever a photo is shown, which the figcaption does.
+ */
+const CITY_SCENE: Record<
+  string,
+  { src: string; alt: string; caption: string; by: string; byLink: string }
+> = {
+  "Boca Raton": {
+    src: "/city-boca-raton.jpg",
+    alt: "Aerial view of the Boca Raton shoreline and the Atlantic",
+    caption: "The Boca Raton coastline.",
+    by: "Nigel Sarrag",
+    byLink: "https://unsplash.com/@nsarrag",
+  },
+  "Boynton Beach": {
+    src: "/city-boynton-beach.jpg",
+    alt: "People walking a boardwalk bridge over water in Boynton Beach",
+    caption: "The boardwalk over the Boynton Beach waterway.",
+    by: "Jeffrey Eisen",
+    byLink: "https://unsplash.com/@jeisen",
+  },
+  "Deerfield Beach": {
+    src: "/city-deerfield-beach.jpg",
+    alt: "The Hillsboro Inlet lighthouse seen from the water",
+    caption: "The Hillsboro Inlet Light off Deerfield Beach.",
+    by: "Ken Okum",
+    byLink: "https://unsplash.com/@kenographyone",
+  },
+  "Delray Beach": {
+    src: "/city-delray-beach.jpg",
+    alt: "A boat moored on the Intracoastal beside Delray Beach buildings",
+    caption: "The Delray Beach Intracoastal waterfront.",
+    by: "Jeffrey Eisen",
+    byLink: "https://unsplash.com/@jeisen",
+  },
+  "Fort Lauderdale": {
+    src: "/city-fort-lauderdale.jpg",
+    alt: "The Fort Lauderdale beachfront with the city behind it",
+    caption: "The Fort Lauderdale beachfront.",
+    by: "By Carl",
+    byLink: "https://unsplash.com/@bycarl17",
+  },
+  Hollywood: {
+    src: "/city-hollywood.jpg",
+    alt: "Palms and beachgoers along the Hollywood Beach Broadwalk",
+    caption: "The Hollywood Beach Broadwalk.",
+    by: "Zachary Kadolph",
+    byLink: "https://unsplash.com/@zacharykadolph",
+  },
+  "Jensen Beach": {
+    src: "/city-jensen-beach.jpg",
+    alt: "A wooden dune crossover leading to the sand at Jensen Beach",
+    caption: "A dune crossover at Jensen Beach.",
+    by: "Melissa",
+    byLink: "https://unsplash.com/@melissamullinator",
+  },
+  Jupiter: {
+    src: "/city-jupiter.jpg",
+    alt: "Aerial view of the Jupiter Inlet, marina and surrounding buildings",
+    caption: "The Jupiter Inlet and marina from the air.",
+    by: "Chase Baker",
+    byLink: "https://unsplash.com/@sandbarproductions",
+  },
+  "Lake Worth Beach": {
+    src: "/city-lake-worth-beach.jpg",
+    alt: "A sailboat at anchor on the Lake Worth Lagoon under evening cloud",
+    caption: "The Lake Worth Lagoon at dusk.",
+    by: "Gene Gallin",
+    byLink: "https://unsplash.com/@genefoto",
+  },
+  "Palm Beach Gardens": {
+    src: "/city-palm-beach-gardens.jpg",
+    alt: "A palm-lined walkway and lawn in Palm Beach Gardens",
+    caption: "A palm-lined walk in Palm Beach Gardens.",
+    by: "Gene Gallin",
+    byLink: "https://unsplash.com/@genefoto",
+  },
+  "Pompano Beach": {
+    src: "/city-pompano-beach.jpg",
+    alt: "A beach volleyball game on the sand at Pompano Beach",
+    caption: "Pompano Beach on a weekend.",
+    by: "Ryan Arnst",
+    byLink: "https://unsplash.com/@ryanarnst",
+  },
+  "Riviera Beach": {
+    src: "/city-riviera-beach.jpg",
+    alt: "Sunset over Riviera Beach rooftops and the water beyond",
+    caption: "Riviera Beach rooftops at sunset.",
+    by: "Scott Greer",
+    byLink: "https://unsplash.com/@sgreer",
+  },
+  "West Palm Beach": {
+    src: "/city-west-palm-beach.jpg",
+    alt: "The West Palm Beach skyline seen across the Intracoastal",
+    caption: "The West Palm Beach skyline from across the Intracoastal.",
+    by: "Richard Sagredo",
+    byLink: "https://unsplash.com/@sagredophotography",
+  },
+};
 
 export function CityMoldPage({
   city,
@@ -101,9 +269,23 @@ export function CityMoldPage({
    * Keyed off the city name so the choice is stable between builds: a page
    * that changed photo on every deploy would churn the prerendered HTML.
    */
-  const cityPhoto = CITY_PHOTOS[
-    [...city].reduce((a, c) => a + c.charCodeAt(0), 0) % CITY_PHOTOS.length
-  ];
+  /**
+   * Index by the city's position in a stable alphabetical list, not by a hash
+   * of its name. A character-sum hash clustered badly: one photo landed on six
+   * pages while another went unused entirely. Position modulo the set size
+   * spreads 27 cities over 10 photos evenly, and stays stable between builds
+   * so the prerendered HTML does not churn.
+   */
+  const cityPhoto =
+    CITY_PHOTOS[
+      Math.max(
+        0,
+        [...cities].map((c) => c.name).sort().indexOf(city),
+      ) % CITY_PHOTOS.length
+    ];
+
+  /** Undefined for the 14 cities with no honest photograph of the place. */
+  const cityScene = CITY_SCENE[city];
 
   const sharedFaqs: Array<{ q: string; a: string }> = [
     {
@@ -276,6 +458,10 @@ export function CityMoldPage({
     description: intro,
     path: cityPath,
     serviceType: "Mold inspection and assessment",
+    // The inspection photograph, not the city scene. This property asserts
+    // what the service looks like, and a stock shot of the coastline would be
+    // a false claim about the work.
+    image: cityPhoto.src,
   });
 
   const trustBadges = [
@@ -424,6 +610,81 @@ export function CityMoldPage({
             contractor, or a real-estate attorney can act on it without
             translation.
           </p>
+        </div>
+      </section>
+
+      {/* LOCAL BAND — the city itself, plus where we cover.
+          Cities with a real photograph get both; the rest get a full-width map,
+          which keeps every one of the 27 pages visually distinct without
+          putting a wrong or generic photo under a city name. */}
+      <section className="mt-16 border-y border-border bg-secondary py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="text-sm font-medium uppercase tracking-wider text-accent">
+            On the ground in {city}
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold text-primary sm:text-3xl">
+            Where we work in {city}.
+          </h2>
+          <div
+            className={`mt-8 grid gap-6 ${cityScene ? "lg:grid-cols-2" : ""}`}
+          >
+            {cityScene ? (
+              <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+                <picture>
+                  <source srcSet={webpVariant(cityScene.src)} type="image/webp" />
+                  <img
+                    src={cityScene.src}
+                    alt={cityScene.alt}
+                    width={1200}
+                    height={750}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[16/10] w-full object-cover"
+                  />
+                </picture>
+                <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+                  {cityScene.caption}{" "}
+                  <span className="opacity-70">
+                    Photo by{" "}
+                    <a
+                      href={`${cityScene.byLink}?utm_source=safe_haven_inspections&utm_medium=referral`}
+                      rel="noopener noreferrer nofollow"
+                      target="_blank"
+                      className="underline hover:text-accent"
+                    >
+                      {cityScene.by}
+                    </a>{" "}
+                    on{" "}
+                    <a
+                      href="https://unsplash.com/?utm_source=safe_haven_inspections&utm_medium=referral"
+                      rel="noopener noreferrer nofollow"
+                      target="_blank"
+                      className="underline hover:text-accent"
+                    >
+                      Unsplash
+                    </a>
+                    .
+                  </span>
+                </figcaption>
+              </figure>
+            ) : null}
+            <figure className="overflow-hidden rounded-2xl border border-border bg-card">
+              {/* Keyless embed: no API key reaches the browser. Lazy so it never
+                  competes with the hero for LCP, and titled because an untitled
+                  iframe is a WCAG failure. */}
+              <iframe
+                title={`Map of the ${city}, Florida mold inspection service area`}
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(`${city}, FL`)}&z=12&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="aspect-[16/10] w-full border-0"
+              />
+              <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
+                We inspect at your property across {city} and {county}. There is
+                no office to visit, and same-week appointments are usual.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -600,10 +861,10 @@ export function CityMoldPage({
                     Every .jpg here has a .webp sibling: a <source> pointing at a
                     missing .webp renders a broken image, it does not fall back. */}
                 <picture>
-                  <source srcSet={webpVariant(cityPhoto)} type="image/webp" />
+                  <source srcSet={webpVariant(cityPhoto.src)} type="image/webp" />
                   <img
-                    src={cityPhoto}
-                    alt={`Mold inspection in ${city}, FL: moisture meter reading taken at an interior baseboard`}
+                    src={cityPhoto.src}
+                    alt={`Mold inspection in ${city}, FL: ${cityPhoto.alt}`}
                     width={1200}
                     height={750}
                     loading="lazy"
@@ -612,8 +873,7 @@ export function CityMoldPage({
                   />
                 </picture>
                 <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
-                  Moisture mapping during a {city} mold inspection: readings are
-                  recorded in your report, not just described.
+                  On a {city} mold inspection. {cityPhoto.cap}
                 </figcaption>
               </figure>
             </div>

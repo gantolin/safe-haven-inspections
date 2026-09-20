@@ -285,6 +285,13 @@ export interface ServiceSchemaInput {
   description: string;
   path: string;
   serviceType?: string;
+  /**
+   * Site-root-relative path to a photograph that actually depicts the service
+   * being performed. Emitted as an absolute URL, because Google ignores
+   * relative ones. Never point this at decorative or stock imagery: the
+   * property is a claim about the service, not page dressing.
+   */
+  image?: string;
 }
 
 /**
@@ -299,6 +306,7 @@ export function serviceSchema(input: ServiceSchemaInput) {
     description: input.description,
     url: absoluteUrl(input.path),
     ...(input.serviceType ? { serviceType: input.serviceType } : {}),
+    ...(input.image ? { image: absoluteUrl(input.image) } : {}),
     provider: { "@id": `${SITE_URL}/#business` },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Martin County, FL" },
