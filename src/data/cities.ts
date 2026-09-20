@@ -7,6 +7,14 @@ export interface City {
   slug: string; // matches /mold-inspection-{slug}
   name: string;
   county: County;
+  /**
+   * Overrides the /mold-inspection-{slug}/ link target for cities that do not
+   * have their own page. Only Greenacres uses this: it is the home city, the
+   * home page targets it, and its former city page now 301s to "/". It stays
+   * listed in the service-area directory because the business genuinely does
+   * serve it — a directory that omitted the company's own city would be wrong.
+   */
+  href?: string;
 }
 
 export const cities: City[] = [
@@ -23,7 +31,7 @@ export const cities: City[] = [
   { slug: "royal-palm-beach", name: "Royal Palm Beach", county: "Palm Beach" },
   { slug: "loxahatchee", name: "Loxahatchee", county: "Palm Beach" },
   { slug: "lake-worth-beach", name: "Lake Worth Beach", county: "Palm Beach" },
-  { slug: "greenacres", name: "Greenacres", county: "Palm Beach" },
+  { slug: "greenacres", name: "Greenacres", county: "Palm Beach", href: "/" },
   { slug: "boynton-beach", name: "Boynton Beach", county: "Palm Beach" },
   { slug: "delray-beach", name: "Delray Beach", county: "Palm Beach" },
   { slug: "boca-raton", name: "Boca Raton", county: "Palm Beach" },
@@ -45,3 +53,17 @@ export const cities: City[] = [
 ];
 
 export const counties: County[] = ["Martin", "Palm Beach", "Broward"];
+
+/**
+ * The URL to link a city by. Use this everywhere a city list is rendered
+ * rather than rebuilding `/mold-inspection-${slug}/` inline: Greenacres has no
+ * page of its own (the home page targets it), and four separate call sites
+ * were each constructing the path by hand, so three of them kept pointing at
+ * a URL that now redirects.
+ *
+ * Trailing slash matters: GitHub Pages serves /mold-inspection-{slug}/index.html
+ * and 301s the bare form, so linking without the slash costs a redirect hop.
+ */
+export function cityHref(city: City): string {
+  return city.href ?? `/mold-inspection-${city.slug}/`;
+}

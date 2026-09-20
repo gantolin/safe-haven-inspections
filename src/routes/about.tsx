@@ -18,7 +18,7 @@ import { absoluteUrl, SITE_URL, BUSINESS_PHONE, BUSINESS_EMAIL, jsonLdScript } f
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
 const CANONICAL = absoluteUrl("/about/");
-const TITLE = "Certified Mold Inspector, Palm Beach County | Safe Haven";
+const TITLE = "About Landon Heinrichs, FL Mold Assessor | Safe Haven";
 const DESCRIPTION =
   "Landon Heinrichs, founder of Safe Haven Inspections and FL-licensed Mold Assessor MRSA3366, serving Martin, Palm Beach and Broward. We test, we never remediate.";
 

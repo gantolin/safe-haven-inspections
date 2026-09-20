@@ -105,7 +105,9 @@ const COUNTIES_SERVED = [
 // Sitewide LocalBusiness schema (place on __root.tsx).
 //
 // MODELED AS A SERVICE-AREA BUSINESS (SAB): work happens at the client's
-// property, so there is deliberately NO `streetAddress` here.
+// property, so `areaServed` and `serviceArea` carry the three counties rather
+// than a single trading location. The street address IS published below; see
+// the note further down for why that changed.
 //
 // NOTE: the Google Business Profile is NOT hidden-address. It publicly
 // displays "5880 Corson Pl, Greenacres, FL 33463".
@@ -119,11 +121,12 @@ const COUNTIES_SERVED = [
 // is. Do not "normalise" this back — NAP checks compare it character for
 // character against the profile.
 //
-// Omitting `streetAddress` while the GBP publishes one is a deliberate,
-// defensible middle ground: the locality now agrees, and nothing here
-// re-publishes the street line. Adding the full street address is a judgement
-// call for the owner — it is already public on the GBP, and in this market
-// most map-pack winners do display one — so it is left out until asked for.
+// `streetAddress` IS published here, and deliberately so. The landing page
+// displays the address and embeds a map of it, and the GBP publishes it too,
+// so omitting it would leave the structured data saying less than the page it
+// describes and would weaken the NAP match that map-pack ranking depends on.
+// It must stay character-for-character identical to the Google Business
+// Profile: "5880 Corson Pl", Greenacres, FL 33463.
 //
 // `openingHoursSpecification` was previously omitted pending confirmation that
 // published hours match the GBP exactly. Confirmed 2026-08-15: the GBP shows
@@ -171,6 +174,27 @@ export function localBusinessSchema() {
       },
     ],
     aggregateRating: aggregateRatingSchema(),
+    // `image`, `founder` and `hasOfferCatalog` belong to the business, not to
+    // any one page, so they live on this node. They used to be spread onto a
+    // SECOND #business node emitted by routes/index.tsx, which meant the home
+    // page shipped two <script type="application/ld+json"> blocks claiming the
+    // same @id. Google merges same-@id nodes, but the home page was the only
+    // page in the site failing the Rich Results check while city and service
+    // pages passed, and the duplicate block was the one thing unique to it.
+    // One node, emitted once from __root.tsx, is what every page gets now.
+    image: absoluteUrl("/og-card.png"),
+    founder: { "@type": "Person", name: "Landon Heinrichs" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Mold Inspection Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential mold inspection" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-purchase mold assessment" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Post-remediation verification" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air and surface sampling" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Realtor and property-manager inspections" } },
+      ],
+    },
     knowsAbout: [
       "Mold inspection",
       "Mold testing",

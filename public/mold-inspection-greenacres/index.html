@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      STATIC REDIRECT: /mold-inspection-greenacres/ -> /
+
+      Greenacres is the home city (5880 Corson Pl), and the home page already
+      targets it: title "Mold Inspection in Greenacres, FL" and H1 "Mold
+      Inspection & Testing in Greenacres, FL". Running a second page against
+      the same query was cannibalization, and Search Console showed it: for
+      "greenacres mold inspection" the home page sat at 5 and this page at 21,
+      while for "greenacres florida mold inspection" the order flipped to 24.3
+      and 5. Google was alternating between the two and ranking both worse.
+
+      WHY THIS IS A FILE AND NOT A ROUTE: a TanStack `beforeLoad` redirect
+      renders nothing at build time, so on GitHub Pages the URL just 404s. The
+      repo's previous /mold-inspection redirect route did exactly that and was
+      returning GitHub's 404 page in production. There is no server to issue a
+      real 301 here, so a zero-delay meta refresh plus a canonical is the
+      correct static equivalent: Google treats it as a permanent redirect and
+      consolidates the signals onto the canonical target.
+
+      This URL was live and indexed, so it must keep returning 200. Do not
+      delete this file to "clean up" — that turns an indexed page into a 404.
+    -->
+    <title>Redirecting to Safe Haven Inspections</title>
+    <link rel="canonical" href="https://www.safehaveninspectionsllc.com/" />
+    <meta http-equiv="refresh" content="0; url=https://www.safehaveninspectionsllc.com/" />
+    <script>
+      window.location.replace("https://www.safehaveninspectionsllc.com/");
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #1f2937;
+        background: #f8fafc;
+        padding: 1.5rem;
+        text-align: center;
+      }
+      a {
+        color: #0f766e;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Mold inspection in Greenacres has moved to the
+      <a href="https://www.safehaveninspectionsllc.com/">Safe Haven Inspections home page</a>.
+    </p>
+  </body>
+</html>

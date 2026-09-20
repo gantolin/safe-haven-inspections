@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
+import type { ReactNode } from "react";
+import { absoluteUrl, faqSchema, jsonLdScript } from "@/lib/seo";
 import {
   ShieldCheck,
   Scale,
@@ -19,6 +20,7 @@ import {
   CloudRain,
   Clock,
   Users,
+  MapPin,
 } from "lucide-react";
 import {
   Accordion,
@@ -46,6 +48,73 @@ const heroImgMobile = heroMobileAsset.url;
 // 168px (3x) crop framed on the head.
 const landonAvatar = "/landon-avatar.jpg";
 
+/**
+ * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
+ * are built from ONE list. `a` is the plain-text answer and is what goes into
+ * structured data; `aNode` is an optional richer rendering (a link, markup)
+ * for the page itself. Keep the two saying the same thing: FAQ markup that
+ * does not match the visible answer is a structured-data policy violation, so
+ * an `aNode` may add a link but must not add, drop or change an assertion.
+ */
+const HOME_FAQS: Array<{ q: string; a: string; aNode?: ReactNode }> = [
+  {
+    q: "Do you also do mold removal?",
+    a: "No. Our specialty is assessment. We inspect, test, and report, so the findings you receive are fully objective. If remediation turns out to be needed, our report gives you everything required to hire the right company with confidence, and we can verify the work afterward.",
+  },
+  {
+    q: "What's the difference between a mold assessment and mold remediation?",
+    a: "An assessment identifies whether mold is present, where it is, what's causing it, and how severe it is, backed by lab testing. Remediation is the physical removal and cleanup. We handle the assessment side independently.",
+  },
+  {
+    q: "Do I need to leave my home during the inspection?",
+    a: "No. You're welcome to stay. Most homeowners like to walk through with us so we can point out what we're seeing in real time.",
+  },
+  {
+    q: "How long does the inspection take?",
+    a: "Most residential mold inspections take about 60–120 minutes on site, depending on the size of the home and how many areas of concern we need to evaluate.",
+  },
+  {
+    q: "How soon will I get my results?",
+    a: "Field observations and moisture data are captured the day of the visit. Lab-analyzed samples and the written report are typically delivered within 24 hours.",
+  },
+  {
+    q: "What does a mold inspection cost?",
+    a: "Every home is different: square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection for exact numbers.",
+  },
+  {
+    q: "Do you test for asbestos as well as mold?",
+    a: "Yes. Landon is a certified asbestos inspector on top of his Florida mold assessor license, so popcorn ceilings, floor tile, and pipe wrap can be sampled on the same visit as the mold inspection. Results come back from an accredited lab within 24 hours. We test only, and never remove.",
+    aNode: (
+      <>
+        Yes. Landon is a certified asbestos inspector on top of his Florida mold
+        assessor license, so popcorn ceilings, floor tile, and pipe wrap can be
+        sampled on the same visit as the mold inspection. Results come back from
+        an accredited lab within 24 hours. See{" "}
+        <Link to="/services/asbestos-testing/" className="font-semibold text-accent underline underline-offset-2">
+          asbestos testing
+        </Link>{" "}
+        for what we sample and how it works. We test only, and never remove.
+      </>
+    ),
+  },
+  // The two questions below came off the former /mold-inspection-greenacres/
+  // page when it was folded into this one. They are the only genuinely local
+  // content that page had, and Greenacres is this page's target city, so they
+  // belong here rather than being lost to a redirect.
+  {
+    q: "Our Greenacres house is from the 1970s. What's the most likely source?",
+    a: "Two things, both age-related. Aging galvanized supply lines sweat and seep inside wall cavities long before anything reaches the surface: the drywall face can look perfect while the cavity behind stays damp. The second is HVAC that has been repaired rather than replaced. An older system still cools, so it feels like it's working, but it has lost the ability to actually dehumidify. Indoor humidity climbs and mold appears on the coolest surfaces in the house. Moisture meters and thermal imaging locate both without opening walls.",
+  },
+  {
+    q: "Is Greenacres in the High-Velocity Hurricane Zone?",
+    a: "No. The Florida Building Code defines the High-Velocity Hurricane Zone as Broward and Miami-Dade counties only, so Greenacres (in Palm Beach County) is built to the standard statewide code rather than HVHZ requirements. That matters for moisture because the housing stock here is mixed: homes with original single-glazed openings and more incidental air exchange sit alongside newer or impact-retrofitted homes that seal far tighter. The two fail in opposite ways: older homes tend to let water in at windows, doors, and roof penetrations, while tighter homes trap humidity and condense it on cool interior surfaces. We test for both rather than assuming which one you have.",
+  },
+  {
+    q: "Which areas do you serve?",
+    a: "We serve Martin, Palm Beach & Broward Counties across South Florida's Treasure Coast and Gold Coast region.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -69,32 +138,16 @@ export const Route = createFileRoute("/")({
         fetchpriority: "high",
       },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        // Spreads the canonical LocalBusiness node so this page cannot drift
-        // from it. Previously this block hand-rolled its own copy with a
-        // relative "@id" ("/#business" vs the absolute one), a non-existent
-        // addressLocality ("South Florida"), and a different email casing —
-        // which registered a second, conflicting business entity.
-        children: JSON.stringify({
-          ...localBusinessSchema(),
-          image: heroImg,
-          founder: { "@type": "Person", name: "Landon Heinrichs" },
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: "Mold Inspection Services",
-            itemListElement: [
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Residential mold inspection" } },
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Pre-purchase mold assessment" } },
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Post-remediation verification" } },
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Air and surface sampling" } },
-              { "@type": "Offer", itemOffered: { "@type": "Service", name: "Realtor and property-manager inspections" } },
-            ],
-          },
-        }),
-      },
-    ],
+    // NO LocalBusiness node here. __root.tsx emits the canonical #business
+    // node on every page, and this route used to emit a SECOND one carrying
+    // the same @id. That duplicate was the only structured-data difference
+    // between the home page (Rich Results: FAIL) and the city and service
+    // pages (PASS). Its extra properties (image, founder, hasOfferCatalog)
+    // now live on the shared node in lib/seo.ts, so nothing was lost.
+    //
+    // What this page does own is its FAQ, which was visible to readers but
+    // invisible to Google because it carried no FAQPage markup.
+    scripts: [jsonLdScript(faqSchema(HOME_FAQS.map(({ q, a }) => ({ q, a }))))],
   }),
   component: Index,
 });
@@ -601,6 +654,61 @@ function Index() {
         </div>
       </section>
 
+      {/* Greenacres local conditions.
+          Carried over from the former /mold-inspection-greenacres/ page, which
+          now redirects here. This page's H1 targets Greenacres, so it needs to
+          actually say something specific about Greenacres housing stock rather
+          than leaving that content on a second page competing for the same
+          query. Every other city keeps its own page; Greenacres does not,
+          because Greenacres is where the business is. */}
+      <section className="mx-auto mt-20 max-w-4xl px-4 sm:px-6">
+        <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+            <MapPin className="h-3.5 w-3.5" /> Greenacres, FL
+          </div>
+          <h2 className="mt-3 text-3xl font-semibold text-primary sm:text-4xl">
+            Greenacres-specific moisture concerns
+          </h2>
+          <div className="mt-5 space-y-4 text-muted-foreground">
+            <p>
+              Greenacres is dominated by 1970s and 1980s CBS single-family homes on
+              modest slab-on-grade lots. That construction generation has a very
+              predictable failure pattern: aging galvanized supply lines that sweat
+              inside wall cavities, single-pane aluminum windows whose sills stain
+              and rot, and original flat-tile roofs whose underlayment has aged out
+              even when the tile still looks intact from the ground. We consistently
+              find mold at ceiling perimeters below roof valleys and around bathroom
+              windows that have never been resealed.
+            </p>
+            <p>
+              The other Greenacres driver is HVAC that has been patched rather than
+              replaced. In an affordable-housing market, owners understandably keep
+              older systems running past their useful dehumidification life. The
+              system cools, but indoor humidity stays high, and mold appears on
+              primary-bedroom exterior walls, inside master closets, and on the
+              underside of ceiling drywall in the coolest rooms in the house. Our
+              inspection includes humidity logging and mechanical-closet checks to
+              catch this directly.
+            </p>
+          </div>
+          <div className="mt-7 flex flex-wrap gap-3 border-t border-border pt-6 text-sm">
+            <span className="text-muted-foreground">Nearby:</span>
+            <Link to="/mold-inspection-lake-worth-beach/" className="font-semibold text-accent underline underline-offset-2">
+              Lake Worth Beach
+            </Link>
+            <Link to="/mold-inspection-boynton-beach/" className="font-semibold text-accent underline underline-offset-2">
+              Boynton Beach
+            </Link>
+            <Link to="/mold-inspection-royal-palm-beach/" className="font-semibold text-accent underline underline-offset-2">
+              Royal Palm Beach
+            </Link>
+            <Link to="/mold-inspection-west-palm-beach/" className="font-semibold text-accent underline underline-offset-2">
+              West Palm Beach
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto mt-20 max-w-4xl px-4 sm:px-6">
         <div className="max-w-2xl">
@@ -613,59 +721,13 @@ function Index() {
         </div>
         <div className="mt-10 rounded-2xl border border-border bg-card p-2 sm:p-4">
           <Accordion type="single" collapsible className="w-full">
-            {[
-              {
-                q: "Do you also do mold removal?",
-                a: "No. Our specialty is assessment. We inspect, test, and report, so the findings you receive are fully objective. If remediation turns out to be needed, our report gives you everything required to hire the right company with confidence, and we can verify the work afterward.",
-              },
-              {
-                q: "What's the difference between a mold assessment and mold remediation?",
-                a: "An assessment identifies whether mold is present, where it is, what's causing it, and how severe it is, backed by lab testing. Remediation is the physical removal and cleanup. We handle the assessment side independently.",
-              },
-              {
-                q: "Do I need to leave my home during the inspection?",
-                a: "No. You're welcome to stay. Most homeowners like to walk through with us so we can point out what we're seeing in real time.",
-              },
-              {
-                q: "How long does the inspection take?",
-                a: "Most residential mold inspections take about 60–120 minutes on site, depending on the size of the home and how many areas of concern we need to evaluate.",
-              },
-              {
-                q: "How soon will I get my results?",
-                a: "Field observations and moisture data are captured the day of the visit. Lab-analyzed samples and the written report are typically delivered within 24 hours.",
-              },
-              {
-                q: "What does a mold inspection cost?",
-                a: "Every home is different: square footage, number of areas of concern, and how many samples the job actually needs all factor in. We give you a clear, upfront quote before any work begins, with no surprise fees. Call (561) 632-6387 or request an inspection for exact numbers.",
-              },
-              {
-                q: "Do you test for asbestos as well as mold?",
-                a: (
-                  <>
-                    Yes. Landon is a certified asbestos inspector on top of his
-                    Florida mold assessor license, so popcorn ceilings, floor tile,
-                    and pipe wrap can be sampled on the same visit as the mold
-                    inspection. Results come back from an accredited lab within 24
-                    hours. See{" "}
-                    <Link to="/services/asbestos-testing/" className="font-semibold text-accent underline underline-offset-2">
-                      asbestos testing
-                    </Link>{" "}
-                    for what we sample and how it works. We test only, and never
-                    remove.
-                  </>
-                ),
-              },
-              {
-                q: "Which areas do you serve?",
-                a: "We serve Martin, Palm Beach & Broward Counties across South Florida's Treasure Coast and Gold Coast region.",
-              },
-            ].map((item, i) => (
+            {HOME_FAQS.map((item, i) => (
               <AccordionItem key={item.q} value={`item-${i}`} className="border-border px-3 sm:px-4">
                 <AccordionTrigger className="text-left text-base font-semibold text-primary hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                  {item.a}
+                  {item.aNode ?? item.a}
                 </AccordionContent>
               </AccordionItem>
             ))}

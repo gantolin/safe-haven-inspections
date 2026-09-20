@@ -60,7 +60,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/mold-inspection-jupiter/",
           "/mold-inspection-palm-beach-gardens/",
           "/mold-inspection-lake-worth-beach/",
-          "/mold-inspection-greenacres/",
+          // NO "/mold-inspection-greenacres/": it 301s to "/" now. Greenacres
+          // is the home city and the home page targets it. Listing a redirect
+          // in the sitemap asks Google to crawl a URL that never returns 200.
           "/mold-inspection-riviera-beach/",
         ];
         const entries = [

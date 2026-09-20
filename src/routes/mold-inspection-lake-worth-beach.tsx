@@ -39,7 +39,7 @@ function LakeWorthBeachPage() {
       otherCities={[
         { to: "/mold-inspection-west-palm-beach/", label: "West Palm Beach" },
         { to: "/mold-inspection-boynton-beach/", label: "Boynton Beach" },
-        { to: "/mold-inspection-greenacres/", label: "Greenacres" },
+        { to: "/", label: "Greenacres" },
       ]}
     />
   );

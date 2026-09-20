@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/surface-sampling")({
   head: () => {
     const base = pageMeta({
       path: "/services/surface-sampling/",
-      title: "Black Mold Testing & Surface Sampling, FL | Safe Haven",
+      title: "Surface & Tape-Lift Mold Sampling | Safe Haven",
       description:
         "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth, no remediation upsell.",
     });
@@ -57,7 +57,7 @@ function SurfaceSamplingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Black Mold Testing & Surface Sampling"
+      h1="Surface & Tape-Lift Mold Sampling"
       intro={
         <>
           Black mold testing and surface sampling answer the question a

@@ -26,7 +26,7 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 import { getCityProfile, citySlug } from "@/data/city-profiles";
-import { cities } from "@/data/cities";
+import { cities, cityHref } from "@/data/cities";
 import { webpVariant } from "@/lib/images";
 import { CITY_SCENE } from "@/data/city-scenes";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
@@ -66,7 +66,9 @@ export interface CityMoldPageProps {
       | "/mold-inspection-jupiter/"
       | "/mold-inspection-palm-beach-gardens/"
       | "/mold-inspection-lake-worth-beach/"
-      | "/mold-inspection-greenacres/"
+      // Greenacres has no page of its own: the home page targets it and
+      // /mold-inspection-greenacres/ 301s to "/". Link Greenacres as "/".
+      | "/"
       | "/mold-inspection-riviera-beach/";
     label: string;
   }>;
@@ -985,7 +987,7 @@ export function CityMoldPage({
               {countyPeers.map((c) => (
                 <a
                   key={c.slug}
-                  href={`/mold-inspection-${c.slug}/`}
+                  href={cityHref(c)}
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-primary transition-colors hover:border-accent hover:text-accent"
                 >
                   <MapPin className="h-3 w-3 text-accent" />

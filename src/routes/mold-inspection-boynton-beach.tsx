@@ -43,7 +43,7 @@ function BoyntonBeachPage() {
       otherCities={[
         { to: "/mold-inspection-delray-beach/", label: "Delray Beach" },
         { to: "/mold-inspection-lake-worth-beach/", label: "Lake Worth Beach" },
-        { to: "/mold-inspection-greenacres/", label: "Greenacres" },
+        { to: "/", label: "Greenacres" },
       ]}
     />
   );

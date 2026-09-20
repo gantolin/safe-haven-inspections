@@ -87,9 +87,9 @@ export const Route = createFileRoute("/services/mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-inspection/",
-      title: "Mold Inspection Services, Palm Beach County | Safe Haven",
+      title: "What a Mold Inspection Includes | Safe Haven Inspections",
       description:
-        "Mold inspection services across Palm Beach, Broward, and Martin County. Florida-licensed, independent, visual and lab-backed sampling. Report in 24 hours.",
+        "What a Florida-licensed mold inspection covers, step by step: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed written report in 24 hours.",
       ogType: "website",
     });
     return {
@@ -98,9 +98,9 @@ export const Route = createFileRoute("/services/mold-inspection")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Mold Inspection South Florida",
+            name: "Mold Inspection",
             description:
-              "Mold inspection services across Palm Beach, Broward, and Martin County. Florida-licensed, independent, visual and lab-backed sampling. Report in 24 hours.",
+              "What a Florida-licensed mold inspection covers, step by step: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed written report in 24 hours.",
             path: "/services/mold-inspection/",
             serviceType: "Mold inspection and assessment",
           }),
@@ -109,7 +109,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Mold Inspection South Florida", path: "/services/mold-inspection/" },
+            { name: "What a Mold Inspection Includes", path: "/services/mold-inspection/" },
           ]),
         ),
       ],
@@ -126,7 +126,7 @@ function MoldInspectionPage() {
           <div>
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Service</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Mold Inspection Services in Palm Beach County
+            What a mold inspection includes
           </h1>
           <span aria-hidden className="spectrum-rule mt-5" />
           <p className="mt-5 max-w-3xl text-base text-muted-foreground sm:text-lg">

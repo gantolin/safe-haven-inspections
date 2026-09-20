@@ -31,7 +31,6 @@ import { Route as MoldInspectionJupiterRouteImport } from './routes/mold-inspect
 import { Route as MoldInspectionJensenBeachRouteImport } from './routes/mold-inspection-jensen-beach'
 import { Route as MoldInspectionHollywoodRouteImport } from './routes/mold-inspection-hollywood'
 import { Route as MoldInspectionHobeSoundRouteImport } from './routes/mold-inspection-hobe-sound'
-import { Route as MoldInspectionGreenacresRouteImport } from './routes/mold-inspection-greenacres'
 import { Route as MoldInspectionFortLauderdaleRouteImport } from './routes/mold-inspection-fort-lauderdale'
 import { Route as MoldInspectionDelrayBeachRouteImport } from './routes/mold-inspection-delray-beach'
 import { Route as MoldInspectionDeerfieldBeachRouteImport } from './routes/mold-inspection-deerfield-beach'
@@ -39,7 +38,6 @@ import { Route as MoldInspectionDavieRouteImport } from './routes/mold-inspectio
 import { Route as MoldInspectionCoralSpringsRouteImport } from './routes/mold-inspection-coral-springs'
 import { Route as MoldInspectionBoyntonBeachRouteImport } from './routes/mold-inspection-boynton-beach'
 import { Route as MoldInspectionBocaRatonRouteImport } from './routes/mold-inspection-boca-raton'
-import { Route as MoldInspectionRouteImport } from './routes/mold-inspection'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -182,12 +180,6 @@ const MoldInspectionHobeSoundRoute = MoldInspectionHobeSoundRouteImport.update({
   path: '/mold-inspection-hobe-sound',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MoldInspectionGreenacresRoute =
-  MoldInspectionGreenacresRouteImport.update({
-    id: '/mold-inspection-greenacres',
-    path: '/mold-inspection-greenacres',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const MoldInspectionFortLauderdaleRoute =
   MoldInspectionFortLauderdaleRouteImport.update({
     id: '/mold-inspection-fort-lauderdale',
@@ -226,11 +218,6 @@ const MoldInspectionBoyntonBeachRoute =
 const MoldInspectionBocaRatonRoute = MoldInspectionBocaRatonRouteImport.update({
   id: '/mold-inspection-boca-raton',
   path: '/mold-inspection-boca-raton',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MoldInspectionRoute = MoldInspectionRouteImport.update({
-  id: '/mold-inspection',
-  path: '/mold-inspection',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -340,7 +327,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
   '/mold-inspection-boynton-beach': typeof MoldInspectionBoyntonBeachRoute
   '/mold-inspection-coral-springs': typeof MoldInspectionCoralSpringsRoute
@@ -348,7 +334,6 @@ export interface FileRoutesByFullPath {
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
-  '/mold-inspection-greenacres': typeof MoldInspectionGreenacresRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
   '/mold-inspection-jensen-beach': typeof MoldInspectionJensenBeachRoute
@@ -392,7 +377,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
   '/mold-inspection-boynton-beach': typeof MoldInspectionBoyntonBeachRoute
   '/mold-inspection-coral-springs': typeof MoldInspectionCoralSpringsRoute
@@ -400,7 +384,6 @@ export interface FileRoutesByTo {
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
-  '/mold-inspection-greenacres': typeof MoldInspectionGreenacresRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
   '/mold-inspection-jensen-beach': typeof MoldInspectionJensenBeachRoute
@@ -445,7 +428,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/mold-inspection': typeof MoldInspectionRoute
   '/mold-inspection-boca-raton': typeof MoldInspectionBocaRatonRoute
   '/mold-inspection-boynton-beach': typeof MoldInspectionBoyntonBeachRoute
   '/mold-inspection-coral-springs': typeof MoldInspectionCoralSpringsRoute
@@ -453,7 +435,6 @@ export interface FileRoutesById {
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
-  '/mold-inspection-greenacres': typeof MoldInspectionGreenacresRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
   '/mold-inspection-jensen-beach': typeof MoldInspectionJensenBeachRoute
@@ -499,7 +480,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/mold-inspection'
     | '/mold-inspection-boca-raton'
     | '/mold-inspection-boynton-beach'
     | '/mold-inspection-coral-springs'
@@ -507,7 +487,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
     | '/mold-inspection-fort-lauderdale'
-    | '/mold-inspection-greenacres'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
     | '/mold-inspection-jensen-beach'
@@ -551,7 +530,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/mold-inspection'
     | '/mold-inspection-boca-raton'
     | '/mold-inspection-boynton-beach'
     | '/mold-inspection-coral-springs'
@@ -559,7 +537,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
     | '/mold-inspection-fort-lauderdale'
-    | '/mold-inspection-greenacres'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
     | '/mold-inspection-jensen-beach'
@@ -603,7 +580,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/mold-inspection'
     | '/mold-inspection-boca-raton'
     | '/mold-inspection-boynton-beach'
     | '/mold-inspection-coral-springs'
@@ -611,7 +587,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
     | '/mold-inspection-fort-lauderdale'
-    | '/mold-inspection-greenacres'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
     | '/mold-inspection-jensen-beach'
@@ -656,7 +631,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  MoldInspectionRoute: typeof MoldInspectionRoute
   MoldInspectionBocaRatonRoute: typeof MoldInspectionBocaRatonRoute
   MoldInspectionBoyntonBeachRoute: typeof MoldInspectionBoyntonBeachRoute
   MoldInspectionCoralSpringsRoute: typeof MoldInspectionCoralSpringsRoute
@@ -664,7 +638,6 @@ export interface RootRouteChildren {
   MoldInspectionDeerfieldBeachRoute: typeof MoldInspectionDeerfieldBeachRoute
   MoldInspectionDelrayBeachRoute: typeof MoldInspectionDelrayBeachRoute
   MoldInspectionFortLauderdaleRoute: typeof MoldInspectionFortLauderdaleRoute
-  MoldInspectionGreenacresRoute: typeof MoldInspectionGreenacresRoute
   MoldInspectionHobeSoundRoute: typeof MoldInspectionHobeSoundRoute
   MoldInspectionHollywoodRoute: typeof MoldInspectionHollywoodRoute
   MoldInspectionJensenBeachRoute: typeof MoldInspectionJensenBeachRoute
@@ -861,13 +834,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MoldInspectionHobeSoundRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mold-inspection-greenacres': {
-      id: '/mold-inspection-greenacres'
-      path: '/mold-inspection-greenacres'
-      fullPath: '/mold-inspection-greenacres'
-      preLoaderRoute: typeof MoldInspectionGreenacresRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/mold-inspection-fort-lauderdale': {
       id: '/mold-inspection-fort-lauderdale'
       path: '/mold-inspection-fort-lauderdale'
@@ -915,13 +881,6 @@ declare module '@tanstack/react-router' {
       path: '/mold-inspection-boca-raton'
       fullPath: '/mold-inspection-boca-raton'
       preLoaderRoute: typeof MoldInspectionBocaRatonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/mold-inspection': {
-      id: '/mold-inspection'
-      path: '/mold-inspection'
-      fullPath: '/mold-inspection'
-      preLoaderRoute: typeof MoldInspectionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -1064,7 +1023,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  MoldInspectionRoute: MoldInspectionRoute,
   MoldInspectionBocaRatonRoute: MoldInspectionBocaRatonRoute,
   MoldInspectionBoyntonBeachRoute: MoldInspectionBoyntonBeachRoute,
   MoldInspectionCoralSpringsRoute: MoldInspectionCoralSpringsRoute,
@@ -1072,7 +1030,6 @@ const rootRouteChildren: RootRouteChildren = {
   MoldInspectionDeerfieldBeachRoute: MoldInspectionDeerfieldBeachRoute,
   MoldInspectionDelrayBeachRoute: MoldInspectionDelrayBeachRoute,
   MoldInspectionFortLauderdaleRoute: MoldInspectionFortLauderdaleRoute,
-  MoldInspectionGreenacresRoute: MoldInspectionGreenacresRoute,
   MoldInspectionHobeSoundRoute: MoldInspectionHobeSoundRoute,
   MoldInspectionHollywoodRoute: MoldInspectionHollywoodRoute,
   MoldInspectionJensenBeachRoute: MoldInspectionJensenBeachRoute,

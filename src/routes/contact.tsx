@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, ShieldCheck, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import { cities } from "@/data/cities";
+import { cities, cityHref } from "@/data/cities";
 import { submitContactForm } from "@/lib/contact";
-import { absoluteUrl, localBusinessSchema } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { ctaPrimary } from "@/lib/cta";
 import { webpVariant } from "@/lib/images";
@@ -17,14 +17,11 @@ export const Route = createFileRoute("/contact")({
       { property: "og:url", content: absoluteUrl("/contact/") },
     ],
     links: [{ rel: "canonical", href: absoluteUrl("/contact/") }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        // See the note in routes/index.tsx: this used to hand-roll a second
-        // LocalBusiness node that conflicted with the canonical one.
-        children: JSON.stringify(localBusinessSchema()),
-      },
-    ],
+    // No LocalBusiness node here either: __root.tsx already emits the canonical
+    // #business node on every page, so repeating it here only shipped a second
+    // <script> block with a duplicate @id. See the note in routes/index.tsx.
+    // This also drops a bare JSON.stringify, which skipped the "<" escaping
+    // that serializeJsonLd does.
   }),
   component: ContactPage,
 });
@@ -372,7 +369,7 @@ function ContactPage() {
             {cities.map((c) => (
               <li key={c.slug}>
                 <a
-                  href={`/mold-inspection-${c.slug}/`}
+                  href={cityHref(c)}
                   className="inline-flex rounded-full border border-border bg-card px-3 py-1.5 text-sm text-primary transition hover:border-accent hover:text-accent"
                 >
                   {c.name}

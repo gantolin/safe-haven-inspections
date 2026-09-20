@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, ArrowRight } from "lucide-react";
-import { cities, counties, type City } from "@/data/cities";
+import { cities, cityHref, counties } from "@/data/cities";
 import { absoluteUrl } from "@/lib/seo";
 import { webpVariant } from "@/lib/images";
 
 export const Route = createFileRoute("/service-areas")({
   head: () => ({
     meta: [
-      { title: "Service Areas: South Florida Mold Inspection | Safe Haven" },
+      { title: "Cities We Serve Across South Florida | Safe Haven" },
       { name: "description", content: "Independent mold inspection across Martin, Palm Beach & Broward Counties: Stuart, West Palm Beach, Boca Raton, Fort Lauderdale, and more." },
       { property: "og:title", content: "South Florida Service Areas: Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/service-areas/") },
@@ -16,16 +16,6 @@ export const Route = createFileRoute("/service-areas")({
   }),
   component: ServiceAreasPage,
 });
-
-// Every city.slug maps 1:1 to a built /mold-inspection-{slug} route.
-// The Link component is typed against the route tree, so we cast per-item
-// to keep the mapping generic without listing all 27 literal paths here.
-function cityHref(city: City): string {
-  // Trailing slash: GitHub Pages serves /mold-inspection-{slug}/index.html, so
-  // the bare form 301s. This is a raw <a>, so the router's trailingSlash
-  // setting does not reach it.
-  return `/mold-inspection-${city.slug}/`;
-}
 
 function ServiceAreasPage() {
   return (

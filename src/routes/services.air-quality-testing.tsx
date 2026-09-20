@@ -29,7 +29,7 @@ export const Route = createFileRoute("/services/air-quality-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/air-quality-testing/",
-      title: "Indoor Air Quality Testing, Palm Beach County | Safe Haven",
+      title: "Indoor Air Quality Testing & Spore Traps | Safe Haven",
       description:
         "Indoor air quality testing in Palm Beach County and across South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
     });

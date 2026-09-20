@@ -22,7 +22,7 @@ import { webpVariant } from "@/lib/images";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Mold Inspection & Testing Services, South Florida | Safe Haven" },
+      { title: "Our Services: Mold, Air Quality & Asbestos Testing | Safe Haven" },
       { name: "description", content: "Independent mold inspection, testing, air-quality sampling, and moisture evaluation across Martin, Palm Beach & Broward Counties. Fast lab turnaround." },
       { property: "og:title", content: "Our Services: Safe Haven Inspections" },
       { property: "og:url", content: absoluteUrl("/services/") },
@@ -165,7 +165,7 @@ function ServicesPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Services</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
-            Independent Mold Inspection &amp; Air Quality Testing in South Florida
+            Our inspection and testing services
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
             Lab-backed inspection and testing for homeowners, buyers, sellers, and

@@ -20,7 +20,7 @@ export const Route = createFileRoute("/services/mold-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-testing/",
-      title: "Mold Testing in Palm Beach County, FL | Safe Haven",
+      title: "Mold Testing & Accredited Lab Analysis | Safe Haven",
       description: "Independent, lab-analyzed mold testing (air and surface sampling) across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
     });
     return {
@@ -51,7 +51,7 @@ function MoldTestingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Mold Testing"
+      h1="Mold Testing & Lab Analysis"
       intro={
         <>
           Mold testing is the lab-analyzed sampling piece of a mold assessment:
