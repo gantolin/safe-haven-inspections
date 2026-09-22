@@ -22,12 +22,6 @@ import {
   Users,
   MapPin,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { GoogleReviews, GoogleRatingBadge } from "@/components/google-reviews";
 import { CertBadgeGrid } from "@/components/cert-badges";
 import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
@@ -719,19 +713,24 @@ function Index() {
             Straight answers to common questions.
           </h2>
         </div>
-        <div className="mt-10 rounded-2xl border border-border bg-card p-2 sm:p-4">
-          <Accordion type="single" collapsible className="w-full">
-            {HOME_FAQS.map((item, i) => (
-              <AccordionItem key={item.q} value={`item-${i}`} className="border-border px-3 sm:px-4">
-                <AccordionTrigger className="text-left text-base font-semibold text-primary hover:no-underline">
+        {/* Native <details>, the same pattern as the service pages. This used
+            to be the Radix Accordion, which unmounts closed panels, so none of
+            these answers (or the links inside them) existed in the prerendered
+            HTML. Google only ever saw the questions plus the FAQ schema. */}
+        <div className="mt-10 divide-y divide-border rounded-2xl border border-border bg-card px-2 sm:px-4">
+          {HOME_FAQS.map((item) => (
+            <details key={item.q} className="group px-3 py-4 sm:px-4">
+              <summary className="cursor-pointer list-none text-base font-semibold text-primary">
+                <span className="flex items-center justify-between gap-4">
                   {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
-                  {item.aNode ?? item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                  <span className="text-accent transition group-open:rotate-45">+</span>
+                </span>
+              </summary>
+              <div className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {item.aNode ?? item.a}
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 

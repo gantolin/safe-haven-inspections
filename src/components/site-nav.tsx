@@ -15,6 +15,28 @@ const links = [
   { to: "/contact/", label: "Contact" },
 ] as const;
 
+/**
+ * Footer service links. Until these existed the only site-wide path to a
+ * service page was the /services/ hub, and a page reachable from one hub
+ * plus a couple of related-service cards sat in "Discovered, not indexed"
+ * for weeks (asbestos testing, Sept 2026). Labels are the page H1s, short.
+ */
+const footerServices = [
+  { to: "/services/mold-inspection/", label: "Mold Inspection" },
+  { to: "/services/mold-testing/", label: "Mold Testing" },
+  { to: "/services/air-quality-testing/", label: "Air Quality Testing" },
+  { to: "/services/surface-sampling/", label: "Surface Sampling" },
+  { to: "/services/thermal-imaging/", label: "Thermal Imaging" },
+  { to: "/services/water-damage-inspection/", label: "Water Damage Inspection" },
+  { to: "/services/humidity-testing/", label: "Humidity Testing" },
+  { to: "/services/post-remediation-verification/", label: "Post-Remediation Verification" },
+  { to: "/services/real-estate-mold-inspection/", label: "Real Estate Mold Inspection" },
+  { to: "/services/commercial-mold-inspection/", label: "Commercial Mold Inspection" },
+  { to: "/services/mold-assessment-report/", label: "Mold Assessment Report" },
+  { to: "/services/asbestos-testing/", label: "Asbestos Testing" },
+  { to: "/services/insurance-claim-mold-inspection/", label: "Insurance Claim Mold Inspection" },
+] as const;
+
 export function SiteNav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -123,7 +145,7 @@ export function SiteNav() {
 export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-border bg-secondary">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <span className="relative flex items-center">
             <picture>
@@ -143,6 +165,18 @@ export function SiteFooter() {
           <p className="mt-3 text-sm text-muted-foreground">
             Independent, state-licensed mold assessors serving South Florida.
           </p>
+        </div>
+        <div className="text-sm">
+          <h3 className="font-semibold text-primary">Services</h3>
+          <ul className="mt-3 space-y-1 text-muted-foreground">
+            {footerServices.map((s) => (
+              <li key={s.to}>
+                <Link to={s.to} className="hover:text-accent hover:underline">
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="text-sm">
           <h3 className="font-semibold text-primary">Contact</h3>

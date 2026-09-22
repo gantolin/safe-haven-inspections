@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/seo";
 // <lastmod> values it decides are untrustworthy, so a date that never moves
 // (or one that moves on every deploy) is worse than none at all. Blog URLs use
 // their own post date instead.
-const STATIC_CONTENT_UPDATED = "2026-07-31";
+const STATIC_CONTENT_UPDATED = "2026-09-22";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

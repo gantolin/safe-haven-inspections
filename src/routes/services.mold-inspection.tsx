@@ -15,12 +15,6 @@ import {
   Thermometer,
 } from "lucide-react";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   pageMeta,
   faqSchema,
   jsonLdScript,
@@ -497,18 +491,25 @@ function MoldInspectionPage() {
 
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">Frequently asked questions</h2>
-        <Accordion type="single" collapsible className="mt-6">
-          {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-base font-semibold text-primary">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
+        {/* Native <details> like the other service pages: the Radix Accordion
+            unmounted closed panels, so the answers were missing from the
+            prerendered HTML. */}
+        <div className="mt-6 space-y-4">
+          {faqs.map((f) => (
+            <details
+              key={f.q}
+              className="group rounded-2xl border border-border bg-card p-5 open:shadow-sm"
+            >
+              <summary className="cursor-pointer list-none text-base font-semibold text-primary">
+                <span className="flex items-center justify-between gap-4">
+                  {f.q}
+                  <span className="text-accent transition group-open:rotate-45">+</span>
+                </span>
+              </summary>
+              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+            </details>
           ))}
-        </Accordion>
+        </div>
       </section>
 
       <section className="mx-auto my-16 max-w-6xl px-4 sm:px-6">

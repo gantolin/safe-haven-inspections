@@ -128,6 +128,7 @@ function WaterDamagePage() {
         { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
         { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "After the water is gone, ambient humidity is what decides whether mold returns." },
         { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "Packaging the same evidence for an adjuster, with causation documented." },
+        { to: "/services/asbestos-testing/", label: "Asbestos testing", blurb: "A leak through a pre-1980 ceiling or floor can disturb asbestos. Sample it before the demo crew starts." },
       ]}
       heroImage={{
         src: "/hero-water-damage.jpg",
