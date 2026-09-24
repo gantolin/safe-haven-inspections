@@ -1,23 +1,37 @@
 import { Link } from "@tanstack/react-router";
 import {
   Activity,
+  Anchor,
   ArrowRight,
   Award,
   Building2,
   CalendarCheck,
+  CalendarRange,
+  CloudRain,
+  Compass,
+  Droplet,
   Droplets,
+  Fence,
   FileCheck2,
+  Flag,
   FlaskConical,
   Gauge,
+  LandPlot,
+  Landmark,
   MapPin,
   Microscope,
   Phone,
+  Sailboat,
+  Ship,
   ShieldCheck,
   Thermometer,
+  Trees,
+  Waves,
   Wind,
   Check,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import {
   faqSchema,
   breadcrumbSchema,
@@ -30,6 +44,29 @@ import { cities, cityHref } from "@/data/cities";
 import { webpVariant } from "@/lib/images";
 import { CITY_SCENE } from "@/data/city-scenes";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
+
+/**
+ * One icon per housing-profile stat label. The labels are a closed set defined in
+ * `city-profiles.ts`; anything new falls back to the gauge rather than rendering blank.
+ */
+const STAT_ICONS: Record<string, LucideIcon> = {
+  "Annual rainfall": CloudRain,
+  "Attached housing": Building2,
+  "Avg. humidity": Droplets,
+  "Building code": ShieldCheck,
+  "Canal frontage": Ship,
+  "Coastal exposure": Anchor,
+  "Country-club density": Flag,
+  "Equestrian land": Fence,
+  "Flood exposure": Waves,
+  "Historic districts": Landmark,
+  "Housing era": CalendarRange,
+  "Inland position": Compass,
+  "Lot character": LandPlot,
+  "Marine exposure": Sailboat,
+  "Water & sewer": Droplet,
+  "Western position": Trees,
+};
 
 export interface CityMoldPageProps {
   city: string;
@@ -563,12 +600,18 @@ export function CityMoldPage({
               {/* Keyless embed: no API key reaches the browser. Lazy so it never
                   competes with the hero for LCP, and titled because an untitled
                   iframe is a WCAG failure. */}
+              {/* Paired with a city photo the map is half-width, so 16:10 is right.
+                  Alone it spans the full column, where 16:10 renders ~690px tall
+                  and dominates the top of the page. A locality map at z=12 reads
+                  fine in a wider, shorter frame. */}
               <iframe
                 title={`Map of the ${city}, Florida mold inspection service area`}
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(`${city}, FL`)}&z=12&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="aspect-[16/10] w-full border-0"
+                className={`w-full border-0 ${
+                  cityScene ? "aspect-[16/10]" : "aspect-[16/10] sm:aspect-[21/9]"
+                }`}
               />
               <figcaption className="border-t border-border p-4 text-xs text-muted-foreground">
                 We inspect at your property across {city} and {county}. There is
@@ -709,20 +752,33 @@ export function CityMoldPage({
               housing stock, and water table shape how homes here actually fail.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {profile.stats.map((s) => (
-                <div
-                  key={s.label}
-                  className="rounded-xl border border-border bg-card p-5"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    {s.label}
-                  </p>
-                  <p className="mt-1 font-mono-data text-2xl font-semibold text-primary">
-                    {s.value}
-                  </p>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.note}</p>
-                </div>
-              ))}
+              {profile.stats.map((s) => {
+                const StatIcon = STAT_ICONS[s.label] ?? Gauge;
+                return (
+                  <div
+                    key={s.label}
+                    className="relative overflow-hidden rounded-xl border border-border bg-card p-5 pt-6"
+                  >
+                    {/* Readout rule: marks these as measured figures, not feature cards. */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-x-0 top-0 h-1 bg-accent/35"
+                    />
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <StatIcon className="h-4 w-4 shrink-0 text-accent" />
+                      <p className="text-xs font-medium uppercase tracking-wider">
+                        {s.label}
+                      </p>
+                    </div>
+                    <p className="mt-3 font-mono-data text-2xl font-semibold leading-tight text-primary">
+                      {s.value}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {s.note}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
             </div>
           </section>
