@@ -1,7 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
-  Link,
   createRootRouteWithContext,
   useRouter,
   useRouterState,
@@ -13,29 +12,12 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav, SiteFooter, MobileCallBar } from "../components/site-nav";
+import { NotFoundContent } from "../components/not-found";
 import { localBusinessSchema, jsonLdScript, absoluteUrl } from "../lib/seo";
 import { analyticsHeadScripts, useAnalytics } from "../lib/analytics";
 
 function NotFoundComponent() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+  return <NotFoundContent />;
 }
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
@@ -104,13 +86,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           // ever sent — the origin allow-list applies to the tag exactly as it
           // does to anything else.
           "script-src 'self' 'unsafe-inline' https://*.googletagmanager.com",
-          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-          "font-src 'self' https://fonts.gstatic.com",
-          "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
+          "style-src 'self' 'unsafe-inline'",
+          "font-src 'self'",
+          "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com",
           // GA4 posts its hits to google-analytics.com, and to a
           // region-scoped analytics.google.com host for some visitors, so both
           // wildcards are needed. This is the set Google documents for CSP.
-          "connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+          // A wildcard does not match the bare host, and the live tag also posts
+          // to analytics.google.com itself, www.google.com/g/collect and
+          // stats.g.doubleclick.net. Lighthouse caught all three being blocked
+          // on 2026-09-23, so they are listed explicitly.
+          "connect-src 'self' https://api.web3forms.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com",
           "form-action 'self'",
           "base-uri 'self'",
           "object-src 'none'",
@@ -141,9 +127,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: absoluteUrl("/og-card.png") },
     ],
     links: [
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" },
+      // Body and heading faces, preloaded so text paints in the right font
+      // on first render. Both are variable fonts: one file covers every weight.
+      { rel: "preload", href: "/fonts/ibm-plex-sans-400-latin.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: "/fonts/space-grotesk-500-latin.woff2", as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: appCss,

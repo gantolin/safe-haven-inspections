@@ -35,6 +35,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/realtors/",
           "/blog/",
           "/contact/",
+          "/privacy-policy/",
           "/mold-inspection-wellington/",
           "/mold-inspection-royal-palm-beach/",
           "/mold-inspection-loxahatchee/",

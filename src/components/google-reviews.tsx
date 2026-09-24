@@ -33,7 +33,7 @@ const AUTOPLAY_MS = 6000;
 
 function Stars({ className = "h-5 w-5" }: { className?: string }) {
   return (
-    <div className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
+    <div className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
@@ -84,7 +84,6 @@ export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
       href={GOOGLE_REVIEWS_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${ratingValue.toFixed(1)} out of 5 stars on Google, read the reviews on Google`}
       className={
         onDark
           ? "inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white transition hover:bg-white/20"
@@ -94,6 +93,7 @@ export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
       <Stars className="h-3.5 w-3.5" />
       <span className="font-semibold">{ratingValue.toFixed(1)}</span>
       <span className={onDark ? "text-white/80" : "text-muted-foreground"}>on Google</span>
+      <span className="sr-only">, read the reviews on Google</span>
     </a>
   );
 }
@@ -194,7 +194,7 @@ export function GoogleReviews() {
           </button>
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-2">
+        <div className="mt-6 flex items-center justify-center gap-1">
           {REVIEWS.map((_, i) => (
             <button
               key={i}
@@ -202,10 +202,15 @@ export function GoogleReviews() {
               aria-label={`Go to review ${i + 1}`}
               aria-current={i === index}
               onClick={() => setIndex(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-accent" : "w-2 bg-border hover:bg-muted-foreground/40"
-              }`}
-            />
+              className="group grid h-6 min-w-6 place-items-center"
+            >
+              <span
+                aria-hidden
+                className={`block h-2 rounded-full transition-all ${
+                  i === index ? "w-6 bg-accent" : "w-2 bg-border group-hover:bg-muted-foreground/40"
+                }`}
+              />
+            </button>
           ))}
         </div>
 

@@ -215,7 +215,7 @@ function ContactPage() {
                 <Phone className="h-5 w-5" />
               </span>
               <span>
-                <span className="block text-xs uppercase tracking-wider text-white/80">
+                <span className="block text-xs uppercase tracking-wider text-white">
                   Free phone consultation
                 </span>
                 <span className="block text-lg font-semibold sm:text-xl">(561) 632-6387</span>

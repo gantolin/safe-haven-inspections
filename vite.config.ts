@@ -25,6 +25,8 @@ export default defineConfig({
     // /sitemap.xml is a server route and nothing links to it, so the crawler
     // never reaches it. robots.txt advertises it, so it has to exist as a real
     // file — list it explicitly to render it out at build time.
-    pages: [{ path: "/sitemap.xml" }],
+    // /404 is not linked from anywhere either; scripts/copy-404.mjs turns it
+    // into the 404.html that GitHub Pages serves for missing URLs.
+    pages: [{ path: "/sitemap.xml" }, { path: "/404" }],
   },
 });

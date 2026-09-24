@@ -201,7 +201,7 @@ export function SiteFooter() {
             {/* The IICRC / NAERMC credentials now appear as real badge artwork
                 in the certifications section on the home page and on /about,
                 so the fine-print restatement here was redundant. */}
-            <li className="text-xs text-muted-foreground/80">
+            <li className="text-xs text-muted-foreground">
               Inspection &amp; testing only, no remediation.
             </li>
           </ul>
@@ -210,6 +210,10 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <p className="mx-auto max-w-6xl px-4 py-4 text-xs text-muted-foreground sm:px-6">
           © {new Date().getFullYear()} Safe Haven Inspections LLC. All rights reserved.
+          <span aria-hidden> · </span>
+          <Link to="/privacy-policy" className="hover:text-accent hover:underline">
+            Privacy Policy
+          </Link>
         </p>
       </div>
     </footer>
@@ -225,14 +229,14 @@ export function MobileCallBar() {
     >
       <a
         href="tel:+15616326387"
-        aria-label="Call Safe Haven Inspections at (561) 632-6387"
+        aria-label="Call Now: (561) 632-6387"
         className={ctaBarPrimary}
       >
         <Phone className="h-4 w-4" aria-hidden /> Call Now
       </a>
       <a
         href="sms:+15616326387"
-        aria-label="Text a photo to (561) 632-6387"
+        aria-label="Text a Photo to (561) 632-6387"
         className={ctaBarSecondary}
       >
         <MessageSquare className="h-4 w-4" aria-hidden /> Text a Photo
