@@ -74,7 +74,7 @@ function ThermalImagingPage() {
           h2: "Thermal imaging mold inspection for Greenacres homes",
           paragraphs: [
             "Greenacres housing gives a thermal camera plenty to find. Flat-tile roofs from the 1980s can look intact from the ground while the underlayment beneath has aged out, and the first sign indoors is a cool patch at the ceiling edge. Galvanized supply lines sweat and seep inside walls well before the drywall shows anything.",
-            "In condo and villa sections, the camera also helps answer where the water is coming from. A wet area that runs along a shared wall or down from the ceiling points at a neighboring unit, and that changes who needs to fix it. Every cool spot the camera finds is confirmed with a moisture meter before it goes in the report.",
+            "In condo and villa sections, the camera also helps answer where the water is coming from. A wet area that runs along a shared wall or down from the ceiling points at a neighboring unit, and that changes who needs to fix it. Every cool spot the camera finds is confirmed with a moisture meter before it goes in the report. That is why a thermal scan is often booked as a moisture inspection: the camera finds the cool spots and the meter confirms which ones are wet.",
           ],
         },
         {

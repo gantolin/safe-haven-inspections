@@ -35,6 +35,10 @@ const footerServices = [
   { to: "/services/mold-assessment-report-greenacres/", label: "Mold Assessment Report" },
   { to: "/services/asbestos-testing-greenacres/", label: "Asbestos Testing" },
   { to: "/services/insurance-claim-mold-inspection-greenacres/", label: "Insurance Claim Mold Inspection" },
+  { to: "/services/independent-mold-inspection-greenacres/", label: "Independent Mold Inspection" },
+  { to: "/services/apartment-mold-inspection-greenacres/", label: "Apartment Mold Inspection" },
+  { to: "/services/attic-mold-inspection-greenacres/", label: "Attic Mold Inspection" },
+  { to: "/services/popcorn-ceiling-asbestos-testing-greenacres/", label: "Popcorn Ceiling Asbestos Testing" },
 ] as const;
 
 export function SiteNav() {

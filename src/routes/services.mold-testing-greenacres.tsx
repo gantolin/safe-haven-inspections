@@ -66,7 +66,7 @@ function MoldTestingPage() {
           h2: "Mold testing for Greenacres homes",
           paragraphs: [
             "Most of the housing in Greenacres went up between the 1970s and the 1990s. In homes that age, the usual reason to test is a musty smell with nothing visible: a supply line sweating inside a wall, or an older AC system that still cools but no longer pulls moisture out of the air.",
-            "Testing turns that suspicion into numbers. Air samples are taken in the rooms you are worried about and read against an outdoor sample from the same day, so the lab report shows whether spores are elevated and which part of the house they point to. Safe Haven is based in Greenacres and covers all three of its ZIP codes: 33413, 33463, and 33467.",
+            "Testing turns that suspicion into numbers. Air samples are taken in the rooms you are worried about and read against an outdoor sample from the same day, so the lab report shows whether spores are elevated and which part of the house they point to. Safe Haven is based in Greenacres and covers all three of its ZIP codes: 33413, 33463, and 33467. It is a professional home mold test, read by a lab, not a hardware-store kit.",
           ],
         },
         {

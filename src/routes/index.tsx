@@ -50,6 +50,10 @@ const HOME_FAQS: Array<{ q: string; a: string; aNode?: ReactNode }> = [
     a: "An assessment identifies whether mold is present, where it is, what's causing it, and how severe it is, backed by lab testing. Remediation is the physical removal and cleanup. We handle the assessment side independently.",
   },
   {
+    q: "Is Landon a licensed mold inspector?",
+    a: "Yes. In Florida the license is called a mold assessor, and Landon Heinrichs holds Florida Mold Assessor license MRSA3366. He is the certified mold inspector who comes to your home, takes the samples, and writes the report.",
+  },
+  {
     q: "Do I need to leave my home during the inspection?",
     a: "No. You're welcome to stay. Most homeowners like to walk through with us so we can point out what we're seeing in real time.",
   },

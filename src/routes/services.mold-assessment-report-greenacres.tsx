@@ -73,7 +73,7 @@ function MoldAssessmentReportPage() {
           h2: "When Greenacres owners need a written report",
           paragraphs: [
             "In Greenacres the report is often requested by someone other than the owner: a remediation contractor who needs a scope to bid, a condo or HOA board deciding whose leak it is, an adjuster, or a buyer's agent.",
-            "Florida law keeps the assessor and the remediator separate on the same job, so the protocol in our report is the independent scope every contractor bids against. For homes from the 1970s and 1980s it also records the likely cause, such as an aging roof, a failed supply line, or an AC system that no longer dehumidifies, so the repair covers more than the visible damage.",
+            "Florida law keeps the assessor and the remediator separate on the same job, so the protocol in our report is the independent scope every contractor bids against. For homes from the 1970s and 1980s it also records the likely cause, such as an aging roof, a failed supply line, or an AC system that no longer dehumidifies, so the repair covers more than the visible damage. Contractors often just call that scope the mold protocol.",
           ],
         },
         {

@@ -73,7 +73,7 @@ function RealEstatePage() {
           h2: "Buying or selling a home in Greenacres",
           paragraphs: [
             "Most homes that change hands in Greenacres are 30 to 50 years old. At that age, the things a buyer cannot see are the ones worth checking: the roof underlayment, the supply lines inside the walls, and how well the AC still controls humidity. A mold inspection samples the air and measures moisture inside the walls, which a walkthrough alone cannot do.",
-            "For condos and villas, the shared walls and the ceiling under the unit above get a close look, since a neighbor's leak becomes the new owner's problem. You get a written report inside the inspection period, in time to negotiate, ask for a repair, or walk away.",
+            "For condos and villas, the shared walls and the ceiling under the unit above get a close look, since a neighbor's leak becomes the new owner's problem. You get a written report inside the inspection period, in time to negotiate, ask for a repair, or walk away. For home buyers this is a pre-purchase mold inspection, scheduled inside the inspection period.",
           ],
         },
         {

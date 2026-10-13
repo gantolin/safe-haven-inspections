@@ -100,6 +100,10 @@ export interface RelatedService {
     | "/services/mold-testing-greenacres/"
     | "/services/water-damage-inspection-greenacres/"
     | "/services/humidity-testing-greenacres/"
+    | "/services/independent-mold-inspection-greenacres/"
+    | "/services/apartment-mold-inspection-greenacres/"
+    | "/services/attic-mold-inspection-greenacres/"
+    | "/services/popcorn-ceiling-asbestos-testing-greenacres/"
     | "/services/insurance-claim-mold-inspection-greenacres/";
   label: string;
   blurb: string;

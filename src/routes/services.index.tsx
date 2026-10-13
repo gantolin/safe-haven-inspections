@@ -53,6 +53,10 @@ type ServiceLink =
   | "/services/post-remediation-verification-greenacres/"
   | "/services/real-estate-mold-inspection-greenacres/"
   | "/services/commercial-mold-inspection-greenacres/"
+  | "/services/independent-mold-inspection-greenacres/"
+  | "/services/apartment-mold-inspection-greenacres/"
+  | "/services/attic-mold-inspection-greenacres/"
+  | "/services/popcorn-ceiling-asbestos-testing-greenacres/"
   | "/services/mold-assessment-report-greenacres/";
 
 const services: Array<{
@@ -155,6 +159,30 @@ const services: Array<{
     icon: FileText,
     title: "Mold Assessment & Written Protocol",
     body: "The formal Florida assessment report, and, when needed, the remediation protocol remediators bid and clearance is graded against.",
+  },
+  {
+    to: "/services/independent-mold-inspection-greenacres/",
+    icon: FileText,
+    title: "Independent Mold Inspection",
+    body: "Inspection and testing from an assessor who does no remediation, so the findings stand on their own.",
+  },
+  {
+    to: "/services/apartment-mold-inspection-greenacres/",
+    icon: Building2,
+    title: "Apartment & Condo Mold Inspection",
+    body: "For renters, condo owners, and landlords: an independent report on what is in the unit and where the moisture comes from.",
+  },
+  {
+    to: "/services/attic-mold-inspection-greenacres/",
+    icon: FileText,
+    title: "Attic Mold Inspection",
+    body: "Roof deck, framing, insulation, and ductwork checked for moisture and growth after a roof leak or an AC problem.",
+  },
+  {
+    to: "/services/popcorn-ceiling-asbestos-testing-greenacres/",
+    icon: Layers,
+    title: "Popcorn Ceiling Asbestos Testing",
+    body: "A certified asbestos inspector samples the ceiling before you scrape, sand, or drill it. Lab results in 24 hours.",
   },
 ];
 

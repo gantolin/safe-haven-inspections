@@ -74,7 +74,7 @@ function CommercialPage() {
           h2: "Commercial and multi-unit buildings in Greenacres",
           paragraphs: [
             "In Greenacres, commercial mold inspection often means multi-unit housing: condo and villa associations, apartment buildings, and rental portfolios, along with the offices and storefronts on the Lake Worth Road corridor. In attached housing, a roof or plumbing leak rarely stays in one unit. It moves through shared walls and ceilings, and by the time it shows on one side it has usually been wet for weeks.",
-            "That makes the first question who is responsible, and an association, an owner, and a tenant will each have a view. Our report documents where the moisture is, where it appears to come from, and what the lab found. It is written by a company that does not sell the repair, so a board or property manager can hand the same document to every party.",
+            "That makes the first question who is responsible, and an association, an owner, and a tenant will each have a view. Our report documents where the moisture is, where it appears to come from, and what the lab found. It is written by a company that does not sell the repair, so a board or property manager can hand the same document to every party. Office mold testing follows the same steps as a home, with more sample locations and more people to report to.",
           ],
         },
         {

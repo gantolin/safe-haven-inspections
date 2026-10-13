@@ -47,13 +47,17 @@ import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesAirQualityTestingGreenacresRouteImport } from './routes/services.air-quality-testing-greenacres'
+import { Route as ServicesApartmentMoldInspectionGreenacresRouteImport } from './routes/services.apartment-mold-inspection-greenacres'
 import { Route as ServicesAsbestosTestingGreenacresRouteImport } from './routes/services.asbestos-testing-greenacres'
+import { Route as ServicesAtticMoldInspectionGreenacresRouteImport } from './routes/services.attic-mold-inspection-greenacres'
 import { Route as ServicesCommercialMoldInspectionGreenacresRouteImport } from './routes/services.commercial-mold-inspection-greenacres'
 import { Route as ServicesHumidityTestingGreenacresRouteImport } from './routes/services.humidity-testing-greenacres'
+import { Route as ServicesIndependentMoldInspectionGreenacresRouteImport } from './routes/services.independent-mold-inspection-greenacres'
 import { Route as ServicesInsuranceClaimMoldInspectionGreenacresRouteImport } from './routes/services.insurance-claim-mold-inspection-greenacres'
 import { Route as ServicesMoldAssessmentReportGreenacresRouteImport } from './routes/services.mold-assessment-report-greenacres'
 import { Route as ServicesMoldInspectionRouteImport } from './routes/services.mold-inspection'
 import { Route as ServicesMoldTestingGreenacresRouteImport } from './routes/services.mold-testing-greenacres'
+import { Route as ServicesPopcornCeilingAsbestosTestingGreenacresRouteImport } from './routes/services.popcorn-ceiling-asbestos-testing-greenacres'
 import { Route as ServicesPostRemediationVerificationGreenacresRouteImport } from './routes/services.post-remediation-verification-greenacres'
 import { Route as ServicesRealEstateMoldInspectionGreenacresRouteImport } from './routes/services.real-estate-mold-inspection-greenacres'
 import { Route as ServicesSurfaceSamplingGreenacresRouteImport } from './routes/services.surface-sampling-greenacres'
@@ -268,10 +272,22 @@ const ServicesAirQualityTestingGreenacresRoute =
     path: '/services/air-quality-testing-greenacres',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ServicesApartmentMoldInspectionGreenacresRoute =
+  ServicesApartmentMoldInspectionGreenacresRouteImport.update({
+    id: '/services/apartment-mold-inspection-greenacres',
+    path: '/services/apartment-mold-inspection-greenacres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesAsbestosTestingGreenacresRoute =
   ServicesAsbestosTestingGreenacresRouteImport.update({
     id: '/services/asbestos-testing-greenacres',
     path: '/services/asbestos-testing-greenacres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesAtticMoldInspectionGreenacresRoute =
+  ServicesAtticMoldInspectionGreenacresRouteImport.update({
+    id: '/services/attic-mold-inspection-greenacres',
+    path: '/services/attic-mold-inspection-greenacres',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesCommercialMoldInspectionGreenacresRoute =
@@ -284,6 +300,12 @@ const ServicesHumidityTestingGreenacresRoute =
   ServicesHumidityTestingGreenacresRouteImport.update({
     id: '/services/humidity-testing-greenacres',
     path: '/services/humidity-testing-greenacres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesIndependentMoldInspectionGreenacresRoute =
+  ServicesIndependentMoldInspectionGreenacresRouteImport.update({
+    id: '/services/independent-mold-inspection-greenacres',
+    path: '/services/independent-mold-inspection-greenacres',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesInsuranceClaimMoldInspectionGreenacresRoute =
@@ -307,6 +329,12 @@ const ServicesMoldTestingGreenacresRoute =
   ServicesMoldTestingGreenacresRouteImport.update({
     id: '/services/mold-testing-greenacres',
     path: '/services/mold-testing-greenacres',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesPopcornCeilingAsbestosTestingGreenacresRoute =
+  ServicesPopcornCeilingAsbestosTestingGreenacresRouteImport.update({
+    id: '/services/popcorn-ceiling-asbestos-testing-greenacres',
+    path: '/services/popcorn-ceiling-asbestos-testing-greenacres',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ServicesPostRemediationVerificationGreenacresRoute =
@@ -377,13 +405,17 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing-greenacres': typeof ServicesAirQualityTestingGreenacresRoute
+  '/services/apartment-mold-inspection-greenacres': typeof ServicesApartmentMoldInspectionGreenacresRoute
   '/services/asbestos-testing-greenacres': typeof ServicesAsbestosTestingGreenacresRoute
+  '/services/attic-mold-inspection-greenacres': typeof ServicesAtticMoldInspectionGreenacresRoute
   '/services/commercial-mold-inspection-greenacres': typeof ServicesCommercialMoldInspectionGreenacresRoute
   '/services/humidity-testing-greenacres': typeof ServicesHumidityTestingGreenacresRoute
+  '/services/independent-mold-inspection-greenacres': typeof ServicesIndependentMoldInspectionGreenacresRoute
   '/services/insurance-claim-mold-inspection-greenacres': typeof ServicesInsuranceClaimMoldInspectionGreenacresRoute
   '/services/mold-assessment-report-greenacres': typeof ServicesMoldAssessmentReportGreenacresRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing-greenacres': typeof ServicesMoldTestingGreenacresRoute
+  '/services/popcorn-ceiling-asbestos-testing-greenacres': typeof ServicesPopcornCeilingAsbestosTestingGreenacresRoute
   '/services/post-remediation-verification-greenacres': typeof ServicesPostRemediationVerificationGreenacresRoute
   '/services/real-estate-mold-inspection-greenacres': typeof ServicesRealEstateMoldInspectionGreenacresRoute
   '/services/surface-sampling-greenacres': typeof ServicesSurfaceSamplingGreenacresRoute
@@ -429,13 +461,17 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing-greenacres': typeof ServicesAirQualityTestingGreenacresRoute
+  '/services/apartment-mold-inspection-greenacres': typeof ServicesApartmentMoldInspectionGreenacresRoute
   '/services/asbestos-testing-greenacres': typeof ServicesAsbestosTestingGreenacresRoute
+  '/services/attic-mold-inspection-greenacres': typeof ServicesAtticMoldInspectionGreenacresRoute
   '/services/commercial-mold-inspection-greenacres': typeof ServicesCommercialMoldInspectionGreenacresRoute
   '/services/humidity-testing-greenacres': typeof ServicesHumidityTestingGreenacresRoute
+  '/services/independent-mold-inspection-greenacres': typeof ServicesIndependentMoldInspectionGreenacresRoute
   '/services/insurance-claim-mold-inspection-greenacres': typeof ServicesInsuranceClaimMoldInspectionGreenacresRoute
   '/services/mold-assessment-report-greenacres': typeof ServicesMoldAssessmentReportGreenacresRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing-greenacres': typeof ServicesMoldTestingGreenacresRoute
+  '/services/popcorn-ceiling-asbestos-testing-greenacres': typeof ServicesPopcornCeilingAsbestosTestingGreenacresRoute
   '/services/post-remediation-verification-greenacres': typeof ServicesPostRemediationVerificationGreenacresRoute
   '/services/real-estate-mold-inspection-greenacres': typeof ServicesRealEstateMoldInspectionGreenacresRoute
   '/services/surface-sampling-greenacres': typeof ServicesSurfaceSamplingGreenacresRoute
@@ -482,13 +518,17 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/air-quality-testing-greenacres': typeof ServicesAirQualityTestingGreenacresRoute
+  '/services/apartment-mold-inspection-greenacres': typeof ServicesApartmentMoldInspectionGreenacresRoute
   '/services/asbestos-testing-greenacres': typeof ServicesAsbestosTestingGreenacresRoute
+  '/services/attic-mold-inspection-greenacres': typeof ServicesAtticMoldInspectionGreenacresRoute
   '/services/commercial-mold-inspection-greenacres': typeof ServicesCommercialMoldInspectionGreenacresRoute
   '/services/humidity-testing-greenacres': typeof ServicesHumidityTestingGreenacresRoute
+  '/services/independent-mold-inspection-greenacres': typeof ServicesIndependentMoldInspectionGreenacresRoute
   '/services/insurance-claim-mold-inspection-greenacres': typeof ServicesInsuranceClaimMoldInspectionGreenacresRoute
   '/services/mold-assessment-report-greenacres': typeof ServicesMoldAssessmentReportGreenacresRoute
   '/services/mold-inspection': typeof ServicesMoldInspectionRoute
   '/services/mold-testing-greenacres': typeof ServicesMoldTestingGreenacresRoute
+  '/services/popcorn-ceiling-asbestos-testing-greenacres': typeof ServicesPopcornCeilingAsbestosTestingGreenacresRoute
   '/services/post-remediation-verification-greenacres': typeof ServicesPostRemediationVerificationGreenacresRoute
   '/services/real-estate-mold-inspection-greenacres': typeof ServicesRealEstateMoldInspectionGreenacresRoute
   '/services/surface-sampling-greenacres': typeof ServicesSurfaceSamplingGreenacresRoute
@@ -536,13 +576,17 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing-greenacres'
+    | '/services/apartment-mold-inspection-greenacres'
     | '/services/asbestos-testing-greenacres'
+    | '/services/attic-mold-inspection-greenacres'
     | '/services/commercial-mold-inspection-greenacres'
     | '/services/humidity-testing-greenacres'
+    | '/services/independent-mold-inspection-greenacres'
     | '/services/insurance-claim-mold-inspection-greenacres'
     | '/services/mold-assessment-report-greenacres'
     | '/services/mold-inspection'
     | '/services/mold-testing-greenacres'
+    | '/services/popcorn-ceiling-asbestos-testing-greenacres'
     | '/services/post-remediation-verification-greenacres'
     | '/services/real-estate-mold-inspection-greenacres'
     | '/services/surface-sampling-greenacres'
@@ -588,13 +632,17 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing-greenacres'
+    | '/services/apartment-mold-inspection-greenacres'
     | '/services/asbestos-testing-greenacres'
+    | '/services/attic-mold-inspection-greenacres'
     | '/services/commercial-mold-inspection-greenacres'
     | '/services/humidity-testing-greenacres'
+    | '/services/independent-mold-inspection-greenacres'
     | '/services/insurance-claim-mold-inspection-greenacres'
     | '/services/mold-assessment-report-greenacres'
     | '/services/mold-inspection'
     | '/services/mold-testing-greenacres'
+    | '/services/popcorn-ceiling-asbestos-testing-greenacres'
     | '/services/post-remediation-verification-greenacres'
     | '/services/real-estate-mold-inspection-greenacres'
     | '/services/surface-sampling-greenacres'
@@ -640,13 +688,17 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/blog/$slug'
     | '/services/air-quality-testing-greenacres'
+    | '/services/apartment-mold-inspection-greenacres'
     | '/services/asbestos-testing-greenacres'
+    | '/services/attic-mold-inspection-greenacres'
     | '/services/commercial-mold-inspection-greenacres'
     | '/services/humidity-testing-greenacres'
+    | '/services/independent-mold-inspection-greenacres'
     | '/services/insurance-claim-mold-inspection-greenacres'
     | '/services/mold-assessment-report-greenacres'
     | '/services/mold-inspection'
     | '/services/mold-testing-greenacres'
+    | '/services/popcorn-ceiling-asbestos-testing-greenacres'
     | '/services/post-remediation-verification-greenacres'
     | '/services/real-estate-mold-inspection-greenacres'
     | '/services/surface-sampling-greenacres'
@@ -693,13 +745,17 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ServicesAirQualityTestingGreenacresRoute: typeof ServicesAirQualityTestingGreenacresRoute
+  ServicesApartmentMoldInspectionGreenacresRoute: typeof ServicesApartmentMoldInspectionGreenacresRoute
   ServicesAsbestosTestingGreenacresRoute: typeof ServicesAsbestosTestingGreenacresRoute
+  ServicesAtticMoldInspectionGreenacresRoute: typeof ServicesAtticMoldInspectionGreenacresRoute
   ServicesCommercialMoldInspectionGreenacresRoute: typeof ServicesCommercialMoldInspectionGreenacresRoute
   ServicesHumidityTestingGreenacresRoute: typeof ServicesHumidityTestingGreenacresRoute
+  ServicesIndependentMoldInspectionGreenacresRoute: typeof ServicesIndependentMoldInspectionGreenacresRoute
   ServicesInsuranceClaimMoldInspectionGreenacresRoute: typeof ServicesInsuranceClaimMoldInspectionGreenacresRoute
   ServicesMoldAssessmentReportGreenacresRoute: typeof ServicesMoldAssessmentReportGreenacresRoute
   ServicesMoldInspectionRoute: typeof ServicesMoldInspectionRoute
   ServicesMoldTestingGreenacresRoute: typeof ServicesMoldTestingGreenacresRoute
+  ServicesPopcornCeilingAsbestosTestingGreenacresRoute: typeof ServicesPopcornCeilingAsbestosTestingGreenacresRoute
   ServicesPostRemediationVerificationGreenacresRoute: typeof ServicesPostRemediationVerificationGreenacresRoute
   ServicesRealEstateMoldInspectionGreenacresRoute: typeof ServicesRealEstateMoldInspectionGreenacresRoute
   ServicesSurfaceSamplingGreenacresRoute: typeof ServicesSurfaceSamplingGreenacresRoute
@@ -977,11 +1033,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesAirQualityTestingGreenacresRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/apartment-mold-inspection-greenacres': {
+      id: '/services/apartment-mold-inspection-greenacres'
+      path: '/services/apartment-mold-inspection-greenacres'
+      fullPath: '/services/apartment-mold-inspection-greenacres'
+      preLoaderRoute: typeof ServicesApartmentMoldInspectionGreenacresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/asbestos-testing-greenacres': {
       id: '/services/asbestos-testing-greenacres'
       path: '/services/asbestos-testing-greenacres'
       fullPath: '/services/asbestos-testing-greenacres'
       preLoaderRoute: typeof ServicesAsbestosTestingGreenacresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/attic-mold-inspection-greenacres': {
+      id: '/services/attic-mold-inspection-greenacres'
+      path: '/services/attic-mold-inspection-greenacres'
+      fullPath: '/services/attic-mold-inspection-greenacres'
+      preLoaderRoute: typeof ServicesAtticMoldInspectionGreenacresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/commercial-mold-inspection-greenacres': {
@@ -996,6 +1066,13 @@ declare module '@tanstack/react-router' {
       path: '/services/humidity-testing-greenacres'
       fullPath: '/services/humidity-testing-greenacres'
       preLoaderRoute: typeof ServicesHumidityTestingGreenacresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/independent-mold-inspection-greenacres': {
+      id: '/services/independent-mold-inspection-greenacres'
+      path: '/services/independent-mold-inspection-greenacres'
+      fullPath: '/services/independent-mold-inspection-greenacres'
+      preLoaderRoute: typeof ServicesIndependentMoldInspectionGreenacresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/insurance-claim-mold-inspection-greenacres': {
@@ -1024,6 +1101,13 @@ declare module '@tanstack/react-router' {
       path: '/services/mold-testing-greenacres'
       fullPath: '/services/mold-testing-greenacres'
       preLoaderRoute: typeof ServicesMoldTestingGreenacresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/popcorn-ceiling-asbestos-testing-greenacres': {
+      id: '/services/popcorn-ceiling-asbestos-testing-greenacres'
+      path: '/services/popcorn-ceiling-asbestos-testing-greenacres'
+      fullPath: '/services/popcorn-ceiling-asbestos-testing-greenacres'
+      preLoaderRoute: typeof ServicesPopcornCeilingAsbestosTestingGreenacresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/post-remediation-verification-greenacres': {
@@ -1102,18 +1186,26 @@ const rootRouteChildren: RootRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
   ServicesAirQualityTestingGreenacresRoute:
     ServicesAirQualityTestingGreenacresRoute,
+  ServicesApartmentMoldInspectionGreenacresRoute:
+    ServicesApartmentMoldInspectionGreenacresRoute,
   ServicesAsbestosTestingGreenacresRoute:
     ServicesAsbestosTestingGreenacresRoute,
+  ServicesAtticMoldInspectionGreenacresRoute:
+    ServicesAtticMoldInspectionGreenacresRoute,
   ServicesCommercialMoldInspectionGreenacresRoute:
     ServicesCommercialMoldInspectionGreenacresRoute,
   ServicesHumidityTestingGreenacresRoute:
     ServicesHumidityTestingGreenacresRoute,
+  ServicesIndependentMoldInspectionGreenacresRoute:
+    ServicesIndependentMoldInspectionGreenacresRoute,
   ServicesInsuranceClaimMoldInspectionGreenacresRoute:
     ServicesInsuranceClaimMoldInspectionGreenacresRoute,
   ServicesMoldAssessmentReportGreenacresRoute:
     ServicesMoldAssessmentReportGreenacresRoute,
   ServicesMoldInspectionRoute: ServicesMoldInspectionRoute,
   ServicesMoldTestingGreenacresRoute: ServicesMoldTestingGreenacresRoute,
+  ServicesPopcornCeilingAsbestosTestingGreenacresRoute:
+    ServicesPopcornCeilingAsbestosTestingGreenacresRoute,
   ServicesPostRemediationVerificationGreenacresRoute:
     ServicesPostRemediationVerificationGreenacresRoute,
   ServicesRealEstateMoldInspectionGreenacresRoute:

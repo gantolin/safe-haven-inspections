@@ -78,7 +78,7 @@ function AirQualityTestingPage() {
           h2: "Why Greenacres homes get air tested",
           paragraphs: [
             "A typical Greenacres air quality question goes like this: the house smells musty, someone's allergies are worse indoors, and nothing is visibly wrong. In housing built from the 1970s through the 1990s, that often traces back to an air conditioner that has been repaired for years and no longer dehumidifies. The rooms stay cool, the humidity stays high, and spore levels climb without a single leak.",
-            "Air testing settles it with numbers. We run one sample outdoors and one in each area of concern, and the lab reports spore types and counts for each. In condo and villa sections, where units share walls, the results also help show whether the source is inside your unit or coming through from next door.",
+            "Air testing settles it with numbers. We run one sample outdoors and one in each area of concern, and the lab reports spore types and counts for each. In condo and villa sections, where units share walls, the results also help show whether the source is inside your unit or coming through from next door. If you searched for a mold air test or air sampling for mold, this is that service.",
           ],
         },
         {
