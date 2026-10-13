@@ -137,6 +137,8 @@ export interface ServicePageProps {
    * abatement, not remediation, and the licence line differs.
    */
   independence?: { h2: string; body: string };
+  /** GA4 form_name for the hero form. Defaults to "service-hero". */
+  formName?: string;
   ctaTitle: string;
   ctaBody: string;
 }
@@ -152,6 +154,7 @@ export function ServicePage({
   heroImage,
   heroMedia,
   independence,
+  formName = "service-hero",
   ctaTitle,
   ctaBody,
 }: ServicePageProps) {
@@ -210,7 +213,7 @@ export function ServicePage({
           </p>
           </div>
           <HeroQuoteCard
-            formName="service-hero"
+            formName={formName}
             className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start"
           />
           {heroMedia ? (

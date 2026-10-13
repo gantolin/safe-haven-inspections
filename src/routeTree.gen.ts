@@ -19,6 +19,7 @@ import { Route as MoldInspectionCoralSpringsRouteImport } from './routes/mold-in
 import { Route as MoldInspectionDavieRouteImport } from './routes/mold-inspection-davie'
 import { Route as MoldInspectionDeerfieldBeachRouteImport } from './routes/mold-inspection-deerfield-beach'
 import { Route as MoldInspectionDelrayBeachRouteImport } from './routes/mold-inspection-delray-beach'
+import { Route as MoldInspectionForRealtorsRouteImport } from './routes/mold-inspection-for-realtors'
 import { Route as MoldInspectionFortLauderdaleRouteImport } from './routes/mold-inspection-fort-lauderdale'
 import { Route as MoldInspectionHobeSoundRouteImport } from './routes/mold-inspection-hobe-sound'
 import { Route as MoldInspectionHollywoodRouteImport } from './routes/mold-inspection-hollywood'
@@ -40,7 +41,6 @@ import { Route as MoldInspectionWellingtonRouteImport } from './routes/mold-insp
 import { Route as MoldInspectionWestPalmBeachRouteImport } from './routes/mold-inspection-west-palm-beach'
 import { Route as MoldInspectionWestonRouteImport } from './routes/mold-inspection-weston'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as RealtorsRouteImport } from './routes/realtors'
 import { Route as ServiceAreasRouteImport } from './routes/service-areas'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -118,6 +118,12 @@ const MoldInspectionDelrayBeachRoute =
   MoldInspectionDelrayBeachRouteImport.update({
     id: '/mold-inspection-delray-beach',
     path: '/mold-inspection-delray-beach',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const MoldInspectionForRealtorsRoute =
+  MoldInspectionForRealtorsRouteImport.update({
+    id: '/mold-inspection-for-realtors',
+    path: '/mold-inspection-for-realtors',
     getParentRoute: () => rootRouteImport,
   } as any)
 const MoldInspectionFortLauderdaleRoute =
@@ -236,11 +242,6 @@ const MoldInspectionWestonRoute = MoldInspectionWestonRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RealtorsRoute = RealtorsRouteImport.update({
-  id: '/realtors',
-  path: '/realtors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServiceAreasRoute = ServiceAreasRouteImport.update({
@@ -393,6 +394,7 @@ export interface FileRoutesByFullPath {
   '/mold-inspection-davie': typeof MoldInspectionDavieRoute
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
+  '/mold-inspection-for-realtors': typeof MoldInspectionForRealtorsRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
@@ -414,7 +416,6 @@ export interface FileRoutesByFullPath {
   '/mold-inspection-west-palm-beach': typeof MoldInspectionWestPalmBeachRoute
   '/mold-inspection-weston': typeof MoldInspectionWestonRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/realtors': typeof RealtorsRoute
   '/service-areas': typeof ServiceAreasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -451,6 +452,7 @@ export interface FileRoutesByTo {
   '/mold-inspection-davie': typeof MoldInspectionDavieRoute
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
+  '/mold-inspection-for-realtors': typeof MoldInspectionForRealtorsRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
@@ -472,7 +474,6 @@ export interface FileRoutesByTo {
   '/mold-inspection-west-palm-beach': typeof MoldInspectionWestPalmBeachRoute
   '/mold-inspection-weston': typeof MoldInspectionWestonRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/realtors': typeof RealtorsRoute
   '/service-areas': typeof ServiceAreasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -510,6 +511,7 @@ export interface FileRoutesById {
   '/mold-inspection-davie': typeof MoldInspectionDavieRoute
   '/mold-inspection-deerfield-beach': typeof MoldInspectionDeerfieldBeachRoute
   '/mold-inspection-delray-beach': typeof MoldInspectionDelrayBeachRoute
+  '/mold-inspection-for-realtors': typeof MoldInspectionForRealtorsRoute
   '/mold-inspection-fort-lauderdale': typeof MoldInspectionFortLauderdaleRoute
   '/mold-inspection-hobe-sound': typeof MoldInspectionHobeSoundRoute
   '/mold-inspection-hollywood': typeof MoldInspectionHollywoodRoute
@@ -531,7 +533,6 @@ export interface FileRoutesById {
   '/mold-inspection-west-palm-beach': typeof MoldInspectionWestPalmBeachRoute
   '/mold-inspection-weston': typeof MoldInspectionWestonRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/realtors': typeof RealtorsRoute
   '/service-areas': typeof ServiceAreasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -570,6 +571,7 @@ export interface FileRouteTypes {
     | '/mold-inspection-davie'
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
+    | '/mold-inspection-for-realtors'
     | '/mold-inspection-fort-lauderdale'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
@@ -591,7 +593,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-west-palm-beach'
     | '/mold-inspection-weston'
     | '/privacy-policy'
-    | '/realtors'
     | '/service-areas'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -628,6 +629,7 @@ export interface FileRouteTypes {
     | '/mold-inspection-davie'
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
+    | '/mold-inspection-for-realtors'
     | '/mold-inspection-fort-lauderdale'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
@@ -649,7 +651,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-west-palm-beach'
     | '/mold-inspection-weston'
     | '/privacy-policy'
-    | '/realtors'
     | '/service-areas'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -686,6 +687,7 @@ export interface FileRouteTypes {
     | '/mold-inspection-davie'
     | '/mold-inspection-deerfield-beach'
     | '/mold-inspection-delray-beach'
+    | '/mold-inspection-for-realtors'
     | '/mold-inspection-fort-lauderdale'
     | '/mold-inspection-hobe-sound'
     | '/mold-inspection-hollywood'
@@ -707,7 +709,6 @@ export interface FileRouteTypes {
     | '/mold-inspection-west-palm-beach'
     | '/mold-inspection-weston'
     | '/privacy-policy'
-    | '/realtors'
     | '/service-areas'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -745,6 +746,7 @@ export interface RootRouteChildren {
   MoldInspectionDavieRoute: typeof MoldInspectionDavieRoute
   MoldInspectionDeerfieldBeachRoute: typeof MoldInspectionDeerfieldBeachRoute
   MoldInspectionDelrayBeachRoute: typeof MoldInspectionDelrayBeachRoute
+  MoldInspectionForRealtorsRoute: typeof MoldInspectionForRealtorsRoute
   MoldInspectionFortLauderdaleRoute: typeof MoldInspectionFortLauderdaleRoute
   MoldInspectionHobeSoundRoute: typeof MoldInspectionHobeSoundRoute
   MoldInspectionHollywoodRoute: typeof MoldInspectionHollywoodRoute
@@ -766,7 +768,6 @@ export interface RootRouteChildren {
   MoldInspectionWestPalmBeachRoute: typeof MoldInspectionWestPalmBeachRoute
   MoldInspectionWestonRoute: typeof MoldInspectionWestonRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  RealtorsRoute: typeof RealtorsRoute
   ServiceAreasRoute: typeof ServiceAreasRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -863,6 +864,13 @@ declare module '@tanstack/react-router' {
       path: '/mold-inspection-delray-beach'
       fullPath: '/mold-inspection-delray-beach'
       preLoaderRoute: typeof MoldInspectionDelrayBeachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mold-inspection-for-realtors': {
+      id: '/mold-inspection-for-realtors'
+      path: '/mold-inspection-for-realtors'
+      fullPath: '/mold-inspection-for-realtors'
+      preLoaderRoute: typeof MoldInspectionForRealtorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mold-inspection-fort-lauderdale': {
@@ -1010,13 +1018,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/realtors': {
-      id: '/realtors'
-      path: '/realtors'
-      fullPath: '/realtors'
-      preLoaderRoute: typeof RealtorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/service-areas': {
@@ -1201,6 +1202,7 @@ const rootRouteChildren: RootRouteChildren = {
   MoldInspectionDavieRoute: MoldInspectionDavieRoute,
   MoldInspectionDeerfieldBeachRoute: MoldInspectionDeerfieldBeachRoute,
   MoldInspectionDelrayBeachRoute: MoldInspectionDelrayBeachRoute,
+  MoldInspectionForRealtorsRoute: MoldInspectionForRealtorsRoute,
   MoldInspectionFortLauderdaleRoute: MoldInspectionFortLauderdaleRoute,
   MoldInspectionHobeSoundRoute: MoldInspectionHobeSoundRoute,
   MoldInspectionHollywoodRoute: MoldInspectionHollywoodRoute,
@@ -1222,7 +1224,6 @@ const rootRouteChildren: RootRouteChildren = {
   MoldInspectionWestPalmBeachRoute: MoldInspectionWestPalmBeachRoute,
   MoldInspectionWestonRoute: MoldInspectionWestonRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  RealtorsRoute: RealtorsRoute,
   ServiceAreasRoute: ServiceAreasRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,

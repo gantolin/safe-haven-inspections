@@ -8,8 +8,12 @@ const faqs: FaqItem[] = [
     a: "Yes: real estate inspections are scheduled with closing windows in mind. Once contracts are signed, we prioritize putting a team on-site within the inspection period, and lab-analyzed samples are typically returned within 24 hours so the written report is ready well ahead of most inspection-response deadlines.",
   },
   {
-    q: "Is a mold inspection different from a general home inspection?",
-    a: "Yes. A general home inspection covers the whole house at a broad level (roof, plumbing, electrical, systems) and typically notes moisture or suspected mold as an observation for a specialist. A mold inspection is that specialist step: a licensed mold assessor performing focused visual, moisture, and lab-based evaluation.",
+    q: "Does a home inspection include mold?",
+    a: "Usually not. A general home inspection covers the whole house at a broad level (roof, plumbing, electrical, systems) and typically notes moisture or suspected mold as an observation for a specialist. A mold inspection is that specialist step: a licensed mold assessor performing focused visual, moisture, and lab-based evaluation.",
+  },
+  {
+    q: "What does a mold test when buying a house involve?",
+    a: "Air samples from inside the home compared with an outdoor sample taken the same day, plus surface samples where growth is visible. An accredited lab reads them, and results are typically back within 24 hours, inside most inspection periods.",
   },
   {
     q: "Should the buyer or the seller order the inspection?",
@@ -17,7 +21,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Do you work directly with realtors?",
-    a: "Yes. We regularly coordinate with agents on scheduling, access, and reporting timelines. See our dedicated Realtors page for the details.",
+    a: "Yes. We regularly coordinate with agents on scheduling, access, and reporting timelines. Our mold inspection for Realtors page has the details.",
   },
 ];
 
@@ -77,10 +81,10 @@ function RealEstatePage() {
           ],
         },
         {
-          h2: "Why real estate transactions need a specialist",
+          h2: "Should I get a mold inspection when buying a house?",
           paragraphs: [
-            "General home inspections are broad by design. They cover systems and structure, and most inspectors will flag suspected moisture or mold as a specialist referral rather than analyze it. That's the correct call, but it leaves buyers and sellers with an open question at exactly the moment they need answers.",
-            "A licensed mold assessor closes that loop. In South Florida, where humidity, hurricanes, and aging HVAC systems create hidden moisture on a regular basis, an independent third-party inspection is one of the highest-leverage due-diligence steps a buyer can take, and one of the smartest disclosures a seller can offer proactively.",
+            "In South Florida, usually yes. Humidity, storms, and aging AC systems leave moisture where a walkthrough cannot see it, and a general home inspection is broad by design. Most home inspectors flag suspected moisture or mold for a specialist and stop there, which leaves the question open at exactly the moment you need an answer.",
+            "A licensed mold assessor closes it with moisture readings, air samples, and a lab report, all inside the inspection period. If the home is clean, you close knowing that. If it is not, you know before the deadline, while you can still ask for a repair, a credit, or your deposit back.",
           ],
         },
         {
@@ -125,16 +129,10 @@ function RealEstatePage() {
           ],
         },
         {
-          h2: "What the report provides for the transaction",
+          h2: "Selling a house with mold",
           paragraphs: [
-            "The report is written to function as evidence rather than opinion. Findings are photographed and located, lab results are attached with the outdoor control clearly labeled, and recommendations are prioritized by risk. Because it comes from an independent assessor with no remediation stake, both sides tend to accept it as a shared source of truth, which is exactly what a real-estate negotiation needs.",
-            "Sellers use it to disclose accurately. Buyers use it to decide whether to close, ask for a credit, or request specific repairs. Agents use it to keep the conversation grounded in data instead of speculation.",
-          ],
-        },
-        {
-          h2: "How this fits with our other services",
-          paragraphs: [
-            "Real estate mold inspections lean on every other service we offer (visual inspection, moisture mapping, air testing, surface sampling) condensed into a transaction-ready package. If a buyer moves forward and later needs post-remediation verification after negotiated repairs, the same assessor and the same baseline data carry through to clearance.",
+            "Selling a house with mold goes better when the seller finds it first. An inspection before listing shows what is there and how far it goes, so it can be fixed and disclosed on your schedule, not the buyer's.",
+            "After a cleanup, buyers often ask for a mold clearance certificate. What that means in practice is a post-remediation verification report: an independent assessor retests the area and states in writing whether it passed.",
           ],
         },
       ]}
@@ -142,9 +140,14 @@ function RealEstatePage() {
       related={[
         { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "The lab-backed indoor air data most transactions ultimately turn on." },
         { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Non-destructive scan for hidden moisture, ideal within an inspection window." },
-        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "The clearance report buyers ask for after a cleanup." },
         { to: "/services/asbestos-testing-greenacres/", label: "Asbestos testing", blurb: "Buying a pre-1980 home? Test the popcorn ceiling before the inspection period closes." },
       ]}
+      furtherReading={{
+        href: "/mold-inspection-for-realtors/",
+        label: "Mold inspection for Realtors in Palm Beach County",
+        blurb: "For agents and property managers: scheduling, access, and pre-listing inspections.",
+      }}
       heroImage={{
         src: "/hero-real-estate.jpg",
         alt: "Air sampling stand set up in an empty room during a pre purchase inspection",

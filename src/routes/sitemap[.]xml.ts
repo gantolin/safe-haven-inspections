@@ -38,7 +38,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/services/attic-mold-inspection-greenacres/",
           "/services/popcorn-ceiling-asbestos-testing-greenacres/",
           "/service-areas/",
-          "/realtors/",
+          "/mold-inspection-for-realtors/",
           "/blog/",
           "/contact/",
           "/privacy-policy/",
