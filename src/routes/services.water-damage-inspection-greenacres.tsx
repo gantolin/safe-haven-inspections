@@ -65,7 +65,7 @@ function WaterDamagePage() {
           h2: "Common water damage in Greenacres homes",
           paragraphs: [
             "Three sources account for most water damage in Greenacres homes: roofs past their service life leaking at vents and valleys, AC condensate lines backing up in the air-handler closet, and aging supply lines failing inside a wall. On lakefront lots, moisture can also come up through the slab.",
-            "Mold can start growing within 24 to 48 hours of a water event, so timing matters. We are based in Greenacres and give storm and leak calls priority. The inspection maps how far the water traveled, checks whether growth has started, and gives you a written record before anything gets torn out or closed back up. Some people call this a water intrusion inspection or a moisture inspection. It is the same visit.",
+            "Mold can start growing within 24 to 48 hours of a water event, so timing matters. We are based in Greenacres and give storm and leak calls priority. The inspection maps how far the water traveled, checks whether growth has started, and gives you a written record before anything gets torn out or closed back up. Some people call this a water intrusion inspection. It is the same visit.",
           ],
         },
         {
