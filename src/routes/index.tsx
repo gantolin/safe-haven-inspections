@@ -33,6 +33,7 @@ import { HeroQuoteCard } from "@/components/quote-form";
 
 // Home hero photo. Same file as step one of the four-step section.
 const HERO_PHOTO = "/step-visual.jpg";
+const HERO_BG = "/hero-living-room.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -118,7 +119,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/step-visual.webp",
+        href: "/hero-living-room.webp",
         type: "image/webp",
         fetchpriority: "high",
       },
@@ -142,14 +143,29 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
-        {/* Plain brand ground. The hero carries a headline, a form and a
-            photo; a picture behind all three was one layer too many. */}
+        {/* Background photo: "Living room with white sofa and glass window" by
+            Spacejoy, from Unsplash (free licence, photo id 4YGsYQf7DNQ). A
+            stock room, not a client's home, so nothing on the page says it is. */}
+        <picture className="absolute inset-0 -z-10 h-full w-full">
+          <source srcSet={webpVariant(HERO_BG)} type="image/webp" />
+          <img
+            src={HERO_BG}
+            alt=""
+            width={1600}
+            height={900}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </picture>
+        {/* Scrim: heavy behind the headline, falling away toward the form. */}
         <div
           aria-hidden
           className="absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "linear-gradient(135deg, #0b2545 0%, #12395c 55%, #1d5c63 100%)",
+              "linear-gradient(to right, rgba(11,37,69,0.90) 0%, rgba(11,37,69,0.82) 38%, rgba(11,37,69,0.55) 70%, rgba(11,37,69,0.40) 100%)",
           }}
         />
         {/* Two columns from lg up: the pitch on the left, the request form on
@@ -231,8 +247,7 @@ function Index() {
                 alt="Inspector in a Safe Haven shirt taking a moisture reading at a baseboard"
                 width={400}
                 height={250}
-                fetchPriority="high"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
                 className="block h-auto w-full"
               />
