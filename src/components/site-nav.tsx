@@ -7,11 +7,11 @@ import { ctaBarPrimary, ctaBarSecondary } from "@/lib/cta";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about/", label: "About" },
   { to: "/services/", label: "Services" },
   { to: "/service-areas/", label: "Areas" },
   { to: "/realtors/", label: "Realtors" },
   { to: "/blog/", label: "Blog" },
+  { to: "/about/", label: "About" },
   { to: "/contact/", label: "Contact" },
 ] as const;
 
