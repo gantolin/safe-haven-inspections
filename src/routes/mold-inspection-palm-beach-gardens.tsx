@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-palm-beach-gardens")({
       path: "/mold-inspection-palm-beach-gardens/",
       title: "Mold Inspection Palm Beach Gardens FL | Licensed Assessor",
       description:
-        "Independent mold inspection and testing in Palm Beach Gardens, FL. Lab-backed reports for PGA and golf-course communities and screened-enclosure homes.",
+        "Mold inspection and testing in Palm Beach Gardens, FL. Lab-backed reports for PGA and golf-course communities and screened-enclosure homes.",
     }),
   component: PalmBeachGardensPage,
 });

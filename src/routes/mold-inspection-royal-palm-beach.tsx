@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-royal-palm-beach")({
       path: "/mold-inspection-royal-palm-beach/",
       title: "Mold Inspection Royal Palm Beach FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Royal Palm Beach, FL. Licensed assessors, AIHA-accredited lab results, and honest reports for buyers and homeowners.",
+        "Mold inspection and testing in Royal Palm Beach, FL. Licensed assessors, AIHA-accredited lab results, and honest reports for buyers and homeowners.",
     }),
   component: RPBPage,
 });

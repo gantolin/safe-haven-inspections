@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-hollywood")({
       path: "/mold-inspection-hollywood/",
       title: "Mold Inspection Hollywood FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Hollywood, FL. Lab-backed reports for beach rentals, older bungalows, and coastal condos exposed to salt air.",
+        "Mold inspection and testing in Hollywood, FL. Lab-backed reports for beach rentals, older bungalows, and coastal condos exposed to salt air.",
     }),
   component: HollywoodPage,
 });

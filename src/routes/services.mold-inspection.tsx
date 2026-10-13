@@ -84,7 +84,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
       path: "/services/mold-inspection/",
       title: "What a Mold Inspection Includes | Safe Haven Inspections",
       description:
-        "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed report in 24 hours.",
+        "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab report in 24 hours.",
       ogType: "website",
     });
     return {
@@ -95,7 +95,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
           serviceSchema({
             name: "Mold Inspection",
             description:
-              "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed report in 24 hours.",
+              "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab report in 24 hours.",
             path: "/services/mold-inspection/",
             serviceType: "Mold inspection and assessment",
           }),

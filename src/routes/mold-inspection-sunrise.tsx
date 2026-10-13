@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-sunrise")({
       path: "/mold-inspection-sunrise/",
       title: "Mold Inspection Sunrise FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Sunrise, FL. Lab-backed reports for townhomes, condos, and planned communities with shared-wall HVAC condensation.",
+        "Mold inspection and testing in Sunrise, FL. Lab-backed reports for townhomes, condos, and planned communities with shared-wall HVAC condensation.",
     }),
   component: SunrisePage,
 });

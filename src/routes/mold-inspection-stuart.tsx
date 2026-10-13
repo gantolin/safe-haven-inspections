@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-stuart")({
       path: "/mold-inspection-stuart/",
       title: "Mold Inspection Stuart FL | Licensed Mold Assessor",
       description:
-        "Independent, state-licensed mold inspection and testing in Stuart, FL. Lab-backed reports for historic downtown, waterfront homes, and flood-zone properties.",
+        "Mold inspection and testing in Stuart, FL. Lab-backed reports for historic downtown, waterfront homes, and flood-zone properties.",
     }),
   component: StuartPage,
 });

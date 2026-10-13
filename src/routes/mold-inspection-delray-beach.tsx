@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-delray-beach")({
       path: "/mold-inspection-delray-beach/",
       title: "Mold Inspection Delray Beach FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Delray Beach, FL. Lab-backed reports for historic downtown bungalows, beach rentals, and older homes with additions.",
+        "Mold inspection and testing in Delray Beach, FL. Lab-backed reports for historic downtown bungalows, beach rentals, and older homes with additions.",
     }),
   component: DelrayBeachPage,
 });

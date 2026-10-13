@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-plantation")({
       path: "/mold-inspection-plantation/",
       title: "Mold Inspection Plantation FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Plantation, FL. Lab-backed reports for established slab-on-grade homes with mature landscaping and drainage issues.",
+        "Mold inspection and testing in Plantation, FL. Lab-backed reports for established slab-on-grade homes with mature landscaping and drainage issues.",
     }),
   component: PlantationPage,
 });

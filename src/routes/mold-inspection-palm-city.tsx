@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-palm-city")({
       path: "/mold-inspection-palm-city/",
       title: "Mold Inspection Palm City FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Palm City, FL. Lab-backed reports for canal-front homes, gated communities, and newer suburban builds.",
+        "Mold inspection and testing in Palm City, FL. Lab-backed reports for canal-front homes, gated communities, and newer suburban builds.",
     }),
   component: PalmCityPage,
 });

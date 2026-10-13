@@ -22,7 +22,7 @@ export const Route = createFileRoute("/services/insurance-claim-mold-inspection-
   head: () => {
     const base = pageMeta({
       path: "/services/insurance-claim-mold-inspection-greenacres/",
-      title: "Mold Inspection for Insurance Claims in Greenacres, FL | Safe Haven",
+      title: "Mold Inspection for Insurance Claims in Greenacres | Safe Haven",
       description: DESCRIPTION,
     });
     return {

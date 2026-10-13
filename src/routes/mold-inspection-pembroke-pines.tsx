@@ -8,7 +8,7 @@ export const Route = createFileRoute("/mold-inspection-pembroke-pines")({
       path: "/mold-inspection-pembroke-pines/",
       title: "Mold Inspection Pembroke Pines FL | Licensed Mold Assessor",
       description:
-        "Independent mold inspection and testing in Pembroke Pines, FL. Lab-backed reports for master-planned communities, newer construction, and HOA properties.",
+        "Mold inspection and testing in Pembroke Pines, FL. Lab-backed reports for master-planned communities, newer construction, and HOA properties.",
     }),
   component: PembrokePinesPage,
 });
