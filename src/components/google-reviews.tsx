@@ -127,74 +127,55 @@ export function GoogleReviews() {
   };
 
   return (
-    <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
-      <div className="rounded-2xl border border-border bg-secondary/60 p-6 sm:p-10">
-        <div className="mb-8 flex flex-col items-center text-center">
-          <p className="text-sm font-medium uppercase tracking-wider text-accent">
-            What Our Clients Say
-          </p>
-          <div className="mt-3 flex items-center gap-3">
-            <GoogleGBadge />
-            <span className="font-[Bricolage_Grotesque] text-2xl font-semibold text-primary sm:text-3xl">
-              5.0
-            </span>
-            <Stars className="h-6 w-6" />
-          </div>
-          <p className="mt-2 text-sm text-muted-foreground">
-            5.0 rating on Google
-          </p>
-        </div>
+    <section className="mx-auto mt-14 max-w-3xl px-4 text-center sm:px-6">
+      <a
+        href={GOOGLE_REVIEWS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2.5 text-sm font-medium text-muted-foreground transition hover:text-primary"
+      >
+        <GoogleGBadge />
+        <span className="font-[Bricolage_Grotesque] text-xl font-semibold text-primary">5.0</span>
+        <Stars className="h-4 w-4" />
+        <span>on Google</span>
+      </a>
 
-        <div
-          className="relative"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={() => setPaused(false)}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
+      {/* Every review sits in the same grid cell and they cross-fade, so the
+          block keeps one height and all five stay in the page HTML. Each is
+          clamped to four lines; the full text is one tap away on Google. */}
+      <div
+        className="mt-5 grid"
+        aria-live="polite"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {REVIEWS.map((r, i) => (
+          <blockquote
+            key={i}
+            aria-hidden={i !== index}
+            className={`col-start-1 row-start-1 line-clamp-4 text-base leading-relaxed text-foreground transition-opacity duration-700 sm:text-lg ${
+              i === index ? "opacity-100" : "pointer-events-none opacity-0"
+            }`}
+          >
+            “{r.text}”
+          </blockquote>
+        ))}
+      </div>
+
+      <div className="mt-5 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          aria-label="Previous review"
+          onClick={prev}
+          className="grid h-8 w-8 place-items-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-primary"
         >
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${index * 100}%)` }}
-              aria-live="polite"
-            >
-              {REVIEWS.map((r, i) => (
-                <div key={i} className="w-full shrink-0 px-1 sm:px-8">
-                  <article className="mx-auto flex h-full max-w-3xl flex-col rounded-xl border border-border bg-background p-6 shadow-sm sm:p-8">
-                    <Stars />
-                    <p className="mt-4 text-base leading-relaxed text-foreground sm:text-lg">
-                      “{r.text}”
-                    </p>
-                    <p className="mt-6 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      Posted on Google
-                    </p>
-                  </article>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="button"
-            aria-label="Previous review"
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 rounded-full border border-border bg-background p-2 text-primary shadow-sm transition hover:bg-secondary sm:-translate-x-3"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            type="button"
-            aria-label="Next review"
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 rounded-full border border-border bg-background p-2 text-primary shadow-sm transition hover:bg-secondary sm:translate-x-3"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        </div>
-
-        <div className="mt-6 flex items-center justify-center gap-1">
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <div className="flex items-center gap-1">
           {REVIEWS.map((_, i) => (
             <button
               key={i}
@@ -202,28 +183,25 @@ export function GoogleReviews() {
               aria-label={`Go to review ${i + 1}`}
               aria-current={i === index}
               onClick={() => setIndex(i)}
-              className="group grid h-6 min-w-6 place-items-center"
+              className="group grid h-6 min-w-5 place-items-center"
             >
               <span
                 aria-hidden
-                className={`block h-2 rounded-full transition-all ${
-                  i === index ? "w-6 bg-accent" : "w-2 bg-border group-hover:bg-muted-foreground/40"
+                className={`block h-1.5 rounded-full transition-all ${
+                  i === index ? "w-5 bg-accent" : "w-1.5 bg-border group-hover:bg-muted-foreground/40"
                 }`}
               />
             </button>
           ))}
         </div>
-
-        <div className="mt-8 flex justify-center">
-          <a
-            href={GOOGLE_REVIEWS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium text-primary shadow-sm transition hover:bg-secondary"
-          >
-            Read All Reviews on Google
-          </a>
-        </div>
+        <button
+          type="button"
+          aria-label="Next review"
+          onClick={next}
+          className="grid h-8 w-8 place-items-center rounded-full text-muted-foreground transition hover:bg-secondary hover:text-primary"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
       </div>
     </section>
   );

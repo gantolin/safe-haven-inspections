@@ -123,6 +123,8 @@ export interface ServicePageProps {
    * imagery at all, so this is the one image guaranteed above the fold.
    */
   heroImage?: ServiceFigure;
+  /** Replaces the hero photo with a component, such as the thermal comparison. */
+  heroMedia?: ReactNode;
   /**
    * The independence block defaults to the mold wording. The asbestos page
    * overrides it: there the conflict of interest being disclaimed is
@@ -142,6 +144,7 @@ export function ServicePage({
   related,
   furtherReading,
   heroImage,
+  heroMedia,
   independence,
   ctaTitle,
   ctaBody,
@@ -204,14 +207,16 @@ export function ServicePage({
             >
               mold inspection and testing in Greenacres
             </Link>
-            : independent, licensed, and lab-backed.
+            .
           </p>
           </div>
           <HeroQuoteCard
             formName="service-hero"
             className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start"
           />
-          {heroImage ? (
+          {heroMedia ? (
+            <div className="lg:col-start-1 lg:row-start-2 lg:self-start">{heroMedia}</div>
+          ) : heroImage ? (
             <Figure fig={heroImage} className="shadow-sm lg:col-start-1 lg:row-start-2 lg:self-start" />
           ) : null}
         </div>
@@ -308,9 +313,6 @@ export function ServicePage({
               <div>
                 <p className="font-semibold text-primary">
                   Seen enough? We can usually be out this week.
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Licensed, independent, and lab-backed. No remediation upsell.
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-2 sm:flex-row">

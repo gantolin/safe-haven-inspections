@@ -15,7 +15,6 @@ import {
   ArrowRight,
   CheckCircle2,
   HeartPulse,
-  Home,
   Droplets,
   CloudRain,
   Clock,
@@ -36,12 +35,6 @@ import { HeroQuoteCard } from "@/components/quote-form";
 
 const heroImg = heroDesktopAsset.url;
 const heroImgMobile = heroMobileAsset.url;
-
-// Dedicated head crop for the 56px trust-bar avatar. The full portrait on
-// /about is 1122x1402; handing that to the browser to scale down ~20x for this
-// slot renders soft, and at 56px the face is too small to read. This is a
-// 168px (3x) crop framed on the head.
-const landonAvatar = "/landon-avatar.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -271,55 +264,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Trust bar */}
-      <section className="mx-auto mt-8 max-w-6xl px-4 sm:mt-12 sm:px-6">
-        <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
-          <div className="flex flex-col items-center gap-5 md:flex-row md:justify-between">
-            <div className="flex items-center gap-4">
-              <picture>
-                <source srcSet={webpVariant(landonAvatar)} type="image/webp" />
-                <img
-                  src={landonAvatar}
-                  alt="Landon Heinrichs, owner of Safe Haven Inspections"
-                  width={56}
-                  height={56}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-14 w-14 rounded-full object-cover ring-1 ring-border"
-                />
-              </picture>
-              <div>
-                <p className="font-[Bricolage_Grotesque] text-base font-semibold text-primary">
-                  Landon Heinrichs
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Founder · Licensed FL Mold Assessor
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
-              <span className="inline-flex items-center gap-1.5 font-medium text-primary">
-                <ShieldCheck className="h-4 w-4 text-accent" /> Licensed
-              </span>
-              <span className="inline-flex items-center gap-1.5 font-medium text-primary">
-                <CheckCircle2 className="h-4 w-4 text-accent" /> Certified
-              </span>
-              <span className="inline-flex items-center gap-1.5 font-medium text-primary">
-                <Home className="h-4 w-4 text-accent" /> Insured
-              </span>
-            </div>
-            <div className="flex gap-2 text-xs">
-              <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
-                MRSA3366
-              </span>
-              <span className="rounded-md border border-border bg-secondary px-3 py-1.5 font-semibold text-primary">
-                MRSR3536
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Google reviews trust strip */}
       <GoogleReviews />
 
@@ -413,30 +357,6 @@ function Index() {
               Read more about Landon <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Stat strip */}
-      <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {[
-            { k: "3", v: "Counties served" },
-            { k: "5.0★", v: "Google Rating" },
-            { k: "Local", v: "Owner-operated" },
-            { k: "Lab", v: "Accredited results" },
-          ].map((s) => (
-            <div
-              key={s.v}
-              className="rounded-xl border border-border bg-secondary p-5 text-center"
-            >
-              <div className="font-[Bricolage_Grotesque] text-2xl font-semibold text-primary sm:text-3xl">
-                {s.k}
-              </div>
-              <div className="mt-1 text-xs text-muted-foreground sm:text-sm">
-                {s.v}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 

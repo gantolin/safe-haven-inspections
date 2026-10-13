@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
+import { ThermalReveal } from "@/components/thermal-reveal";
 import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
 const faqs: FaqItem[] = [
@@ -142,6 +143,7 @@ function ThermalImagingPage() {
         blurb:
           "Why moisture readings taken while the material is still wet are worth more than the same visit a month later.",
       }}
+      heroMedia={<ThermalReveal />}
       heroImage={{
         src: "/hero-thermal-imaging.jpg",
         alt: "Infrared thermal image of a wall and floor junction showing a cooler area consistent with moisture",
