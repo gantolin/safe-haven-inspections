@@ -95,7 +95,7 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100 lg:max-[1151px]:px-2"
+              className="relative rounded-md px-2.5 py-2 text-base font-medium text-muted-foreground lg:max-[1151px]:text-sm transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100 lg:max-[1151px]:px-2"
             >
               {l.label}
             </Link>
@@ -103,11 +103,11 @@ export function SiteNav() {
           <div className="ml-2 flex flex-col items-end">
             <a
               href="tel:+15616326387"
-              className="font-mono-data inline-flex items-center whitespace-nowrap rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--accent)_88%,black)] hover:shadow-md hover:shadow-accent/40 lg:max-[1151px]:px-3"
+              className="font-mono-data inline-flex items-center whitespace-nowrap rounded-md bg-cta px-4 py-2 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] hover:shadow-md hover:shadow-cta/40 lg:max-[1151px]:px-3"
             >
               (561) 632-6387
             </a>
-            <span className="mt-1 text-[11px] leading-tight text-muted-foreground">
+            <span className="mt-1 whitespace-nowrap text-[11px] leading-tight text-muted-foreground">
               You'll reach our local team directly&nbsp;
             </span>
           </div>
