@@ -132,18 +132,12 @@ function MoldInspectionPage() {
             mold assessor. We inspect, we test, and that is where our job ends. Nothing
             in your report exists to sell you a cleanup.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 hidden lg:flex">
             <a
               href="tel:+15616326387"
-              className={`${ctaPrimary} py-3.5 text-base`}
+              className={`${ctaPrimary} px-6 py-3.5 text-base`}
             >
               <Phone className="h-4 w-4" /> Call (561) 632-6387
-            </a>
-            <a
-              href="#request"
-              className={`${ctaSecondary} py-3.5 lg:hidden`}
-            >
-              Request an inspection <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           </div>

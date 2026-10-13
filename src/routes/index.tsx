@@ -214,21 +214,15 @@ function Index() {
               Martin County. We never sell the cleanup, so the answer you get is the
               honest one.
             </p>
-            <div className="mt-6 grid w-full grid-cols-2 gap-2 sm:mt-7 sm:flex sm:w-auto sm:gap-3">
+            {/* Desktop only. Below lg the sticky bar at the bottom of the screen
+                already carries Call and Request, so repeating them here only
+                pushed the form down. */}
+            <div className="mt-7 hidden lg:flex">
               <a
                 href="tel:+15616326387"
-                className={`${ctaPrimary} px-3 py-3.5 text-base sm:px-6`}
+                className={`${ctaPrimary} px-6 py-3.5 text-base`}
               >
-                <Phone className="h-4 w-4" />
-                <span className="sm:hidden">Call now</span>
-                <span className="hidden sm:inline">Call (561) 632-6387</span>
-              </a>
-              {/* Below lg the form sits under this block, so this jumps to it. */}
-              <a
-                href="#request"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-3 py-3.5 text-sm font-semibold text-primary shadow-sm transition hover:bg-white/90 sm:px-6 lg:hidden"
-              >
-                Request inspection <ArrowRight className="h-4 w-4" />
+                <Phone className="h-4 w-4" /> Call (561) 632-6387
               </a>
             </div>
             <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm lg:hidden">
