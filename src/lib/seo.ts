@@ -332,7 +332,11 @@ export function serviceSchema(input: ServiceSchemaInput) {
     ...(input.serviceType ? { serviceType: input.serviceType } : {}),
     ...(input.image ? { image: absoluteUrl(input.image) } : {}),
     provider: { "@id": `${SITE_URL}/#business` },
+    // Greenacres first: it is where the business is, and it is the city every
+    // service page targets. The counties stay because the work does not stop
+    // at the city line.
     areaServed: [
+      { "@type": "City", name: "Greenacres, FL" },
       { "@type": "AdministrativeArea", name: "Martin County, FL" },
       { "@type": "AdministrativeArea", name: "Palm Beach County, FL" },
       { "@type": "AdministrativeArea", name: "Broward County, FL" },

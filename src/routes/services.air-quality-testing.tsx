@@ -29,9 +29,9 @@ export const Route = createFileRoute("/services/air-quality-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/air-quality-testing/",
-      title: "Indoor Air Quality Testing & Spore Traps | Safe Haven",
+      title: "Indoor Air Quality Testing in Greenacres, FL | Safe Haven",
       description:
-        "Indoor air quality testing in Palm Beach County and across South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
+        "Indoor air quality testing in Greenacres, FL. Spore-trap air samples, an outdoor control, and AIHA-accredited lab analysis in 24 hours. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/services/air-quality-testing")({
         jsonLdScript(
           serviceSchema({
             name: "Indoor Air Quality Testing",
-            description: "Indoor air quality testing in Palm Beach County and across South Florida. Spore-trap sampling, outdoor controls, and AIHA-accredited lab analysis.",
+            description: "Indoor air quality testing in Greenacres, FL. Spore-trap air samples, an outdoor control, and AIHA-accredited lab analysis in 24 hours. Call (561) 632-6387.",
             path: "/services/air-quality-testing/",
           }),
         ),
@@ -61,10 +61,10 @@ function AirQualityTestingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Indoor Air Quality Testing"
+      h1="Indoor Air Quality Testing in Greenacres, FL"
       intro={
         <>
-          Indoor air quality testing measures how many mold spores are in the
+          Indoor air quality testing in Greenacres measures how many mold spores are in the
           air inside your home, what kind they are, and how that compares to the
           outdoor air around it. That comparison is the whole point: it tells you
           whether your indoor air is normal, elevated, or feeding a hidden problem.
@@ -74,6 +74,13 @@ function AirQualityTestingPage() {
         </>
       }
       sections={[
+        {
+          h2: "Why Greenacres homes get air tested",
+          paragraphs: [
+            "A typical Greenacres air quality question goes like this: the house smells musty, someone's allergies are worse indoors, and nothing is visibly wrong. In housing built from the 1970s through the 1990s, that often traces back to an air conditioner that has been repaired for years and no longer dehumidifies. The rooms stay cool, the humidity stays high, and spore levels climb without a single leak.",
+            "Air testing settles it with numbers. We run one sample outdoors and one in each area of concern, and the lab reports spore types and counts for each. In condo and villa sections, where units share walls, the results also help show whether the source is inside your unit or coming through from next door.",
+          ],
+        },
         {
           h2: "What air quality testing actually is",
           paragraphs: [

@@ -20,8 +20,8 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/water-damage-inspection/",
-      title: "Water Damage Inspection, South Florida | Safe Haven",
-      description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
+      title: "Water Damage Inspection in Greenacres, FL | Safe Haven",
+      description: "Water damage inspection in Greenacres, FL after a leak, storm, or flood. Moisture and mold assessment, insurance-ready report. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
         jsonLdScript(
           serviceSchema({
             name: "Water Damage Inspection",
-            description: "Independent post-leak, post-storm, and post-flood moisture and mold inspection across South Florida. Insurance-ready reports, typically within 24 hours.",
+            description: "Water damage inspection in Greenacres, FL after a leak, storm, or flood. Moisture and mold assessment, insurance-ready report. Call (561) 632-6387.",
             path: "/services/water-damage-inspection/",
           }),
         ),
@@ -51,16 +51,23 @@ function WaterDamagePage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Water Damage & Moisture Intrusion Assessment"
+      h1="Water Damage Inspection in Greenacres, FL"
       intro={
         <>
-          A water-damage inspection is a licensed, non-destructive assessment of a
+          A water damage inspection in Greenacres is a licensed, non-destructive assessment of a
           property after a leak, storm, or flooding event: documenting where the
           water went, what got wet, and whether mold growth has begun. It gives you
           an independent, insurance-ready record before the walls close back up.
         </>
       }
       sections={[
+        {
+          h2: "Common water damage in Greenacres homes",
+          paragraphs: [
+            "Three sources account for most water damage in Greenacres homes: roofs past their service life leaking at vents and valleys, AC condensate lines backing up in the air-handler closet, and aging supply lines failing inside a wall. On lakefront lots, moisture can also come up through the slab.",
+            "Mold can start growing within 24 to 48 hours of a water event, so timing matters. We are based in Greenacres and give storm and leak calls priority. The inspection maps how far the water traveled, checks whether growth has started, and gives you a written record before anything gets torn out or closed back up.",
+          ],
+        },
         {
           h2: "What a water-damage inspection covers",
           paragraphs: [

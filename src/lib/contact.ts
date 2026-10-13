@@ -5,7 +5,10 @@ const contactFormSchema = z.object({
   name: z.string().min(2, "Please enter your name."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().min(10, "Please enter a phone number we can reach you on."),
-  address: z.string().min(5, "Please enter the property address."),
+  // Optional: the hero form does not ask for it. The /contact/ form still
+  // marks the field required in the markup.
+  address: z.string().optional(),
+  page: z.string().optional(),
   timing: z.string().optional(),
   message: z
     .string()
@@ -119,7 +122,8 @@ async function sendEnquiry(data: ContactFormData): Promise<boolean> {
         Name: data.name,
         Email: data.email,
         Phone: data.phone,
-        "Property Address": data.address,
+        "Property Address": data.address || "Not given (short form)",
+        "Submitted from": data.page || "Unknown",
         "Preferred timing": data.timing || "Not specified",
         Message: data.message,
       }),

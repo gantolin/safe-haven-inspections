@@ -19,8 +19,8 @@ export const Route = createFileRoute("/services/humidity-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/humidity-testing/",
-      title: "Humidity Testing & Psychrometrics, South Florida | Safe Haven",
-      description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
+      title: "Humidity Testing in Greenacres, FL | Safe Haven Inspections",
+      description: "Humidity testing in Greenacres, FL. Temperature, humidity, and dew point readings show whether damp air, not a leak, is behind the mold. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/services/humidity-testing")({
         jsonLdScript(
           serviceSchema({
             name: "Humidity Testing & Psychrometrics",
-            description: "Independent temperature, humidity, and dew point testing for South Florida homes and buildings. Diagnose humidity-driven mold conditions with lab-backed data.",
+            description: "Humidity testing in Greenacres, FL. Temperature, humidity, and dew point readings show whether damp air, not a leak, is behind the mold. Call (561) 632-6387.",
             path: "/services/humidity-testing/",
           }),
         ),
@@ -50,10 +50,10 @@ function HumidityPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Humidity Testing & Psychrometrics"
+      h1="Humidity Testing in Greenacres, FL"
       intro={
         <>
-          Humidity testing is a psychrometric evaluation of the indoor
+          Humidity testing in Greenacres is a psychrometric evaluation of the indoor
           environment (temperature, relative humidity, and dew point) that
           identifies whether ambient moisture, not a specific leak, is what's
           driving mold or mildew problems. It's the diagnostic step that answers
@@ -61,6 +61,13 @@ function HumidityPage() {
         </>
       }
       sections={[
+        {
+          h2: "Why humidity is a Greenacres problem",
+          paragraphs: [
+            "Many Greenacres homes still run on AC systems that have been patched for years instead of replaced. An older system keeps cooling long after it stops removing moisture, so the house feels fine while indoor humidity stays high. Mold then shows up in the coolest spots: exterior bedroom walls, the inside of closets, and ceiling drywall in the coldest rooms.",
+            "Humidity testing puts numbers on that. We log temperature, relative humidity, and dew point room by room and check the air-handler closet, where a backed-up condensate line is a common find in homes from the 1970s and 1980s. The readings show whether you have a moisture source to chase or an air conditioning problem to fix.",
+          ],
+        },
         {
           h2: "Why humidity is a mold question in South Florida",
           paragraphs: [

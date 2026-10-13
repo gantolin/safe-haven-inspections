@@ -20,8 +20,8 @@ export const Route = createFileRoute("/services/mold-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-testing/",
-      title: "Mold Testing & Accredited Lab Analysis | Safe Haven",
-      description: "Independent, lab-analyzed mold testing (air and surface sampling) across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
+      title: "Mold Testing in Greenacres, FL | 24-Hour Lab Results | Safe Haven",
+      description: "Mold testing in Greenacres, FL. Air and surface samples analyzed by an AIHA-accredited lab, with a written report in 24 hours. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -29,8 +29,8 @@ export const Route = createFileRoute("/services/mold-testing")({
         jsonLdScript(faqSchema(faqs)),
         jsonLdScript(
           serviceSchema({
-            name: "Mold Testing South Florida",
-            description: "Independent, lab-analyzed mold testing (air and surface sampling) across Martin, Palm Beach & Broward Counties. AIHA-accredited lab, report in 24 hours.",
+            name: "Mold Testing",
+            description: "Mold testing in Greenacres, FL. Air and surface samples analyzed by an AIHA-accredited lab, with a written report in 24 hours. Call (561) 632-6387.",
             path: "/services/mold-testing/",
           }),
         ),
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/services/mold-testing")({
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Mold Testing South Florida", path: "/services/mold-testing/" },
+            { name: "Mold Testing", path: "/services/mold-testing/" },
           ]),
         ),
       ],
@@ -51,10 +51,10 @@ function MoldTestingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Mold Testing & Lab Analysis"
+      h1="Mold Testing in Greenacres, FL"
       intro={
         <>
-          Mold testing is the lab-analyzed sampling piece of a mold assessment:
+          Mold testing in Greenacres is the lab-analyzed sampling piece of a mold assessment:
           air samples, surface samples, and, when needed, bulk material samples
           sent to an accredited third-party laboratory. It's how you turn "we see
           something" into defensible numbers and species identifications you can
@@ -62,6 +62,13 @@ function MoldTestingPage() {
         </>
       }
       sections={[
+        {
+          h2: "Mold testing for Greenacres homes",
+          paragraphs: [
+            "Most of the housing in Greenacres went up between the 1970s and the 1990s. In homes that age, the usual reason to test is a musty smell with nothing visible: a supply line sweating inside a wall, or an older AC system that still cools but no longer pulls moisture out of the air.",
+            "Testing turns that suspicion into numbers. Air samples are taken in the rooms you are worried about and read against an outdoor sample from the same day, so the lab report shows whether spores are elevated and which part of the house they point to. Safe Haven is based in Greenacres and covers all three of its ZIP codes: 33413, 33463, and 33467.",
+          ],
+        },
         {
           h2: "What mold testing actually measures",
           paragraphs: [

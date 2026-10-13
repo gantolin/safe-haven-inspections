@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/commercial-mold-inspection/",
-      title: "Commercial Mold Inspection & Assessment | Safe Haven",
+      title: "Commercial Mold Inspection in Greenacres, FL | Safe Haven",
       description:
-        "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
+        "Commercial mold inspection in Greenacres, FL for offices, rentals, HOAs, and retail. Independent reports from a licensed assessor. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
         jsonLdScript(
           serviceSchema({
             name: "Commercial Mold Inspection",
-            description: "Independent commercial mold inspection for South Florida offices, rentals, HOAs, and retail. Third-party reports property managers can rely on.",
+            description: "Commercial mold inspection in Greenacres, FL for offices, rentals, HOAs, and retail. Independent reports from a licensed assessor. Call (561) 632-6387.",
             path: "/services/commercial-mold-inspection/",
           }),
         ),
@@ -57,10 +57,10 @@ function CommercialPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Commercial Mold Inspection"
+      h1="Commercial Mold Inspection in Greenacres, FL"
       intro={
         <>
-          Commercial mold inspection is a scaled, documentation-heavy version
+          Commercial mold inspection in Greenacres is a scaled, documentation-heavy version
           of our residential assessment work, built for offices, rental
           buildings, HOAs, condos, and retail spaces where multiple
           stakeholders (owners, managers, tenants, insurers) need to trust
@@ -70,6 +70,13 @@ function CommercialPage() {
         </>
       }
       sections={[
+        {
+          h2: "Commercial and multi-unit buildings in Greenacres",
+          paragraphs: [
+            "In Greenacres, commercial mold inspection often means multi-unit housing: condo and villa associations, apartment buildings, and rental portfolios, along with the offices and storefronts on the Lake Worth Road corridor. In attached housing, a roof or plumbing leak rarely stays in one unit. It moves through shared walls and ceilings, and by the time it shows on one side it has usually been wet for weeks.",
+            "That makes the first question who is responsible, and an association, an owner, and a tenant will each have a view. Our report documents where the moisture is, where it appears to come from, and what the lab found. It is written by a company that does not sell the repair, so a board or property manager can hand the same document to every party.",
+          ],
+        },
         {
           h2: "Where a commercial inspection differs from residential",
           paragraphs: [

@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/thermal-imaging")({
   head: () => {
     const base = pageMeta({
       path: "/services/thermal-imaging/",
-      title: "Thermal Imaging Mold Inspection, FL | Safe Haven",
+      title: "Thermal Imaging Inspection in Greenacres, FL | Safe Haven",
       description:
-        "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
+        "Thermal imaging inspection in Greenacres, FL. Infrared scanning and moisture meters find hidden leaks behind walls without cutting. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/thermal-imaging")({
         jsonLdScript(
           serviceSchema({
             name: "Moisture Mapping & Thermal Imaging",
-            description: "Non-destructive moisture mapping and infrared thermal imaging in South Florida. Find hidden water intrusion behind walls and ceilings before it becomes mold.",
+            description: "Thermal imaging inspection in Greenacres, FL. Infrared scanning and moisture meters find hidden leaks behind walls without cutting. Call (561) 632-6387.",
             path: "/services/thermal-imaging/",
           }),
         ),
@@ -57,10 +57,10 @@ function ThermalImagingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Thermal Imaging Mold Inspection"
+      h1="Thermal Imaging Inspection in Greenacres, FL"
       intro={
         <>
-          A thermal imaging mold inspection uses infrared cameras and moisture
+          A thermal imaging inspection in Greenacres uses infrared cameras and moisture
           meters to find water hiding behind walls, ceilings, and floors. That
           hidden moisture is the condition that turns a small leak into a mold
           problem, and it is almost always invisible until something stains or
@@ -69,6 +69,13 @@ function ThermalImagingPage() {
         </>
       }
       sections={[
+        {
+          h2: "Thermal imaging mold inspection for Greenacres homes",
+          paragraphs: [
+            "Greenacres housing gives a thermal camera plenty to find. Flat-tile roofs from the 1980s can look intact from the ground while the underlayment beneath has aged out, and the first sign indoors is a cool patch at the ceiling edge. Galvanized supply lines sweat and seep inside walls well before the drywall shows anything.",
+            "In condo and villa sections, the camera also helps answer where the water is coming from. A wet area that runs along a shared wall or down from the ceiling points at a neighboring unit, and that changes who needs to fix it. Every cool spot the camera finds is confirmed with a moisture meter before it goes in the report.",
+          ],
+        },
         {
           h2: "Why moisture (not mold) is really the target",
           paragraphs: [

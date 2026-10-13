@@ -16,13 +16,13 @@ const faqs: FaqItem[] = [
 ];
 
 const DESCRIPTION =
-  "Mold inspection for insurance claims across Palm Beach, Broward, and Martin County. Independent, Florida-licensed documentation built for adjusters, from an assessor who never does the remediation.";
+  "Mold inspection for insurance claims in Greenacres, FL. Independent, licensed documentation built for adjusters, by an assessor who never does the cleanup.";
 
 export const Route = createFileRoute("/services/insurance-claim-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/insurance-claim-mold-inspection/",
-      title: "Mold Inspection for Insurance Claims, FL | Safe Haven",
+      title: "Mold Inspection for Insurance Claims in Greenacres, FL | Safe Haven",
       description: DESCRIPTION,
     });
     return {
@@ -54,10 +54,10 @@ function InsuranceClaimPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Mold Inspection & Testing for Insurance Claims"
+      h1="Mold Inspection for Insurance Claims in Greenacres, FL"
       intro={
         <>
-          An insurance-claim mold inspection is an independent, Florida-licensed
+          A mold inspection for an insurance claim in Greenacres is an independent, Florida-licensed
           assessment that documents what happened, where the moisture came from,
           and how far it spread, in a format an adjuster can act on. We cover Palm
           Beach, Broward, and Martin County. The report is written by an assessor
@@ -66,6 +66,13 @@ function InsuranceClaimPage() {
         </>
       }
       sections={[
+        {
+          h2: "Insurance claims we document in Greenacres",
+          paragraphs: [
+            "Claims in Greenacres tend to start one of three ways: a roof leak after a storm, a supply line that failed inside a wall, or water coming through from the unit next door or above. Roofs in the city's 1980s and 1990s subdivisions are at or past their original service life, and older galvanized plumbing tends to fail slowly. That matters, because insurers treat a sudden loss differently from a long-term leak.",
+            "Our job is to record the evidence before cleanup removes it: moisture readings, thermal images, photographs, lab results, and a written account of where the water came from and how far it spread. If you can, call before remediation starts.",
+          ],
+        },
         {
           h2: "Why independent assessments carry weight",
           paragraphs: [

@@ -32,6 +32,7 @@ import stepSampling from "@/assets/step-sampling.jpg.asset.json";
 import stepLab from "@/assets/step-lab.jpg.asset.json";
 import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
+import { HeroQuoteCard } from "@/components/quote-form";
 
 const heroImg = heroDesktopAsset.url;
 const heroImgMobile = heroMobileAsset.url;
@@ -195,7 +196,10 @@ function Index() {
               "linear-gradient(to right, rgba(11,37,69,0.88) 0%, rgba(11,37,69,0.82) 30%, rgba(11,37,69,0.52) 52%, rgba(11,37,69,0.16) 78%, rgba(11,37,69,0.04) 100%)",
           }}
         />
-        <div className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24 md:min-h-[640px] md:py-28">
+        {/* Two columns from lg up: the pitch on the left, the request form on
+            the right. Below lg the form drops under the buttons, still inside
+            the hero, so it is on the landing screen at every width. */}
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:min-h-[640px] lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10 lg:py-16">
           {/* Column is a flex container on phones only; items-start keeps the
               pill badge from stretching. */}
           <div className="flex max-w-2xl flex-col items-start sm:block">
@@ -216,7 +220,7 @@ function Index() {
               </div>
               <GoogleRatingBadge onDark />
             </div>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl md:text-6xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl">
               Mold Inspection & Testing in Greenacres, FL
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
@@ -237,19 +241,22 @@ function Index() {
               honest one.
             </p>
             <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
-              <Link
-                to="/contact/"
-                className={ctaPrimary}
-              >
-                Request an inspection <ArrowRight className="h-4 w-4" />
-              </Link>
-              {/* Hidden on phones: the fixed MobileCallBar already pins Call and
-                  Text a Photo to the bottom of every screen below lg. */}
+              {/* The call button shows at every width, phones included. The
+                  sticky bar at the bottom of the screen repeats it, but a
+                  visitor should not have to notice a bar to find the number. */}
               <a
                 href="tel:+15616326387"
-                className="hidden items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:inline-flex"
+                className={`${ctaPrimary} py-3.5 text-base`}
               >
                 <Phone className="h-4 w-4" /> Call (561) 632-6387
+              </a>
+              {/* Below lg the form sits under this block, so this jumps to
+                  it. From lg up the form is already beside the headline. */}
+              <a
+                href="#request"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 lg:hidden"
+              >
+                Request an inspection <ArrowRight className="h-4 w-4" />
               </a>
             </div>
             <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm">
@@ -260,6 +267,7 @@ function Index() {
               and we'll tell you if it's worth testing.
             </p>
           </div>
+          <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:max-w-none" />
         </div>
       </section>
 

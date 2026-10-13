@@ -23,6 +23,7 @@ import {
   type FaqItem,
 } from "@/lib/seo";
 import { EQUIPMENT_FIGURES } from "@/data/figures";
+import { HeroQuoteCard } from "@/components/quote-form";
 import { webpVariant } from "@/lib/images";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 
@@ -83,7 +84,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
       path: "/services/mold-inspection/",
       title: "What a Mold Inspection Includes | Safe Haven Inspections",
       description:
-        "What a Florida-licensed mold inspection covers, step by step: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed written report in 24 hours.",
+        "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed report in 24 hours.",
       ogType: "website",
     });
     return {
@@ -94,7 +95,7 @@ export const Route = createFileRoute("/services/mold-inspection")({
           serviceSchema({
             name: "Mold Inspection",
             description:
-              "What a Florida-licensed mold inspection covers, step by step: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed written report in 24 hours.",
+              "What a Florida-licensed mold inspection covers: visual survey, moisture mapping, thermal imaging, air and surface sampling, and a lab-backed report in 24 hours.",
             path: "/services/mold-inspection/",
             serviceType: "Mold inspection and assessment",
           }),
@@ -116,8 +117,8 @@ function MoldInspectionPage() {
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-          <div>
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10">
+          <div className="lg:col-start-1">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Service</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">
             What a mold inspection includes
@@ -132,21 +133,25 @@ function MoldInspectionPage() {
             in your report exists to sell you a cleanup.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/contact/"
-              className={ctaPrimary}
-            >
-              Request an inspection <ArrowRight className="h-4 w-4" />
-            </Link>
             <a
               href="tel:+15616326387"
-              className={ctaSecondary}
+              className={`${ctaPrimary} py-3.5 text-base`}
             >
-              <Phone className="h-4 w-4" /> (561) 632-6387
+              <Phone className="h-4 w-4" /> Call (561) 632-6387
+            </a>
+            <a
+              href="#request"
+              className={`${ctaSecondary} py-3.5 lg:hidden`}
+            >
+              Request an inspection <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           </div>
-          <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <HeroQuoteCard
+            formName="service-hero"
+            className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start"
+          />
+          <figure className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm lg:col-start-1 lg:row-start-2 lg:self-start">
             <picture>
               <source srcSet={webpVariant("/hero-mold-inspection.jpg")} type="image/webp" />
               <img

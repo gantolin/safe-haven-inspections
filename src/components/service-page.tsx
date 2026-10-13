@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Phone, ShieldCheck } from "lucide-react";
 import { Fragment, type ReactNode } from "react";
 import { webpVariant } from "@/lib/images";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
+import { HeroQuoteCard } from "@/components/quote-form";
 
 /** Photo plus caption, styled to match the card language used across the site. */
 function Figure({ fig, className = "" }: { fig: ServiceFigure; className?: string }) {
@@ -152,12 +153,11 @@ export function ServicePage({
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div
-          className={`mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 ${
-            heroImage ? "lg:grid-cols-[1.1fr_1fr] lg:items-center" : ""
-          }`}
-        >
-          <div>
+        {/* Text, then the request form, then the photo. On phones they stack in
+            that order, so the ask comes before the picture. From lg up the form
+            takes the right column and the photo sits under the text. */}
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10">
+          <div className="lg:col-start-1">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">
             {eyebrow}
           </p>
@@ -168,32 +168,52 @@ export function ServicePage({
           <div className="mt-5 max-w-3xl text-base text-muted-foreground sm:text-lg">
             {intro}
           </div>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              to="/contact/"
-              className={ctaPrimary}
-            >
-              Request an inspection <ArrowRight className="h-4 w-4" />
-            </Link>
+          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-primary">
+            {[
+              "Licensed and insured",
+              "Independent accredited lab",
+              "Reports typically in 24 hours",
+              "Testing only, nothing to sell you",
+            ].map((t) => (
+              <li key={t} className="inline-flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" /> {t}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
               href="tel:+15616326387"
-              className={ctaSecondary}
+              className={`${ctaPrimary} py-3.5 text-base`}
             >
-              <Phone className="h-4 w-4" /> (561) 632-6387
+              <Phone className="h-4 w-4" /> Call (561) 632-6387
+            </a>
+            {/* Phones and tablets only: from lg up the form is already on
+                screen beside this column. */}
+            <a
+              href="#request"
+              className={`${ctaSecondary} py-3.5 lg:hidden`}
+            >
+              Request an inspection <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <p className="mt-6 max-w-2xl text-xs text-muted-foreground">
             Part of our{" "}
             <Link
-              to="/services/mold-inspection/"
+              to="/"
               className="font-semibold text-accent hover:underline"
             >
-              Palm Beach County mold inspection
-            </Link>{" "}
-            services: independent, licensed, and lab-backed.
+              mold inspection and testing in Greenacres
+            </Link>
+            : independent, licensed, and lab-backed.
           </p>
           </div>
-          {heroImage ? <Figure fig={heroImage} className="shadow-sm" /> : null}
+          <HeroQuoteCard
+            formName="service-hero"
+            className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start"
+          />
+          {heroImage ? (
+            <Figure fig={heroImage} className="shadow-sm lg:col-start-1 lg:row-start-2 lg:self-start" />
+          ) : null}
         </div>
       </section>
 

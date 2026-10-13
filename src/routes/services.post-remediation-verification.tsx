@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
   head: () => {
     const base = pageMeta({
       path: "/services/post-remediation-verification/",
-      title: "Post Remediation Verification in Florida | Safe Haven",
+      title: "Post-Remediation Verification in Greenacres, FL | Safe Haven",
       description:
-        "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
+        "Post-remediation verification in Greenacres, FL. Independent mold clearance testing with a clear pass or fail after the cleanup. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
         jsonLdScript(
           serviceSchema({
             name: "Post-Remediation Verification",
-            description: "Independent post-remediation verification and clearance testing in South Florida. Third-party pass/fail decisions after any mold remediation company finishes.",
+            description: "Post-remediation verification in Greenacres, FL. Independent mold clearance testing with a clear pass or fail after the cleanup. Call (561) 632-6387.",
             path: "/services/post-remediation-verification/",
           }),
         ),
@@ -57,10 +57,10 @@ function PostRemediationPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Post-Remediation Verification & Mold Clearance Testing"
+      h1="Post-Remediation Verification in Greenacres, FL"
       intro={
         <>
-          Post-remediation verification is the independent, third-party check
+          Post-remediation verification in Greenacres is the independent, third-party check
           that confirms a mold remediation project actually returned the space
           to a normal condition: visually, structurally dry, and free of
           elevated airborne spores. As a Florida-licensed mold assessor that
@@ -70,6 +70,13 @@ function PostRemediationPage() {
         </>
       }
       sections={[
+        {
+          h2: "Mold clearance testing in Greenacres",
+          paragraphs: [
+            "If a remediation crew is finishing up at your Greenacres home, clearance testing is the last step before the containment comes down. We are based in the city, which makes it easier to time the visit to the day the crew finishes, while the plastic is still up and the area can be cleaned again if it fails.",
+            "In the city's condo and villa sections, the shared wall matters. A cleanup can pass on your side while the source in the neighboring unit is still wet. The clearance report states what was tested, what passed, and anything outside the work area that still needs attention.",
+          ],
+        },
         {
           h2: "Why independence is required for clearance",
           paragraphs: [

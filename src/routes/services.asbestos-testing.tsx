@@ -10,7 +10,7 @@ import {
 } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Asbestos testing in Palm Beach County and across South Florida. A certified asbestos inspector collects the samples, an accredited lab analyzes them, report in 24 hours.";
+  "Asbestos testing in Greenacres, FL. A certified asbestos inspector collects the samples, an accredited lab analyzes them, and the report is back in 24 hours.";
 
 /*
  * FAQ questions are written to match how people actually search, because the
@@ -77,7 +77,7 @@ export const Route = createFileRoute("/services/asbestos-testing")({
   head: () => {
     const base = pageMeta({
       path: "/services/asbestos-testing/",
-      title: "Asbestos Testing in Palm Beach County | Safe Haven",
+      title: "Asbestos Testing in Greenacres, FL | 24-Hour Results | Safe Haven",
       description: DESCRIPTION,
     });
     return {
@@ -109,10 +109,10 @@ function AsbestosTestingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Asbestos Testing"
+      h1="Asbestos Testing in Greenacres, FL"
       intro={
         <>
-          Asbestos testing tells you whether the material you are about to sand,
+          Asbestos testing in Greenacres tells you whether the material you are about to sand,
           cut, or tear out contains asbestos fibers, before the demolition starts
           rather than after. It matters most in South Florida homes built before
           1980, where popcorn ceilings, floor tile, pipe wrap, and old joint
@@ -128,6 +128,13 @@ function AsbestosTestingPage() {
         body: "Safe Haven Inspections performs asbestos sampling and lab analysis only. We do not remove, encapsulate, or subcontract abatement, and we take no referral fee from the contractors who do. That matters more with asbestos than almost anything else we test for, because the company telling you a material is positive is very often the company quoting you to remove it. When the result comes from someone with nothing to sell on the other side of it, a negative result is just as trustworthy as a positive one.",
       }}
       sections={[
+        {
+          h2: "Where asbestos turns up in Greenacres homes",
+          paragraphs: [
+            "Greenacres has a lot of housing from the 1970s, and that is the decade that matters. Popcorn ceilings, vinyl floor tile, the adhesive under it, and joint compound from those years can all contain asbestos, and none of it can be identified by eye.",
+            "The usual trigger is a renovation: scraping a ceiling, pulling up a kitchen floor, opening a wall. Have the material sampled before the work starts, because once it has been sanded or broken up the fibers are already in the air. We take a small sample of each suspect material and send it to an accredited lab.",
+          ],
+        },
         {
           h2: "What we test",
           tone: "band",

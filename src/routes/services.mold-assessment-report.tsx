@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
   head: () => {
     const base = pageMeta({
       path: "/services/mold-assessment-report/",
-      title: "Mold Assessment Report & Protocol, Florida | Safe Haven",
+      title: "Mold Assessment Report in Greenacres, FL | Safe Haven",
       description:
-        "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
+        "Mold assessment report in Greenacres, FL from a licensed, independent assessor. Lab data, findings, and a remediation protocol contractors can bid from.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
         jsonLdScript(
           serviceSchema({
             name: "Mold Assessment Report & Protocol",
-            description: "Formal Florida mold assessment reports and remediation protocols from a licensed, independent assessor. Documentation insurers and attorneys can rely on.",
+            description: "Mold assessment report in Greenacres, FL from a licensed, independent assessor. Lab data, findings, and a remediation protocol contractors can bid from.",
             path: "/services/mold-assessment-report/",
           }),
         ),
@@ -57,10 +57,10 @@ function MoldAssessmentReportPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Mold Assessment Report & Written Protocol"
+      h1="Mold Assessment Report in Greenacres, FL"
       intro={
         <>
-          A mold assessment report is the formal, written deliverable a
+          A mold assessment report for a Greenacres property is the formal, written deliverable a
           Florida-licensed mold assessor produces after inspecting and
           sampling a property: the document that turns observations and lab
           data into an evidence record and, when needed, a remediation
@@ -69,6 +69,13 @@ function MoldAssessmentReportPage() {
         </>
       }
       sections={[
+        {
+          h2: "When Greenacres owners need a written report",
+          paragraphs: [
+            "In Greenacres the report is often requested by someone other than the owner: a remediation contractor who needs a scope to bid, a condo or HOA board deciding whose leak it is, an adjuster, or a buyer's agent.",
+            "Florida law keeps the assessor and the remediator separate on the same job, so the protocol in our report is the independent scope every contractor bids against. For homes from the 1970s and 1980s it also records the likely cause, such as an aging roof, a failed supply line, or an AC system that no longer dehumidifies, so the repair covers more than the visible damage.",
+          ],
+        },
         {
           h2: "What the report actually is",
           paragraphs: [

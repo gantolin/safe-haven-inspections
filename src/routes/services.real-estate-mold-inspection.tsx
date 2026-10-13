@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
   head: () => {
     const base = pageMeta({
       path: "/services/real-estate-mold-inspection/",
-      title: "Mold Inspection When Buying a House | Safe Haven",
+      title: "Real Estate Mold Inspection in Greenacres, FL | Safe Haven",
       description:
-        "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
+        "Real estate mold inspection in Greenacres, FL for buyers, sellers, and agents. Licensed, independent, timed to your inspection period. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
         jsonLdScript(
           serviceSchema({
             name: "Real Estate Mold Inspection",
-            description: "Independent pre-purchase and pre-sale mold inspection for South Florida real-estate transactions. Fast scheduling, clear reports, and no remediation upsell.",
+            description: "Real estate mold inspection in Greenacres, FL for buyers, sellers, and agents. Licensed, independent, timed to your inspection period. Call (561) 632-6387.",
             path: "/services/real-estate-mold-inspection/",
           }),
         ),
@@ -57,10 +57,10 @@ function RealEstatePage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Mold Inspection When Buying a House"
+      h1="Real Estate Mold Inspection in Greenacres, FL"
       intro={
         <>
-          Should you get a mold inspection when buying a house in South Florida?
+          A real estate mold inspection in Greenacres answers the question most buyers ask late: should you get a mold inspection when buying a house in South Florida?
           In a market this humid, usually yes, and a standard home inspection is
           not the same thing. This is a focused, licensed evaluation for hidden
           mold and moisture, run on the timeline a real estate deal actually moves
@@ -69,6 +69,13 @@ function RealEstatePage() {
         </>
       }
       sections={[
+        {
+          h2: "Buying or selling a home in Greenacres",
+          paragraphs: [
+            "Most homes that change hands in Greenacres are 30 to 50 years old. At that age, the things a buyer cannot see are the ones worth checking: the roof underlayment, the supply lines inside the walls, and how well the AC still controls humidity. A mold inspection samples the air and measures moisture inside the walls, which a walkthrough alone cannot do.",
+            "For condos and villas, the shared walls and the ceiling under the unit above get a close look, since a neighbor's leak becomes the new owner's problem. You get a written report inside the inspection period, in time to negotiate, ask for a repair, or walk away.",
+          ],
+        },
         {
           h2: "Why real estate transactions need a specialist",
           paragraphs: [

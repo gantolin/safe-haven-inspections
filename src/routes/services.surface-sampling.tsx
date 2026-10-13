@@ -25,9 +25,9 @@ export const Route = createFileRoute("/services/surface-sampling")({
   head: () => {
     const base = pageMeta({
       path: "/services/surface-sampling/",
-      title: "Surface & Tape-Lift Mold Sampling | Safe Haven",
+      title: "Surface Mold Sampling in Greenacres, FL | Safe Haven",
       description:
-        "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth, no remediation upsell.",
+        "Surface mold sampling in Greenacres, FL. Tape-lift, swab, and bulk samples identified by an accredited lab, so you know what a stain is. Call (561) 632-6387.",
     });
     return {
       ...base,
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/services/surface-sampling")({
         jsonLdScript(
           serviceSchema({
             name: "Surface Sampling & Swab Testing",
-            description: "Independent tape-lift, swab, and bulk mold sampling in South Florida. Lab-backed species identification from visible growth, no remediation upsell.",
+            description: "Surface mold sampling in Greenacres, FL. Tape-lift, swab, and bulk samples identified by an accredited lab, so you know what a stain is. Call (561) 632-6387.",
             path: "/services/surface-sampling/",
           }),
         ),
@@ -57,10 +57,10 @@ function SurfaceSamplingPage() {
   return (
     <ServicePage
       eyebrow="Service"
-      h1="Surface & Tape-Lift Mold Sampling"
+      h1="Surface Mold Sampling in Greenacres, FL"
       intro={
         <>
-          Black mold testing and surface sampling answer the question a
+          Surface mold sampling in Greenacres answers the question a
           homeowner actually asks: what is this stain on my wall, and is it the
           bad kind? We collect material straight off the affected surface with a
           swab, tape lift, or bulk sample and send it to an accredited lab for
@@ -69,6 +69,13 @@ function SurfaceSamplingPage() {
         </>
       }
       sections={[
+        {
+          h2: "What gets sampled in Greenacres homes",
+          paragraphs: [
+            "In Greenacres, the spots people ask about are predictable: dark growth around a bathroom window that was never resealed, staining on a ceiling below a roof valley, and spotting on a bedroom wall or inside a closet. A surface sample tells you whether it is mold at all and, if so, which kind.",
+            "Plenty of what looks like mold in an older home is not. Dust streaks at an AC register, dirt on a cold wall, and old water stains can all pass for it. A tape lift or swab takes a few minutes, goes to the lab, and gives you a name for what is on the wall before you pay anyone to remove it.",
+          ],
+        },
         {
           h2: "What surface sampling is",
           paragraphs: [
