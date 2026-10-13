@@ -9,7 +9,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/services/", label: "Services" },
   { to: "/service-areas/", label: "Areas" },
-  { to: "/mold-inspection-for-realtors/", label: "Realtors" },
+  { to: "/mold-inspection-for-realtors-palm-beach-county/", label: "Realtors" },
   { to: "/blog/", label: "Blog" },
   { to: "/about/", label: "About" },
   { to: "/contact/", label: "Contact" },
@@ -41,7 +41,7 @@ const footerServices = [
   { to: "/services/apartment-mold-inspection-greenacres/", label: "Apartment Mold Inspection" },
   { to: "/services/attic-mold-inspection-greenacres/", label: "Attic Mold Inspection" },
   { to: "/services/popcorn-ceiling-asbestos-testing-greenacres/", label: "Popcorn Ceiling Asbestos Testing" },
-  { to: "/mold-inspection-for-realtors/", label: "Mold Inspection for Realtors" },
+  { to: "/mold-inspection-for-realtors-palm-beach-county/", label: "Mold Inspection for Realtors" },
 ] as const;
 
 export function SiteNav() {

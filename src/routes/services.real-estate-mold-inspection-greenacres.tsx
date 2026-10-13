@@ -144,7 +144,7 @@ function RealEstatePage() {
         { to: "/services/asbestos-testing-greenacres/", label: "Asbestos testing", blurb: "Buying a pre-1980 home? Test the popcorn ceiling before the inspection period closes." },
       ]}
       furtherReading={{
-        href: "/mold-inspection-for-realtors/",
+        href: "/mold-inspection-for-realtors-palm-beach-county/",
         label: "Mold inspection for Realtors in Palm Beach County",
         blurb: "For agents and property managers: scheduling, access, and pre-listing inspections.",
       }}

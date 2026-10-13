@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ServicePage } from "@/components/service-page";
 import { pageMeta, faqSchema, jsonLdScript, type FaqItem, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
-const PATH = "/mold-inspection-for-realtors/";
+const PATH = "/mold-inspection-for-realtors-palm-beach-county/";
 const DESCRIPTION =
   "Mold inspection for Realtors in Palm Beach County. A licensed, independent mold assessor scheduled inside the inspection period, with lab results in 24 hours.";
 
@@ -25,7 +25,7 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/mold-inspection-for-realtors")({
+export const Route = createFileRoute("/mold-inspection-for-realtors-palm-beach-county")({
   head: () => {
     const base = pageMeta({
       path: PATH,
