@@ -132,7 +132,7 @@ function AsbestosTestingPage() {
           h2: "Where asbestos turns up in Greenacres homes",
           paragraphs: [
             "Greenacres has a lot of housing from the 1970s, and that is the decade that matters. Popcorn ceilings, vinyl floor tile, the adhesive under it, and joint compound from those years can all contain asbestos, and none of it can be identified by eye.",
-            "The usual trigger is a renovation: scraping a ceiling, pulling up a kitchen floor, opening a wall. Have the material sampled before the work starts, because once it has been sanded or broken up the fibers are already in the air. We take a small sample of each suspect material and send it to an accredited lab.",
+            "The usual trigger is a renovation: scraping a ceiling, pulling up a kitchen floor, opening a wall. Have the material sampled before the work starts, because once it has been sanded or broken up the fibers are already in the air. We take a small sample of each suspect material and send it to an accredited lab. We also do whole-property asbestos inspections and surveys before renovation or demolition.",
           ],
         },
         {
@@ -245,10 +245,10 @@ function AsbestosTestingPage() {
             "The flagship service, and the one most often booked alongside asbestos sampling on the same visit.",
         },
         {
-          to: "/services/air-quality-testing-greenacres/",
-          label: "Indoor Air Quality Testing",
+          to: "/services/asbestos-inspection-greenacres/",
+          label: "Asbestos Inspection & Surveys",
           blurb:
-            "Spore-trap air sampling with outdoor controls when the question is what you are breathing, not what is in the ceiling.",
+            "A whole-property inspection, or a survey of everything a renovation or demolition will disturb.",
         },
         {
           to: "/services/post-remediation-verification-greenacres/",

@@ -31,6 +31,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/services/mold-assessment-report-greenacres/",
           "/services/asbestos-testing-greenacres/",
           "/services/insurance-claim-mold-inspection-greenacres/",
+          "/services/hvac-mold-inspection-greenacres/",
+          "/services/asbestos-inspection-greenacres/",
           "/services/independent-mold-inspection-greenacres/",
           "/services/apartment-mold-inspection-greenacres/",
           "/services/attic-mold-inspection-greenacres/",

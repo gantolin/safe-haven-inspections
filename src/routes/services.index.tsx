@@ -57,6 +57,8 @@ type ServiceLink =
   | "/services/apartment-mold-inspection-greenacres/"
   | "/services/attic-mold-inspection-greenacres/"
   | "/services/popcorn-ceiling-asbestos-testing-greenacres/"
+  | "/services/hvac-mold-inspection-greenacres/"
+  | "/services/asbestos-inspection-greenacres/"
   | "/services/mold-assessment-report-greenacres/";
 
 const services: Array<{
@@ -183,6 +185,18 @@ const services: Array<{
     icon: Layers,
     title: "Popcorn Ceiling Asbestos Testing",
     body: "A certified asbestos inspector samples the ceiling before you scrape, sand, or drill it. Lab results in 24 hours.",
+  },
+  {
+    to: "/services/hvac-mold-inspection-greenacres/",
+    icon: Wind,
+    title: "HVAC Mold Inspection",
+    body: "Air handler, drain line, vents, humidity, and indoor air checked to see whether the AC system is the source.",
+  },
+  {
+    to: "/services/asbestos-inspection-greenacres/",
+    icon: Layers,
+    title: "Asbestos Inspection & Surveys",
+    body: "A certified asbestos inspector samples every material a renovation or demolition will disturb. Inspection only, never abatement.",
   },
 ];
 

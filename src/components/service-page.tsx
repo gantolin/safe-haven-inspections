@@ -104,6 +104,8 @@ export interface RelatedService {
     | "/services/apartment-mold-inspection-greenacres/"
     | "/services/attic-mold-inspection-greenacres/"
     | "/services/popcorn-ceiling-asbestos-testing-greenacres/"
+    | "/services/hvac-mold-inspection-greenacres/"
+    | "/services/asbestos-inspection-greenacres/"
     | "/services/insurance-claim-mold-inspection-greenacres/";
   label: string;
   blurb: string;
