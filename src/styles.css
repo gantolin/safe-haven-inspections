@@ -316,3 +316,34 @@ main section[data-reveal].is-visible {
     transform: none !important;
   }
 }
+
+/* Home hero thermal scan. The plain-wall layer is clipped away from the left
+   as the line crosses, holds on infrared, then closes again. One 10s loop. */
+@keyframes hero-thermal-wipe {
+  0%, 12% { clip-path: inset(0 0 0 0); }
+  42%, 86% { clip-path: inset(0 0 0 100%); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+@keyframes hero-thermal-line {
+  0%, 12% { left: 0%; opacity: 0; }
+  14% { opacity: 1; }
+  42% { left: 100%; opacity: 1; }
+  44%, 86% { left: 100%; opacity: 0; }
+  88% { opacity: 1; }
+  100% { left: 0%; opacity: 0; }
+}
+.hero-thermal-plain {
+  animation: hero-thermal-wipe 10s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+.hero-thermal-line {
+  left: 0;
+  opacity: 0;
+  animation: hero-thermal-line 10s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-thermal-plain,
+  .hero-thermal-line {
+    animation: none;
+    display: none;
+  }
+}

@@ -23,8 +23,6 @@ import {
 } from "lucide-react";
 import { GoogleReviews, GoogleRatingBadge } from "@/components/google-reviews";
 import { CertBadgeGrid } from "@/components/cert-badges";
-import heroDesktopAsset from "../assets/hero-family-desktop.jpg.asset.json";
-import heroMobileAsset from "../assets/hero-family-mobile.jpg.asset.json";
 import { webpVariant } from "@/lib/images";
 import stepVisual from "@/assets/step-visual.jpg.asset.json";
 import stepSampling from "@/assets/step-sampling.jpg.asset.json";
@@ -33,8 +31,9 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
-const heroImg = heroDesktopAsset.url;
-const heroImgMobile = heroMobileAsset.url;
+// Home hero: a real infrared frame, and the same frame flattened to a plain wall.
+const HERO_IR = "/thermal-reveal-ir.jpg";
+const HERO_PLAIN = "/thermal-reveal-plain.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -120,9 +119,8 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: heroImgMobile,
-        imagesrcset: `${heroImgMobile} 800w, ${heroImg} 1600w`,
-        imagesizes: "100vw",
+        href: "/thermal-reveal-ir.webp",
+        type: "image/webp",
         fetchpriority: "high",
       },
     ],
@@ -145,48 +143,49 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
+        {/* Background: one real frame from our thermal camera. A plain-wall
+            version of the same frame lies on top and is wiped away by a scan
+            line, so the hero turns from "what you see" into "what the camera
+            sees" and back. The motion is CSS only (see .hero-thermal-* in
+            styles.css), so it runs before the page hydrates and stops under
+            reduced motion, where the hero simply rests on the infrared frame. */}
         <picture className="absolute inset-0 -z-10 h-full w-full">
-          <source media="(min-width: 768px)" srcSet={webpVariant(heroImg)} type="image/webp" />
-          <source media="(min-width: 768px)" srcSet={heroImg} />
-          <source srcSet={webpVariant(heroImgMobile)} type="image/webp" />
+          <source srcSet={webpVariant(HERO_IR)} type="image/webp" />
           <img
-            src={heroImgMobile}
-            alt="A family with two children and a golden doodle puppy relaxing in a bright, sunlit South Florida living room."
-            width={1600}
-            height={1067}
+            src={HERO_IR}
+            alt="Infrared image from a thermal camera showing a cooler area low on an interior wall"
+            width={1200}
+            height={799}
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="h-full w-full object-cover object-[center_78%] brightness-[1.12] saturate-[1.06] sm:object-[center_62%] sm:brightness-[1.06] sm:saturate-[1.04]"
+            className="h-full w-full object-cover"
           />
         </picture>
-        {/* Flat darkening, now only in the 640–767px band. Below that the scrim
-            below already does the work; above it the directional gradient does.
-            Everywhere it applied, it was stacking on top of a gradient and
-            washing the photo out — on desktop the right-hand side sat at ~0.35
-            combined, which is what made the family look grey. */}
+        <picture aria-hidden className="hero-thermal-plain absolute inset-0 -z-10 h-full w-full">
+          <source srcSet={webpVariant(HERO_PLAIN)} type="image/webp" />
+          <img
+            src={HERO_PLAIN}
+            alt=""
+            width={600}
+            height={400}
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </picture>
+        {/* The scan line, with the camera riding on it. */}
+        <div aria-hidden className="hero-thermal-line absolute inset-y-0 -z-10 w-0.5 bg-white shadow-[0_0_18px_4px_rgba(255,255,255,0.65)]">
+          <span className="absolute left-1/2 top-[18%] grid h-11 w-11 -translate-x-1/2 place-items-center rounded-full bg-white text-primary shadow-lg lg:top-3">
+            <Camera className="h-5 w-5" />
+          </span>
+        </div>
+        {/* Scrim. Heavier on the left, where the headline sits, and lighter to
+            the right so the infrared colour still reads around the form. */}
         <div
-          className="absolute inset-0 -z-10 hidden sm:block md:hidden"
-          style={{ backgroundColor: "rgba(11,37,69,0.28)" }}
-        />
-        {/* Mobile: scrim is heavy behind the headline and falls away fast, so the
-            lower half of the frame reads as a photograph rather than a navy wash. */}
-        <div
-          className="absolute inset-0 -z-10 md:hidden"
+          className="absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(11,37,69,0.86) 0%, rgba(11,37,69,0.74) 34%, rgba(11,37,69,0.30) 66%, rgba(11,37,69,0.10) 100%)",
-          }}
-        />
-        {/* Desktop: directional gradient anchored behind the headline (left).
-            Carries the text contrast alone now that the flat layer is gone, so
-            it starts heavier and falls away much further right — the family
-            sits in the 55–90% band and needs to be close to unscrimmed. */}
-        <div
-          className="absolute inset-0 -z-10 hidden md:block"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, rgba(11,37,69,0.88) 0%, rgba(11,37,69,0.82) 30%, rgba(11,37,69,0.52) 52%, rgba(11,37,69,0.16) 78%, rgba(11,37,69,0.04) 100%)",
+              "linear-gradient(to right, rgba(11,37,69,0.86) 0%, rgba(11,37,69,0.78) 40%, rgba(11,37,69,0.42) 70%, rgba(11,37,69,0.26) 100%)",
           }}
         />
         {/* Two columns from lg up: the pitch on the left, the request form on
