@@ -418,10 +418,10 @@ function MoldInspectionPage() {
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
-            { to: "/services/mold-testing/" as const, label: "Mold Testing", blurb: "Air and surface testing overview: what each test measures and when it's used." },
-            { to: "/services/thermal-imaging/" as const, label: "Moisture Mapping & Thermal Imaging", blurb: "Non-destructive infrared and moisture-meter survey for hidden water intrusion." },
-            { to: "/services/post-remediation-verification/" as const, label: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation, before walls close." },
-            { to: "/services/asbestos-testing/" as const, label: "Asbestos Testing", blurb: "Pre-1980 building? Sample the ceiling texture and floor tile on the same visit." },
+            { to: "/services/mold-testing-greenacres/" as const, label: "Mold Testing", blurb: "Air and surface testing overview: what each test measures and when it's used." },
+            { to: "/services/thermal-imaging-greenacres/" as const, label: "Moisture Mapping & Thermal Imaging", blurb: "Non-destructive infrared and moisture-meter survey for hidden water intrusion." },
+            { to: "/services/post-remediation-verification-greenacres/" as const, label: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation, before walls close." },
+            { to: "/services/asbestos-testing-greenacres/" as const, label: "Asbestos Testing", blurb: "Pre-1980 building? Sample the ceiling texture and floor tile on the same visit." },
           ].map((r) => (
             <Link
               key={r.to}

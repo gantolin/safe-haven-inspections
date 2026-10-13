@@ -21,10 +21,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/real-estate-mold-inspection")({
+export const Route = createFileRoute("/services/real-estate-mold-inspection-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/real-estate-mold-inspection/",
+      path: "/services/real-estate-mold-inspection-greenacres/",
       title: "Real Estate Mold Inspection in Greenacres, FL | Safe Haven",
       description:
         "Real estate mold inspection in Greenacres, FL for buyers, sellers, and agents. Licensed, independent, timed to your inspection period. Call (561) 632-6387.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/real-estate-mold-inspection")({
           serviceSchema({
             name: "Real Estate Mold Inspection",
             description: "Real estate mold inspection in Greenacres, FL for buyers, sellers, and agents. Licensed, independent, timed to your inspection period. Call (561) 632-6387.",
-            path: "/services/real-estate-mold-inspection/",
+            path: "/services/real-estate-mold-inspection-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Real Estate Mold Inspection", path: "/services/real-estate-mold-inspection/" },
+            { name: "Real Estate Mold Inspection", path: "/services/real-estate-mold-inspection-greenacres/" },
           ]),
         ),
       ],
@@ -140,10 +140,10 @@ function RealEstatePage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "The lab-backed indoor air data most transactions ultimately turn on." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Non-destructive scan for hidden moisture, ideal within an inspection window." },
-        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
-        { to: "/services/asbestos-testing/", label: "Asbestos testing", blurb: "Buying a pre-1980 home? Test the popcorn ceiling before the inspection period closes." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "The lab-backed indoor air data most transactions ultimately turn on." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Non-destructive scan for hidden moisture, ideal within an inspection window." },
+        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment & written protocol", blurb: "Formal protocol document when negotiated remediation is part of the deal." },
+        { to: "/services/asbestos-testing-greenacres/", label: "Asbestos testing", blurb: "Buying a pre-1980 home? Test the popcorn ceiling before the inspection period closes." },
       ]}
       heroImage={{
         src: "/hero-real-estate.jpg",

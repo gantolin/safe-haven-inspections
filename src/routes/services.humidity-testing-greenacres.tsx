@@ -15,10 +15,10 @@ const faqs: FaqItem[] = [
   { q: "Do you serve all of South Florida?", a: "Yes: Martin, Palm Beach, and Broward Counties." },
 ];
 
-export const Route = createFileRoute("/services/humidity-testing")({
+export const Route = createFileRoute("/services/humidity-testing-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/humidity-testing/",
+      path: "/services/humidity-testing-greenacres/",
       title: "Humidity Testing in Greenacres, FL | Safe Haven Inspections",
       description: "Humidity testing in Greenacres, FL. Temperature, humidity, and dew point readings show whether damp air, not a leak, is behind the mold. Call (561) 632-6387.",
     });
@@ -30,14 +30,14 @@ export const Route = createFileRoute("/services/humidity-testing")({
           serviceSchema({
             name: "Humidity Testing & Psychrometrics",
             description: "Humidity testing in Greenacres, FL. Temperature, humidity, and dew point readings show whether damp air, not a leak, is behind the mold. Call (561) 632-6387.",
-            path: "/services/humidity-testing/",
+            path: "/services/humidity-testing-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Humidity Testing & Psychrometrics", path: "/services/humidity-testing/" },
+            { name: "Humidity Testing & Psychrometrics", path: "/services/humidity-testing-greenacres/" },
           ]),
         ),
       ],
@@ -125,8 +125,8 @@ function HumidityPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Pair with psychrometric readings to see whether humidity has already driven airborne spore counts up." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the specific cold surfaces where condensation is landing." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Pair with psychrometric readings to see whether humidity has already driven airborne spore counts up." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Find the specific cold surfaces where condensation is landing." },
         { to: "/services/mold-inspection/", label: "Full mold inspection", blurb: "The umbrella service: combines humidity, moisture, visual, and lab testing in one visit." },
       ]}
       furtherReading={{

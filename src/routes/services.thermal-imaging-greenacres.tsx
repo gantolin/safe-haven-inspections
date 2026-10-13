@@ -22,10 +22,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/thermal-imaging")({
+export const Route = createFileRoute("/services/thermal-imaging-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/thermal-imaging/",
+      path: "/services/thermal-imaging-greenacres/",
       title: "Thermal Imaging Inspection in Greenacres, FL | Safe Haven",
       description:
         "Thermal imaging inspection in Greenacres, FL. Infrared scanning and moisture meters find hidden leaks behind walls without cutting. Call (561) 632-6387.",
@@ -38,14 +38,14 @@ export const Route = createFileRoute("/services/thermal-imaging")({
           serviceSchema({
             name: "Moisture Mapping & Thermal Imaging",
             description: "Thermal imaging inspection in Greenacres, FL. Infrared scanning and moisture meters find hidden leaks behind walls without cutting. Call (561) 632-6387.",
-            path: "/services/thermal-imaging/",
+            path: "/services/thermal-imaging-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Moisture Mapping & Thermal Imaging", path: "/services/thermal-imaging/" },
+            { name: "Moisture Mapping & Thermal Imaging", path: "/services/thermal-imaging-greenacres/" },
           ]),
         ),
       ],
@@ -132,10 +132,10 @@ function ThermalImagingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Confirm whether a moisture finding has already produced elevated indoor spore counts." },
-        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "Positively identify any visible material found near a documented moisture source." },
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
-        { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Thermal imaging is usually how the extent of a leak gets mapped; this is the full post-water assessment around it." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Confirm whether a moisture finding has already produced elevated indoor spore counts." },
+        { to: "/services/surface-sampling-greenacres/", label: "Surface & swab sampling", blurb: "Positively identify any visible material found near a documented moisture source." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Confirm materials are dry and stayed dry after remediation, before repairs are closed up." },
+        { to: "/services/water-damage-inspection-greenacres/", label: "Water Damage Inspection", blurb: "Thermal imaging is usually how the extent of a leak gets mapped; this is the full post-water assessment around it." },
       ]}
       furtherReading={{
         href: "/blog/first-48-hours-after-a-water-leak/",

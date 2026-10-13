@@ -18,10 +18,10 @@ const faqs: FaqItem[] = [
 const DESCRIPTION =
   "Mold inspection for insurance claims in Greenacres, FL. Independent, licensed documentation built for adjusters, by an assessor who never does the cleanup.";
 
-export const Route = createFileRoute("/services/insurance-claim-mold-inspection")({
+export const Route = createFileRoute("/services/insurance-claim-mold-inspection-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/insurance-claim-mold-inspection/",
+      path: "/services/insurance-claim-mold-inspection-greenacres/",
       title: "Mold Inspection for Insurance Claims in Greenacres, FL | Safe Haven",
       description: DESCRIPTION,
     });
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/services/insurance-claim-mold-inspection"
           serviceSchema({
             name: "Mold Inspection for Insurance Claims",
             description: DESCRIPTION,
-            path: "/services/insurance-claim-mold-inspection/",
+            path: "/services/insurance-claim-mold-inspection-greenacres/",
             serviceType: "Mold assessment and documentation for property insurance claims",
           }),
         ),
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/services/insurance-claim-mold-inspection"
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Insurance Claim Mold Inspection", path: "/services/insurance-claim-mold-inspection/" },
+            { name: "Insurance Claim Mold Inspection", path: "/services/insurance-claim-mold-inspection-greenacres/" },
           ]),
         ),
       ],
@@ -149,10 +149,10 @@ function InsuranceClaimPage() {
         blurb: "Storm losses are the most common route into a Florida mold claim. This is what to do in the first days, before the evidence changes.",
       }}
       related={[
-        { to: "/services/water-damage-inspection/", label: "Water damage inspection", blurb: "Documenting the covered event itself, which is what most mold claims actually turn on." },
-        { to: "/services/mold-assessment-report/", label: "Mold assessment report & protocol", blurb: "The written deliverable an adjuster, attorney, or remediator works from." },
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent proof the cleanup your carrier paid for actually met protocol." },
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Lab-backed evidence of what is in the air, with a paired outdoor control." },
+        { to: "/services/water-damage-inspection-greenacres/", label: "Water damage inspection", blurb: "Documenting the covered event itself, which is what most mold claims actually turn on." },
+        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment report & protocol", blurb: "The written deliverable an adjuster, attorney, or remediator works from." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Independent proof the cleanup your carrier paid for actually met protocol." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Lab-backed evidence of what is in the air, with a paired outdoor control." },
       ]}
       heroImage={{
         src: "/hero-insurance.jpg",

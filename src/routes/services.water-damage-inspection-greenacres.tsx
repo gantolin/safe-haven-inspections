@@ -16,10 +16,10 @@ const faqs: FaqItem[] = [
   { q: "What areas do you cover?", a: "Martin, Palm Beach, and Broward Counties. Post-storm and emergency scheduling is prioritized across all three." },
 ];
 
-export const Route = createFileRoute("/services/water-damage-inspection")({
+export const Route = createFileRoute("/services/water-damage-inspection-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/water-damage-inspection/",
+      path: "/services/water-damage-inspection-greenacres/",
       title: "Water Damage Inspection in Greenacres, FL | Safe Haven",
       description: "Water damage inspection in Greenacres, FL after a leak, storm, or flood. Moisture and mold assessment, insurance-ready report. Call (561) 632-6387.",
     });
@@ -31,14 +31,14 @@ export const Route = createFileRoute("/services/water-damage-inspection")({
           serviceSchema({
             name: "Water Damage Inspection",
             description: "Water damage inspection in Greenacres, FL after a leak, storm, or flood. Moisture and mold assessment, insurance-ready report. Call (561) 632-6387.",
-            path: "/services/water-damage-inspection/",
+            path: "/services/water-damage-inspection-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Water Damage Inspection", path: "/services/water-damage-inspection/" },
+            { name: "Water Damage Inspection", path: "/services/water-damage-inspection-greenacres/" },
           ]),
         ),
       ],
@@ -130,12 +130,12 @@ function WaterDamagePage() {
         blurb: "What to do in the days after a storm, while the window to stop mold from establishing is still open.",
       }}
       related={[
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "The non-destructive backbone of any water-damage inspection." },
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Sample the air after a water event to see whether spore levels are already elevated." },
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
-        { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "After the water is gone, ambient humidity is what decides whether mold returns." },
-        { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "Packaging the same evidence for an adjuster, with causation documented." },
-        { to: "/services/asbestos-testing/", label: "Asbestos testing", blurb: "A leak through a pre-1980 ceiling or floor can disturb asbestos. Sample it before the demo crew starts." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "The non-destructive backbone of any water-damage inspection." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Sample the air after a water event to see whether spore levels are already elevated." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Independent clearance after any water-driven remediation, before walls close." },
+        { to: "/services/humidity-testing-greenacres/", label: "Humidity Testing & Psychrometrics", blurb: "After the water is gone, ambient humidity is what decides whether mold returns." },
+        { to: "/services/insurance-claim-mold-inspection-greenacres/", label: "Mold inspection for insurance claims", blurb: "Packaging the same evidence for an adjuster, with causation documented." },
+        { to: "/services/asbestos-testing-greenacres/", label: "Asbestos testing", blurb: "A leak through a pre-1980 ceiling or floor can disturb asbestos. Sample it before the demo crew starts." },
       ]}
       heroImage={{
         src: "/hero-water-damage.jpg",

@@ -21,10 +21,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/surface-sampling")({
+export const Route = createFileRoute("/services/surface-sampling-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/surface-sampling/",
+      path: "/services/surface-sampling-greenacres/",
       title: "Surface Mold Sampling in Greenacres, FL | Safe Haven",
       description:
         "Surface mold sampling in Greenacres, FL. Tape-lift, swab, and bulk samples identified by an accredited lab, so you know what a stain is. Call (561) 632-6387.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/surface-sampling")({
           serviceSchema({
             name: "Surface Sampling & Swab Testing",
             description: "Surface mold sampling in Greenacres, FL. Tape-lift, swab, and bulk samples identified by an accredited lab, so you know what a stain is. Call (561) 632-6387.",
-            path: "/services/surface-sampling/",
+            path: "/services/surface-sampling-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Surface Sampling & Swab Testing", path: "/services/surface-sampling/" },
+            { name: "Surface Sampling & Swab Testing", path: "/services/surface-sampling-greenacres/" },
           ]),
         ),
       ],
@@ -131,10 +131,10 @@ function SurfaceSamplingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Complement targeted surface samples with lab-analyzed air data." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the moisture source feeding what your surface sample identified." },
-        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
-        { to: "/services/mold-testing/", label: "Mold Testing", blurb: "How surface results sit alongside air sampling in a complete testing package." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Complement targeted surface samples with lab-analyzed air data." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Find the moisture source feeding what your surface sample identified." },
+        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment & written protocol", blurb: "Formal DBPR-assessor report that stitches visual findings, lab data, and recommendations together." },
+        { to: "/services/mold-testing-greenacres/", label: "Mold Testing", blurb: "How surface results sit alongside air sampling in a complete testing package." },
       ]}
       furtherReading={{
         href: "/blog/what-black-mold-actually-is/",

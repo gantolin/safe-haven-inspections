@@ -88,19 +88,19 @@ export interface ServiceSection {
 
 export interface RelatedService {
   to:
-    | "/services/asbestos-testing/"
-    | "/services/air-quality-testing/"
-    | "/services/surface-sampling/"
-    | "/services/thermal-imaging/"
-    | "/services/post-remediation-verification/"
-    | "/services/real-estate-mold-inspection/"
-    | "/services/commercial-mold-inspection/"
-    | "/services/mold-assessment-report/"
+    | "/services/asbestos-testing-greenacres/"
+    | "/services/air-quality-testing-greenacres/"
+    | "/services/surface-sampling-greenacres/"
+    | "/services/thermal-imaging-greenacres/"
+    | "/services/post-remediation-verification-greenacres/"
+    | "/services/real-estate-mold-inspection-greenacres/"
+    | "/services/commercial-mold-inspection-greenacres/"
+    | "/services/mold-assessment-report-greenacres/"
     | "/services/mold-inspection/"
-    | "/services/mold-testing/"
-    | "/services/water-damage-inspection/"
-    | "/services/humidity-testing/"
-    | "/services/insurance-claim-mold-inspection/";
+    | "/services/mold-testing-greenacres/"
+    | "/services/water-damage-inspection-greenacres/"
+    | "/services/humidity-testing-greenacres/"
+    | "/services/insurance-claim-mold-inspection-greenacres/";
   label: string;
   blurb: string;
 }

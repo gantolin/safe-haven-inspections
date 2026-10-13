@@ -21,10 +21,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/post-remediation-verification")({
+export const Route = createFileRoute("/services/post-remediation-verification-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/post-remediation-verification/",
+      path: "/services/post-remediation-verification-greenacres/",
       title: "Post-Remediation Verification in Greenacres, FL | Safe Haven",
       description:
         "Post-remediation verification in Greenacres, FL. Independent mold clearance testing with a clear pass or fail after the cleanup. Call (561) 632-6387.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/post-remediation-verification")(
           serviceSchema({
             name: "Post-Remediation Verification",
             description: "Post-remediation verification in Greenacres, FL. Independent mold clearance testing with a clear pass or fail after the cleanup. Call (561) 632-6387.",
-            path: "/services/post-remediation-verification/",
+            path: "/services/post-remediation-verification-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Post-Remediation Verification", path: "/services/post-remediation-verification/" },
+            { name: "Post-Remediation Verification", path: "/services/post-remediation-verification-greenacres/" },
           ]),
         ),
       ],
@@ -138,10 +138,10 @@ function PostRemediationPage() {
         blurb: "What to do in the days after a storm, while the window to stop mold from establishing is still open.",
       }}
       related={[
-        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal scope of work the remediator is measured against at clearance." },
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Air samples are the core measurable behind a clearance pass or fail." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
-        { to: "/services/humidity-testing/", label: "Humidity Testing & Psychrometrics", blurb: "Clearance can pass while the conditions that caused the growth are still in place." },
+        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment & written protocol", blurb: "The formal scope of work the remediator is measured against at clearance." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Air samples are the core measurable behind a clearance pass or fail." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Confirm affected materials are actually dry before the walls close." },
+        { to: "/services/humidity-testing-greenacres/", label: "Humidity Testing & Psychrometrics", blurb: "Clearance can pass while the conditions that caused the growth are still in place." },
       ]}
       heroImage={{
         src: "/hero-post-remediation.jpg",

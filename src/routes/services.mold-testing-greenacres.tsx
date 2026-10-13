@@ -16,10 +16,10 @@ const faqs: FaqItem[] = [
   { q: "Does testing cost extra on top of the inspection?", a: "Sampling adds cost because the lab bills per sample. Every property is different, so we quote up front once we understand your situation. No pricing surprises." },
 ];
 
-export const Route = createFileRoute("/services/mold-testing")({
+export const Route = createFileRoute("/services/mold-testing-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/mold-testing/",
+      path: "/services/mold-testing-greenacres/",
       title: "Mold Testing in Greenacres, FL | 24-Hour Lab Results | Safe Haven",
       description: "Mold testing in Greenacres, FL. Air and surface samples analyzed by an AIHA-accredited lab, with a written report in 24 hours. Call (561) 632-6387.",
     });
@@ -31,14 +31,14 @@ export const Route = createFileRoute("/services/mold-testing")({
           serviceSchema({
             name: "Mold Testing",
             description: "Mold testing in Greenacres, FL. Air and surface samples analyzed by an AIHA-accredited lab, with a written report in 24 hours. Call (561) 632-6387.",
-            path: "/services/mold-testing/",
+            path: "/services/mold-testing-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Mold Testing", path: "/services/mold-testing/" },
+            { name: "Mold Testing", path: "/services/mold-testing-greenacres/" },
           ]),
         ),
       ],
@@ -135,8 +135,8 @@ function MoldTestingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "Spore-trap air sampling with outdoor control: the core lab-backed indoor air dataset." },
-        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "Tape-lift and swab sampling of visible material for positive species identification." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "Spore-trap air sampling with outdoor control: the core lab-backed indoor air dataset." },
+        { to: "/services/surface-sampling-greenacres/", label: "Surface & swab sampling", blurb: "Tape-lift and swab sampling of visible material for positive species identification." },
         { to: "/services/mold-inspection/", label: "Full mold inspection", blurb: "The umbrella service: visual, moisture, thermal, and lab-backed sampling combined." },
       ]}
       furtherReading={{

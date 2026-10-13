@@ -25,10 +25,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/air-quality-testing")({
+export const Route = createFileRoute("/services/air-quality-testing-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/air-quality-testing/",
+      path: "/services/air-quality-testing-greenacres/",
       title: "Indoor Air Quality Testing in Greenacres, FL | Safe Haven",
       description:
         "Indoor air quality testing in Greenacres, FL. Spore-trap air samples, an outdoor control, and AIHA-accredited lab analysis in 24 hours. Call (561) 632-6387.",
@@ -41,14 +41,14 @@ export const Route = createFileRoute("/services/air-quality-testing")({
           serviceSchema({
             name: "Indoor Air Quality Testing",
             description: "Indoor air quality testing in Greenacres, FL. Spore-trap air samples, an outdoor control, and AIHA-accredited lab analysis in 24 hours. Call (561) 632-6387.",
-            path: "/services/air-quality-testing/",
+            path: "/services/air-quality-testing-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Indoor Air Quality Testing", path: "/services/air-quality-testing/" },
+            { name: "Indoor Air Quality Testing", path: "/services/air-quality-testing-greenacres/" },
           ]),
         ),
       ],
@@ -139,10 +139,10 @@ function AirQualityTestingPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/surface-sampling/", label: "Surface & swab sampling", blurb: "When visible material needs species-level identification, tape lifts and swabs complement air testing." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Find the hidden moisture source that's driving elevated indoor spore counts." },
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation, with air samples front and center." },
-        { to: "/services/mold-testing/", label: "Mold Testing", blurb: "The broader testing picture: air and surface sampling together, and when each one answers the question." },
+        { to: "/services/surface-sampling-greenacres/", label: "Surface & swab sampling", blurb: "When visible material needs species-level identification, tape lifts and swabs complement air testing." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Find the hidden moisture source that's driving elevated indoor spore counts." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Independent clearance testing after remediation, with air samples front and center." },
+        { to: "/services/mold-testing-greenacres/", label: "Mold Testing", blurb: "The broader testing picture: air and surface sampling together, and when each one answers the question." },
       ]}
       furtherReading={{
         href: "/blog/musty-smell-but-no-visible-mold/",

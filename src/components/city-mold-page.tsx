@@ -403,26 +403,26 @@ export function CityMoldPage({
 
   const serviceCards: Array<{
     to:
-      | "/services/air-quality-testing/"
-      | "/services/surface-sampling/"
-      | "/services/thermal-imaging/"
-      | "/services/post-remediation-verification/"
-      | "/services/real-estate-mold-inspection/"
-      | "/services/commercial-mold-inspection/"
-      | "/services/mold-assessment-report/"
-      | "/services/mold-testing/"
-      | "/services/humidity-testing/"
-      | "/services/water-damage-inspection/";
+      | "/services/air-quality-testing-greenacres/"
+      | "/services/surface-sampling-greenacres/"
+      | "/services/thermal-imaging-greenacres/"
+      | "/services/post-remediation-verification-greenacres/"
+      | "/services/real-estate-mold-inspection-greenacres/"
+      | "/services/commercial-mold-inspection-greenacres/"
+      | "/services/mold-assessment-report-greenacres/"
+      | "/services/mold-testing-greenacres/"
+      | "/services/humidity-testing-greenacres/"
+      | "/services/water-damage-inspection-greenacres/";
     title: string;
     blurb: string;
   }> = [
-    { to: "/services/air-quality-testing/", title: "Air Quality Testing", blurb: "Indoor spore-trap sampling with paired outdoor controls to quantify what's actually in the air you breathe." },
-    { to: "/services/surface-sampling/", title: "Surface Sampling & Swab Testing", blurb: "Targeted swab, tape-lift, and bulk samples that identify specific mold genera on visible growth." },
-    { to: "/services/thermal-imaging/", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry, non-invasively." },
-    { to: "/services/post-remediation-verification/", title: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation so you know the work actually met protocol." },
-    { to: "/services/real-estate-mold-inspection/", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
-    { to: "/services/commercial-mold-inspection/", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
-    { to: "/services/mold-assessment-report/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps, usable by insurers and remediators." },
+    { to: "/services/air-quality-testing-greenacres/", title: "Air Quality Testing", blurb: "Indoor spore-trap sampling with paired outdoor controls to quantify what's actually in the air you breathe." },
+    { to: "/services/surface-sampling-greenacres/", title: "Surface Sampling & Swab Testing", blurb: "Targeted swab, tape-lift, and bulk samples that identify specific mold genera on visible growth." },
+    { to: "/services/thermal-imaging-greenacres/", title: "Thermal Imaging", blurb: "Infrared scanning that reveals hidden moisture behind walls, ceilings, and cabinetry, non-invasively." },
+    { to: "/services/post-remediation-verification-greenacres/", title: "Post-Remediation Verification", blurb: "Independent clearance testing after remediation so you know the work actually met protocol." },
+    { to: "/services/real-estate-mold-inspection-greenacres/", title: "Real Estate Inspection", blurb: "Fast pre-purchase and pre-sale assessments scheduled around inspection-period deadlines." },
+    { to: "/services/commercial-mold-inspection-greenacres/", title: "Commercial Inspection", blurb: "Property-manager and business-owner assessments for offices, retail, medical, and multi-unit buildings." },
+    { to: "/services/mold-assessment-report-greenacres/", title: "Mold Assessment Report", blurb: "A plain-language, photo-supported report with lab results and clear next steps, usable by insurers and remediators." },
   ];
 
   const whatToExpect: Array<{
@@ -430,28 +430,28 @@ export function CityMoldPage({
     title: string;
     body: string;
     to?:
-      | "/services/air-quality-testing/"
-      | "/services/surface-sampling/"
-      | "/services/thermal-imaging/"
-      | "/services/mold-assessment-report/";
+      | "/services/air-quality-testing-greenacres/"
+      | "/services/surface-sampling-greenacres/"
+      | "/services/thermal-imaging-greenacres/"
+      | "/services/mold-assessment-report-greenacres/";
   }> = [
     {
       icon: Wind,
       title: "Air quality / spore-trap samples",
       body: "We collect calibrated air samples inside the home and pair them with an outdoor control taken the same day. The lab counts spore types and concentrations from both, and the comparison is what tells us whether indoor air actually contains more mold than the outdoor baseline.",
-      to: "/services/air-quality-testing/",
+      to: "/services/air-quality-testing-greenacres/",
     },
     {
       icon: Microscope,
       title: "Surface & swab samples",
       body: "When we see suspect growth on drywall, grout, framing, or HVAC surfaces, we collect a swab, tape-lift, or bulk sample directly from it. That lets the lab identify the specific mold genera present rather than guessing from color or texture.",
-      to: "/services/surface-sampling/",
+      to: "/services/surface-sampling-greenacres/",
     },
     {
       icon: Thermometer,
       title: "Thermal imaging",
       body: "An infrared camera reveals temperature differences that flag hidden moisture: behind drywall, above ceilings, inside built-in cabinets, and around window and roof penetrations. It doesn't diagnose mold on its own, but it points our moisture meter to the right spots.",
-      to: "/services/thermal-imaging/",
+      to: "/services/thermal-imaging-greenacres/",
     },
     {
       icon: Droplets,
@@ -467,7 +467,7 @@ export function CityMoldPage({
       icon: FileCheck2,
       title: "Certified 3rd-party lab reporting",
       body: "All samples ship to an AIHA-accredited independent laboratory. Because we don't own the lab and don't sell remediation, the results you receive are unfiltered: the same numbers a remediator or insurance carrier would get.",
-      to: "/services/mold-assessment-report/",
+      to: "/services/mold-assessment-report-greenacres/",
     },
   ];
 
@@ -871,7 +871,7 @@ export function CityMoldPage({
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{profile.market}</p>
                 <Link
-                  to="/services/real-estate-mold-inspection/"
+                  to="/services/real-estate-mold-inspection-greenacres/"
                   className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
                 >
                   Real estate mold inspection in {city}{" "}

@@ -21,10 +21,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/mold-assessment-report")({
+export const Route = createFileRoute("/services/mold-assessment-report-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/mold-assessment-report/",
+      path: "/services/mold-assessment-report-greenacres/",
       title: "Mold Assessment Report in Greenacres, FL | Safe Haven",
       description:
         "Mold assessment report in Greenacres, FL from a licensed, independent assessor. Lab data, findings, and a remediation protocol contractors can bid from.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/mold-assessment-report")({
           serviceSchema({
             name: "Mold Assessment Report & Protocol",
             description: "Mold assessment report in Greenacres, FL from a licensed, independent assessor. Lab data, findings, and a remediation protocol contractors can bid from.",
-            path: "/services/mold-assessment-report/",
+            path: "/services/mold-assessment-report-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Mold Assessment Report & Protocol", path: "/services/mold-assessment-report/" },
+            { name: "Mold Assessment Report & Protocol", path: "/services/mold-assessment-report-greenacres/" },
           ]),
         ),
       ],
@@ -130,10 +130,10 @@ function MoldAssessmentReportPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance graded against the criteria written into the protocol." },
-        { to: "/services/air-quality-testing/", label: "Airborne mold & air quality testing", blurb: "The lab data most often referenced by the report's findings and recommendations." },
-        { to: "/services/commercial-mold-inspection/", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
-        { to: "/services/insurance-claim-mold-inspection/", label: "Mold inspection for insurance claims", blurb: "The same report, packaged for an adjuster, with causation and scope documented." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Independent clearance graded against the criteria written into the protocol." },
+        { to: "/services/air-quality-testing-greenacres/", label: "Airborne mold & air quality testing", blurb: "The lab data most often referenced by the report's findings and recommendations." },
+        { to: "/services/commercial-mold-inspection-greenacres/", label: "Commercial mold inspection", blurb: "Multi-stakeholder reporting for offices, rentals, HOAs, and retail properties." },
+        { to: "/services/insurance-claim-mold-inspection-greenacres/", label: "Mold inspection for insurance claims", blurb: "The same report, packaged for an adjuster, with causation and scope documented." },
       ]}
       heroImage={{
         src: "/report-preview.jpg",

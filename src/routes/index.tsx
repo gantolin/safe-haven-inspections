@@ -77,7 +77,7 @@ const HOME_FAQS: Array<{ q: string; a: string; aNode?: ReactNode }> = [
         assessor license, so popcorn ceilings, floor tile, and pipe wrap can be
         sampled on the same visit as the mold inspection. Results come back from
         an accredited lab within 24 hours. See{" "}
-        <Link to="/services/asbestos-testing/" className="font-semibold text-accent underline underline-offset-2">
+        <Link to="/services/asbestos-testing-greenacres/" className="font-semibold text-accent underline underline-offset-2">
           asbestos testing
         </Link>{" "}
         for what we sample and how it works. We test only, and never remove.

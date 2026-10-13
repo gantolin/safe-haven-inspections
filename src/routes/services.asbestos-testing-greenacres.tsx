@@ -73,10 +73,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/asbestos-testing")({
+export const Route = createFileRoute("/services/asbestos-testing-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/asbestos-testing/",
+      path: "/services/asbestos-testing-greenacres/",
       title: "Asbestos Testing in Greenacres, FL | 24-Hour Results | Safe Haven",
       description: DESCRIPTION,
     });
@@ -88,7 +88,7 @@ export const Route = createFileRoute("/services/asbestos-testing")({
           serviceSchema({
             name: "Asbestos Testing",
             description: DESCRIPTION,
-            path: "/services/asbestos-testing/",
+            path: "/services/asbestos-testing-greenacres/",
             serviceType: "Asbestos testing and inspection",
           }),
         ),
@@ -96,7 +96,7 @@ export const Route = createFileRoute("/services/asbestos-testing")({
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Asbestos Testing", path: "/services/asbestos-testing/" },
+            { name: "Asbestos Testing", path: "/services/asbestos-testing-greenacres/" },
           ]),
         ),
       ],
@@ -245,13 +245,13 @@ function AsbestosTestingPage() {
             "The flagship service, and the one most often booked alongside asbestos sampling on the same visit.",
         },
         {
-          to: "/services/air-quality-testing/",
+          to: "/services/air-quality-testing-greenacres/",
           label: "Indoor Air Quality Testing",
           blurb:
             "Spore-trap air sampling with outdoor controls when the question is what you are breathing, not what is in the ceiling.",
         },
         {
-          to: "/services/post-remediation-verification/",
+          to: "/services/post-remediation-verification-greenacres/",
           label: "Post-Remediation Verification",
           blurb:
             "Independent clearance testing after remediation, so the company that did the work is not the one grading it.",

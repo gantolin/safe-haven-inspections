@@ -23,18 +23,18 @@ const links = [
  */
 const footerServices = [
   { to: "/services/mold-inspection/", label: "Mold Inspection" },
-  { to: "/services/mold-testing/", label: "Mold Testing" },
-  { to: "/services/air-quality-testing/", label: "Air Quality Testing" },
-  { to: "/services/surface-sampling/", label: "Surface Sampling" },
-  { to: "/services/thermal-imaging/", label: "Thermal Imaging" },
-  { to: "/services/water-damage-inspection/", label: "Water Damage Inspection" },
-  { to: "/services/humidity-testing/", label: "Humidity Testing" },
-  { to: "/services/post-remediation-verification/", label: "Post-Remediation Verification" },
-  { to: "/services/real-estate-mold-inspection/", label: "Real Estate Mold Inspection" },
-  { to: "/services/commercial-mold-inspection/", label: "Commercial Mold Inspection" },
-  { to: "/services/mold-assessment-report/", label: "Mold Assessment Report" },
-  { to: "/services/asbestos-testing/", label: "Asbestos Testing" },
-  { to: "/services/insurance-claim-mold-inspection/", label: "Insurance Claim Mold Inspection" },
+  { to: "/services/mold-testing-greenacres/", label: "Mold Testing" },
+  { to: "/services/air-quality-testing-greenacres/", label: "Air Quality Testing" },
+  { to: "/services/surface-sampling-greenacres/", label: "Surface Sampling" },
+  { to: "/services/thermal-imaging-greenacres/", label: "Thermal Imaging" },
+  { to: "/services/water-damage-inspection-greenacres/", label: "Water Damage Inspection" },
+  { to: "/services/humidity-testing-greenacres/", label: "Humidity Testing" },
+  { to: "/services/post-remediation-verification-greenacres/", label: "Post-Remediation Verification" },
+  { to: "/services/real-estate-mold-inspection-greenacres/", label: "Real Estate Mold Inspection" },
+  { to: "/services/commercial-mold-inspection-greenacres/", label: "Commercial Mold Inspection" },
+  { to: "/services/mold-assessment-report-greenacres/", label: "Mold Assessment Report" },
+  { to: "/services/asbestos-testing-greenacres/", label: "Asbestos Testing" },
+  { to: "/services/insurance-claim-mold-inspection-greenacres/", label: "Insurance Claim Mold Inspection" },
 ] as const;
 
 export function SiteNav() {

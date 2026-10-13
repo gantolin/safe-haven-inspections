@@ -41,19 +41,19 @@ export const Route = createFileRoute("/services/")({
 });
 
 type ServiceLink =
-  | "/services/asbestos-testing/"
+  | "/services/asbestos-testing-greenacres/"
   | "/services/mold-inspection/"
-  | "/services/mold-testing/"
-  | "/services/air-quality-testing/"
-  | "/services/surface-sampling/"
-  | "/services/thermal-imaging/"
-  | "/services/water-damage-inspection/"
-  | "/services/humidity-testing/"
-  | "/services/insurance-claim-mold-inspection/"
-  | "/services/post-remediation-verification/"
-  | "/services/real-estate-mold-inspection/"
-  | "/services/commercial-mold-inspection/"
-  | "/services/mold-assessment-report/";
+  | "/services/mold-testing-greenacres/"
+  | "/services/air-quality-testing-greenacres/"
+  | "/services/surface-sampling-greenacres/"
+  | "/services/thermal-imaging-greenacres/"
+  | "/services/water-damage-inspection-greenacres/"
+  | "/services/humidity-testing-greenacres/"
+  | "/services/insurance-claim-mold-inspection-greenacres/"
+  | "/services/post-remediation-verification-greenacres/"
+  | "/services/real-estate-mold-inspection-greenacres/"
+  | "/services/commercial-mold-inspection-greenacres/"
+  | "/services/mold-assessment-report-greenacres/";
 
 const services: Array<{
   to: ServiceLink;
@@ -75,83 +75,83 @@ const services: Array<{
     body: "The flagship service. Licensed on-site visual, moisture, thermal, and lab-backed evaluation of the property. Start here if you're not sure what you need.",
   },
   {
-    to: "/services/mold-testing/",
+    to: "/services/mold-testing-greenacres/",
     image: { src: "/svc-mold-testing.jpg", alt: "Air sampling stand and stopwatch running in a sealed off hallway" },
     icon: Microscope,
     title: "Mold Testing",
     body: "The lab-analyzed sampling piece: air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
   },
   {
-    to: "/services/air-quality-testing/",
+    to: "/services/air-quality-testing-greenacres/",
     image: { src: "/svc-air-quality.jpg", alt: "Spore trap cassette mounted outdoors to collect a control sample" },
     icon: Wind,
     title: "Airborne Mold & Air Quality Testing",
     body: "Spore-trap air sampling with outdoor controls, analyzed at an AIHA-accredited third-party lab. The core indoor air data behind most decisions.",
   },
   {
-    to: "/services/surface-sampling/",
+    to: "/services/surface-sampling-greenacres/",
     image: { src: "/svc-surface-sampling.jpg", alt: "Surface sample bag sealed and labelled at a baseboard" },
     icon: FlaskConical,
     title: "Surface Sampling & Swab Testing",
     body: "Tape-lift, swab, and bulk sampling of visible material for positive species identification. Complements air testing when there's something to point at.",
   },
   {
-    to: "/services/thermal-imaging/",
+    to: "/services/thermal-imaging-greenacres/",
     image: { src: "/svc-thermal-imaging.jpg", alt: "Infrared thermal image of a wall and floor junction" },
     icon: Thermometer,
     title: "Moisture Mapping & Thermal Imaging",
     body: "Non-destructive infrared and moisture-meter surveys that locate hidden water intrusion behind walls, ceilings, and floors before it becomes mold.",
   },
   {
-    to: "/services/water-damage-inspection/",
+    to: "/services/water-damage-inspection-greenacres/",
     image: { src: "/svc-water-damage.jpg", alt: "Drywall paper delaminated along a ceiling line after a water event" },
     icon: Droplets,
     title: "Water Damage & Moisture Intrusion Assessment",
     body: "Post-leak, post-storm, and post-flood inspection. Insurance-ready documentation of what got wet and how far the moisture traveled.",
   },
   {
-    to: "/services/humidity-testing/",
+    to: "/services/humidity-testing-greenacres/",
     image: { src: "/svc-humidity.jpg", alt: "Digital hygrometer displaying relative humidity and temperature" },
     icon: Gauge,
     title: "Humidity Testing & Psychrometrics",
     body: "Temperature, RH, and dew-point measurement across the home to diagnose humidity-driven mildew when there's no obvious leak.",
   },
   {
-    to: "/services/insurance-claim-mold-inspection/",
+    to: "/services/insurance-claim-mold-inspection-greenacres/",
     image: { src: "/svc-insurance.jpg", alt: "Infrared thermometer recording surface temperature on a damaged wall" },
     icon: ShieldCheck,
     title: "Insurance Claim Documentation",
     body: "Independent assessment built for adjusters: causation, moisture mapping, and lab results, from an assessor who never does the cleanup.",
   },
   {
-    to: "/services/post-remediation-verification/",
+    to: "/services/post-remediation-verification-greenacres/",
     image: { src: "/svc-post-remediation.jpg", alt: "Containment sheeting still in place during clearance testing" },
     icon: ShieldCheck,
     title: "Post-Remediation Verification",
     body: "Independent clearance testing after any remediation company finishes. Third-party pass/fail decisions before walls close and occupants return.",
   },
   {
-    to: "/services/real-estate-mold-inspection/",
+    to: "/services/real-estate-mold-inspection-greenacres/",
     image: { src: "/svc-real-estate.jpg", alt: "Air sampling set up in a vacant room during a pre purchase inspection" },
     icon: Home,
     title: "Real Estate Mold Inspection",
     body: "Pre-purchase and pre-sale inspections scheduled to fit inside real inspection-period windows. Reports designed for buyers, sellers, and agents.",
   },
   {
-    to: "/services/commercial-mold-inspection/",
+    to: "/services/commercial-mold-inspection-greenacres/",
     image: { src: "/svc-commercial.jpg", alt: "Opened ceiling exposing ductwork and insulation in a commercial unit" },
     icon: Building2,
     title: "Commercial & Property Management",
     body: "Offices, rentals, HOAs, condos, and retail. Multi-stakeholder documentation for owners, managers, tenants, and insurers.",
   },
   {
-    to: "/services/asbestos-testing/",
+    to: "/services/asbestos-testing-greenacres/",
     icon: Layers,
     title: "Asbestos Testing",
     body: "Sampling and accredited lab analysis for popcorn ceilings, floor tile, pipe wrap, and joint compound in pre-1980 buildings. Testing only, never abatement.",
   },
   {
-    to: "/services/mold-assessment-report/",
+    to: "/services/mold-assessment-report-greenacres/",
     icon: FileText,
     title: "Mold Assessment & Written Protocol",
     body: "The formal Florida assessment report, and, when needed, the remediation protocol remediators bid and clearance is graded against.",

@@ -21,10 +21,10 @@ const faqs: FaqItem[] = [
   },
 ];
 
-export const Route = createFileRoute("/services/commercial-mold-inspection")({
+export const Route = createFileRoute("/services/commercial-mold-inspection-greenacres")({
   head: () => {
     const base = pageMeta({
-      path: "/services/commercial-mold-inspection/",
+      path: "/services/commercial-mold-inspection-greenacres/",
       title: "Commercial Mold Inspection in Greenacres, FL | Safe Haven",
       description:
         "Commercial mold inspection in Greenacres, FL for offices, rentals, HOAs, and retail. Independent reports from a licensed assessor. Call (561) 632-6387.",
@@ -37,14 +37,14 @@ export const Route = createFileRoute("/services/commercial-mold-inspection")({
           serviceSchema({
             name: "Commercial Mold Inspection",
             description: "Commercial mold inspection in Greenacres, FL for offices, rentals, HOAs, and retail. Independent reports from a licensed assessor. Call (561) 632-6387.",
-            path: "/services/commercial-mold-inspection/",
+            path: "/services/commercial-mold-inspection-greenacres/",
           }),
         ),
         jsonLdScript(
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Services", path: "/services/" },
-            { name: "Commercial Mold Inspection", path: "/services/commercial-mold-inspection/" },
+            { name: "Commercial Mold Inspection", path: "/services/commercial-mold-inspection-greenacres/" },
           ]),
         ),
       ],
@@ -138,11 +138,11 @@ function CommercialPage() {
       ]}
       faqs={faqs}
       related={[
-        { to: "/services/mold-assessment-report/", label: "Mold assessment & written protocol", blurb: "The formal document commercial insurers, remediators, and attorneys read." },
-        { to: "/services/thermal-imaging/", label: "Moisture mapping & thermal imaging", blurb: "Trace envelope and mechanical moisture across multi-unit or multi-zone properties." },
-        { to: "/services/post-remediation-verification/", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
-        { to: "/services/water-damage-inspection/", label: "Water Damage Inspection", blurb: "Post-leak and post-storm assessment for commercial roofs, risers, and shared walls." },
-        { to: "/services/asbestos-testing/", label: "Asbestos testing", blurb: "Pre-1980 building? Floor tile, mastic, and pipe insulation get sampled before a build-out disturbs them." },
+        { to: "/services/mold-assessment-report-greenacres/", label: "Mold assessment & written protocol", blurb: "The formal document commercial insurers, remediators, and attorneys read." },
+        { to: "/services/thermal-imaging-greenacres/", label: "Moisture mapping & thermal imaging", blurb: "Trace envelope and mechanical moisture across multi-unit or multi-zone properties." },
+        { to: "/services/post-remediation-verification-greenacres/", label: "Post-remediation verification", blurb: "Independent clearance after any remediation contractor finishes at the property." },
+        { to: "/services/water-damage-inspection-greenacres/", label: "Water Damage Inspection", blurb: "Post-leak and post-storm assessment for commercial roofs, risers, and shared walls." },
+        { to: "/services/asbestos-testing-greenacres/", label: "Asbestos testing", blurb: "Pre-1980 building? Floor tile, mastic, and pipe insulation get sampled before a build-out disturbs them." },
       ]}
       heroImage={{
         src: "/hero-commercial.jpg",
