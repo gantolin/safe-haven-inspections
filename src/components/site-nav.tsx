@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, MessageSquare, ClipboardList } from "lucide-react";
+import { Menu, X, Phone, ClipboardList } from "lucide-react";
 import logo from "@/assets/safe-haven-logo.png.asset.json";
 import { webpVariant } from "@/lib/images";
 import { ctaBarPrimary, ctaBarSecondary } from "@/lib/cta";
@@ -231,14 +231,14 @@ export function MobileCallBar() {
     <div
       role="navigation"
       aria-label="Quick contact"
-      className="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-3 gap-1.5 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
+      className="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
     >
       <a
         href="tel:+15616326387"
         aria-label="Call Now: (561) 632-6387"
-        className={`${ctaBarPrimary} whitespace-nowrap px-1.5 text-[13px]`}
+        className={`${ctaBarPrimary} whitespace-nowrap px-2`}
       >
-        <Phone className="h-4 w-4" aria-hidden /> Call
+        <Phone className="h-4 w-4" aria-hidden /> Call now
       </a>
       {/* Jumps to the request form when the page has one (home and service
           pages). Everywhere else it goes to the contact page. */}
@@ -252,16 +252,9 @@ export function MobileCallBar() {
             form.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         }}
-        className={`${ctaBarSecondary} whitespace-nowrap px-1.5 text-[13px]`}
+        className={`${ctaBarSecondary} whitespace-nowrap px-2`}
       >
-        <ClipboardList className="h-4 w-4" aria-hidden /> Request
-      </a>
-      <a
-        href="sms:+15616326387"
-        aria-label="Text a Photo to (561) 632-6387"
-        className={`${ctaBarSecondary} whitespace-nowrap px-1.5 text-[13px]`}
-      >
-        <MessageSquare className="h-4 w-4" aria-hidden /> Text photo
+        <ClipboardList className="h-4 w-4" aria-hidden /> Request inspection
       </a>
     </div>
   );
