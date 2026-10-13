@@ -31,8 +31,6 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
-// Home hero photo. Same file as step one of the four-step section.
-const HERO_PHOTO = "/step-visual.jpg";
 const HERO_BG = "/hero-living-room.jpg";
 
 /**
@@ -238,20 +236,6 @@ function Index() {
               </a>{" "}
               and we'll tell you if it's worth testing.
             </p>
-            {/* Shown at its real size. The file is 400px wide, so it is a
-                card here and not a full-width background. */}
-            <picture className="mt-6 block w-full max-w-[400px] overflow-hidden rounded-2xl border border-white/20 shadow-xl shadow-black/30">
-              <source srcSet={webpVariant(HERO_PHOTO)} type="image/webp" />
-              <img
-                src={HERO_PHOTO}
-                alt="Inspector in a Safe Haven shirt taking a moisture reading at a baseboard"
-                width={400}
-                height={250}
-                loading="lazy"
-                decoding="async"
-                className="block h-auto w-full"
-              />
-            </picture>
           </div>
           <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:max-w-none" />
           <CertBadgeRow className="lg:col-span-2" />
