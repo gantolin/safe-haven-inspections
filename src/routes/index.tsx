@@ -18,7 +18,6 @@ import {
   Droplets,
   CloudRain,
   Clock,
-  Users,
   MapPin,
 } from "lucide-react";
 import { GoogleReviews, GoogleRatingBadge } from "@/components/google-reviews";
@@ -177,21 +176,17 @@ function Index() {
                 the social proof is visible on landing rather than only in the
                 carousel further down the page. Wraps to its own line on phones. */}
             <div className="flex flex-wrap items-center gap-2">
-              {/* "Family operated" is Landon's own wording on the About page, and
-                  the 14 years already appears on the city pages and the blog index.
-                  Both are repeated here because they were only discoverable by
-                  scrolling, and they are the two things that separate Safe Haven
-                  from a franchise. */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
-                <Users className="h-3.5 w-3.5" /> Family operated · 14 years in the field
-              </div>
               <GoogleRatingBadge onDark />
+              {/* The count is the owner's figure, given to us 2026-10-13. */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2 text-base font-semibold text-white">
+                <CheckCircle2 className="h-5 w-5 text-[#FBBC04]" /> Over 1,600 mold inspections completed
+              </div>
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl">
               Mold Inspection & Testing in Greenacres, FL
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
-              Protect your home and the air you breathe.
+              Family operated, with 14 years in the field.
             </p>
             {/* Phones get a one-line version of the pitch; the full paragraph
                 returns from sm up. Four lines of body copy over the photo was

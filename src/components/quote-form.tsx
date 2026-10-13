@@ -282,17 +282,17 @@ export function HeroQuoteCard({
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className="h-4 w-4"
+                className="h-5 w-5"
                 style={{ color: "#FBBC04", fill: "#FBBC04" }}
                 aria-hidden="true"
               />
             ))}
           </span>
-          <figcaption className="text-sm font-semibold text-primary">
+          <figcaption className="text-base font-semibold text-primary">
             5.0 on Google
           </figcaption>
         </div>
-        <blockquote className="mt-1 text-sm font-medium leading-snug text-primary">
+        <blockquote className="mt-1.5 text-base font-semibold leading-snug text-primary">
           “{HERO_REVIEW}”
         </blockquote>
       </figure>
