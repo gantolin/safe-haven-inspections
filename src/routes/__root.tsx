@@ -177,6 +177,27 @@ function RootComponent() {
   // conversion tracking. Production builds only.
   useAnalytics();
 
+  // A fresh load or a refresh always opens at the top of the page. Two things
+  // were landing visitors on the request form instead: an old "#request" on
+  // the address (the hero buttons used to link to it), and scroll restoration
+  // putting a refreshed page back where it was. Back and forward still return
+  // to where the visitor was, which is what those buttons are for.
+  useEffect(() => {
+    const nav = performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
+    if (nav?.type === "back_forward") return;
+    if (window.location.hash === "#request") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    } else if (window.location.hash) {
+      return; // a real in-page link, such as a blog heading: leave it alone
+    }
+    window.scrollTo(0, 0);
+    // Once more after the router's own restore has had its turn.
+    const t = window.setTimeout(() => window.scrollTo(0, 0), 120);
+    return () => window.clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) return;
