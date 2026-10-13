@@ -93,3 +93,42 @@ export function CertBadgeGrid({
     </ul>
   );
 }
+
+/**
+ * The same six badges as one compact strip, for the home page hero. Small
+ * marks on a white bar, no captions: the names are in each image's alt text
+ * and in full in the certifications section further down the page.
+ */
+export function CertBadgeRow({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`flex flex-col items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-black/20 sm:flex-row sm:gap-6 ${className}`}
+    >
+      <p className="shrink-0 text-center text-sm font-semibold leading-snug text-primary sm:text-left">
+        Landon's certifications
+        <span className="block text-xs font-normal text-muted-foreground">
+          FL Mold Assessor MRSA3366
+        </span>
+      </p>
+      <ul className="grid grid-cols-3 place-items-center gap-x-8 gap-y-3 sm:flex sm:flex-1 sm:items-center sm:justify-between sm:gap-0">
+        {certifications.map((c) => (
+          <li key={c.label}>
+            <picture>
+              <source srcSet={webpVariant(c.src)} type="image/webp" />
+              <img
+                src={c.src}
+                alt={`${c.label}${c.sub === "NAERMC" ? ", NAERMC" : ""} certification badge`}
+                title={c.label}
+                width={512}
+                height={512}
+                loading="lazy"
+                decoding="async"
+                className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+              />
+            </picture>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

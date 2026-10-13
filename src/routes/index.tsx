@@ -22,7 +22,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { GoogleReviews, GoogleRatingBadge } from "@/components/google-reviews";
-import { CertBadgeGrid } from "@/components/cert-badges";
+import { CertBadgeGrid, CertBadgeRow } from "@/components/cert-badges";
 import { webpVariant } from "@/lib/images";
 import stepVisual from "@/assets/step-visual.jpg.asset.json";
 import stepSampling from "@/assets/step-sampling.jpg.asset.json";
@@ -31,9 +31,8 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
-// Home hero: a real infrared frame, and the same frame flattened to a plain wall.
-const HERO_IR = "/thermal-reveal-ir.jpg";
-const HERO_PLAIN = "/thermal-reveal-plain.jpg";
+// Home hero photo. Same file as step one of the four-step section.
+const HERO_PHOTO = "/step-visual.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -119,7 +118,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/thermal-reveal-ir.webp",
+        href: "/step-visual.webp",
         type: "image/webp",
         fetchpriority: "high",
       },
@@ -143,49 +142,14 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
-        {/* Background: one real frame from our thermal camera. A plain-wall
-            version of the same frame lies on top and is wiped away by a scan
-            line, so the hero turns from "what you see" into "what the camera
-            sees" and back. The motion is CSS only (see .hero-thermal-* in
-            styles.css), so it runs before the page hydrates and stops under
-            reduced motion, where the hero simply rests on the infrared frame. */}
-        <picture className="absolute inset-0 -z-10 h-full w-full">
-          <source srcSet={webpVariant(HERO_IR)} type="image/webp" />
-          <img
-            src={HERO_IR}
-            alt="Infrared image from a thermal camera showing a cooler area low on an interior wall"
-            width={1200}
-            height={799}
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-            className="h-full w-full object-cover"
-          />
-        </picture>
-        <picture aria-hidden className="hero-thermal-plain absolute inset-0 -z-10 h-full w-full">
-          <source srcSet={webpVariant(HERO_PLAIN)} type="image/webp" />
-          <img
-            src={HERO_PLAIN}
-            alt=""
-            width={600}
-            height={400}
-            decoding="async"
-            className="h-full w-full object-cover"
-          />
-        </picture>
-        {/* The scan line, with the camera riding on it. */}
-        <div aria-hidden className="hero-thermal-line absolute inset-y-0 -z-10 w-0.5 bg-white shadow-[0_0_18px_4px_rgba(255,255,255,0.65)]">
-          <span className="absolute left-1/2 top-[18%] grid h-11 w-11 -translate-x-1/2 place-items-center rounded-full bg-white text-primary shadow-lg lg:top-3">
-            <Camera className="h-5 w-5" />
-          </span>
-        </div>
-        {/* Scrim. Heavier on the left, where the headline sits, and lighter to
-            the right so the infrared colour still reads around the form. */}
+        {/* Plain brand ground. The hero carries a headline, a form and a
+            photo; a picture behind all three was one layer too many. */}
         <div
+          aria-hidden
           className="absolute inset-0 -z-10"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(11,37,69,0.86) 0%, rgba(11,37,69,0.78) 40%, rgba(11,37,69,0.42) 70%, rgba(11,37,69,0.26) 100%)",
+              "linear-gradient(135deg, #0b2545 0%, #12395c 55%, #1d5c63 100%)",
           }}
         />
         {/* Two columns from lg up: the pitch on the left, the request form on
@@ -258,13 +222,110 @@ function Index() {
               </a>{" "}
               and we'll tell you if it's worth testing.
             </p>
+            {/* Shown at its real size. The file is 400px wide, so it is a
+                card here and not a full-width background. */}
+            <picture className="mt-6 block w-full max-w-[400px] overflow-hidden rounded-2xl border border-white/20 shadow-xl shadow-black/30">
+              <source srcSet={webpVariant(HERO_PHOTO)} type="image/webp" />
+              <img
+                src={HERO_PHOTO}
+                alt="Inspector in a Safe Haven shirt taking a moisture reading at a baseboard"
+                width={400}
+                height={250}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                className="block h-auto w-full"
+              />
+            </picture>
           </div>
           <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:max-w-none" />
+          <CertBadgeRow className="lg:col-span-2" />
         </div>
       </section>
 
       {/* Google reviews trust strip */}
       <GoogleReviews />
+
+      {/* How we inspect */}
+      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium uppercase tracking-wider text-accent">
+            How we inspect
+          </p>
+          <h2 className="mt-2 text-3xl font-semibold text-primary sm:text-4xl">
+            A clear, four-step process.
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: Search,
+              step: "01",
+              title: "Visual inspection",
+              image: stepVisual.url,
+              alt: "Licensed mold inspector kneeling to examine a baseboard with a flashlight during a residential mold inspection.",
+              body: "A full walk-through of the property: attic, HVAC, cabinetry, baseboards, bathrooms, and known problem areas.",
+            },
+            {
+              icon: Wind,
+              step: "02",
+              title: "Air & surface sampling",
+              image: stepSampling.url,
+              alt: "Certified inspector collecting an air sample with a spore trap cassette during indoor mold testing in a South Florida home.",
+              body: "Indoor spore traps compared to an outdoor control, plus tape-lift or swab samples on suspect surfaces.",
+            },
+            {
+              icon: FlaskConical,
+              step: "03",
+              title: "Accredited lab analysis",
+              image: stepLab.url,
+              alt: "AIHA-accredited lab technician analyzing a mold sample on a microscope slide in a professional laboratory.",
+              body: "Samples are analyzed by an independent AIHA-accredited laboratory, never by us.",
+            },
+            {
+              icon: FileText,
+              step: "04",
+              title: "Plain-language report",
+              image: stepReport.url,
+              alt: "Detailed mold inspection report with lab results, photos, and charts reviewed next to a laptop.",
+              body: "You receive a clear report with findings, lab data, photos, and honest recommendations you can act on.",
+            },
+          ].map(({ icon: Icon, step, title, body, image, alt }) => (
+            <div
+              key={title}
+              className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
+            >
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
+                <picture>
+                  <source srcSet={webpVariant(image)} type="image/webp" />
+                  <img
+                    src={image}
+                    alt={alt}
+                    width={1280}
+                    height={720}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                  />
+                </picture>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
+                <span className="absolute right-3 top-3 rounded-md bg-white/95 px-2 py-1 font-[Bricolage_Grotesque] text-xs font-semibold text-primary shadow-sm ring-1 ring-black/5">
+                  {step}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2">
+                  <span className="grid h-8 w-8 place-items-center rounded-md bg-accent/10 text-accent">
+                    <Icon className="h-4 w-4" />
+                  </span>
+                  <h3 className="text-lg font-semibold text-primary">{title}</h3>
+                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Why we're different — the pitch */}
       <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
@@ -356,87 +417,6 @@ function Index() {
               Read more about Landon <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* How we inspect */}
-      <section className="mx-auto mt-20 max-w-6xl px-4 sm:px-6">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-wider text-accent">
-            How we inspect
-          </p>
-          <h2 className="mt-2 text-3xl font-semibold text-primary sm:text-4xl">
-            A clear, four-step process.
-          </h2>
-        </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: Search,
-              step: "01",
-              title: "Visual inspection",
-              image: stepVisual.url,
-              alt: "Licensed mold inspector kneeling to examine a baseboard with a flashlight during a residential mold inspection.",
-              body: "A full walk-through of the property: attic, HVAC, cabinetry, baseboards, bathrooms, and known problem areas.",
-            },
-            {
-              icon: Wind,
-              step: "02",
-              title: "Air & surface sampling",
-              image: stepSampling.url,
-              alt: "Certified inspector collecting an air sample with a spore trap cassette during indoor mold testing in a South Florida home.",
-              body: "Indoor spore traps compared to an outdoor control, plus tape-lift or swab samples on suspect surfaces.",
-            },
-            {
-              icon: FlaskConical,
-              step: "03",
-              title: "Accredited lab analysis",
-              image: stepLab.url,
-              alt: "AIHA-accredited lab technician analyzing a mold sample on a microscope slide in a professional laboratory.",
-              body: "Samples are analyzed by an independent AIHA-accredited laboratory, never by us.",
-            },
-            {
-              icon: FileText,
-              step: "04",
-              title: "Plain-language report",
-              image: stepReport.url,
-              alt: "Detailed mold inspection report with lab results, photos, and charts reviewed next to a laptop.",
-              body: "You receive a clear report with findings, lab data, photos, and honest recommendations you can act on.",
-            },
-          ].map(({ icon: Icon, step, title, body, image, alt }) => (
-            <div
-              key={title}
-              className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
-            >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-secondary">
-                <picture>
-                  <source srcSet={webpVariant(image)} type="image/webp" />
-                  <img
-                    src={image}
-                    alt={alt}
-                    width={1280}
-                    height={720}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                  />
-                </picture>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
-                <span className="absolute right-3 top-3 rounded-md bg-white/95 px-2 py-1 font-[Bricolage_Grotesque] text-xs font-semibold text-primary shadow-sm ring-1 ring-black/5">
-                  {step}
-                </span>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-2">
-                  <span className="grid h-8 w-8 place-items-center rounded-md bg-accent/10 text-accent">
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <h3 className="text-lg font-semibold text-primary">{title}</h3>
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground">{body}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
