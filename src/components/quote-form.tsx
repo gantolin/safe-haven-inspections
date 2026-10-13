@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AlertCircle, CheckCircle2, Phone, Send, Star } from "lucide-react";
+import { AlertCircle, CheckCircle2, Send, Star } from "lucide-react";
 import { submitContactForm } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 import { ctaPrimary } from "@/lib/cta";
@@ -217,14 +217,7 @@ export function QuoteForm({
         >
           <Send className="h-4 w-4" /> {loading ? "Sending…" : compact ? "Request my inspection" : "Send request"}
         </button>
-        {compact ? (
-          <p className="text-center text-xs text-muted-foreground">
-            We reply within one business day. Faster by phone:{" "}
-            <a href="tel:+15616326387" className="inline-flex items-center gap-1 font-semibold text-accent hover:underline">
-              <Phone className="h-3 w-3" aria-hidden /> (561) 632-6387
-            </a>
-          </p>
-        ) : (
+        {compact ? null : (
           <>
             <p className="text-sm text-muted-foreground">
               Not sure if it's mold?{" "}
@@ -290,17 +283,17 @@ export function HeroQuoteCard({
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className="h-3.5 w-3.5"
+                className="h-5 w-5"
                 style={{ color: "#FBBC04", fill: "#FBBC04" }}
                 aria-hidden="true"
               />
             ))}
           </span>
-          <figcaption className="text-xs font-medium text-muted-foreground">
-            Google review
+          <figcaption className="text-sm font-semibold text-primary">
+            5.0 on Google
           </figcaption>
         </div>
-        <blockquote className="mt-1.5 text-sm text-foreground">
+        <blockquote className="mt-2 text-base font-medium leading-snug text-primary">
           “{HERO_REVIEW}”
         </blockquote>
       </figure>
