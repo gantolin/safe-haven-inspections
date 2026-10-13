@@ -276,14 +276,13 @@ export function HeroQuoteCard({
           </p>
         </div>
       </div>
-      <QuoteForm formName={formName} compact />
-      <figure className="mt-4 border-t border-border pt-4">
+      <figure className="mt-4 rounded-xl bg-secondary/60 px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
                 key={i}
-                className="h-5 w-5"
+                className="h-4 w-4"
                 style={{ color: "#FBBC04", fill: "#FBBC04" }}
                 aria-hidden="true"
               />
@@ -293,10 +292,11 @@ export function HeroQuoteCard({
             5.0 on Google
           </figcaption>
         </div>
-        <blockquote className="mt-2 text-base font-medium leading-snug text-primary">
+        <blockquote className="mt-1 text-sm font-medium leading-snug text-primary">
           “{HERO_REVIEW}”
         </blockquote>
       </figure>
+      <QuoteForm formName={formName} compact />
     </div>
   );
 }

@@ -102,7 +102,7 @@ export function CertBadgeGrid({
 export function CertBadgeRow({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`flex flex-col items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-black/20 sm:flex-row sm:gap-6 ${className}`}
+      className={`flex flex-col items-center gap-3 rounded-2xl bg-white px-5 py-2 shadow-lg shadow-black/20 sm:flex-row sm:gap-6 ${className}`}
     >
       <p className="shrink-0 text-center text-sm font-semibold leading-snug text-primary sm:text-left">
         Landon's certifications
@@ -123,7 +123,7 @@ export function CertBadgeRow({ className = "" }: { className?: string }) {
                 height={512}
                 loading="lazy"
                 decoding="async"
-                className="h-14 w-14 object-contain sm:h-16 sm:w-16"
+                className="h-12 w-12 object-contain sm:h-14 sm:w-14"
               />
             </picture>
           </li>

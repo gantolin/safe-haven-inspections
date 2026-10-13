@@ -169,17 +169,14 @@ function Index() {
         {/* Two columns from lg up: the pitch on the left, the request form on
             the right. Below lg the form drops under the buttons, still inside
             the hero, so it is on the landing screen at every width. */}
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:min-h-[640px] lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10 lg:py-10">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_1fr] lg:items-start lg:gap-x-10 lg:gap-y-4 lg:py-6">
           {/* Column is a flex container on phones only; items-start keeps the
               pill badge from stretching. */}
-          <div className="flex max-w-2xl flex-col items-start sm:block">
+          <div className="flex max-w-2xl flex-col items-start sm:block lg:col-start-1 lg:row-start-1">
             {/* Trust row. The Google rating sits beside the licensing pill so
                 the social proof is visible on landing rather than only in the
                 carousel further down the page. Wraps to its own line on phones. */}
             <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium text-white">
-                <ShieldCheck className="h-3.5 w-3.5" /> Independent · Licensed · Insured
-              </div>
               {/* "Family operated" is Landon's own wording on the About page, and
                   the 14 years already appears on the city pages and the blog index.
                   Both are repeated here because they were only discoverable by
@@ -196,7 +193,6 @@ function Index() {
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Protect your home and the air you breathe.
             </p>
-            <span aria-hidden className="spectrum-rule mt-5" />
             {/* Phones get a one-line version of the pitch; the full paragraph
                 returns from sm up. Four lines of body copy over the photo was
                 burying the image and pushing the CTA toward the fold. */}
@@ -229,7 +225,7 @@ function Index() {
                 Request an inspection <ArrowRight className="h-4 w-4" />
               </a>
             </div>
-            <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm">
+            <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm lg:hidden">
               Not sure if it's mold?{" "}
               <a href="sms:+15616326387" className="font-semibold text-white underline underline-offset-2 hover:text-accent">
                 Text a photo to (561) 632-6387
@@ -237,8 +233,8 @@ function Index() {
               and we'll tell you if it's worth testing.
             </p>
           </div>
-          <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:max-w-none" />
-          <CertBadgeRow className="lg:col-span-2" />
+          <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-none" />
+          <CertBadgeRow className="lg:col-start-1 lg:row-start-2" />
         </div>
       </section>
 
