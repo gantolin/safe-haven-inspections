@@ -155,7 +155,7 @@ export function ServicePage({
 
   return (
     <>
-      <section className="border-b border-border bg-secondary">
+      <section className="bg-background">
         {/* Text, then the request form, then the photo. On phones they stack in
             that order, so the ask comes before the picture. From lg up the form
             takes the right column and the photo sits under the text. */}
@@ -224,13 +224,10 @@ export function ServicePage({
 
       {sections.map((s, i) => (
         <Fragment key={i}>
-        <section
-          className={
-            s.tone === "band"
-              ? "mt-14 border-y border-border bg-secondary py-14 sm:py-16"
-              : "mt-14"
-          }
-        >
+        {/* White ground, wide spacing, and a short hairline between
+            sections. No tinted bands and no boxes around body copy. */}
+        <hr aria-hidden className="mx-auto my-14 w-full max-w-md border-border sm:my-20" />
+        <section>
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-2xl font-semibold text-primary sm:text-3xl">{s.h2}</h2>
           {s.intro ? (
@@ -244,12 +241,9 @@ export function ServicePage({
             </div>
           ) : null}
           {s.subsections?.length ? (
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="mt-8 grid gap-x-14 gap-y-8 md:grid-cols-2">
               {s.subsections.map((ss) => (
-                <div
-                  key={ss.h3}
-                  className="rounded-2xl border border-border bg-card p-6"
-                >
+                <div key={ss.h3}>
                   <h3 className="font-semibold text-primary">{ss.h3}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{ss.body}</p>
                 </div>
@@ -257,12 +251,9 @@ export function ServicePage({
             </div>
           ) : null}
           {s.steps?.length ? (
-            <ol className="mt-6 grid gap-4 md:grid-cols-2">
+            <ol className="mt-8 grid gap-x-14 gap-y-8 md:grid-cols-2">
               {s.steps.map((st) => (
-                <li
-                  key={st.n}
-                  className="rounded-2xl border border-border bg-card p-6"
-                >
+                <li key={st.n} className="border-l-2 border-accent/40 pl-5">
                   <div className="text-sm font-semibold uppercase tracking-wider text-accent">
                     {st.n}
                   </div>
@@ -273,11 +264,11 @@ export function ServicePage({
             </ol>
           ) : null}
           {s.bullets?.length ? (
-            <ul className="mt-6 grid gap-3 md:grid-cols-2">
+            <ul className="mt-8 grid gap-x-14 gap-y-4 md:grid-cols-2">
               {s.bullets.map((b) => (
                 <li
                   key={b}
-                  className="flex gap-3 rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground"
+                  className="flex gap-3 text-sm text-muted-foreground"
                 >
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <span>{b}</span>
@@ -329,8 +320,9 @@ export function ServicePage({
         </Fragment>
       ))}
 
-      <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
-        <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
+      <hr aria-hidden className="mx-auto my-14 w-full max-w-md border-border sm:my-20" />
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="max-w-3xl border-l-2 border-accent pl-5">
           <div className="flex items-start gap-3">
             <ShieldCheck className="mt-0.5 h-5 w-5 text-accent" />
             <div>
@@ -347,15 +339,16 @@ export function ServicePage({
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
+      <hr aria-hidden className="mx-auto my-14 w-full max-w-md border-border sm:my-20" />
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
           Frequently asked questions
         </h2>
-        <div className="mt-6 space-y-4">
+        <div className="mt-6 max-w-3xl divide-y divide-border border-y border-border">
           {faqs.map((f) => (
             <details
               key={f.q}
-              className="group rounded-2xl border border-border bg-card p-5 open:shadow-sm"
+              className="group py-5"
             >
               <summary className="cursor-pointer list-none text-base font-semibold text-primary">
                 <span className="flex items-center justify-between gap-4">
@@ -369,7 +362,8 @@ export function ServicePage({
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-6xl px-4 sm:px-6">
+      <hr aria-hidden className="mx-auto my-14 w-full max-w-md border-border sm:my-20" />
+      <section className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-2xl font-semibold text-primary sm:text-3xl">
           Related services
         </h2>

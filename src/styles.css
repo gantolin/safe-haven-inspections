@@ -150,7 +150,7 @@
 :root {
   --radius: 0.75rem;
   /* Brand — "Field Lab": cool clinical off-white, deep petrol ink & teal, thermal amber signal. */
-  --background: oklch(0.977 0.003 220);         /* #F6F8F9 */
+  --background: oklch(1 0 0);                    /* #FFFFFF: white page ground */
   --foreground: oklch(0.244 0.020 210);         /* #0E2A2F */
   --card: oklch(1 0 0);                          /* #FFFFFF */
   --card-foreground: oklch(0.244 0.020 210);
