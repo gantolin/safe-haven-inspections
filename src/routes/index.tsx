@@ -199,7 +199,7 @@ function Index() {
         {/* Two columns from lg up: the pitch on the left, the request form on
             the right. Below lg the form drops under the buttons, still inside
             the hero, so it is on the landing screen at every width. */}
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:min-h-[640px] lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10 lg:py-16">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-16 lg:min-h-[640px] lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10 lg:py-10">
           {/* Column is a flex container on phones only; items-start keeps the
               pill badge from stretching. */}
           <div className="flex max-w-2xl flex-col items-start sm:block">

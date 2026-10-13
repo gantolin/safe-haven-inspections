@@ -117,7 +117,7 @@ function MoldInspectionPage() {
   return (
     <>
       <section className="border-b border-border bg-secondary">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10 lg:py-10">
           <div className="lg:col-start-1">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">Service</p>
           <h1 className="mt-2 max-w-3xl text-4xl font-semibold text-primary sm:text-5xl">

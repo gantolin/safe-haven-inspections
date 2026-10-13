@@ -156,7 +156,7 @@ export function ServicePage({
         {/* Text, then the request form, then the photo. On phones they stack in
             that order, so the ask comes before the picture. From lg up the form
             takes the right column and the photo sits under the text. */}
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-x-10 lg:py-10">
           <div className="lg:col-start-1">
           <p className="text-sm font-medium uppercase tracking-wider text-accent">
             {eyebrow}

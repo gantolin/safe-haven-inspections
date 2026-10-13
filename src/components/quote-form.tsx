@@ -1,8 +1,18 @@
 import { useState } from "react";
-import { AlertCircle, CheckCircle2, Phone, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, Phone, Send, Star } from "lucide-react";
 import { submitContactForm } from "@/lib/contact";
 import { trackEvent } from "@/lib/analytics";
 import { ctaPrimary } from "@/lib/cta";
+import { webpVariant } from "@/lib/images";
+
+// 168px head crop, the same file the home page trust bar uses.
+const LANDON_AVATAR = "/landon-avatar.jpg";
+
+// The opening of a real Google review, word for word. The full text is the
+// third entry in REVIEWS in google-reviews.tsx. Do not tidy the wording: a
+// quote that has been edited is no longer the customer's.
+const HERO_REVIEW =
+  "Landon was great to work with. Very knowledgeable and easy to communicate with.";
 
 const inputClass =
   "mt-1.5 w-full rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground shadow-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
@@ -190,7 +200,7 @@ export function QuoteForm({
           </span>
           <textarea
             name="message"
-            rows={compact ? 3 : 5}
+            rows={compact ? 2 : 5}
             required
             placeholder={
               compact
@@ -250,12 +260,50 @@ export function HeroQuoteCard({
       id="request"
       className={`scroll-mt-32 rounded-2xl border border-border bg-card p-5 text-left shadow-xl shadow-primary/10 sm:p-6 ${className}`}
     >
-      <h2 className="text-xl font-semibold text-primary">Request an inspection</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Talking to us is free. You get the scope and the price before anything
-        is booked.
-      </p>
+      {/* The person who answers, before the fields. A form with a face on it
+          reads as a message to someone, not a submission to a company. */}
+      <div className="flex items-center gap-4">
+        <picture className="shrink-0">
+          <source srcSet={webpVariant(LANDON_AVATAR)} type="image/webp" />
+          <img
+            src={LANDON_AVATAR}
+            alt="Landon Heinrichs, founder of Safe Haven Inspections"
+            width={64}
+            height={64}
+            decoding="async"
+            className="h-16 w-16 rounded-full object-cover ring-2 ring-accent/30"
+          />
+        </picture>
+        <div>
+          <h2 className="text-xl font-semibold text-primary">Request an inspection</h2>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            <span className="font-semibold text-primary">Landon Heinrichs</span>,
+            founder and licensed Florida mold assessor. Talking to him is free,
+            and you get the price before anything is booked.
+          </p>
+        </div>
+      </div>
       <QuoteForm formName={formName} compact />
+      <figure className="mt-4 border-t border-border pt-4">
+        <div className="flex items-center gap-2">
+          <span className="flex items-center gap-0.5" role="img" aria-label="5 out of 5 stars">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star
+                key={i}
+                className="h-3.5 w-3.5"
+                style={{ color: "#FBBC04", fill: "#FBBC04" }}
+                aria-hidden="true"
+              />
+            ))}
+          </span>
+          <figcaption className="text-xs font-medium text-muted-foreground">
+            Google review
+          </figcaption>
+        </div>
+        <blockquote className="mt-1.5 text-sm text-foreground">
+          “{HERO_REVIEW}”
+        </blockquote>
+      </figure>
     </div>
   );
 }
