@@ -31,6 +31,7 @@ import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
 const HERO_BG = "/hero-living-room.jpg";
+const HERO_BG_MOBILE = "/hero-living-room-mobile.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -121,6 +122,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: "/hero-living-room.webp",
+        media: "(min-width: 1024px)",
         type: "image/webp",
         fetchpriority: "high",
       },
@@ -143,16 +145,21 @@ function Index() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden bg-[#0b2545]">
         {/* Background photo: "Living room with white sofa and glass window" by
             Spacejoy, from Unsplash (free licence, photo id 4YGsYQf7DNQ). A
             stock room, not a client's home, so nothing on the page says it is. */}
-        <picture className="absolute inset-0 -z-10 h-full w-full">
-          <source srcSet={webpVariant(HERO_BG)} type="image/webp" />
+        {/* Phones get a portrait crop that covers only the headline block; the
+            form below it sits on plain navy. Stretching the wide photo down a
+            1,500px phone hero showed a blurry sliver of it. */}
+        <picture className="absolute inset-x-0 top-0 -z-10 h-[30rem] w-full lg:h-full">
+          <source media="(min-width: 1024px)" srcSet={webpVariant(HERO_BG)} type="image/webp" />
+          <source media="(min-width: 1024px)" srcSet={HERO_BG} />
+          <source srcSet={webpVariant(HERO_BG_MOBILE)} type="image/webp" />
           <img
-            src={HERO_BG}
+            src={HERO_BG_MOBILE}
             alt=""
-            width={1600}
+            width={720}
             height={900}
             fetchPriority="high"
             loading="eager"
@@ -160,10 +167,19 @@ function Index() {
             className="h-full w-full object-cover"
           />
         </picture>
-        {/* Scrim: heavy behind the headline, falling away toward the form. */}
+        {/* Scrim. Phones: darkens downward into the navy below the photo.
+            Desktop: heavy behind the headline, falling away toward the form. */}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10"
+          className="absolute inset-x-0 top-0 -z-10 h-[30rem] lg:hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(to bottom, rgba(11,37,69,0.80) 0%, rgba(11,37,69,0.72) 55%, rgba(11,37,69,1) 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 hidden lg:block"
           style={{
             backgroundImage:
               "linear-gradient(to right, rgba(11,37,69,0.90) 0%, rgba(11,37,69,0.82) 38%, rgba(11,37,69,0.55) 70%, rgba(11,37,69,0.40) 100%)",
@@ -182,8 +198,8 @@ function Index() {
             <div className="flex flex-wrap items-center gap-2">
               <GoogleRatingBadge onDark />
               {/* The count is the owner's figure, given to us 2026-10-13. */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2 text-base font-semibold text-white">
-                <CheckCircle2 className="h-5 w-5 text-[#FBBC04]" /> Over 1,600 mold inspections completed
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-sm font-semibold text-white sm:px-5 sm:py-2 sm:text-base">
+                <CheckCircle2 className="h-4 w-4 text-[#FBBC04] sm:h-5 sm:w-5" /> Over 1,600 mold inspections completed
               </div>
             </div>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl">
@@ -192,36 +208,27 @@ function Index() {
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Family operated, with 14 years in the field.
             </p>
-            {/* Phones get a one-line version of the pitch; the full paragraph
-                returns from sm up. Four lines of body copy over the photo was
-                burying the image and pushing the CTA toward the fold. */}
-            <p className="mt-5 text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:hidden">
-              Independent, state-licensed mold inspection across South Florida.
-              Unbiased, lab-backed answers.
-            </p>
             <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg">
               Safe Haven Inspections is an independent, state-licensed mold inspection
               and testing company based in Greenacres, covering Palm Beach, Broward, and
               Martin County. We never sell the cleanup, so the answer you get is the
               honest one.
             </p>
-            <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:w-auto sm:flex-row">
-              {/* The call button shows at every width, phones included. The
-                  sticky bar at the bottom of the screen repeats it, but a
-                  visitor should not have to notice a bar to find the number. */}
+            <div className="mt-6 grid w-full grid-cols-2 gap-2 sm:mt-7 sm:flex sm:w-auto sm:gap-3">
               <a
                 href="tel:+15616326387"
-                className={`${ctaPrimary} py-3.5 text-base`}
+                className={`${ctaPrimary} px-3 py-3.5 text-base sm:px-6`}
               >
-                <Phone className="h-4 w-4" /> Call (561) 632-6387
+                <Phone className="h-4 w-4" />
+                <span className="sm:hidden">Call now</span>
+                <span className="hidden sm:inline">Call (561) 632-6387</span>
               </a>
-              {/* Below lg the form sits under this block, so this jumps to
-                  it. From lg up the form is already beside the headline. */}
+              {/* Below lg the form sits under this block, so this jumps to it. */}
               <a
                 href="#request"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/20 lg:hidden"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-3 py-3.5 text-sm font-semibold text-primary shadow-sm transition hover:bg-white/90 sm:px-6 lg:hidden"
               >
-                Request an inspection <ArrowRight className="h-4 w-4" />
+                Request inspection <ArrowRight className="h-4 w-4" />
               </a>
             </div>
             <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm lg:hidden">

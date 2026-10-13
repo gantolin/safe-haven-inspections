@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, MessageSquare } from "lucide-react";
+import { Menu, X, Phone, MessageSquare, ClipboardList } from "lucide-react";
 import logo from "@/assets/safe-haven-logo.png.asset.json";
 import { webpVariant } from "@/lib/images";
 import { ctaBarPrimary, ctaBarSecondary } from "@/lib/cta";
@@ -58,7 +58,7 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-28 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC, Home"
@@ -75,7 +75,7 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-[clamp(3.75rem,18.5vw,5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16"
+                className="h-[clamp(3rem,15vw,3.75rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16"
                 width={988}
                 height={489}
                 decoding="async"
@@ -231,21 +231,37 @@ export function MobileCallBar() {
     <div
       role="navigation"
       aria-label="Quick contact"
-      className="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
+      className="lg:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-3 gap-1.5 border-t border-border bg-background/95 p-2 backdrop-blur pb-[calc(env(safe-area-inset-bottom)+0.5rem)] shadow-[0_-6px_20px_-12px_rgba(11,37,69,0.35)]"
     >
       <a
         href="tel:+15616326387"
         aria-label="Call Now: (561) 632-6387"
-        className={ctaBarPrimary}
+        className={`${ctaBarPrimary} whitespace-nowrap px-1.5 text-[13px]`}
       >
-        <Phone className="h-4 w-4" aria-hidden /> Call Now
+        <Phone className="h-4 w-4" aria-hidden /> Call
+      </a>
+      {/* Jumps to the request form when the page has one (home and service
+          pages). Everywhere else it goes to the contact page. */}
+      <a
+        href="/contact/"
+        aria-label="Request an inspection"
+        onClick={(e) => {
+          const form = document.getElementById("request");
+          if (form) {
+            e.preventDefault();
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }}
+        className={`${ctaBarSecondary} whitespace-nowrap px-1.5 text-[13px]`}
+      >
+        <ClipboardList className="h-4 w-4" aria-hidden /> Request
       </a>
       <a
         href="sms:+15616326387"
         aria-label="Text a Photo to (561) 632-6387"
-        className={ctaBarSecondary}
+        className={`${ctaBarSecondary} whitespace-nowrap px-1.5 text-[13px]`}
       >
-        <MessageSquare className="h-4 w-4" aria-hidden /> Text a Photo
+        <MessageSquare className="h-4 w-4" aria-hidden /> Text photo
       </a>
     </div>
   );

@@ -189,20 +189,22 @@ export function ServicePage({
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:flex sm:gap-3">
             <a
               href="tel:+15616326387"
-              className={`${ctaPrimary} py-3.5 text-base`}
+              className={`${ctaPrimary} px-3 py-3.5 text-base sm:px-6`}
             >
-              <Phone className="h-4 w-4" /> Call (561) 632-6387
+              <Phone className="h-4 w-4" />
+              <span className="sm:hidden">Call now</span>
+              <span className="hidden sm:inline">Call (561) 632-6387</span>
             </a>
             {/* Phones and tablets only: from lg up the form is already on
                 screen beside this column. */}
             <a
               href="#request"
-              className={`${ctaSecondary} py-3.5 lg:hidden`}
+              className={`${ctaSecondary} px-3 py-3.5 sm:px-6 lg:hidden`}
             >
-              Request an inspection <ArrowRight className="h-4 w-4" />
+              Request inspection <ArrowRight className="h-4 w-4" />
             </a>
           </div>
           <p className="mt-6 max-w-2xl text-xs text-muted-foreground">

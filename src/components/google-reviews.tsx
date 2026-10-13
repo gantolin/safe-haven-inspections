@@ -86,11 +86,11 @@ export function GoogleRatingBadge({ onDark = false }: { onDark?: boolean }) {
       rel="noopener noreferrer"
       className={
         onDark
-          ? "inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-5 py-2 text-base font-semibold text-white transition hover:bg-white/25"
+          ? "inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/15 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-white/25 sm:px-5 sm:py-2 sm:text-base"
           : "inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-primary transition hover:border-accent"
       }
     >
-      <Stars className={onDark ? "h-5 w-5" : "h-3.5 w-3.5"} />
+      <Stars className={onDark ? "h-4 w-4 sm:h-5 sm:w-5" : "h-3.5 w-3.5"} />
       <span className="font-semibold">{ratingValue.toFixed(1)}</span>
       <span className={onDark ? "text-white/80" : "text-muted-foreground"}>on Google</span>
       <span className="sr-only">, read the reviews on Google</span>
