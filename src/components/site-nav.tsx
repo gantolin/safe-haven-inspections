@@ -239,7 +239,7 @@ export function MobileCallBar() {
         aria-label="Call Now: (561) 632-6387"
         className={`${ctaBarPrimary} whitespace-nowrap px-2`}
       >
-        <Phone className="h-4 w-4" aria-hidden /> Call now
+        <Phone className="h-4 w-4 shrink-0" aria-hidden /> (561) 632-6387
       </a>
       {/* Jumps to the request form when the page has one (home and service
           pages). Everywhere else it goes to the contact page. */}
@@ -255,7 +255,7 @@ export function MobileCallBar() {
         }}
         className={`${ctaBarSecondary} whitespace-nowrap px-2`}
       >
-        <ClipboardList className="h-4 w-4" aria-hidden /> Request inspection
+        <ClipboardList className="h-4 w-4 shrink-0" aria-hidden /> Request inspection
       </a>
     </div>
   );
