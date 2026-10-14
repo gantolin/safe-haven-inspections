@@ -220,9 +220,9 @@ function Index() {
             <div className="mt-7 hidden lg:flex">
               <a
                 href="tel:+15616326387"
-                className={`${ctaPrimary} px-6 py-3.5 text-base`}
+                className={`${ctaPrimary} px-8 py-4 text-xl`}
               >
-                <Phone className="h-4 w-4" /> Call (561) 632-6387
+                <Phone className="h-5 w-5" /> Call (561) 632-6387
               </a>
             </div>
             <p className="mt-3 hidden max-w-xl text-xs text-white/85 [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:block sm:text-sm lg:hidden">
