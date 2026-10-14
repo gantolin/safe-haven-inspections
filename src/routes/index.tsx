@@ -30,8 +30,8 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
-const HERO_BG = "/hero-living-room.jpg";
-const HERO_BG_MOBILE = "/hero-living-room-mobile.jpg";
+const HERO_BG = "/hero-thermal-inspection.jpg";
+const HERO_BG_MOBILE = "/hero-thermal-inspection-mobile.jpg";
 
 /**
  * Home-page FAQ, hoisted so the FAQPage schema and the accordion readers see
@@ -121,7 +121,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/hero-living-room.webp",
+        href: "/hero-thermal-inspection.webp",
         media: "(min-width: 1024px)",
         type: "image/webp",
         fetchpriority: "high",
@@ -160,7 +160,7 @@ function Index() {
             src={HERO_BG_MOBILE}
             alt=""
             width={720}
-            height={900}
+            height={633}
             fetchPriority="high"
             loading="eager"
             decoding="async"
@@ -174,7 +174,7 @@ function Index() {
           className="absolute inset-x-0 top-0 -z-10 h-[30rem] lg:hidden"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(11,37,69,0.80) 0%, rgba(11,37,69,0.72) 55%, rgba(11,37,69,1) 100%)",
+              "linear-gradient(to bottom, rgba(11,37,69,0.62) 0%, rgba(11,37,69,0.55) 55%, rgba(11,37,69,1) 100%)",
           }}
         />
         <div
@@ -182,7 +182,7 @@ function Index() {
           className="absolute inset-0 -z-10 hidden lg:block"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(11,37,69,0.90) 0%, rgba(11,37,69,0.82) 38%, rgba(11,37,69,0.55) 70%, rgba(11,37,69,0.40) 100%)",
+              "linear-gradient(to right, rgba(11,37,69,0.80) 0%, rgba(11,37,69,0.66) 36%, rgba(11,37,69,0.30) 58%, rgba(11,37,69,0.20) 100%)",
           }}
         />
         {/* Two columns from lg up: the pitch on the left, the request form on
