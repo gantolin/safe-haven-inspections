@@ -208,6 +208,7 @@ function Index() {
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Family operated, with 14 years in the field.
             </p>
+            <CertBadgeRow compact className="mt-4" />
             <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg lg:max-w-[27rem]">
               Safe Haven Inspections is an independent, state-licensed mold inspection
               and testing company based in Greenacres, covering Palm Beach, Broward, and
@@ -234,7 +235,6 @@ function Index() {
             </p>
           </div>
           <HeroQuoteCard formName="home-hero" className="w-full max-w-xl lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-none" />
-          <CertBadgeRow className="lg:col-start-1 lg:row-start-2" />
         </div>
       </section>
 

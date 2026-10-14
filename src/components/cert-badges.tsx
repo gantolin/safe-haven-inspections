@@ -99,7 +99,39 @@ export function CertBadgeGrid({
  * marks on a white bar, no captions: the names are in each image's alt text
  * and in full in the certifications section further down the page.
  */
-export function CertBadgeRow({ className = "" }: { className?: string }) {
+export function CertBadgeRow({
+  className = "",
+  compact = false,
+}: {
+  className?: string;
+  /** Badges only, in one small white strip. Used under the hero subline. */
+  compact?: boolean;
+}) {
+  if (compact) {
+    return (
+      <ul
+        aria-label="Landon's certifications"
+        className={`flex w-fit items-center gap-2 rounded-xl bg-white px-3 py-1.5 shadow-lg shadow-black/20 sm:gap-3 sm:px-4 ${className}`}
+      >
+        {certifications.map((c) => (
+          <li key={c.label}>
+            <picture>
+              <source srcSet={webpVariant(c.src)} type="image/webp" />
+              <img
+                src={c.src}
+                alt={`${c.label}${c.sub === "NAERMC" ? ", NAERMC" : ""} certification badge`}
+                title={c.label}
+                width={512}
+                height={512}
+                decoding="async"
+                className="h-10 w-10 object-contain sm:h-12 sm:w-12"
+              />
+            </picture>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   return (
     <div
       className={`flex flex-col items-center gap-3 rounded-2xl bg-white px-5 py-2 shadow-lg shadow-black/20 sm:flex-row sm:gap-6 ${className}`}
