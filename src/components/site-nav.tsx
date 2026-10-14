@@ -59,7 +59,7 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20">
+      <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20 min-[72rem]:h-24">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC, Home"
@@ -76,7 +76,7 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-[clamp(3rem,15vw,3.75rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16"
+                className="h-[clamp(3.5rem,18vw,4.5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16 min-[72rem]:h-20"
                 width={988}
                 height={489}
                 decoding="async"
@@ -102,7 +102,7 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              className="relative rounded-md px-2.5 py-2 text-base font-medium text-muted-foreground lg:max-[1151px]:text-sm transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100 lg:max-[1151px]:px-2"
+              className="relative rounded-md px-2.5 py-2 text-base font-medium text-muted-foreground min-[72rem]:px-2 min-[72rem]:text-lg lg:max-[1151px]:text-sm transition-colors hover:text-primary data-[status=active]:text-primary after:pointer-events-none after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 data-[status=active]:after:scale-x-100 lg:max-[1151px]:px-2"
             >
               {l.label}
             </Link>
@@ -110,7 +110,7 @@ export function SiteNav() {
           <div className="ml-2 flex flex-col items-end">
             <a
               href="tel:+15616326387"
-              className="font-mono-data inline-flex items-center whitespace-nowrap rounded-md bg-cta px-4 py-2 text-sm font-semibold text-cta-foreground shadow-sm shadow-cta/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] hover:shadow-md hover:shadow-cta/40 lg:max-[1151px]:px-3"
+              className="font-mono-data inline-flex items-center whitespace-nowrap rounded-md bg-cta px-4 py-2 text-sm min-[72rem]:text-base font-semibold text-cta-foreground shadow-sm shadow-cta/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[color-mix(in_oklab,var(--cta)_88%,black)] hover:shadow-md hover:shadow-cta/40 lg:max-[1151px]:px-3"
             >
               (561) 632-6387
             </a>
@@ -137,7 +137,7 @@ export function SiteNav() {
                 to={l.to}
                 activeOptions={{ exact: l.to === "/" }}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-muted-foreground data-[status=active]:text-primary data-[status=active]:bg-secondary"
+                className="rounded-md px-3 py-3 text-lg font-medium text-muted-foreground data-[status=active]:text-primary data-[status=active]:bg-secondary"
               >
                 {l.label}
               </Link>
