@@ -82,7 +82,7 @@ const services: Array<{
   },
   {
     to: "/services/mold-testing-greenacres/",
-    image: { src: "/svc-mold-testing.jpg", alt: "Air sampling stand and stopwatch running in a sealed off hallway" },
+    image: { src: "/svc-mold-testing.jpg", alt: "Gloved hand placing a petri dish under a lab microscope for mold analysis" },
     icon: Microscope,
     title: "Mold Testing",
     body: "The lab-analyzed sampling piece: air, surface, and bulk testing at an AIHA-accredited third-party laboratory. Defensible numbers and species IDs.",
@@ -96,7 +96,7 @@ const services: Array<{
   },
   {
     to: "/services/surface-sampling-greenacres/",
-    image: { src: "/svc-surface-sampling.jpg", alt: "Surface sample bag sealed and labelled at a baseboard" },
+    image: { src: "/svc-surface-sampling.jpg", alt: "Black mold growth streaking down a white wall" },
     icon: FlaskConical,
     title: "Surface Sampling & Swab Testing",
     body: "Tape-lift, swab, and bulk sampling of visible material for positive species identification. Complements air testing when there's something to point at.",
@@ -110,7 +110,7 @@ const services: Array<{
   },
   {
     to: "/services/water-damage-inspection-greenacres/",
-    image: { src: "/svc-water-damage.jpg", alt: "Drywall paper delaminated along a ceiling line after a water event" },
+    image: { src: "/svc-water-damage.jpg", alt: "Ceiling plaster collapsed after a roof or plumbing leak" },
     icon: Droplets,
     title: "Water Damage & Moisture Intrusion Assessment",
     body: "Post-leak, post-storm, and post-flood inspection. Insurance-ready documentation of what got wet and how far the moisture traveled.",
@@ -138,14 +138,14 @@ const services: Array<{
   },
   {
     to: "/services/real-estate-mold-inspection-greenacres/",
-    image: { src: "/svc-real-estate.jpg", alt: "Air sampling set up in a vacant room during a pre purchase inspection" },
+    image: { src: "/svc-real-estate.jpg", alt: "South Florida neighborhood of tile roof homes with palm trees" },
     icon: Home,
     title: "Real Estate Mold Inspection",
     body: "Pre-purchase and pre-sale inspections scheduled to fit inside real inspection-period windows. Reports designed for buyers, sellers, and agents.",
   },
   {
     to: "/services/commercial-mold-inspection-greenacres/",
-    image: { src: "/svc-commercial.jpg", alt: "Opened ceiling exposing ductwork and insulation in a commercial unit" },
+    image: { src: "/svc-commercial.jpg", alt: "Open plan office floor with rows of desks" },
     icon: Building2,
     title: "Commercial & Property Management",
     body: "Offices, rentals, HOAs, condos, and retail. Multi-stakeholder documentation for owners, managers, tenants, and insurers.",
