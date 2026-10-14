@@ -174,7 +174,7 @@ function Index() {
           className="absolute inset-x-0 top-0 -z-10 h-[30rem] lg:hidden"
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(11,37,69,0.62) 0%, rgba(11,37,69,0.55) 55%, rgba(11,37,69,1) 100%)",
+              "linear-gradient(to bottom, rgba(11,37,69,0.76) 0%, rgba(11,37,69,0.70) 55%, rgba(11,37,69,1) 100%)",
           }}
         />
         <div
