@@ -67,8 +67,7 @@ const services: Array<{
   title: string;
   body: string;
   /**
-   * Card thumbnail. Optional: asbestos testing and the assessment report have
-   * no honest photograph yet, and those cards fall back to the icon alone.
+   * Card thumbnail. Optional: a card without one falls back to the icon.
    * Every .jpg here has a .webp sibling in /public.
    */
   image?: { src: string; alt: string };
@@ -152,48 +151,56 @@ const services: Array<{
   },
   {
     to: "/services/asbestos-testing-greenacres/",
+    image: { src: "/svc-asbestos-testing.jpg", alt: "Weathered corrugated asbestos cement roof sheets" },
     icon: Layers,
     title: "Asbestos Testing",
     body: "Sampling and accredited lab analysis for popcorn ceilings, floor tile, pipe wrap, and joint compound in pre-1980 buildings. Testing only, never abatement.",
   },
   {
     to: "/services/mold-assessment-report-greenacres/",
+    image: { src: "/svc-assessment-report.jpg", alt: "Hand writing findings on a clipboard" },
     icon: FileText,
     title: "Mold Assessment & Written Protocol",
     body: "The formal Florida assessment report, and, when needed, the remediation protocol remediators bid and clearance is graded against.",
   },
   {
     to: "/services/independent-mold-inspection-greenacres/",
+    image: { src: "/svc-independent.jpg", alt: "Inspector with a headlamp and respirator checking a dark space" },
     icon: FileText,
     title: "Independent Mold Inspection",
     body: "Inspection and testing from an assessor who does no remediation, so the findings stand on their own.",
   },
   {
     to: "/services/apartment-mold-inspection-greenacres/",
+    image: { src: "/svc-apartment.jpg", alt: "South Florida condo building with palm trees" },
     icon: Building2,
     title: "Apartment & Condo Mold Inspection",
     body: "For renters, condo owners, and landlords: an independent report on what is in the unit and where the moisture comes from.",
   },
   {
     to: "/services/attic-mold-inspection-greenacres/",
+    image: { src: "/svc-attic.jpg", alt: "Attic roof deck and wood framing" },
     icon: FileText,
     title: "Attic Mold Inspection",
     body: "Roof deck, framing, insulation, and ductwork checked for moisture and growth after a roof leak or an AC problem.",
   },
   {
     to: "/services/popcorn-ceiling-asbestos-testing-greenacres/",
+    image: { src: "/svc-popcorn-ceiling.jpg", alt: "Close-up of a bumpy textured ceiling finish" },
     icon: Layers,
     title: "Popcorn Ceiling Asbestos Testing",
     body: "A certified asbestos inspector samples the ceiling before you scrape, sand, or drill it. Lab results in 24 hours.",
   },
   {
     to: "/services/hvac-mold-inspection-greenacres/",
+    image: { src: "/svc-hvac.jpg", alt: "Round air supply vent in a white ceiling" },
     icon: Wind,
     title: "HVAC Mold Inspection",
     body: "Air handler, drain line, vents, humidity, and indoor air checked to see whether the AC system is the source.",
   },
   {
     to: "/services/asbestos-inspection-greenacres/",
+    image: { src: "/svc-asbestos-inspection.jpg", alt: "Walls opened during a renovation, exposing old building materials" },
     icon: Layers,
     title: "Asbestos Inspection & Surveys",
     body: "A certified asbestos inspector samples every material a renovation or demolition will disturb. Inspection only, never abatement.",
