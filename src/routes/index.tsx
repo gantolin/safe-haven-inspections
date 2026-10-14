@@ -202,13 +202,13 @@ function Index() {
                 <CheckCircle2 className="h-4 w-4 text-[#FBBC04] sm:h-5 sm:w-5" /> Over 1,600 mold inspections completed
               </div>
             </div>
-            <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-white [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl lg:max-w-[27rem]">
               Mold Inspection & Testing in Greenacres, FL
             </h1>
             <p className="mt-3 text-lg font-medium text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:text-xl">
               Family operated, with 14 years in the field.
             </p>
-            <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg">
+            <p className="mt-5 hidden text-base text-white/95 [text-shadow:0_2px_12px_rgba(0,0,0,0.55)] sm:block sm:text-lg lg:max-w-[27rem]">
               Safe Haven Inspections is an independent, state-licensed mold inspection
               and testing company based in Greenacres, covering Palm Beach, Broward, and
               Martin County. We never sell the cleanup, so the answer you get is the
