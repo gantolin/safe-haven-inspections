@@ -110,7 +110,7 @@ export function CertBadgeRow({
   if (compact) {
     return (
       <ul
-        aria-label="Landon's certifications"
+        aria-label="Certifications"
         className={`flex w-fit items-center gap-2 rounded-xl bg-white px-3 py-1.5 shadow-lg shadow-black/20 sm:gap-3 sm:px-4 ${className}`}
       >
         {certifications.map((c) => (
@@ -137,7 +137,7 @@ export function CertBadgeRow({
       className={`flex flex-col items-center gap-3 rounded-2xl bg-white px-5 py-2 shadow-lg shadow-black/20 sm:flex-row sm:gap-6 ${className}`}
     >
       <p className="shrink-0 text-center text-sm font-semibold leading-snug text-primary sm:text-left">
-        Landon's certifications
+        Certifications
         <span className="block text-xs font-normal text-muted-foreground">
           FL Mold Assessor MRSA3366
         </span>
