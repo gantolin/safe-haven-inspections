@@ -41,6 +41,7 @@ function PopcornCeilingAsbestosTestingPage() {
       eyebrow="Service"
       h1="Popcorn Ceiling Asbestos Testing in Greenacres, FL"
       intro={"Popcorn ceiling asbestos testing in Greenacres tells you whether the texture on your ceiling contains asbestos before anyone scrapes, sands, or drills it. Landon Heinrichs is a certified asbestos inspector. He takes the sample, an accredited lab analyzes it, and you have a written answer in 24 hours."}
+      heroImage={{"src": "/hero-popcorn-ceiling.jpg", "alt": "Close-up of a bumpy textured ceiling finish", "caption": "A textured ceiling can look like any other. Only a lab test shows whether it contains asbestos.", "width": 1400, "height": 875}}
       sections={[
         {
           h2: "When to test a popcorn ceiling",

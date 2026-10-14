@@ -40,6 +40,7 @@ function AsbestosInspectionPage() {
     <ServicePage
       eyebrow="Service"
       h1="Asbestos Inspection in Greenacres, FL"
+      heroImage={{"src": "/hero-asbestos-inspection.jpg", "alt": "Walls opened during a renovation, exposing old building materials", "caption": "Materials a renovation will disturb are sampled before the work starts.", "width": 1400, "height": 875}}
       intro={"An asbestos inspection in Greenacres identifies which materials in a building contain asbestos before they are disturbed. Landon Heinrichs is a certified asbestos inspector. He inspects the property, samples the suspect materials, and sends them to an accredited lab, with results in 24 hours."}
       sections={[
         {

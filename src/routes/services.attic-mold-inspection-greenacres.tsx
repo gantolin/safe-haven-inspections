@@ -41,6 +41,7 @@ function AtticMoldInspectionPage() {
       eyebrow="Service"
       h1="Attic Mold Inspection in Greenacres, FL"
       intro={"An attic mold inspection in Greenacres checks the roof deck, framing, insulation, and ductwork above your ceiling for moisture and visible growth. The attic is part of our full walk-through wherever it can be reached safely, and it is the first place to look after a roof leak."}
+      heroImage={{"src": "/hero-attic.jpg", "alt": "Attic roof deck and wood framing", "caption": "The roof deck, framing, and insulation are checked for moisture and growth.", "width": 1400, "height": 875}}
       sections={[
         {
           h2: "Why attics grow mold in Greenacres",

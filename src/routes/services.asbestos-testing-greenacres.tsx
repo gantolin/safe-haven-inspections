@@ -110,6 +110,7 @@ function AsbestosTestingPage() {
     <ServicePage
       eyebrow="Service"
       h1="Asbestos Testing in Greenacres, FL"
+      heroImage={{"src": "/hero-asbestos-testing.jpg", "alt": "Weathered corrugated asbestos cement roof sheets", "caption": "Cement sheeting is one of many older building materials that can contain asbestos.", "width": 1400, "height": 875}}
       intro={
         <>
           Asbestos testing in Greenacres tells you whether the material you are about to sand,
