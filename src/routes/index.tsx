@@ -30,7 +30,7 @@ import stepReport from "@/assets/step-report.jpg.asset.json";
 import { ctaOnDark, ctaPrimary, ctaSecondary } from "@/lib/cta";
 import { HeroQuoteCard } from "@/components/quote-form";
 
-const HERO_BG = "/hero-thermal-inspection.jpg";
+const HERO_BG = "/hero-thermal-desktop.jpg";
 const HERO_BG_MOBILE = "/hero-thermal-inspection-mobile.jpg";
 
 /**
@@ -121,7 +121,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "preload",
         as: "image",
-        href: "/hero-thermal-inspection.webp",
+        href: "/hero-thermal-desktop.webp",
         media: "(min-width: 1024px)",
         type: "image/webp",
         fetchpriority: "high",
