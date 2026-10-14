@@ -59,7 +59,7 @@ export function SiteNav() {
         scrolled ? "border-border shadow-[0_6px_20px_-12px_rgba(11,37,69,0.25)]" : "border-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20 min-[72rem]:h-24">
+      <div className="mx-auto flex h-[5.5rem] max-w-6xl items-center justify-between gap-2 px-3 min-[360px]:px-4 sm:h-[7.5rem] sm:px-6 lg:h-20 min-[72rem]:h-28">
         <Link
           to="/"
           aria-label="Safe Haven Inspections LLC, Home"
@@ -76,7 +76,7 @@ export function SiteNav() {
               <img
                 src={logo.url}
                 alt="Safe Haven Inspections LLC logo"
-                className="h-[clamp(3.5rem,18vw,4.5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16 min-[72rem]:h-20"
+                className="h-[clamp(3.5rem,18vw,4.5rem)] w-auto max-w-none mix-blend-multiply sm:h-24 lg:h-16 min-[72rem]:h-24"
                 width={988}
                 height={489}
                 decoding="async"
