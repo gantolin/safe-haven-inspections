@@ -182,7 +182,7 @@ function Index() {
           className="absolute inset-0 -z-10 hidden lg:block"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(11,37,69,0.80) 0%, rgba(11,37,69,0.66) 36%, rgba(11,37,69,0.30) 58%, rgba(11,37,69,0.20) 100%)",
+              "linear-gradient(to right, rgba(11,37,69,0.88) 0%, rgba(11,37,69,0.78) 36%, rgba(11,37,69,0.48) 58%, rgba(11,37,69,0.38) 100%)",
           }}
         />
         {/* Two columns from lg up: the pitch on the left, the request form on
