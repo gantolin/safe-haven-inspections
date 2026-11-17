@@ -189,7 +189,7 @@ function PostPage() {
                     <a
                       href={s.href}
                       target="_blank"
-                      rel="noopener"
+                      rel="noopener noreferrer"
                       className="font-medium text-primary underline underline-offset-2 hover:text-accent"
                     >
                       {s.label}
